@@ -1,0 +1,311 @@
+<%- include('partials/header', { 
+    meta: meta || {
+        title: 'Clean Laboratoire | Expert Nettoyage & Décapage Billets de Banque Sécurisé',
+        description: 'Laboratoire Clean-Lab leader en Europe et Afrique. Solutions professionnelles de nettoyage, décapage et analyse de billets. Technologies SSD et spectrophotométrie.',
+        keywords: 'nettoyage billets, décapage billets, solution SSD, laboratoire nettoyage, spectrophotométrie, billets de banque',
+        canonical: '/',
+        robots: 'index, follow'
+    }
+}) %>
+
+    <!-- Schema.org WebPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Clean Laboratoire - Accueil",
+        "description": "Laboratoire expert en nettoyage sécurisé de billets de banque - Solutions SSD, décapage, analyses spectrophotométriques",
+        "url": "https://www.clean-lab.com/",
+        "mainEntity": {
+            "@type": "ProfessionalService",
+            "name": "Clean Laboratoire",
+            "description": "Expert en nettoyage et décapage de billets de banque sécurisé"
+        }
+    }
+    </script>
+
+    <!-- Hero Start -->
+    <div class="container-fluid pb-5 hero-header bg-light mb-5">
+        <div class="container py-5">
+            <div class="row g-5 align-items-center mb-5">
+                <div class="col-lg-6">
+                    <h1 class="display-1 mb-4 animated slideInRight" itemprop="headline">
+                        <%= typeof t !== 'undefined' && t.hero ? t.hero.title : 'Solution Universelle pour le' %> 
+                        <span class="text-primary" itemprop="keywords"><%= typeof t !== 'undefined' && t.hero ? t.hero.titleHighlight : 'Décapage' %></span> 
+                        <%= typeof t !== 'undefined' && t.hero ? t.hero.titleEnd : 'de Billets' %>
+                    </h1>
+                    <h5 class="d-inline-block border border-2 border-white py-3 px-5 mb-0 animated slideInRight" itemprop="description">
+                        <%= typeof t !== 'undefined' && t.hero ? t.hero.subtitle : 'Laboratoire Clean-Lab leader en Europe et en Afrique; Spécialiste en nettoyage de billets de Banque sécurisé.' %>
+                    </h5>
+                    
+                    <!-- Call to Action Buttons -->
+                    <div class="mt-4 animated slideInRight">
+                        <a href="/contact-laboratoire-nettoyage?lang=<%= currentLang %>" 
+                           class="btn btn-primary btn-lg me-3" 
+                           itemprop="potentialAction" 
+                           data-cta="hero-contact">
+                            <i class="fa fa-phone me-2"></i>Devis Gratuit
+                        </a>
+                        <a href="/services-nettoyage-decapage-billets?lang=<%= currentLang %>" 
+                           class="btn btn-outline-primary btn-lg"
+                           itemprop="potentialAction"
+                           data-cta="hero-services">
+                            <i class="fa fa-info-circle me-2"></i>Nos Services
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="owl-carousel header-carousel animated fadeIn">
+                        <div class="carousel-item" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+                            <img class="img-fluid" src="/img/slider-1.png" loading="lazy" 
+                                 alt="Analyse spectrophotométrique de billets dans notre laboratoire Clean Laboratoire"
+                                 itemprop="url contentUrl">
+                            <meta itemprop="name" content="Analyse spectrophotométrique">
+                            <meta itemprop="description" content="Notre laboratoire équipé pour l'analyse précise des billets">
+                        </div>
+                        <div class="carousel-item" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+                            <img class="img-fluid" src="/img/slider-2.png" loading="lazy" 
+                                 alt="SSD, poudre d'activation pour le décapage des billets de banque - Clean Laboratoire"
+                                 itemprop="url contentUrl">
+                            <meta itemprop="name" content="Produits SSD et activation">
+                            <meta itemprop="description" content="Nos solutions chimiques professionnelles pour le nettoyage">
+                        </div>
+                        <div class="carousel-item" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+                            <img class="img-fluid" src="/img/slider-3.png" loading="lazy" 
+                                 alt="Solution professionnelle pour nettoyer vos billets de banque - Expert Clean Laboratoire"
+                                 itemprop="url contentUrl">
+                            <meta itemprop="name" content="Solutions de nettoyage">
+                            <meta itemprop="description" content="Technologies avancées pour le nettoyage sécurisé">
+                        </div>
+                        <div class="carousel-item" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+                            <img class="img-fluid" src="/img/slider-4.png" loading="lazy" 
+                                 alt="Machine de nettoyage de billets de banque haute performance - Clean Laboratoire"
+                                 itemprop="url contentUrl">
+                            <meta itemprop="name" content="Machines haute performance">
+                            <meta itemprop="description" content="Équipements professionnels pour le décapage">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Features Grid -->
+            <div class="row g-5 animated fadeIn" itemscope itemtype="https://schema.org/ItemList">
+                <div class="col-md-6 col-lg-3" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <div class="d-flex align-items-center">
+                        <div class="flex-shrink-0 btn-square border border-2 border-white me-3">
+                            <i class="fa fa-palette text-primary"></i>
+                        </div>
+                        <h5 class="lh-base mb-0" itemprop="name"><%= typeof t !== 'undefined' && t.hero ? t.hero.feature1 : 'Décapage des billets en couleur' %></h5>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <div class="d-flex align-items-center">
+                        <div class="flex-shrink-0 btn-square border border-2 border-white me-3">
+                            <i class="fa fa-cogs text-primary"></i>
+                        </div>
+                        <h5 class="lh-base mb-0" itemprop="name"><%= typeof t !== 'undefined' && t.hero ? t.hero.feature2 : 'Machine de décapage haute performance' %></h5>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <div class="d-flex align-items-center">
+                        <div class="flex-shrink-0 btn-square border border-2 border-white me-3">
+                            <i class="fa fa-flask text-primary"></i>
+                        </div>
+                        <h5 class="lh-base mb-0" itemprop="name"><%= typeof t !== 'undefined' && t.hero ? t.hero.feature3 : 'Produit de nettoyage des billets de banque' %></h5>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <div class="d-flex align-items-center">
+                        <div class="flex-shrink-0 btn-square border border-2 border-white me-3">
+                            <i class="fa fa-euro-sign text-primary"></i>
+                        </div>
+                        <h5 class="lh-base mb-0" itemprop="name"><%= typeof t !== 'undefined' && t.hero ? t.hero.feature4 : 'Prix Abordables avec Garantie de sécurité' %></h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero End -->
+
+    <!-- About Start -->
+    <div class="container-fluid py-5" id="about">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-6 wow fadeIn" data-wow-delay="0.1s">
+                            <img class="img-fluid" src="/img/about-1.png" loading="lazy" 
+                                 alt="Laboratoire spécialisé en nettoyage de billet avec solution chimique SSD pour décapage - Clean Laboratoire"
+                                 itemprop="image">
+                        </div>
+                        <div class="col-6 wow fadeIn" data-wow-delay="0.3s">
+                            <img class="img-fluid h-75" src="/img/about-2.png" loading="lazy" 
+                                 alt="Poudre d'activation SSD pour le nettoyage de billets de banque vert, noire, rouge, ancre - Clean Laboratoire"
+                                 itemprop="image">
+                            <div class="h-25 d-flex align-items-center text-center bg-primary px-4">
+                                <h2 class="text-white lh-base mb-0" itemprop="name">Clean Laboratoire</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                    <h1 class="mb-5">
+                        <span class="text-uppercase text-primary bg-light px-2"><%= typeof t !== 'undefined' && t.about ? t.about.badge : 'À propos de nous' %></span> 
+                    </h1>
+                    <p class="mb-4" itemprop="description"><%= typeof t !== 'undefined' && t.about ? t.about.description1 : 'Clean Lab fonctionne comme un laboratoire de pointe, appliquant des techniques de travail modernes et éprouvées. Nous maîtrisons une gamme complète de produits de nettoyage — notamment la solution SSD, la solution universelle TTZ, la pâte Vectrol, la poudre d\'activation — ainsi que des équipements conçus pour la restauration de billets de banque carbonisés.' %></p>
+                    <p class="mb-5" itemprop="description"><%= typeof t !== 'undefined' && t.about ? t.about.description2 : 'Clean Lab intervient sur toutes les devises — USD, euro, etc. — pour assurer un nettoyage sûr et efficace. Nous fournissons une gamme d\'articles, produits chimiques, sels d\'activation et poudres adaptés, ainsi que des machines capables de traiter de gros volumes. Notre équipe d\'experts étudiera vos besoins et proposera des solutions sur mesure pour restaurer vos billets.' %></p>
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            <h6 class="mb-0">
+                                <i class="fa fa-check text-primary me-2"></i><%= typeof t !== 'undefined' && t.about ? t.about.check2 : 'Personnel Professionnel' %>
+                            </h6>
+                            <div class="d-flex align-items-center mt-5">
+                        <a class="btn btn-primary px-4 me-2" href="/a-propos-laboratoire-nettoyage-billets?lang=<%= currentLang %>" itemprop="url">
+                            <%= typeof t !== 'undefined' && t.about ? t.about.readMore : 'En Savoir Plus' %>
+                        </a>
+                        <a class="btn btn-outline-primary btn-square border-2 me-2" href="https://facebook.com/cleanlaboratoire" aria-label="Facebook" rel="noopener noreferrer">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        
+                        <a class="btn btn-outline-primary btn-square border-2 me-2" href="https://instagram.com/cleanlaboratoire" aria-label="Instagram" rel="noopener noreferrer">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        
+                    </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <h6 class="mb-3">
+                                <i class="fa fa-check text-primary me-2"></i><%= typeof t !== 'undefined' && t.about ? t.about.check3 : 'Support 24/7' %>
+                            </h6>
+                           
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+    <!-- Services Highlights Start -->
+    <div class="container-fluid py-5 bg-light">
+        <div class="container">
+            <div class="text-center wow fadeIn" data-wow-delay="0.1s">
+                <h1 class="mb-5">
+                    <%= typeof t !== 'undefined' && t.service ? t.service.title : 'Nos' %> 
+                    <span class="text-uppercase text-primary bg-white px-2"><%= typeof t !== 'undefined' && t.service ? t.service.titleHighlight : 'Services' %></span>
+                </h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item text-center bg-white p-4 rounded shadow">
+                        <div class="icon-box bg-primary rounded-circle mx-auto mb-4">
+                            <i class="fa fa-flask text-white fa-2x"></i>
+                        </div>
+                        <h5 class="mb-3">Solution SSD Universelle</h5>
+                        <p class="mb-0">Formule brevetée pour le nettoyage efficace de tous types de billets</p>
+                        <a href="/service/solution-ssd-universelle-nettoyage?lang=<%= currentLang %>" class="btn btn-link p-0 mt-2">En savoir plus →</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item text-center bg-white p-4 rounded shadow">
+                        <div class="icon-box bg-primary rounded-circle mx-auto mb-4">
+                            <i class="fa fa-cogs text-white fa-2x"></i>
+                        </div>
+                        <h5 class="mb-3">Location Machines</h5>
+                        <p class="mb-0">Équipements haute performance avec formation incluse</p>
+                        <a href="/service/location-machines-decapage?lang=<%= currentLang %>" class="btn btn-link p-0 mt-2">En savoir plus →</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item text-center bg-white p-4 rounded shadow">
+                        <div class="icon-box bg-primary rounded-circle mx-auto mb-4">
+                            <i class="fa fa-chart-line text-white fa-2x"></i>
+                        </div>
+                        <h5 class="mb-3">Analyse Spectrophotométrie</h5>
+                        <p class="mb-0">Contrôle qualité précis avec technologies de pointe</p>
+                        <a href="/service/analyse-spectrophotometrie-billets?lang=<%= currentLang %>" class="btn btn-link p-0 mt-2">En savoir plus →</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="service-item text-center bg-white p-4 rounded shadow">
+                        <div class="icon-box bg-primary rounded-circle mx-auto mb-4">
+                            <i class="fa fa-vial text-white fa-2x"></i>
+                        </div>
+                        <h5 class="mb-3">Poudre Activation</h5>
+                        <p class="mb-0">Produits professionnels pour résultats optimaux</p>
+                        <a href="/service/poudre-activation-nettoyage?lang=<%= currentLang %>" class="btn btn-link p-0 mt-2">En savoir plus →</a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <a href="/services-nettoyage-decapage-billets?lang=<%= currentLang %>" class="btn btn-primary btn-lg">Voir tous nos services</a>
+            </div>
+        </div>
+    </div>
+    <!-- Services Highlights End -->
+
+    <!-- Features Start -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="text-center wow fadeIn" data-wow-delay="0.1s">
+                <h1 class="mb-5">
+                    <%= typeof t !== 'undefined' && t.feature ? t.feature.title : 'Pourquoi Les Gens' %> 
+                    <span class="text-uppercase text-primary bg-light px-2"><%= typeof t !== 'undefined' && t.feature ? t.feature.titleHighlight : 'Nous Choisissent' %></span>
+                </h1>
+            </div>
+            <div class="row g-5 align-items-center text-center">
+                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.5s">
+                    <i class="fa fa-bolt fa-5x text-primary mb-4"></i>
+                    <h4><%= typeof t !== 'undefined' && t.feature ? t.feature.experience : 'Nettoyage rapide et efficace' %></h4>
+                    <p class="mb-0"><%= typeof t !== 'undefined' && t.feature ? t.feature.architectsDesc : 'Résultats visibles en temps record' %></p>
+                </div>
+                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.3s">
+                    <i class="fa fa-shield-alt fa-5x text-primary mb-4"></i>
+                    <h4><%= typeof t !== 'undefined' && t.feature ? t.feature.design : 'Sécurité maximale' %></h4>
+                    <p class="mb-0"><%= typeof t !== 'undefined' && t.feature ? t.feature.designDesc : 'Processus sécurisé et discret' %></p>
+                </div>
+                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.3s">
+                    <i class="fa fa-euro-sign fa-5x text-primary mb-4"></i>
+                    <h4><%= typeof t !== 'undefined' && t.feature ? t.feature.budget : 'Prix Compétitifs' %></h4>
+                    <p class="mb-0"><%= typeof t !== 'undefined' && t.feature ? t.feature.budgetDesc : 'Solutions accessibles pour tous' %></p>
+                </div>
+                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.5s">
+                    <i class="fa fa-globe fa-5x text-primary mb-4"></i>
+                    <h4><%= typeof t !== 'undefined' && t.feature ? t.feature.material : 'Réseau International' %></h4>
+                    <p class="mb-0"><%= typeof t !== 'undefined' && t.feature ? t.feature.materialDesc : 'Présent en Europe et Afrique' %></p>
+                </div>
+                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.1s">
+                    <i class="fa fa-user-tie fa-5x text-primary mb-4"></i>
+                    <h4><%= typeof t !== 'undefined' && t.feature ? t.feature.experience : 'Expertise Confirmée' %></h4>
+                    <p class="mb-0"><%= typeof t !== 'undefined' && t.feature ? t.feature.experienceDesc : '10 ans d\'expérience professionnelle' %></p>
+                </div>
+                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.1s">
+                    <i class="fa fa-thumbs-up fa-5x text-primary mb-4"></i>
+                    <h4><%= typeof t !== 'undefined' && t.feature ? t.feature.satisfaction : 'Satisfaction Garantie' %></h4>
+                    <p class="mb-0"><%= typeof t !== 'undefined' && t.feature ? t.feature.satisfactionDesc : 'Résultats 100% satisfaisants' %></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Feature End -->
+
+    <!-- CTA Section Start -->
+    <div class="container-fluid bg-primary py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h2 class="text-white mb-0">Prêt à redonner vie à vos billets ?</h2>
+                    <p class="text-white-50 mb-0">Contactez nos experts pour une consultation gratuite</p>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <a href="/contact-laboratoire-nettoyage?lang=<%= currentLang %>" class="btn btn-light btn-lg">
+                        <i class="fa fa-phone me-2"></i>Obtenir un Devis
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- CTA Section End -->
+
+<%- include('partials/footer') %>

@@ -1,0 +1,92 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Acerca de",
+    "services": "Servicios",
+    "projects": "Galería",
+    "pages": "Páginas",
+    "features": "Características",
+    "team": "Nuestro Equipo",
+    "testimonial": "Testimonios",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "title": "Solución Universal para la",
+    "titleHighlight": "Limpieza",
+    "titleEnd": "de Billetes",
+    "subtitle": "Laboratorio Clean-Lab líder en Europa y África; Especialista en limpieza segura de billetes bancarios.",
+    "feature1": "Decapado de billetes en color",
+    "feature2": "Máquinas de decapado de alto rendimiento",
+    "feature3": "Productos de limpieza para billetes bancarios",
+    "feature4": "Precios asequibles con garantía de seguridad"
+  },
+  "about": {
+    "badge": "Acerca de Nosotros",
+    "title": "Clean Lab",
+    "description1": "Clean Lab funciona como un laboratorio de vanguardia, aplicando técnicas de trabajo modernas y probadas. Dominamos una gama completa de productos de limpieza - incluyendo solución SSD, solución universal TTZ, pasta Vectrol, polvo de activación - así como equipos diseñados para la restauración de billetes bancarios carbonizados. Estos productos y servicios se ofrecen a nuestros clientes para satisfacer sus requisitos y demandas específicas.",
+    "description2": "Clean Lab interviene en todas las divisas - USD, euro, etc. - para garantizar una limpieza segura y efectiva. Proveemos una gama de artículos, productos químicos, sales de activación y polvos adecuados, así como máquinas capaces de procesar grandes volúmenes. Nuestro equipo de expertos estudiará sus necesidades y propondrá soluciones personalizadas para restaurar sus billetes.",
+    "check1": "Premiado",
+    "check2": "Personal Profesional",
+    "check3": "Soporte 24/7",
+    "check4": "Precios Justos",
+    "readMore": "Saber Más"
+  },
+  "feature": {
+    "title": "Por Qué La Gente",
+    "titleHighlight": "Nos Elige",
+    "experience": "Limpieza rápida y efectiva por expertos",
+    "design": "Soluciones más sofisticadas",
+    "architects": "Análisis en profundidad",
+    "satisfaction": "Satisfacción del Cliente",
+    "budget": "Precios Asequibles",
+    "material": "Procesamiento seguro de billetes"
+  },
+  "reseau": {
+    "title": "Nuestra Red",
+    "titleHighlight": "Nuestra Red",
+    "paragraph": "Nuestra extensa red de laboratorios especializados en el procesamiento de billetes seguros se extiende por Europa y África. Gracias a esta presencia internacional, podemos ofrecer un acompañamiento personalizado y reactivo, adaptado a las limitaciones locales y los volúmenes procesados. Nuestros equipos locales y nuestros expertos centralizados colaboran para garantizar prestaciones fiables, conformes con los estándares de seguridad, y disponibles rápidamente para responder a sus necesidades.",
+    "kitchens": "Diam sed sed dolor stet amet eirmod"
+  },
+  "service": {
+    "title": "Nuestros",
+    "titleHighlight": "Servicios",
+    "description1": "Nuestro equipo experto utiliza productos químicos especializados y polvos específicos para la limpieza de billetes bancarios, respaldados por máquinas capaces de procesar grandes volúmenes. Nuestro stock incluye productos químicos avanzados, sales de activación y polvos de humina. Confíenos sus necesidades, le propondremos soluciones a medida.",
+    "description2": "Puede contar con nosotros para resolver eficazmente todas sus preocupaciones relacionadas con la limpieza de billetes bancarios.",
+    "additionalTitle1": "Venta de solución SSD Universal para la limpieza",
+    "additionalTitle2": "Alquiler de máquinas de decapado de billetes",
+    "additionalTitle3": "Análisis por espectrofotometría",
+    "additionalTitle4": "Venta de polvo de activación para limpieza de billetes",
+    "interiorDesc1": "Soluciones personalizadas de limpieza de billetes",
+    "interiorDesc2": "Soluciones personalizadas de limpieza de billetes",
+    "interiorDesc3": "Soluciones personalizadas de limpieza de billetes",
+    "interiorDesc4": "Soluciones personalizadas de limpieza de billetes",
+    "commercialDesc": "Diseño de espacios comerciales"
+  },
+  "gallerie": {
+    "title": "Nuestra",
+    "titleHighlight": "Galería",
+    "placeholder": "Descubra nuestros logros en el análisis y limpieza de billetes bancarios seguros",
+    "note": "Diam sed sed dolor stet amet eirmod"
+  },
+  "newsletter": {
+    "title": "Suscríbase a nuestro",
+    "titleHighlight": "Boletín",
+    "placeholder": "Ingrese su email",
+    "note": "Diam sed sed dolor stet amet eirmod"
+  },
+  "footer": {
+    "title": "Laboratorio Clean-Lab líder en Europa y África; Especialista en limpieza segura de billetes bancarios.",
+    "titleContact": "Contáctenos",
+    "titleLink": "Ingrese su email",
+    "titleService": "Nuestros Servicios",
+    "service1": "Decapado de billetes en color",
+    "service2": "Máquinas de decapado de alto rendimiento",
+    "service3": "Limpieza de billetes en blanco y negro",
+    "service4": "Análisis de seguridad de billetes",
+    "linkHome": "Inicio",
+    "linkAbout": "Acerca de",
+    "linkService": "Servicios",
+    "linkGallerie": "Galería",
+    "linkContact": "Contáctenos"
+  }
+}

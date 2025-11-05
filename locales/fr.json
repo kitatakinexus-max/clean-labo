@@ -1,0 +1,274 @@
+{
+  "common": {
+    "loading": "Chargement...",
+    "readMore": "En savoir plus",
+    "contactUs": "Nous contacter",
+    "getQuote": "Obtenir un devis",
+    "learnMore": "En savoir plus",
+    "viewAll": "Voir tout"
+  },
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "services": "Services",
+    "projects": "Réalisations",
+    "pages": "Pages",
+    "features": "Technologies",
+    "team": "Notre Équipe",
+    "testimonial": "Témoignages",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Solution Universelle pour le",
+    "titleHighlight": "Nettoyage & Décapage",
+    "titleEnd": "de Billets",
+    "subtitle": "Laboratoire Clean-Lab leader en Europe et Afrique - Expert en nettoyage sécurisé de billets de banque avec technologies SSD et spectrophotométrie avancée.",
+    "feature1": "Décapage haute précision",
+    "feature2": "Machines professionnelles",
+    "feature3": "Solutions SSD brevetées",
+    "feature4": "Résultats garantis"
+  },
+  "about": {
+    "badge": "Expertise",
+    "title": "Clean Laboratoire",
+    "description1": "Fondé en 2010, Clean Laboratoire opère comme un centre d'expertise international spécialisé dans le nettoyage et la restauration de billets de banque. Notre laboratoire de pointe utilise des technologies avancées incluant la solution SSD universelle, la pâte Vectrol, les poudres d'activation et des équipements haute performance pour la restauration de billets endommagés, carbonisés ou décolorés.",
+    "description2": "Notre expertise s'étend à toutes les devises internationales (USD, EUR, GBP, etc.) avec des protocoles de sécurité stricts. Nous proposons une gamme complète de produits chimiques spécialisés, sels d'activation et solutions sur mesure, soutenus par des machines capables de traiter des volumes importants tout en garantissant confidentialité et résultats optimaux.",
+    "check1": "Certifié",
+    "check2": "Équipe Expert",
+    "check3": "Support 24h/24",
+    "check4": "Tarifs Transparents",
+    "readMore": "Découvrir notre expertise"
+  },
+  "feature": {
+    "title": "Pourquoi",
+    "titleHighlight": "Nous Choisir",
+    "experience": "Nettoyage rapide et efficace",
+    "experienceDesc": "Résultats visibles en moins de 48h",
+    "design": "Technologies de pointe",
+    "designDesc": "Équipements dernière génération",
+    "architects": "Expertise scientifique",
+    "architectsDesc": "Analyses spectrophotométriques précises",
+    "satisfaction": "Satisfaction garantie",
+    "satisfactionDesc": "Résultats 100% satisfaisants",
+    "budget": "Solutions abordables",
+    "budgetDesc": "Tarifs compétitifs et transparents",
+    "material": "Sécurité absolue",
+    "materialDesc": "Processus discret et sécurisé"
+  },
+  "reseau": {
+    "title": "Notre",
+    "titleHighlight": "Réseau International",
+    "paragraph": "Avec des laboratoires partenaires stratégiquement localisés à travers l'Europe et l'Afrique, Clean Laboratoire assure une couverture internationale complète. Notre réseau nous permet d'offrir un accompagnement personnalisé, adapté aux réglementations locales et capable de traiter tous volumes, des particuliers aux institutions financières. Chaque partenaire respecte nos standards de qualité et de sécurité élevés.",
+    "europe": "Europe",
+    "africa": "Afrique",
+    "worldwide": "International"
+  },
+  "service": {
+    "title": "Nos Solutions",
+    "titleHighlight": "Professionnelles",
+    "description1": "Clean Laboratoire propose des services complets de nettoyage et restauration de billets utilisant des technologies brevetées. Notre équipe d'experts maîtrise les techniques les plus avancées incluant les solutions SSD, la spectrophotométrie et les procédés chimiques spécialisés pour des résultats optimaux sur tous types de billets.",
+    "description2": "Que vous soyez un particulier, une entreprise ou une institution, nous avons la solution adaptée à vos besoins spécifiques en matière de nettoyage et de restauration de billets.",
+    "additionalTitle1": "Solution SSD Universelle",
+    "additionalTitle2": "Location Machines Professionnelles",
+    "additionalTitle3": "Analyse Spectrophotométrique",
+    "additionalTitle4": "Poudres d'Activation",
+    "interiorDesc1": "Formule brevetée pour nettoyage profond",
+    "interiorDesc2": "Équipements haute performance",
+    "interiorDesc3": "Contrôle qualité scientifique",
+    "interiorDesc4": "Produits activation professionnels",
+    "commercialDesc": "Solutions institutions financières",
+    "phone": "Appelez-nous pour un diagnostic gratuit"
+  },
+  "services": {
+    "title": "Nos Solutions",
+    "titleHighlight": "Professionnelles",
+    "description1": "Clean Laboratoire propose des services complets de nettoyage et restauration de billets utilisant des technologies brevetées. Notre équipe d'experts maîtrise les techniques les plus avancées incluant les solutions SSD, la spectrophotométrie et les procédés chimiques spécialisés pour des résultats optimaux sur tous types de billets.",
+    "description2": "Que vous soyez un particulier, une entreprise ou une institution, nous avons la solution adaptée à vos besoins spécifiques en matière de nettoyage et de restauration de billets.",
+    "additionalTitle1": "Solution SSD Universelle",
+    "additionalTitle2": "Location Machines Décapage",
+    "additionalTitle3": "Analyse Spectrophotométrie",
+    "additionalTitle4": "Poudres d'Activation",
+    "interiorDesc1": "Formule brevetée pour nettoyage profond de tous types de billets",
+    "interiorDesc2": "Équipements professionnels haute performance avec formation incluse",
+    "interiorDesc3": "Contrôle qualité scientifique avancé pour résultats optimaux",
+    "interiorDesc4": "Produits activation professionnels pour nettoyage optimisé",
+    "commercialDesc": "Services dédiés aux institutions financières avec protocoles renforcés",
+    "phone": "Appelez-nous pour un diagnostic gratuit",
+    "ssd": {
+      "title": "Solution SSD Universelle",
+      "description": "Notre solution SSD brevetée élimine efficacement toutes les encres et colorants sur tous types de billets. Formule avancée garantissant intégrité et sécurité des billets traités."
+    },
+    "machines": {
+      "title": "Location Machines",
+      "description": "Équipements professionnels de décapage haute performance disponibles à la location. Formation complète et support technique inclus."
+    },
+    "analysis": {
+      "title": "Analyse Spectrophotométrie",
+      "description": "Service d'analyse scientifique avancée pour déterminer la composition des encres et optimiser les protocoles de nettoyage."
+    },
+    "powder": {
+      "title": "Poudres d'Activation",
+      "description": "Poudres professionnelles d'activation pour processus de nettoyage optimisé. Compatibles avec toutes les devises et types d'encres."
+    }
+  },
+  "gallerie": {
+    "title": "Nos",
+    "titleHighlight": "Réalisations",
+    "placeholder": "Découvrez nos succès en nettoyage et restauration de billets - Résultats avant/après et études de cas",
+    "note": "Projets réalisés avec succès depuis 2010"
+  },
+  "newsletter": {
+    "title": "Restez Informé",
+    "titleHighlight": "Newsletter Expert",
+    "placeholder": "Votre email professionnel",
+    "note": "Recevez nos dernières innovations en nettoyage de billets",
+    "subscribe": "S'abonner",
+    "success": "Merci pour votre inscription !"
+  },
+  "footer": {
+    "title": "Clean Laboratoire - Expert international en nettoyage sécurisé de billets de banque. Technologies SSD, spectrophotométrie et solutions sur mesure depuis 2010.",
+    "titleContact": "Contact Expert",
+    "titleLink": "Navigation",
+    "titleService": "Solutions",
+    "service1": "Solution SSD Universelle",
+    "service2": "Location Machines Pro",
+    "service3": "Analyse Spectrophotométrie", 
+    "service4": "Poudres d'Activation",
+    "linkHome": "Accueil",
+    "linkAbout": "Notre Expertise",
+    "linkService": "Nos Solutions",
+    "linkGallerie": "Réalisations",
+    "linkContact": "Devis Gratuit"
+  },
+  "cta": {
+    "consultation": "Consultation Gratuite",
+    "quote": "Devis Personnalisé",
+    "contact": "Expertise Immédiate",
+    "whatsapp": "Chat WhatsApp",
+    "call": "Appel Direct"
+  },
+  "seo": {
+    "homeTitle": "Clean Laboratoire | Expert Nettoyage & Décapage Billets Sécurisé",
+    "homeDescription": "Laboratoire leader en Europe et Afrique. Solutions SSD, machines haute performance, analyses spectrophotométriques. Résultats garantis depuis 2010.",
+    "aboutTitle": "À Propos Clean Laboratoire | Expertise Nettoyage Billets",
+    "aboutDescription": "Découvrez notre expertise en nettoyage sécurisé de billets. 10 ans d'expérience, technologies brevetées, réseau international Europe-Afrique.",
+    "servicesTitle": "Services Nettoyage Billets | Solutions SSD & Décapage Pro",
+    "servicesDescription": "Services complets de nettoyage et décapage de billets. Solution SSD universelle, location machines, analyses spectrophotométriques, résultats garantis.",
+    "contactTitle": "Contact Clean Laboratoire | Devis Gratuit Nettoyage Billets",
+    "contactDescription": "Contactez nos experts pour un devis gratuit. Solutions sur mesure pour particuliers et professionnels. Europe et Afrique."
+  },
+
+  "abouts": {
+    "badge": "Expertise",
+    "title": "Clean Laboratoire",
+    "description1": "Fondé en 2010, Clean Laboratoire opère comme un centre d'expertise international spécialisé dans le nettoyage et la restauration de billets de banque. Notre laboratoire de pointe utilise des technologies avancées incluant la solution SSD universelle, la pâte Vectrol, les poudres d'activation et des équipements haute performance pour la restauration de billets endommagés, carbonisés ou décolorés.",
+    "description2": "Notre expertise s'étend à toutes les devises internationales (USD, EUR, GBP, etc.) avec des protocoles de sécurité stricts. Nous proposons une gamme complète de produits chimiques spécialisés, sels d'activation et solutions sur mesure, soutenus par des machines capables de traiter des volumes importants tout en garantissant confidentialité et résultats optimaux.",
+    "check1": "Certifié",
+    "check2": "Équipe Expert",
+    "check3": "Support 24h/24",
+    "check4": "Tarifs Transparents",
+    "readMore": "Découvrir notre expertise",
+    "stats": {
+      "experience": "10+ Ans d'Expertise",
+      "continents": "2 Continents",
+      "projects": "500+ Projets",
+      "satisfaction": "100% Satisfaction"
+    },
+    "values": {
+      "title": "Notre Engagement",
+      "subtitle": "Excellence & Confidentialité Garanties",
+      "description": "Chez Clean Laboratoire, nous combinons expertise technique et discrétion absolue pour des résultats optimaux.",
+      "security": "Sécurité Maximale",
+      "securityDesc": "Protocoles stricts et environnement sécurisé pour garantir la confidentialité de chaque intervention.",
+      "expertise": "Expertise Scientifique",
+      "expertiseDesc": "Technologies brevetées et analyses spectrophotométriques pour des résultats précis et fiables.",
+      "speed": "Rapidité d'Exécution",
+      "speedDesc": "Traitements efficaces avec des délais optimisés pour répondre à vos impératifs.",
+      "support": "Accompagnement Personnalisé",
+      "supportDesc": "Solutions sur mesure adaptées à chaque situation particulière et besoin spécifique."
+    },
+    "process": {
+      "title": "Notre Processus",
+      "subtitle": "Comment Nous Travaillons",
+      "description": "Un processus structuré pour des résultats optimaux à chaque étape.",
+      "step1": "Diagnostic Expert",
+      "step1Desc": "Analyse approfondie de l'état des billets et détermination du protocole de traitement adapté.",
+      "step2": "Traitement Spécialisé",
+      "step2Desc": "Application des solutions SSD et techniques de décapage avec précision et expertise.",
+      "step3": "Contrôle Qualité",
+      "step3Desc": "Vérification rigoureuse et analyses spectrophotométriques pour garantir l'excellence.",
+      "step4": "Livraison Sécurisée",
+      "step4Desc": "Retour discret et sécurisé des billets traités avec rapport détaillé d'intervention."
+    },
+    "cta": {
+      "title": "Prêt à Commencer ?",
+      "subtitle": "Confiez-nous Vos Billets à Restaurer",
+      "description": "Notre équipe d'experts est à votre disposition pour évaluer votre situation et vous proposer la solution optimale.",
+      "quote": "Devis Gratuit",
+      "whatsapp": "Chat WhatsApp"
+    }
+  },
+  "consultation": {
+    "title": "Consultation Expert",
+    "subtitle": "Obtenez une Analyse Personnalisée",
+    "formTitle": "Demande d'Expertise",
+    "serviceType": "Type de Service",
+    "currency": "Devise à Traiter",
+    "name": "Votre Nom",
+    "email": "Votre Email",
+    "phone": "Votre Téléphone",
+    "volume": "Volume à traiter",
+    "message": "Description détaillée de votre besoin...",
+    "submit": "Soumettre ma Demande",
+    "quote": "Devis Gratuit"
+  },
+  "testimonials": {
+    "title": "Témoignages",
+    "subtitle": "Ce Que Disent Nos Clients",
+    "client1": {
+      "text": "\"Service exceptionnel ! Mes billets USD ont été parfaitement nettoyés avec la solution SSD. Résultats au-delà de mes attentes. Je recommande vivement Clean Laboratoire.\"",
+      "name": "Pierre M.",
+      "role": "Client Particulier"
+    },
+    "client2": {
+      "text": "\"En tant qu'institution, nous apprécions particulièrement le professionnalisme et la discrétion de Clean Laboratoire. Leurs analyses spectrophotométriques sont d'une précision remarquable.\"",
+      "name": "Sarah L.",
+      "role": "Gestionnaire Institutionnel"
+    },
+    "client3": {
+      "text": "\"La location de machines avec formation incluse a été déterminante pour notre activité. Support technique réactif et résultats constants. Partenaire de confiance.\"",
+      "name": "Marc T.",
+      "role": "Entrepreneur"
+    }
+  },
+
+  "contact": {
+    "title": "Une Question ?",
+    "titleHighlight": "Contactez-Nous",
+    "description": "Notre équipe d'experts est à votre écoute pour répondre à toutes vos questions concernant le nettoyage et la restauration de billets. Obtenez une consultation gratuite et personnalisée.",
+    "phone": "Téléphone",
+    "email": "Email",
+    "address": "Adresse",
+    "quickContact": "Contact Rapide",
+    "call": "Appeler",
+    "form": {
+      "name": "Votre Nom",
+      "email": "Votre Email",
+      "phone": "Votre Téléphone",
+      "service": "Type de Service",
+      "subject": "Sujet",
+      "message": "Décrivez votre besoin en détail...",
+      "submit": "Envoyer le Message"
+    },
+    "success": {
+      "title": "Message Envoyé !",
+      "message": "Merci pour votre message. Notre équipe vous contactera dans les plus brefs délais."
+    },
+    "error": {
+      "title": "Erreur d'Envoi",
+      "message": "Une erreur s'est produite lors de l'envoi de votre message. Veuillez réessayer ou nous contacter directement."
+    }
+  }
+
+
+}

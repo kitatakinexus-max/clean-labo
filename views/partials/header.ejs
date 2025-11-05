@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="<%= currentLang %>" dir="<%= currentLang === 'ar' ? 'rtl' : 'ltr' %>" itemscope itemtype="https://schema.org/WebSite">
+
+<head>
+    <meta charset="utf-8">
+    
+    <!-- METADONNÉES PRINCIPALES OPTIMISÉES -->
+    <title><%= meta && meta.title ? meta.title : 'Clean Laboratoire | Expert Nettoyage & Décapage Billets de Banque Sécurisé' %></title>
+    <meta name="description" content="<%= meta && meta.description ? meta.description : 'Laboratoire Clean-Lab leader en Europe et Afrique. Solutions professionnelles de nettoyage, décapage et analyse de billets. Technologies SSD et spectrophotométrie.' %>">
+    <meta name="keywords" content="<%= meta && meta.keywords ? meta.keywords : 'nettoyage billets, décapage billets, solution SSD, laboratoire nettoyage, spectrophotométrie, billets de banque, clean laboratoire' %>">
+    <meta name="author" content="Clean Laboratoire">
+    <meta name="robots" content="<%= meta && meta.robots ? meta.robots : 'index, follow' %>">
+    
+    <!-- VIEWPORT RESPONSIVE -->
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    
+    <!-- CANONICAL URL -->
+    <link rel="canonical" href="https://www.clean-lab.com<%= meta && meta.canonical ? meta.canonical : '/' %>">
+    
+    <!-- DONNÉES STRUCTURÉES SCHEMA.ORG -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Clean Laboratoire",
+        "description": "Laboratoire expert en nettoyage sécurisé de billets de banque - Solutions SSD, décapage, analyses spectrophotométriques",
+        "url": "https://www.clean-lab.com",
+        "telephone": "<%= companyInfo.phone %>",
+        "email": "<%= companyInfo.email %>",
+        "areaServed": ["Europe", "Afrique"],
+        "serviceType": "Nettoyage de billets de banque",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Paris",
+            "addressCountry": "FR"
+        },
+        "openingHours": "Mo-Fr 09:00-18:00",
+        "priceRange": "€€",
+        "sameAs": [
+            "https://www.facebook.com/cleanlaboratoire",
+            "https://www.instagram.com/cleanlaboratoire"
+        ]
+    }
+    </script>
+    
+    <!-- OPEN GRAPH META TAGS -->
+    <meta property="og:title" content="<%= meta && meta.title ? meta.title : 'Clean Laboratoire | Expert Nettoyage & Décapage Billets' %>">
+    <meta property="og:description" content="<%= meta && meta.description ? meta.description : 'Laboratoire expert en nettoyage sécurisé de billets de banque - Solutions SSD, décapage, analyses spectrophotométriques' %>">
+    <meta property="og:url" content="https://www.clean-lab.com<%= meta && meta.canonical ? meta.canonical : '/' %>">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Clean Laboratoire">
+    <meta property="og:image" content="https://www.clean-lab.com/img/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="<%= currentLang === 'fr' ? 'fr_FR' : currentLang + '_' + currentLang.toUpperCase() %>">
+    
+    <!-- TWITTER CARD -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="<%= meta && meta.title ? meta.title : 'Clean Laboratoire | Expert Nettoyage Billets' %>">
+    <meta name="twitter:description" content="<%= meta && meta.description ? meta.description : 'Laboratoire expert en nettoyage sécurisé de billets de banque' %>">
+    <meta name="twitter:image" content="https://www.clean-lab.com/img/twitter-image.jpg">
+    
+    <!-- FAVICON ET ICÔNES -->
+    <link href="/img/favicon.ico" rel="icon" type="image/x-icon">
+    <link href="/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="/img/web-app-manifest.json" rel="manifest">
+    
+    <!-- PRELOAD DES RESSOURCES CRITIQUES -->
+    <link rel="preload" href="/css/bootstrap.min.css" as="style">
+    <link rel="preload" href="/css/style.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" as="style" crossorigin>
+    
+    <!-- GOOGLE WEB FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- ARABIC FONT (si langue arabe) -->
+    <% if (currentLang === 'ar') { %>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <% } %>
+
+    <!-- ICON FONT STYLESHEET -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- LIBRARIES STYLESHEET -->
+    <link href="/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- CUSTOMIZED BOOTSTRAP STYLESHEET -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- TEMPLATE STYLESHEET -->
+    <link href="/css/style.css" rel="stylesheet">
+    
+    <!-- BREADCRUMB STRUCTURED DATA -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Accueil",
+                "item": "https://www.clean-lab.com/"
+            }<%
+            let breadcrumbItems = [];
+            if (page === 'about') breadcrumbItems.push({position: 2, name: 'À Propos', item: '/a-propos-laboratoire-nettoyage-billets'});
+            if (page === 'service') breadcrumbItems.push({position: 2, name: 'Services', item: '/services-nettoyage-decapage-billets'});
+            if (page === 'contact') breadcrumbItems.push({position: 2, name: 'Contact', item: '/contact-laboratoire-nettoyage'});
+            
+            breadcrumbItems.forEach((item, index) => { %>,
+            {
+                "@type": "ListItem",
+                "position": <%= item.position %>,
+                "name": "<%= item.name %>",
+                "item": "https://www.clean-lab.com<%= item.item %>"
+            }<% }); %>
+        ]
+    }
+    </script>
+    
+    <style>
+        /* Language Dropdown Styling */
+        .language-dropdown {
+            position: relative;
+        }
+        
+        .language-dropdown .dropdown-toggle {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 15px;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+        
+        .language-dropdown .dropdown-toggle .flag-icon {
+            width: 20px;
+            height: 15px;
+            object-fit: cover;
+            border-radius: 2px;
+            border: 1px solid #ddd;
+        }
+        
+        .language-dropdown .dropdown-menu {
+            min-width: 200px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            border: none;
+            padding: 8px 0;
+        }
+        
+        .language-dropdown .dropdown-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 20px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .language-dropdown .dropdown-item .flag-icon {
+            width: 20px;
+            height: 15px;
+            object-fit: cover;
+            border-radius: 2px;
+            border: 1px solid #ddd;
+            flex-shrink: 0;
+        }
+        
+        .language-dropdown .dropdown-item:hover {
+            background-color: var(--primary, #0d6efd);
+            color: white;
+            transform: translateX(-5px);
+        }
+        
+        .language-dropdown .dropdown-item.active {
+            background-color: var(--primary, #0d6efd);
+            color: white;
+            font-weight: 700;
+        }
+        
+        .language-dropdown .dropdown-item::before {
+            content: '';
+            width: 4px;
+            height: 4px;
+            background: currentColor;
+            border-radius: 50%;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .language-dropdown .dropdown-item.active::before {
+            opacity: 1;
+        }
+        
+        /* Social Media Floating Buttons */
+        .social-float {
+            position: fixed;
+            bottom: 30px;
+            z-index: 999;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .whatsapp-float {
+            left: 30px;
+            background-color: #25D366 !important;
+            border: none;
+            animation: strong-vibrate 1.5s ease-in-out 0s infinite;
+        }
+
+        .telegram-float {
+            left: 110px;
+            background-color: #0088cc !important;
+            border: none;
+            animation: strong-vibrate 1.5s ease-in-out 0.3s infinite;
+        }
+
+        .social-float:hover {
+            transform: scale(1.15) !important;
+            box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.5);
+            animation: none !important;
+        }
+
+        @keyframes strong-vibrate {
+            0%, 100% {
+                transform: rotate(0deg) scale(1);
+            }
+            2%, 6%, 10% {
+                transform: rotate(-8deg) scale(1.1);
+            }
+            4%, 8% {
+                transform: rotate(8deg) scale(1.1);
+            }
+            12% {
+                transform: rotate(0deg) scale(1);
+            }
+            12%, 100% {
+                transform: rotate(0deg) scale(1);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .social-float {
+                width: 50px;
+                height: 50px;
+                font-size: 24px;
+                bottom: 20px;
+            }
+            
+            .whatsapp-float {
+                left: 20px;
+            }
+            
+            .telegram-float {
+                left: 85px;
+            }
+        }
+    </style>
+
+    <% if (currentLang === 'ar') { %>
+    <style>
+        /* RTL Support for Arabic */
+        body {
+            direction: rtl;
+            text-align: right;
+            font-family: 'Cairo', sans-serif;
+        }
+        
+        .navbar-nav {
+            margin-right: auto !important;
+            margin-left: 0 !important;
+        }
+        
+        .navbar-brand {
+            margin-right: 0 !important;
+            margin-left: auto !important;
+        }
+        
+        .me-2, .me-3, .me-4, .me-5 {
+            margin-left: 0.5rem !important;
+            margin-right: 0 !important;
+        }
+        
+        .ms-auto {
+            margin-left: 0 !important;
+            margin-right: auto !important;
+        }
+        
+        .ps-4 {
+            padding-right: 1.5rem !important;
+            padding-left: 0 !important;
+        }
+        
+        .pe-5 {
+            padding-left: 3rem !important;
+            padding-right: 0 !important;
+        }
+        
+        .text-start {
+            text-align: right !important;
+        }
+        
+        .text-end {
+            text-align: left !important;
+        }
+    </style>
+    <% } %>
+</head>
+
+<body itemscope itemtype="https://schema.org/WebPage">
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only"><%= typeof t !== 'undefined' && t.common ? t.common.loading : 'Loading...' %></span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar Start -->
+    <div class="container-fluid sticky-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light border-bottom border-2 border-white" role="navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
+                <a href="/?lang=<%= currentLang %>" class="navbar-brand" itemprop="url">
+                    <h1 itemprop="name">Clean Laboratoire</h1>
+                </a>
+                <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto">
+                        <a href="/?lang=<%= currentLang %>" 
+                           class="nav-item nav-link <%= page === 'home' ? 'active' : '' %>"
+                           itemprop="url">
+                            <span itemprop="name"><%= typeof t !== 'undefined' && t.nav ? t.nav.home : 'Home' %></span>
+                        </a>
+                        <a href="/a-propos-laboratoire-nettoyage-billets?lang=<%= currentLang %>" 
+                           class="nav-item nav-link <%= page === 'about' ? 'active' : '' %>"
+                           itemprop="url">
+                            <span itemprop="name"><%= typeof t !== 'undefined' && t.nav ? t.nav.about : 'About' %></span>
+                        </a>
+                        <a href="/services-nettoyage-decapage-billets?lang=<%= currentLang %>" 
+                           class="nav-item nav-link <%= page === 'service' ? 'active' : '' %>"
+                           itemprop="url">
+                            <span itemprop="name"><%= typeof t !== 'undefined' && t.nav ? t.nav.services : 'Services' %></span>
+                        </a>
+                        <a href="/realisations-nettoyage-billets?lang=<%= currentLang %>" 
+                           class="nav-item nav-link <%= page === 'project' ? 'active' : '' %>"
+                           itemprop="url">
+                            <span itemprop="name"><%= typeof t !== 'undefined' && t.nav ? t.nav.projects : 'Projects' %></span>
+                        </a>
+                       
+                        <a href="/contact-laboratoire-nettoyage?lang=<%= currentLang %>" 
+                           class="nav-item nav-link <%= page === 'contact' ? 'active' : '' %>"
+                           itemprop="url">
+                            <span itemprop="name"><%= typeof t !== 'undefined' && t.nav ? t.nav.contact : 'Contact' %></span>
+                        </a>
+                        
+                        <!-- Language Dropdown -->
+                        <div class="nav-item dropdown language-dropdown">
+                            <a href="#!" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="/img/flags/<%= currentLang %>.png" alt="<%= languages[currentLang] %>" class="flag-icon">
+                                <span><%= languages[currentLang] %></span>
+                            </a>
+                            <div class="dropdown-menu bg-light mt-2">
+                                <% Object.keys(languages).forEach(lang => { %>
+                                    <a href="?lang=<%= lang %>" 
+                                       class="dropdown-item <%= currentLang === lang ? 'active' : '' %>"
+                                       hreflang="<%= lang %>">
+                                        <img src="/img/flags/<%= lang %>.png" alt="<%= languages[lang] %>" class="flag-icon">
+                                        <%= languages[lang] %>
+                                    </a>
+                                <% }) %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->

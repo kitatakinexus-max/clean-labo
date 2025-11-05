@@ -1,0 +1,1006 @@
+<%- include('partials/header', {
+    meta: meta || {
+        title: 'Galerie Projets | Réalisations Nettoyage Billets - Clean Laboratoire',
+        description: 'Découvrez nos réalisations en nettoyage et restauration de billets. Galerie avant/après, résultats concrets et témoignages clients.',
+        keywords: 'galerie nettoyage billets, réalisations avant après, projets réussis, résultats nettoyage billets',
+        canonical: '/projects',
+        robots: 'index, follow'
+    }
+}) %>
+
+<!-- Hero Section Galerie -->
+<div class="container-fluid py-5 bg-primary bg-gradient">
+    <div class="container py-5">
+        <div class="row text-center">
+            <div class="col-12 animate-fade-in">
+                <h1 class="display-4 text-white mb-4">
+                    Notre <span class="text-dark">Galerie</span> de Réalisations
+                </h1>
+                <p class="lead text-white-50 mb-4">
+                    Découvrez les résultats concrets de nos interventions en nettoyage et restauration de billets
+                </p>
+                <div class="d-flex flex-wrap gap-3 justify-content-center">
+                    <button class="btn btn-dark btn-lg rounded-pill filter-btn active" data-filter="all">
+                        Tous les Projets
+                    </button>
+                    <button class="btn btn-outline-light btn-lg rounded-pill filter-btn" data-filter="ssd">
+                        Solution SSD
+                    </button>
+                    <button class="btn btn-outline-light btn-lg rounded-pill filter-btn" data-filter="machines">
+                        Machines
+                    </button>
+                    <button class="btn btn-outline-light btn-lg rounded-pill filter-btn" data-filter="poudre">
+                        Poudres Activation
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Galerie Grid -->
+<div class="container-fluid py-5">
+    <div class="container">
+        <div class="row g-4" id="galleryGrid">
+            
+            <!-- SECTION SOLUTION SSD - 2 vidéos + 2 images (dont 1 carousel) -->
+            
+            <!-- Projet 1 - SSD USD (Vidéo) -->
+            <div class="col-lg-4 col-md-6 gallery-item animate-scale-in" data-category="ssd">
+                <div class="gallery-card rounded-4 shadow-lg overflow-hidden">
+                    <div class="gallery-media position-relative">
+                        <!-- Vidéo démonstration SSD -->
+                        <div class="video-gallery-item">
+                            <video class="gallery-video" poster="/img/video-poster-1.png">
+                                <source src="/videos/processus-ssd.mp4" type="video/mp4">
+                            </video>
+                            <div class="video-play-btn">
+                                <i class="bi bi-play-fill text-white"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+
+            <!-- Projet 2 - SSD Process (Vidéo) -->
+            <div class="col-lg-4 col-md-6 gallery-item animate-scale-in" data-category="ssd" style="animation-delay: 0.1s;">
+                <div class="gallery-card rounded-4 shadow-lg overflow-hidden">
+                    <div class="gallery-media position-relative">
+                        <!-- Vidéo processus complet -->
+                        <div class="video-gallery-item">
+                            <video class="gallery-video" poster="/img/video-poster-poudre.png">
+                                <source src="/videos/utilisation-poudres-activation.mp4" type="video/mp4">
+                            </video>
+                            <div class="video-play-btn">
+                                <i class="bi bi-play-fill text-white"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projet 3 - SSD Avant/Après (Image) -->
+            <div class="col-lg-4 col-md-6 gallery-item animate-scale-in" data-category="ssd" style="animation-delay: 0.2s;">
+                <div class="gallery-card rounded-4 shadow-lg overflow-hidden">
+                    <div class="gallery-media position-relative">
+                        <!-- Image Avant/Après avec effet slider -->
+                        <div class="before-after-container">
+                            <img src="/img/slider-2.png" 
+                                 alt="Billet USD avant nettoyage SSD - Résultat impressionnant"
+                                 class="before-image">
+                            <img src="/img/slider-3.png" 
+                                 alt="Billet USD après nettoyage SSD - Résultat parfait"
+                                 class="after-image">
+                            <div class="slider-handle">
+                                <i class="bi bi-arrow-left-right text-white"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projet 4 - SSD Carousel (Carousel Images) -->
+            <div class="col-lg-4 col-md-6 gallery-item animate-scale-in" data-category="ssd" style="animation-delay: 0.3s;">
+                <div class="gallery-card rounded-4 shadow-lg overflow-hidden">
+                    <div class="gallery-media position-relative">
+                        <!-- Carousel résultats multiples -->
+                        <div class="gallery-carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="/img/projects/ssd1.jpeg" 
+                                         alt="Résultat SSD projet 1"
+                                         class="d-block w-100">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="/img/projects/ssd2.jpeg" 
+                                         alt="Résultat SSD projet 2"
+                                         class="d-block w-100">
+                                </div>
+                               <div class="carousel-item">
+                                    <img src="/img/projects/ssd3.jpeg" 
+                                         alt="Résultat SSD projet 3"
+                                         class="d-block w-100">
+                                </div>
+                            </div>
+                            <button class="carousel-control prev">
+                                <i class="bi bi-chevron-left"></i>
+                            </button>
+                            <button class="carousel-control next">
+                                <i class="bi bi-chevron-right"></i>
+                            </button>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION MACHINES - 4 vidéos + 2 images (dont 1 carousel) -->
+            
+            <!-- Projet 5 - Machine Décapage (Vidéo) -->
+            <div class="col-lg-4 col-md-6 gallery-item animate-scale-in" data-category="machines" style="animation-delay: 0.4s;">
+                <div class="gallery-card rounded-4 shadow-lg overflow-hidden">
+                    <div class="gallery-media position-relative">
+                        <!-- Vidéo décapage haute cadence -->
+                        <div class="video-gallery-item">
+                            <video class="gallery-video" poster="/img/projects/machine-video-poster.png">
+                                <source src="/videos/machine-decapage-haute-cadence.mp4" type="video/mp4">
+                            </video>
+                            <div class="video-play-btn">
+                                <i class="bi bi-play-fill text-white"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projet 6 - Machine Automatisation (Vidéo) -->
+            <div class="col-lg-4 col-md-6 gallery-item animate-scale-in" data-category="machines" style="animation-delay: 0.5s;">
+                <div class="gallery-card rounded-4 shadow-lg overflow-hidden">
+                    <div class="gallery-media position-relative">
+                        <!-- Vidéo processus automatisé -->
+                        <div class="video-gallery-item">
+                            <video class="gallery-video" poster="/img/video-poster-machine.png">
+                                <source src="/videos/demonstration-machine-decapage.mp4" type="video/mp4">
+                            </video>
+                            <div class="video-play-btn">
+                                <i class="bi bi-play-fill text-white"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projet 7 - Machine Volume (Vidéo) -->
+            <div class="col-lg-4 col-md-6 gallery-item animate-scale-in" data-category="machines" style="animation-delay: 0.6s;">
+                <div class="gallery-card rounded-4 shadow-lg overflow-hidden">
+                    <div class="gallery-media position-relative">
+                        <!-- Vidéo traitement volume -->
+                        <div class="timelapse-container">
+                            <video class="timelapse-video" poster="/img/projects/machine-volume-poster.png">
+                                <source src="/videos/machine-traitement-volume.mp4" type="video/mp4">
+                            </video>
+                            <div class="video-play-btn">
+                                <i class="bi bi-play-fill text-white"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projet 8 - Machine Précision (Vidéo) -->
+            <div class="col-lg-4 col-md-6 gallery-item animate-scale-in" data-category="machines" style="animation-delay: 0.7s;">
+                <div class="gallery-card rounded-4 shadow-lg overflow-hidden">
+                    <div class="gallery-media position-relative">
+                        <!-- Vidéo précision technique -->
+                        <div class="video-gallery-item">
+                            <video class="gallery-video" poster="/img/projects/machine-precision-poster.png">
+                                <source src="/videos/machine-precision-technique.mp4" type="video/mp4">
+                            </video>
+                            <div class="video-play-btn">
+                                <i class="bi bi-play-fill text-white"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projet 9 - Machine Installation (Image) -->
+            <div class="col-lg-4 col-md-6 gallery-item animate-scale-in" data-category="machines" style="animation-delay: 0.8s;">
+                <div class="gallery-card rounded-4 shadow-lg overflow-hidden">
+                    <div class="gallery-media position-relative">
+                        <!-- Image installation machine -->
+                        <img src="/img/r-4.png" 
+                             alt="Installation machine professionnelle"
+                             class="w-100 h-100">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projet 10 - Machine Carousel (Carousel Images) -->
+            <div class="col-lg-4 col-md-6 gallery-item animate-scale-in" data-category="machines" style="animation-delay: 0.9s;">
+                <div class="gallery-card rounded-4 shadow-lg overflow-hidden">
+                    <div class="gallery-media position-relative">
+                        <!-- Carousel différentes machines -->
+                        <div class="gallery-carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="/img/r-5.png" 
+                                         alt="Machine modèle Pro 5000"
+                                         class="d-block w-100">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="/img/slider-4.png" 
+                                         alt="Machine modèle Expert 3000"
+                                         class="d-block w-100">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="/img/projects/machine-model-3.jpg" 
+                                         alt="Machine modèle Compact 1000"
+                                         class="d-block w-100">
+                                </div>
+                            </div>
+                            <button class="carousel-control prev">
+                                <i class="bi bi-chevron-left"></i>
+                            </button>
+                            <button class="carousel-control next">
+                                <i class="bi bi-chevron-right"></i>
+                            </button>
+                            <div class="carousel-indicators">
+                                <span class="active"></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION POUDRE ACTIVATION - 2 vidéos + 2 images (dont 1 carousel) -->
+            
+            <!-- Projet 11 - Poudre Démonstration (Vidéo) -->
+            <div class="col-lg-4 col-md-6 gallery-item animate-scale-in" data-category="poudre" style="animation-delay: 1.0s;">
+                <div class="gallery-card rounded-4 shadow-lg overflow-hidden">
+                    <div class="gallery-media position-relative">
+                        <!-- Vidéo application poudre -->
+                        <div class="video-gallery-item">
+                            <video class="gallery-video" poster="/img/video-poster-poudre.png">
+                                <source src="/videos/utilisation-poudres-activation.mp4" type="video/mp4">
+                            </video>
+                            <div class="video-play-btn">
+                                <i class="bi bi-play-fill text-white"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projet 13 - Poudre Comparaison (Image) -->
+            <div class="col-lg-4 col-md-6 gallery-item animate-scale-in" data-category="poudre" style="animation-delay: 1.2s;">
+                <div class="gallery-card rounded-4 shadow-lg overflow-hidden">
+                    <div class="gallery-media position-relative">
+                        <!-- Image avec effet de comparaison -->
+                        <div class="comparison-grid">
+                            <div class="comparison-item">
+                                <img src="/img/m-4.png" alt="Avant poudre activation">
+                                <span class="comparison-label bg-danger">Avant</span>
+                            </div>
+                            <div class="comparison-item">
+                                <img src="/img/r-3.png" alt="Après poudre activation">
+                                <span class="comparison-label bg-success">Après</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projet 14 - Poudre Carousel (Carousel Images) -->
+            <div class="col-lg-4 col-md-6 gallery-item animate-scale-in" data-category="poudre" style="animation-delay: 1.3s;">
+                <div class="gallery-card rounded-4 shadow-lg overflow-hidden">
+                    <div class="gallery-media position-relative">
+                        <!-- Carousel applications poudre -->
+                        <div class="gallery-carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="/img/r-6.png" 
+                                         alt="Application poudre sur EUR"
+                                         class="d-block w-100">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="/img/m-3.png" 
+                                         alt="Application poudre sur USD"
+                                         class="d-block w-100">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="/img/projects/poudre-app-3.jpg" 
+                                         alt="Résultat final poudre"
+                                         class="d-block w-100">
+                                </div>
+                            </div>
+                            <button class="carousel-control prev">
+                                <i class="bi bi-chevron-left"></i>
+                            </button>
+                            <button class="carousel-control next">
+                                <i class="bi bi-chevron-right"></i>
+                            </button>
+                            <div class="carousel-indicators">
+                                <span class="active"></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Load More Button -->
+        <div class="text-center mt-5 animate-fade-in-up">
+            <button class="btn btn-primary btn-lg rounded-pill px-5" id="loadMore">
+                <i class="bi bi-plus-circle me-2"></i>Charger Plus de Projets
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Section Témoignages -->
+<div class="container-fluid bg-light py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mb-5">
+                <h2 class="text-primary">Ils Nous Ont Fait Confiance</h2>
+                <p class="lead text-muted">Découvrez les retours de nos clients satisfaits</p>
+            </div>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4 animate-fade-in-up">
+                <div class="testimonial-card p-4 rounded shadow-sm bg-white">
+                    <div class="testimonial-header d-flex align-items-center mb-3">
+                        <div class="client-avatar bg-primary rounded-circle d-flex align-items-center justify-content-center me-3">
+                            <span class="text-white fw-bold"> M </span>
+                        </div>
+                        <div>
+                            <h6 class="mb-1">Pierre M.</h6>
+                            <small class="text-muted">Client Particulier</small>
+                        </div>
+                    </div>
+                    <div class="testimonial-rating mb-3">
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                    </div>
+                    <p class="text-muted mb-0">
+                        "Des résultats exceptionnels sur mes billets USD. Le processus était rapide et professionnel. Je recommande vivement !"
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4 animate-fade-in-up" style="animation-delay: 0.2s;">
+                <div class="testimonial-card p-4 rounded shadow-sm bg-white">
+                    <div class="testimonial-header d-flex align-items-center mb-3">
+                        <div class="client-avatar bg-warning rounded-circle d-flex align-items-center justify-content-center me-3">
+                            <span class="text-dark fw-bold">SL</span>
+                        </div>
+                        <div>
+                            <h6 class="mb-1">Sarah L.</h6>
+                            <small class="text-muted">Gestionnaire Institutionnel</small>
+                        </div>
+                    </div>
+                    <div class="testimonial-rating mb-3">
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                    </div>
+                    <p class="text-muted mb-0">
+                        "Le professionnalisme et la discrétion de Clean Laboratoire sont remarquables. Analyses précises et résultats constants."
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4 animate-fade-in-up" style="animation-delay: 0.4s;">
+                <div class="testimonial-card p-4 rounded shadow-sm bg-white">
+                    <div class="testimonial-header d-flex align-items-center mb-3">
+                        <div class="client-avatar bg-success rounded-circle d-flex align-items-center justify-content-center me-3">
+                            <span class="text-white fw-bold">MT</span>
+                        </div>
+                        <div>
+                            <h6 class="mb-1">Marc T.</h6>
+                            <small class="text-muted">Entrepreneur</small>
+                        </div>
+                    </div>
+                    <div class="testimonial-rating mb-3">
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                    </div>
+                    <p class="text-muted mb-0">
+                        "La location de machine a boosté notre productivité. Formation excellente et support technique réactif. Partenaire de confiance."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CTA Section -->
+<div class="container-fluid bg-dark py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 text-center text-lg-start animate-fade-in">
+                <h3 class="text-white mb-3">Prêt à Transformer Vos Billets ?</h3>
+                <p class="text-white-50 mb-0">Rejoignez nos nombreux clients satisfaits et obtenez des résultats professionnels</p>
+            </div>
+            <div class="col-lg-4 text-center animate-pulse">
+                <a href="/contact-laboratoire-nettoyage?lang=<%= currentLang %>" class="btn btn-primary btn-lg rounded-pill px-5">
+                    <i class="bi bi-chat-quote me-2"></i>Devis Gratuit
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+/* Animations de base */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.animate-fade-in { animation: fadeIn 1s ease-out; }
+.animate-fade-in-up { animation: fadeIn 0.8s ease-out; }
+.animate-scale-in { animation: scaleIn 0.6s ease-out; }
+
+/* Gallery Card Styles */
+.gallery-card {
+    background: white;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15) !important;
+}
+
+.gallery-media {
+    height: 280px;
+    overflow: hidden;
+}
+
+.gallery-media img,
+.gallery-media video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.gallery-card:hover .gallery-media img,
+.gallery-card:hover .gallery-media video {
+    transform: scale(1.1);
+}
+
+/* Before-After Slider - CORRIGÉ */
+.before-after-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    cursor: col-resize;
+}
+
+.before-image, .after-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.before-image {
+    z-index: 1;
+}
+
+.after-image {
+    z-index: 2;
+    clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+}
+
+.slider-handle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    background: var(--bs-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: col-resize;
+    z-index: 10;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    border: 3px solid white;
+}
+
+/* Video Gallery Items */
+.video-gallery-item,
+.timelapse-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.video-play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: rgba(0,0,0,0.7);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 5;
+}
+
+.video-play-btn:hover {
+    background: rgba(0,0,0,0.9);
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.video-play-btn i {
+    font-size: 1.5rem;
+    margin-left: 3px;
+}
+
+/* Carousel Gallery - CORRIGÉ */
+.gallery-carousel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+    height: 100%;
+    width: 100%;
+}
+
+.carousel-item {
+    min-width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    border: none;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+.gallery-carousel:hover .carousel-control {
+    opacity: 1;
+}
+
+.carousel-control:hover {
+    background: rgba(0,0,0,0.8);
+}
+
+.carousel-control.prev { left: 10px; }
+.carousel-control.next { right: 10px; }
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 5px;
+    z-index: 10;
+}
+
+.carousel-indicators span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carousel-indicators span.active {
+    background: white;
+    transform: scale(1.2);
+}
+
+/* Comparison Grid */
+.comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    height: 100%;
+}
+
+.comparison-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.comparison-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.comparison-label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    z-index: 2;
+}
+
+/* Filter Buttons */
+.filter-btn.active {
+    background: var(--bs-dark) !important;
+    border-color: var(--bs-dark) !important;
+}
+
+/* Gallery Content */
+.gallery-content {
+    padding: 1.5rem !important;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.gallery-content h5 {
+    font-size: 1.1rem;
+    margin-bottom: 0;
+    line-height: 1.3;
+}
+
+.project-badge {
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .gallery-media {
+        height: 200px;
+    }
+    
+    .filter-btn {
+        font-size: 0.8rem;
+        padding: 0.5rem 1rem;
+    }
+    
+    .gallery-content {
+        padding: 1rem !important;
+        min-height: 100px;
+    }
+    
+    .gallery-content h5 {
+        font-size: 1rem;
+    }
+    
+    .carousel-control {
+        opacity: 1;
+        width: 30px;
+        height: 30px;
+    }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Filtrage des projets
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            // Mettre à jour les boutons actifs
+            filterBtns.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            
+            const filter = this.dataset.filter;
+            
+            // Filtrer les éléments
+            galleryItems.forEach(item => {
+                if (filter === 'all' || item.dataset.category === filter) {
+                    item.style.display = 'block';
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'scale(1)';
+                    }, 50);
+                } else {
+                    item.style.opacity = '0';
+                    item.style.transform = 'scale(0.8)';
+                    setTimeout(() => {
+                        item.style.display = 'none';
+                    }, 300);
+                }
+            });
+        });
+    });
+
+    // Before-After Slider - CORRIGÉ
+    const beforeAfterContainers = document.querySelectorAll('.before-after-container');
+    
+    beforeAfterContainers.forEach(container => {
+        const handle = container.querySelector('.slider-handle');
+        const afterImage = container.querySelector('.after-image');
+        let isDragging = false;
+        
+        const updateSlider = (clientX) => {
+            const rect = container.getBoundingClientRect();
+            let x = clientX - rect.left;
+            x = Math.max(0, Math.min(x, rect.width));
+            const percentage = (x / rect.width) * 100;
+            
+            afterImage.style.clipPath = `polygon(0 0, ${percentage}% 0, ${percentage}% 100%, 0 100%)`;
+            handle.style.left = `${percentage}%`;
+        };
+        
+        // Événements souris
+        handle.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            e.preventDefault();
+        });
+        
+        container.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            updateSlider(e.clientX);
+            e.preventDefault();
+        });
+        
+        document.addEventListener('mousemove', (e) => {
+            if (isDragging) {
+                updateSlider(e.clientX);
+            }
+        });
+        
+        document.addEventListener('mouseup', () => {
+            isDragging = false;
+        });
+        
+        // Événements tactiles
+        container.addEventListener('touchstart', (e) => {
+            isDragging = true;
+            updateSlider(e.touches[0].clientX);
+            e.preventDefault();
+        });
+        
+        document.addEventListener('touchmove', (e) => {
+            if (isDragging) {
+                updateSlider(e.touches[0].clientX);
+            }
+        });
+        
+        document.addEventListener('touchend', () => {
+            isDragging = false;
+        });
+        
+        // Empêcher le drag and drop des images
+        container.querySelectorAll('img').forEach(img => {
+            img.addEventListener('dragstart', (e) => {
+                e.preventDefault();
+            });
+        });
+        
+        // Position initiale
+        updateSlider(container.getBoundingClientRect().left + container.getBoundingClientRect().width / 2);
+    });
+
+    // Gestion des carrousels - CORRIGÉ
+    const carousels = document.querySelectorAll('.gallery-carousel');
+    
+    carousels.forEach(carousel => {
+        const inner = carousel.querySelector('.carousel-inner');
+        const items = carousel.querySelectorAll('.carousel-item');
+        const indicators = carousel.querySelectorAll('.carousel-indicators span');
+        const prevBtn = carousel.querySelector('.carousel-control.prev');
+        const nextBtn = carousel.querySelector('.carousel-control.next');
+        let currentIndex = 0;
+        let autoPlay;
+        
+        const goToSlide = (index) => {
+            currentIndex = (index + items.length) % items.length;
+            inner.style.transform = `translateX(-${currentIndex * 100}%)`;
+            
+            // Mettre à jour les indicateurs
+            indicators.forEach((indicator, i) => {
+                indicator.classList.toggle('active', i === currentIndex);
+            });
+        };
+        
+        const startAutoPlay = () => {
+            autoPlay = setInterval(() => {
+                goToSlide(currentIndex + 1);
+            }, 4000);
+        };
+        
+        const stopAutoPlay = () => {
+            clearInterval(autoPlay);
+        };
+        
+        // Navigation
+        prevBtn?.addEventListener('click', (e) => {
+            e.stopPropagation();
+            stopAutoPlay();
+            goToSlide(currentIndex - 1);
+        });
+        
+        nextBtn?.addEventListener('click', (e) => {
+            e.stopPropagation();
+            stopAutoPlay();
+            goToSlide(currentIndex + 1);
+        });
+        
+        // Navigation par indicateurs
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', (e) => {
+                e.stopPropagation();
+                stopAutoPlay();
+                goToSlide(index);
+            });
+        });
+        
+        // Auto-play
+        startAutoPlay();
+        
+        // Pause au survol
+        carousel.addEventListener('mouseenter', stopAutoPlay);
+        carousel.addEventListener('mouseleave', startAutoPlay);
+        
+        // Navigation tactile
+        let startX = 0;
+        let endX = 0;
+        
+        carousel.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+            stopAutoPlay();
+        });
+        
+        carousel.addEventListener('touchend', (e) => {
+            endX = e.changedTouches[0].clientX;
+            const diff = startX - endX;
+            
+            if (Math.abs(diff) > 50) { // Seuil de swipe
+                if (diff > 0) {
+                    goToSlide(currentIndex + 1); // Swipe gauche
+                } else {
+                    goToSlide(currentIndex - 1); // Swipe droit
+                }
+            }
+            startAutoPlay();
+        });
+    });
+
+    // Gestion des vidéos
+    const videoItems = document.querySelectorAll('.video-gallery-item, .timelapse-container');
+    
+    videoItems.forEach(container => {
+        const video = container.querySelector('video');
+        const playBtn = container.querySelector('.video-play-btn');
+        
+        if (video && playBtn) {
+            playBtn.addEventListener('click', () => {
+                if (video.paused) {
+                    video.play();
+                    playBtn.style.opacity = '0';
+                } else {
+                    video.pause();
+                    playBtn.style.opacity = '1';
+                }
+            });
+            
+            video.addEventListener('click', () => {
+                if (video.paused) {
+                    video.play();
+                    playBtn.style.opacity = '0';
+                } else {
+                    video.pause();
+                    playBtn.style.opacity = '1';
+                }
+            });
+            
+            video.addEventListener('play', () => {
+                playBtn.style.opacity = '0';
+            });
+            
+            video.addEventListener('pause', () => {
+                playBtn.style.opacity = '1';
+            });
+            
+            video.addEventListener('ended', () => {
+                playBtn.style.opacity = '1';
+            });
+        }
+    });
+
+    // Load More Projects
+    const loadMoreBtn = document.getElementById('loadMore');
+    
+    loadMoreBtn?.addEventListener('click', function() {
+        this.innerHTML = '<div class="spinner-border spinner-border-sm me-2"></div> Chargement...';
+        this.disabled = true;
+        
+        // Simuler le chargement de nouveaux projets
+        setTimeout(() => {
+            this.innerHTML = '<i class="bi bi-plus-circle me-2"></i>Charger Plus de Projets';
+            this.disabled = false;
+            
+            // Afficher un message temporaire
+            const tempAlert = document.createElement('div');
+            tempAlert.className = 'alert alert-success alert-dismissible fade show mt-3';
+            tempAlert.innerHTML = `
+                Plus de projets seront bientôt disponibles !
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            `;
+            this.parentElement.appendChild(tempAlert);
+        }, 1500);
+    });
+
+    // Animation au scroll
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.animationPlayState = 'running';
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.animate-scale-in, .animate-fade-in-up').forEach(el => {
+        observer.observe(el);
+    });
+});
+</script>
+
+<%- include('partials/footer') %>

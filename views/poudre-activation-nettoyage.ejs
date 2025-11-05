@@ -1,0 +1,542 @@
+<%- include('partials/header', {
+    meta: meta || {
+        title: 'Poudre Activation Nettoyage Billets | Produits Professionnels - Clean Laboratoire',
+        description: 'Poudres d activation professionnelles pour nettoyage optimisé de billets. Compatibles avec toutes devises et types d encres. Résultats garantis.',
+        keywords: 'poudre activation nettoyage, poudre décapage billets, produits activation, poudre professionnelle',
+        canonical: '/service/poudre-activation-nettoyage',
+        robots: 'index, follow'
+    }
+}) %>
+
+<!-- Hero Section Service -->
+<div class="container-fluid py-5 bg-gradient" style="background: linear-gradient(135deg, #6f42c1 0%, #d63384 100%);">
+    <div class="container py-5">
+        <div class="row align-items-center">
+            <div class="col-lg-6 animate-fade-in">
+                <h1 class="display-4 text-white mb-4">
+                    <span class="text-warning">Poudres d'Activation</span>
+                </h1>
+                <p class="text-white-50 lead mb-4">
+                    Produits activation professionnels pour processus de nettoyage optimisé. Compatibles avec toutes les devises et types d'encres.
+                </p>
+                <div class="d-flex flex-wrap gap-3">
+                    <a href="tel:<%= companyInfo.phone %>" class="btn btn-warning btn-lg rounded-pill animate-pulse">
+                        <i class="bi bi-cart me-2"></i>Commander
+                    </a>
+                    <a href="https://wa.me/<%= companyInfo.whatsapp %>?text=Bonjour, je souhaite commander des poudres d'activation" class="btn btn-success btn-lg rounded-pill">
+                        <i class="bi bi-whatsapp me-2"></i>WhatsApp
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6 animate-slide-in-right">
+                <div class="service-hero-image">
+                    <img src="/img/m-4.png" 
+                         alt="Poudres activation nettoyage billets - Produits professionnels Clean Laboratoire"
+                         class="img-fluid rounded-3 shadow-lg">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Description Détaillée -->
+<div class="container-fluid py-5">
+    <div class="container">
+        <div class="row g-5">
+            <!-- Contenu Principal -->
+            <div class="col-lg-8">
+                <div class="service-content animate-fade-in-up">
+                    <h2 class="text-warning mb-4">Poudres d'Activation Professionnelles</h2>
+                    
+                    <p class="lead mb-4">
+                        Nos poudres d'activation spécialement formulées optimisent le processus de nettoyage des billets. 
+                        Développées en laboratoire, elles garantissent des résultats constants et une efficacité maximale.
+                    </p>
+
+                    <!-- Section Produits -->
+                      <!-- 
+                    <div class="products-section mb-5">
+                        <h3 class="text-warning mb-4">Nos Formulations</h3>
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="product-card p-4 rounded shadow-sm border animate-scale-in">
+                                    <div class="product-badge bg-warning text-dark rounded-pill px-3 py-1 d-inline-block mb-3">
+                                        <small>ACTIVATION RAPIDE</small>
+                                    </div>
+                                    <h5 class="text-warning">Poudre Flash</h5>
+                                    <p class="text-muted small mb-3">Pour nettoyage rapide sur encres standard</p>
+                                    <ul class="list-unstyled mb-3">
+                                        <li class="mb-2"><i class="bi bi-lightning text-warning me-2"></i>Action en 15 minutes</li>
+                                        <li class="mb-2"><i class="bi bi-currency-dollar text-warning me-2"></i>USD, EUR, GBP</li>
+                                        <li class="mb-2"><i class="bi bi-check-circle text-warning me-2"></i>Facile à utiliser</li>
+                                    </ul>
+                                    <div class="product-price text-center">
+                                        <strong class="h5 text-dark">50€ / 100g</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="product-card p-4 rounded shadow-sm border animate-scale-in" style="animation-delay: 0.2s;">
+                                    <div class="product-badge bg-danger text-white rounded-pill px-3 py-1 d-inline-block mb-3">
+                                        <small>HAUTE PERFORMANCE</small>
+                                    </div>
+                                    <h5 class="text-danger">Poudre Pro</h5>
+                                    <p class="text-muted small mb-3">Pour encres résistantes et volumes importants</p>
+                                    <ul class="list-unstyled mb-3">
+                                        <li class="mb-2"><i class="bi bi-shield-check text-danger me-2"></i>Encres résistantes</li>
+                                        <li class="mb-2"><i class="bi bi-globe text-danger me-2"></i>Toutes devises</li>
+                                        <li class="mb-2"><i class="bi bi-award text-danger me-2"></i>Résultats premium</li>
+                                    </ul>
+                                    <div class="product-price text-center">
+                                        <strong class="h5 text-dark">80€ / 100g</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="product-card p-4 rounded shadow-sm border animate-scale-in" style="animation-delay: 0.4s;">
+                                    <div class="product-badge bg-info text-white rounded-pill px-3 py-1 d-inline-block mb-3">
+                                        <small>SPÉCIAL CARBONISÉ</small>
+                                    </div>
+                                    <h5 class="text-info">Poudre Carbon</h5>
+                                    <p class="text-muted small mb-3">Pour billets carbonisés ou très endommagés</p>
+                                    <ul class="list-unstyled mb-3">
+                                        <li class="mb-2"><i class="bi bi-fire text-info me-2"></i>Billets carbonisés</li>
+                                        <li class="mb-2"><i class="bi bi-droplet text-info me-2"></i>Action profonde</li>
+                                        <li class="mb-2"><i class="bi bi-star text-info me-2"></i>Résultats exceptionnels</li>
+                                    </ul>
+                                    <div class="product-price text-center">
+                                        <strong class="h5 text-dark">120€ / 100g</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="product-card p-4 rounded shadow-sm border animate-scale-in" style="animation-delay: 0.6s;">
+                                    <div class="product-badge bg-success text-white rounded-pill px-3 py-1 d-inline-block mb-3">
+                                        <small>INSTITUTIONS</small>
+                                    </div>
+                                    <h5 class="text-success">Poudre Elite</h5>
+                                    <p class="text-muted small mb-3">Formulation premium pour institutions</p>
+                                    <ul class="list-unstyled mb-3">
+                                        <li class="mb-2"><i class="bi bi-building text-success me-2"></i>Volume important</li>
+                                        <li class="mb-2"><i class="bi bi-gem text-success me-2"></i>Qualité institution</li>
+                                        <li class="mb-2"><i class="bi bi-lock text-success me-2"></i>Protocole renforcé</li>
+                                    </ul>
+                                    <div class="product-price text-center">
+                                        <strong class="h5 text-dark">Sur devis</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    -->
+
+                    <!-- Section Avantages -->
+                     <!-- 
+                        <div class="benefits-section mb-5">
+                            <h3 class="text-warning mb-4">Pourquoi Nos Poudres ?</h3>
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <div class="benefit-item p-4 rounded bg-light animate-fade-in-up">
+                                        <div class="benefit-header d-flex align-items-center mb-3">
+                                            <div class="benefit-icon bg-warning rounded-circle d-flex align-items-center justify-content-center me-3">
+                                                <i class="bi bi-check-lg text-white"></i>
+                                            </div>
+                                            <h6 class="mb-0">Formulation Exclusive</h6>
+                                        </div>
+                                        <p class="text-muted small mb-0">Développées en laboratoire avec nos experts chimistes</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="benefit-item p-4 rounded bg-light animate-fade-in-up" style="animation-delay: 0.2s;">
+                                        <div class="benefit-header d-flex align-items-center mb-3">
+                                            <div class="benefit-icon bg-warning rounded-circle d-flex align-items-center justify-content-center me-3">
+                                                <i class="bi bi-shield-check text-white"></i>
+                                            </div>
+                                            <h6 class="mb-0">Sécurité Garantie</h6>
+                                        </div>
+                                        <p class="text-muted small mb-0">Respecte l'intégrité des billets et sécurise le processus</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="benefit-item p-4 rounded bg-light animate-fade-in-up" style="animation-delay: 0.4s;">
+                                        <div class="benefit-header d-flex align-items-center mb-3">
+                                            <div class="benefit-icon bg-warning rounded-circle d-flex align-items-center justify-content-center me-3">
+                                                <i class="bi bi-lightning-charge text-white"></i>
+                                            </div>
+                                            <h6 class="mb-0">Efficacité Maximale</h6>
+                                        </div>
+                                        <p class="text-muted small mb-0">Résultats optimaux avec des quantités réduites</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="benefit-item p-4 rounded bg-light animate-fade-in-up" style="animation-delay: 0.6s;">
+                                        <div class="benefit-header d-flex align-items-center mb-3">
+                                            <div class="benefit-icon bg-warning rounded-circle d-flex align-items-center justify-content-center me-3">
+                                                <i class="bi bi-globe text-white"></i>
+                                            </div>
+                                            <h6 class="mb-0">Universalité</h6>
+                                        </div>
+                                        <p class="text-muted small mb-0">Compatible avec toutes les devises internationales</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    -->
+                    <!-- Section Vidéo Utilisation -->
+                    <div class="video-section mb-5">
+                        <h3 class="text-warning mb-4">Guide d'Utilisation</h3>
+                        <div class="video-container rounded shadow-lg overflow-hidden animate-fade-in-up">
+                            <video id="powderVideo" class="w-100" controls poster="/img/video-poster-poudre.png">
+                                <source src="/videos/utilisation-poudres-activation.mp4" type="video/mp4">
+                                Votre navigateur ne supporte pas la lecture vidéo.
+                            </video>
+                        </div>
+                        <p class="text-muted mt-3 text-center">
+                            Démonstration complète de l'utilisation des poudres d'activation
+                        </p>
+                    </div>
+
+                    <!-- Section Guide -->
+                     <!--
+                        <div class="guide-section mb-5">
+                            <h3 class="text-warning mb-4">Comment Utiliser Nos Poudres</h3>
+                            <div class="row g-4">
+                                <div class="col-md-4 text-center">
+                                    <div class="guide-step p-3 animate-scale-in">
+                                        <div class="step-number bg-warning text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3">
+                                            <span>1</span>
+                                        </div>
+                                        <h6>Préparation</h6>
+                                        <p class="text-muted small">Mettre les gants et préparer la zone de travail</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 text-center">
+                                    <div class="guide-step p-3 animate-scale-in" style="animation-delay: 0.2s;">
+                                        <div class="step-number bg-warning text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3">
+                                            <span>2</span>
+                                        </div>
+                                        <h6>Application</h6>
+                                        <p class="text-muted small">Saupoudrer uniformément sur les zones à traiter</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 text-center">
+                                    <div class="guide-step p-3 animate-scale-in" style="animation-delay: 0.4s;">
+                                        <div class="step-number bg-warning text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3">
+                                            <span>3</span>
+                                        </div>
+                                        <h6>Activation</h6>
+                                        <p class="text-muted small">Laisser agir selon le temps recommandé</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    -->
+                </div>
+            </div>
+
+            <!-- Sidebar Contact -->
+            <div class="col-lg-4">
+                <div class="service-sidebar sticky-top animate-slide-in-right">
+                    <div class="card border-0 shadow-lg">
+                        <div class="card-header bg-warning text-dark py-4">
+                            <h4 class="mb-0 text-center">
+                                <i class="bi bi-cart me-2"></i>Commander
+                            </h4>
+                        </div>
+                        <div class="card-body p-4">
+                            <!--
+                            <div class="text-center mb-4">
+                                
+                                <div class="shipping-badge bg-success text-white rounded-pill px-3 py-2 d-inline-block">
+                                    <small>LIVRAISON DISCRÈTE INCLUSE</small>
+                                </div>
+                            </div>
+                        -->
+                            
+                            <div class="contact-options mb-4">
+                                <a href="tel:<%= companyInfo.phone %>" class="btn btn-outline-warning w-100 mb-3 d-flex align-items-center justify-content-center">
+                                    <i class="bi bi-phone me-2"></i>Commander par Téléphone
+                                </a>
+                                <a href="https://wa.me/<%= companyInfo.whatsapp %>?text=Bonjour, je souhaite commander des poudres d'activation" class="btn btn-outline-success w-100 mb-3 d-flex align-items-center justify-content-center">
+                                    <i class="bi bi-whatsapp me-2"></i>Commander WhatsApp
+                                </a>
+                                <button type="button" class="btn btn-warning w-100" data-bs-toggle="modal" data-bs-target="#orderModal">
+                                    <i class="bi bi-envelope me-2"></i>Devis en Ligne
+                                </button>
+                            </div>
+
+                            <div class="service-info">
+                                <!--
+                                <div class="info-item d-flex align-items-center mb-3">
+                                    <i class="bi bi-truck text-warning me-3"></i>
+                                    <div>
+                                        <strong>Livraison</strong>
+                                        <div class="text-muted">48h Europe, 5-7 jours International</div>
+                                    </div>
+                                </div>
+                            -->
+                                <div class="info-item d-flex align-items-center mb-3">
+                                    <i class="bi bi-shield-check text-warning me-3"></i>
+                                    <div>
+                                        <strong>Emballage</strong>
+                                        <div class="text-muted">Discret et sécurisé</div>
+                                    </div>
+                                </div>
+                                <div class="info-item d-flex align-items-center mb-3">
+                                    <i class="bi bi-arrow-repeat text-warning me-3"></i>
+                                    <div>
+                                        <strong>Stock</strong>
+                                        <div class="text-muted">Disponible immédiatement</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Promo -->
+                              <!-- 
+                            <div class="promo-card bg-dark text-white rounded p-3 text-center mt-4">
+                                <h6 class="mb-2">🎁 Offre Spéciale</h6>
+                                <p class="small mb-2">Commande de +500€ = Livraison Express Gratuite</p>
+                                <small>Valable jusqu'au 30/11/2024</small>
+                            </div>
+                        -->
+                        </div>
+                    </div>
+
+                    <!-- Témoignage Produit -->
+                    <div class="card border-0 shadow-sm mt-4 animate-fade-in-up" style="animation-delay: 0.4s;">
+                        <div class="card-body">
+                            <div class="text-center mb-3">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                            </div>
+                            <blockquote class="blockquote mb-0">
+                                <p class="text-muted">"La poudre Pro a résolu nos problèmes d'encres résistantes. Efficacité remarquable et facile à utiliser."</p>
+                                <footer class="blockquote-footer mt-2">Technicien Professionnel</footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CTA Section -->
+<div class="container-fluid bg-dark py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 text-center text-lg-start animate-fade-in">
+                <h3 class="text-white mb-3">Prêt à Optimiser Votre Nettoyage ?</h3>
+                <p class="text-white-50 mb-0">Commandez nos poudres d'activation et obtenez des résultats professionnels</p>
+            </div>
+            <div class="col-lg-4 text-center animate-pulse">
+                <a href="https://wa.me/<%= companyInfo.whatsapp %>?text=Bonjour, je souhaite commander des poudres d'activation" class="btn btn-warning btn-lg rounded-pill px-5">
+                    <i class="bi bi-whatsapp me-2"></i>Commander WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Commande -->
+<div class="modal fade" id="orderModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-warning text-dark">
+                <h5 class="modal-title">Commande de Poudres d'Activation</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form action="/contact/send" method="POST">
+                    <input type="hidden" name="service" value="poudre-activation">
+                    
+                    <!-- Sélection Produits -->
+                    <div class="mb-4">
+                        <h6 class="text-warning mb-3">Sélectionnez vos produits :</h6>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="product-select-card p-3 border rounded">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="products[]" value="poudre-flash" id="flash">
+                                        <label class="form-check-label w-100" for="flash">
+                                            <strong>Poudre Flash</strong>
+                                            <small class="d-block text-muted">50€ / 100g</small>
+                                            <input type="number" class="form-control form-control-sm mt-2" placeholder="Quantité (g)" min="100" step="100" name="flash_quantity">
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="product-select-card p-3 border rounded">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="products[]" value="poudre-pro" id="pro">
+                                        <label class="form-check-label w-100" for="pro">
+                                            <strong>Poudre Pro</strong>
+                                            <small class="d-block text-muted">80€ / 100g</small>
+                                            <input type="number" class="form-control form-control-sm mt-2" placeholder="Quantité (g)" min="100" step="100" name="pro_quantity">
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Informations Client -->
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="Votre Nom" name="name" required>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="email" class="form-control" placeholder="Votre Email" name="email" required>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="tel" class="form-control" placeholder="Téléphone" name="phone" required>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="Adresse de livraison" name="address" required>
+                        </div>
+                        <div class="col-12">
+                            <textarea class="form-control" rows="3" placeholder="Instructions spéciales ou commentaires..." name="message"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 text-center">
+                        <button type="submit" class="btn btn-warning btn-lg px-5">
+                            <i class="bi bi-send me-2"></i>Demander Devis
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.product-card {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.product-card:hover::before {
+    left: 100%;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15) !important;
+}
+
+.product-badge {
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+
+.benefit-icon {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.guide-step {
+    transition: transform 0.3s ease;
+}
+
+.guide-step:hover {
+    transform: scale(1.05);
+}
+
+.promo-card {
+    border: 2px dashed var(--bs-warning);
+}
+
+.product-select-card {
+    transition: border-color 0.3s ease;
+}
+
+.product-select-card:has(input:checked) {
+    border-color: var(--bs-warning);
+    background-color: rgba(255, 193, 7, 0.05);
+}
+
+/* Animation poudre */
+@keyframes powderFall {
+    0% { transform: translateY(-10px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+.animate-powder-fall {
+    animation: powderFall 0.6s ease-out;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Animation des produits
+    const productCards = document.querySelectorAll('.product-card');
+    productCards.forEach((card, index) => {
+        card.style.animationDelay = `${index * 0.1}s`;
+        card.classList.add('animate-powder-fall');
+    });
+
+    // Gestion vidéo poudre
+    const powderVideo = document.getElementById('powderVideo');
+    if (powderVideo) {
+        powderVideo.addEventListener('play', function() {
+            console.log('Video utilisation poudres started');
+        });
+    }
+
+    // Gestion formulaire commande
+    const productCheckboxes = document.querySelectorAll('input[name="products[]"]');
+    productCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+            const quantityInput = this.parentElement.querySelector('input[type="number"]');
+            if (this.checked) {
+                quantityInput.required = true;
+                quantityInput.disabled = false;
+            } else {
+                quantityInput.required = false;
+                quantityInput.disabled = true;
+                quantityInput.value = '';
+            }
+        });
+    });
+
+    // Animation au scroll
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.animationPlayState = 'running';
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.animate-scale-in, .animate-fade-in-up, .animate-slide-in-left').forEach(el => {
+        observer.observe(el);
+    });
+});
+</script>
+
+<%- include('partials/footer') %>

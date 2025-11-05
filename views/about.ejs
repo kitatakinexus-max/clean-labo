@@ -1,0 +1,256 @@
+<%- include('partials/header', {
+    meta: meta || {
+        title: 'À Propos Clean Laboratoire | Expertise Nettoyage Billets Depuis 2010',
+        description: 'Découvrez Clean Laboratoire, laboratoire expert en nettoyage sécurisé de billets. 10 ans d\'expérience, technologies brevetées, réseau international Europe-Afrique.',
+        keywords: 'à propos clean lab, expertise nettoyage billets, laboratoire spécialisé, historiques entreprise, solutions SSD',
+        canonical: '/a-propos-laboratoire-nettoyage-billets',
+        robots: 'index, follow'
+    }
+}) %>
+
+<!-- Schema.org AboutsPage -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "AboutsPage",
+    "name": "À Propos - Clean Laboratoire",
+    "description": "Laboratoire expert en nettoyage sécurisé de billets de banque depuis 2010",
+    "url": "https://www.clean-lab.com/a-propos-laboratoire-nettoyage-billets",
+    "mainEntity": {
+        "@type": "Organization",
+        "name": "Clean Laboratoire",
+        "foundingDate": "2010",
+        "description": "Expert en nettoyage et restauration de billets de banque avec technologies SSD et spectrophotométrie",
+        "areaServed": ["Europe", "Afrique"],
+        "knowsAbout": ["Nettoyage billets", "Solution SSD", "Spectrophotométrie", "Décapage billets"]
+    }
+}
+</script>
+
+    <!-- Abouts Start -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="row gx-5">
+                <div class="col-lg-5 mb-5 mb-lg-0" style="min-height: 500px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute w-100 h-100 rounded" src="/img/about-1.png" 
+                             alt="Laboratoire Clean Laboratoire - équipements professionnels nettoyage billets" 
+                             style="object-fit: cover;"
+                             itemprop="image">
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="mb-4">
+                        <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">
+                            <%= typeof t !== 'undefined' && t.abouts ? t.abouts.badge : 'Expertise' %>
+                        </h5>
+                        <h1 class="display-4" itemprop="headline">Clean Laboratoire : 
+                            <span class="text-primary">Expert en Nettoyage Sécurisé de Billets</span>
+                        </h1>
+                    </div>
+                    <p class="lead" itemprop="description">
+                        <%= typeof t !== 'undefined' && t.abouts ? t.abouts.description1 : 'Fondé en 2010, Clean Laboratoire opère comme un centre d\'expertise international spécialisé dans le nettoyage et la restauration de billets de banque. Notre laboratoire de pointe utilise des technologies avancées incluant la solution SSD universelle, la pâte Vectrol, les poudres d\'activation et des équipements haute performance.' %>
+                    </p>
+                    <p itemprop="description">
+                        <%= typeof t !== 'undefined' && t.abouts ? t.abouts.description2 : 'Notre expertise s\'étend à toutes les devises internationales (USD, EUR, GBP, etc.) avec des protocoles de sécurité stricts. Nous proposons une gamme complète de produits chimiques spécialisés, sels d\'activation et solutions sur mesure, soutenus par des machines capables de traiter des volumes importants tout en garantissant confidentialité et résultats optimaux.' %>
+                    </p>
+                    
+                    <!-- Statistiques et Chiffres -->
+                    <div class="row g-3 pt-3">
+                        <div class="col-sm-3 col-6">
+                            <div class="bg-light text-center rounded-circle py-4">
+                                <i class="fa fa-3x fa-calendar-alt text-primary mb-3"></i>
+                                <h6 class="mb-0">10+<small class="d-block text-primary">Ans d'Expertise</small></h6>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 col-6">
+                            <div class="bg-light text-center rounded-circle py-4">
+                                <i class="fa fa-3x fa-globe text-primary mb-3"></i>
+                                <h6 class="mb-0">2<small class="d-block text-primary">Continents</small></h6>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 col-6">
+                            <div class="bg-light text-center rounded-circle py-4">
+                                <i class="fa fa-3x fa-project-diagram text-primary mb-3"></i>
+                                <h6 class="mb-0">500+<small class="d-block text-primary">Projets</small></h6>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 col-6">
+                            <div class="bg-light text-center rounded-circle py-4">
+                                <i class="fa fa-3x fa-award text-primary mb-3"></i>
+                                <h6 class="mb-0">100%<small class="d-block text-primary">Satisfaction</small></h6>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Call to Action -->
+                    <div class="mt-5">
+                        <a href="/contact-laboratoire-nettoyage?lang=<%= currentLang %>" class="btn btn-primary btn-lg me-3">
+                            <i class="fa fa-phone me-2"></i>Consultation Gratuite
+                        </a>
+                        <a href="/services-nettoyage-decapage-billets?lang=<%= currentLang %>" class="btn btn-outline-primary btn-lg">
+                            <i class="fa fa-info-circle me-2"></i>Nos Solutions
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Abouts End -->
+
+    <!-- Valeurs et Engagement Start -->
+    <div class="container-fluid bg-light my-5 py-5">
+        <div class="container py-5">
+            <div class="text-center mx-auto mb-5" style="max-width: 800px;">
+                <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">Notre Engagement</h5>
+                <h1 class="display-4 mb-4">Excellence & Confidentialité Garanties</h1>
+                <p class="lead">Chez Clean Laboratoire, nous combinons expertise technique et discrétion absolue pour des résultats optimaux.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="bg-white rounded p-4 text-center shadow-sm h-100">
+                        <div class="icon-box bg-primary rounded-circle mx-auto mb-3">
+                            <i class="fa fa-shield-alt fa-2x text-white"></i>
+                        </div>
+                        <h5 class="mb-3">Sécurité Maximale</h5>
+                        <p class="mb-0">Protocoles stricts et environnement sécurisé pour garantir la confidentialité de chaque intervention.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="bg-white rounded p-4 text-center shadow-sm h-100">
+                        <div class="icon-box bg-primary rounded-circle mx-auto mb-3">
+                            <i class="fa fa-flask fa-2x text-white"></i>
+                        </div>
+                        <h5 class="mb-3">Expertise Scientifique</h5>
+                        <p class="mb-0">Technologies brevetées et analyses spectrophotométriques pour des résultats précis et fiables.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="bg-white rounded p-4 text-center shadow-sm h-100">
+                        <div class="icon-box bg-primary rounded-circle mx-auto mb-3">
+                            <i class="fa fa-clock fa-2x text-white"></i>
+                        </div>
+                        <h5 class="mb-3">Rapidité d'Exécution</h5>
+                        <p class="mb-0">Traitements efficaces avec des délais optimisés pour répondre à vos impératifs.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="bg-white rounded p-4 text-center shadow-sm h-100">
+                        <div class="icon-box bg-primary rounded-circle mx-auto mb-3">
+                            <i class="fa fa-handshake fa-2x text-white"></i>
+                        </div>
+                        <h5 class="mb-3">Accompagnement Personnalisé</h5>
+                        <p class="mb-0">Solutions sur mesure adaptées à chaque situation particulière et besoin spécifique.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Valeurs et Engagement End -->
+
+    <!-- Processus Start -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5" style="max-width: 800px;">
+                <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">Notre Processus</h5>
+                <h1 class="display-4 mb-4">Comment Nous Travaillons</h1>
+                <p class="lead">Un processus structuré pour des résultats optimaux à chaque étape.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="process-step text-center">
+                        <div class="step-number bg-primary text-white rounded-circle mx-auto mb-3">1</div>
+                        <h5>Diagnostic Expert</h5>
+                        <p>Analyse approfondie de l'état des billets et détermination du protocole de traitement adapté.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="process-step text-center">
+                        <div class="step-number bg-primary text-white rounded-circle mx-auto mb-3">2</div>
+                        <h5>Traitement Spécialisé</h5>
+                        <p>Application des solutions SSD et techniques de décapage avec précision et expertise.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="process-step text-center">
+                        <div class="step-number bg-primary text-white rounded-circle mx-auto mb-3">3</div>
+                        <h5>Contrôle Qualité</h5>
+                        <p>Vérification rigoureuse et analyses spectrophotométriques pour garantir l'excellence.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="process-step text-center">
+                        <div class="step-number bg-primary text-white rounded-circle mx-auto mb-3">4</div>
+                        <h5>Livraison Sécurisée</h5>
+                        <p>Retour discret et sécurisé des billets traités avec rapport détaillé d'intervention.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Processus End -->
+
+    <!-- CTA Section Start -->
+    <div class="container-fluid bg-primary my-5 py-5">
+        <div class="container py-5">
+            <div class="text-center mx-auto mb-5" style="max-width: 700px;">
+                <h5 class="d-inline-block text-white text-uppercase border-bottom border-5">Prêt à Commencer ?</h5>
+                <h1 class="display-4 mb-4 text-white">Confiez-nous Vos Billets à Restaurer</h1>
+                <h5 class="text-white fw-normal">Notre équipe d'experts est à votre disposition pour évaluer votre situation et vous proposer la solution optimale.</h5>
+            </div>
+            <div class="text-center">
+                <a href="/contact-laboratoire-nettoyage?lang=<%= currentLang %>" class="btn btn-dark btn-lg me-3">
+                    <i class="fa fa-comments me-2"></i>Devis Gratuit
+                </a>
+                <a href="https://wa.me/<%= companyInfo.whatsapp %>?text=Bonjour%20Clean%20Laboratoire,%20je%20souhaite%20obtenir%20des%20informations%20sur%20vos%20services%20de%20nettoyage%20de%20billets." 
+                   target="_blank" 
+                   class="btn btn-success btn-lg">
+                    <i class="fab fa-whatsapp me-2"></i>Chat WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- CTA Section End -->
+
+<style>
+.icon-box {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.process-step {
+    padding: 30px 20px;
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.bg-light.rounded-circle {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bg-light.rounded-circle:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(13, 110, 253, 0.15);
+}
+
+.process-step {
+    transition: transform 0.3s ease;
+}
+
+.process-step:hover {
+    transform: translateY(-5px);
+}
+</style>
+
+<%- include('partials/footer') %>

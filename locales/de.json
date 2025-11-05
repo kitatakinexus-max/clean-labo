@@ -1,0 +1,92 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "about": "Über uns",
+    "services": "Dienstleistungen",
+    "projects": "Galerie",
+    "pages": "Seiten",
+    "features": "Funktionen",
+    "team": "Unser Team",
+    "testimonial": "Referenzen",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "title": "Universallösung für die",
+    "titleHighlight": "Banknoten",
+    "titleEnd": "Reinigung",
+    "subtitle": "Clean-Lab Labor führend in Europa und Afrika; Spezialist für sichere Banknotenreinigung.",
+    "feature1": "Farbige Banknotenentlackung",
+    "feature2": "Hochleistungs-Entlackungsmaschinen",
+    "feature3": "Banknotenreinigungsprodukte",
+    "feature4": "Erschwingliche Preise mit Sicherheitsgarantie"
+  },
+  "about": {
+    "badge": "Über uns",
+    "title": "Clean Lab",
+    "description1": "Clean Lab arbeitet als modernstes Labor und wendet moderne und bewährte Arbeitstechniken an. Wir beherrschen eine komplette Palette von Reinigungsprodukten - einschließlich SSD-Lösung, universelle TTZ-Lösung, Vectrol-Paste, Aktivierungspulver - sowie Geräte für die Restaurierung von verkohlten Banknoten. Diese Produkte und Dienstleistungen werden unseren Kunden angeboten, um ihre spezifischen Anforderungen und Wünsche zu erfüllen.",
+    "description2": "Clean Lab bearbeitet alle Währungen - USD, Euro, etc. - für eine sichere und effektive Reinigung. Wir liefern eine Reihe von Artikeln, Chemikalien, Aktivierungssalzen und geeigneten Pulvern sowie Maschinen, die große Volumen verarbeiten können. Unser Expertenteam wird Ihre Bedürfnisse studieren und maßgeschneiderte Lösungen zur Wiederherstellung Ihrer Banknoten vorschlagen.",
+    "check1": "Ausgezeichnet",
+    "check2": "Professionelles Personal",
+    "check3": "24/7 Support",
+    "check4": "Faire Preise",
+    "readMore": "Mehr Erfahren"
+  },
+  "feature": {
+    "title": "Warum Menschen",
+    "titleHighlight": "Uns Wählen",
+    "experience": "Schnelle und effektive Reinigung durch Experten",
+    "design": "Hochsophistizierte Lösungen",
+    "architects": "Tiefgehende Analysen",
+    "satisfaction": "Kundenzufriedenheit",
+    "budget": "Erschwingliche Preise",
+    "material": "Sichere Banknotenbearbeitung"
+  },
+  "reseau": {
+    "title": "Unser Netzwerk",
+    "titleHighlight": "Unser Netzwerk",
+    "paragraph": "Unser umfangreiches Netzwerk von Laboren, die auf die Verarbeitung sicherer Banknoten spezialisiert sind, erstreckt sich über Europa und Afrika. Dank dieser internationalen Präsenz sind wir in der Lage, personalisierte und responsive Unterstützung zu bieten, die an lokale Gegebenheiten und Verarbeitungsvolumen angepasst ist. Unsere lokalen Teams und zentralisierten Experten arbeiten zusammen, um zuverlässige Dienstleistungen zu gewährleisten, die Sicherheitsstandards entsprechen und schnell verfügbar sind, um Ihre Bedürfnisse zu erfüllen.",
+    "kitchens": "Diam sed sed dolor stet amet eirmod"
+  },
+  "service": {
+    "title": "Unsere",
+    "titleHighlight": "Dienstleistungen",
+    "description1": "Unser Expertenteam verwendet spezialisierte Chemikalien und spezifische Pulver für die Banknotenreinigung, unterstützt durch Maschinen, die große Volumen verarbeiten können. Unser Lager umfasst fortschrittliche Chemikalien, Aktivierungssalze und Humine-Pulver. Vertrauen Sie uns Ihre Bedürfnisse an, wir werden maßgeschneiderte Lösungen vorschlagen.",
+    "description2": "Sie können sich auf uns verlassen, um alle Ihre Bedenken bezüglich der Banknotenreinigung effektiv zu lösen.",
+    "additionalTitle1": "Verkauf von universeller SSD-Lösung für die Reinigung",
+    "additionalTitle2": "Vermietung von Banknotenentlackungsmaschinen",
+    "additionalTitle3": "Spektrophotometrische Analysen",
+    "additionalTitle4": "Verkauf von Aktivierungspulver für Banknotenreinigung",
+    "interiorDesc1": "Maßgeschneiderte Banknotenreinigungs-Lösungen",
+    "interiorDesc2": "Maßgeschneiderte Banknotenreinigungs-Lösungen",
+    "interiorDesc3": "Maßgeschneiderte Banknotenreinigungs-Lösungen",
+    "interiorDesc4": "Maßgeschneiderte Banknotenreinigungs-Lösungen",
+    "commercialDesc": "Gewerbeflächen-Design"
+  },
+  "gallerie": {
+    "title": "Unsere",
+    "titleHighlight": "Galerie",
+    "placeholder": "Entdecken Sie unsere Leistungen in der Analyse und Reinigung sicherer Banknoten",
+    "note": "Diam sed sed dolor stet amet eirmod"
+  },
+  "newsletter": {
+    "title": "Abonnieren Sie unseren",
+    "titleHighlight": "Newsletter",
+    "placeholder": "Geben Sie Ihre E-Mail ein",
+    "note": "Diam sed sed dolor stet amet eirmod"
+  },
+  "footer": {
+    "title": "Clean-Lab Labor führend in Europa und Afrika; Spezialist für sichere Banknotenreinigung.",
+    "titleContact": "Kontaktieren Sie uns",
+    "titleLink": "Geben Sie Ihre E-Mail ein",
+    "titleService": "Unsere Dienstleistungen",
+    "service1": "Farbige Banknotenentlackung",
+    "service2": "Hochleistungs-Entlackungsmaschinen",
+    "service3": "Schwarz-weiß Banknotenreinigung",
+    "service4": "Banknotensicherheitsanalyse",
+    "linkHome": "Startseite",
+    "linkAbout": "Über uns",
+    "linkService": "Dienstleistungen",
+    "linkGallerie": "Galerie",
+    "linkContact": "Kontaktieren Sie uns"
+  }
+}

@@ -1,0 +1,438 @@
+<%- include('partials/header', {
+    meta: meta || {
+        title: 'Location Machines Décapage Billets | Équipements Professionnels - Clean Laboratoire',
+        description: 'Location machines décapage haute performance pour nettoyage billets. Équipements professionnels avec formation incluse et support technique.',
+        keywords: 'location machines décapage, équipement nettoyage billets, machines professionnelles, décapage haute performance',
+        canonical: '/service/location-machines-decapage',
+        robots: 'index, follow'
+    }
+}) %>
+
+<!-- Hero Section Service -->
+<div class="container-fluid py-5 bg-gradient" style="background: linear-gradient(135deg, #6c757d 0%, #495057 100%);">
+    <div class="container py-5">
+        <div class="row align-items-center">
+            <div class="col-lg-6 animate-fade-in">
+                <h1 class="display-4 text-white mb-4">
+                    Location Machines <span class="text-warning">Professionnelles</span>
+                </h1>
+                <p class="text-white-50 lead mb-4">
+                    Équipements haute performance pour le décapage et nettoyage de billets avec formation complète incluse
+                </p>
+                <div class="d-flex flex-wrap gap-3">
+                    <a href="tel:<%= companyInfo.phone %>" class="btn btn-warning btn-lg rounded-pill animate-pulse">
+                        <i class="bi bi-phone me-2"></i>Devis Location
+                    </a>
+                    <a href="https://wa.me/<%= companyInfo.whatsapp %>?text=Bonjour, je souhaite obtenir un devis pour la location de machines de décapage" class="btn btn-success btn-lg rounded-pill">
+                        <i class="bi bi-whatsapp me-2"></i>WhatsApp
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6 animate-slide-in-right">
+                <div class="service-hero-image">
+                    <img src="/img/slider-4.png" 
+                         alt="Location machines décapage professionnelles - Clean Laboratoire"
+                         class="img-fluid rounded-3 shadow-lg">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Description Détaillée -->
+<div class="container-fluid py-5">
+    <div class="container">
+        <div class="row g-5">
+            <!-- Contenu Principal -->
+            <div class="col-lg-8">
+                <div class="service-content animate-fade-in-up">
+                    <h2 class="text-warning mb-4">Machines de Décapage Haute Performance</h2>
+                    
+                    <p class="lead mb-4">
+                        Notre parc de machines professionnelles offre des solutions complètes pour le décapage et nettoyage 
+                        de billets à grande échelle. Chaque équipement est accompagné d'une formation complète et d'un support technique dédié.
+                    </p>
+
+                    <!-- Section Types de Machines -->
+                    <!--
+                        <div class="machines-section mb-5">
+                            <h3 class="text-warning mb-4">Nos Modèles de Machines</h3>
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <div class="machine-card p-4 rounded shadow-sm border animate-scale-in">
+                                        <div class="machine-badge bg-warning text-dark rounded-pill px-3 py-1 d-inline-block mb-3">
+                                            <small>MODÈLE PRO</small>
+                                        </div>
+                                        <h5 class="text-warning">Décap'Pro 5000</h5>
+                                        <ul class="list-unstyled mb-3">
+                                            <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Capacité : 500 billets/heure</li>
+                                            <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Contrôle automatique</li>
+                                            <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Interface tactile</li>
+                                        </ul>
+                                        <div class="price-tag bg-dark text-white rounded p-2 text-center">
+                                            <strong>À partir de 800€/semaine</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="machine-card p-4 rounded shadow-sm border animate-scale-in" style="animation-delay: 0.2s;">
+                                        <div class="machine-badge bg-danger text-white rounded-pill px-3 py-1 d-inline-block mb-3">
+                                            <small>MODÈLE EXPERT</small>
+                                        </div>
+                                        <h5 class="text-danger">UltraClean 8000</h5>
+                                        <ul class="list-unstyled mb-3">
+                                            <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Capacité : 800 billets/heure</li>
+                                            <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Analyse intégrée</li>
+                                            <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Système sécurisé</li>
+                                        </ul>
+                                        <div class="price-tag bg-dark text-white rounded p-2 text-center">
+                                            <strong>À partir de 1200€/semaine</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    -->
+                    <!-- Section Avantages -->
+                    <div class="benefits-section mb-5">
+                        <h3 class="text-warning mb-4">Avantages de la Location</h3>
+                        <div class="row g-4">
+                            <div class="col-md-4">
+                                <div class="benefit-item text-center p-4 rounded shadow-sm animate-fade-in-up">
+                                    <div class="benefit-icon bg-warning rounded-circle d-inline-flex align-items-center justify-content-center mb-3">
+                                        <i class="bi bi-cash-coin text-white fs-4"></i>
+                                    </div>
+                                    <h6>Économique</h6>
+                                    <p class="text-muted small">Pas d'investissement initial lourd</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="benefit-item text-center p-4 rounded shadow-sm animate-fade-in-up" style="animation-delay: 0.2s;">
+                                    <div class="benefit-icon bg-warning rounded-circle d-inline-flex align-items-center justify-content-center mb-3">
+                                        <i class="bi bi-tools text-white fs-4"></i>
+                                    </div>
+                                    <h6>Maintenance Incluse</h6>
+                                    <p class="text-muted small">Support technique 24/7</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="benefit-item text-center p-4 rounded shadow-sm animate-fade-in-up" style="animation-delay: 0.4s;">
+                                    <div class="benefit-icon bg-warning rounded-circle d-inline-flex align-items-center justify-content-center mb-3">
+                                        <i class="bi bi-graph-up-arrow text-white fs-4"></i>
+                                    </div>
+                                    <h6>Flexibilité</h6>
+                                    <p class="text-muted small">Adapté à vos volumes</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section Vidéo Démo -->
+                    <div class="video-section mb-5">
+                        <h3 class="text-warning mb-4">Démonstration Machine en Action</h3>
+                        <div class="video-container rounded shadow-lg overflow-hidden animate-fade-in-up">
+                            <video id="machineVideo" class="w-100" controls poster="/img/video-poster-machine.png">
+                                <source src="/videos/demonstration-machine-decapage.mp4" type="video/mp4">
+                                Votre navigateur ne supporte pas la lecture vidéo.
+                            </video>
+                        </div>
+                        <p class="text-muted mt-3 text-center">
+                            Démonstration complète du fonctionnement de la machine Décap'Pro 5000
+                        </p>
+                    </div>
+
+                    <!-- Section Formation -->
+                    <!--
+                        <div class="training-section mb-5">
+                            <h3 class="text-warning mb-4">Formation Incluse</h3>
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <div class="training-step d-flex align-items-start animate-slide-in-left">
+                                        <div class="step-icon bg-warning text-white rounded-circle d-flex align-items-center justify-content-center me-3 flex-shrink-0">
+                                            <i class="bi bi-1-circle"></i>
+                                        </div>
+                                        <div>
+                                            <h6>Installation & Configuration</h6>
+                                            <p class="text-muted small">Mise en place et paramétrage de la machine</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="training-step d-flex align-items-start animate-slide-in-left" style="animation-delay: 0.2s;">
+                                        <div class="step-icon bg-warning text-white rounded-circle d-flex align-items-center justify-content-center me-3 flex-shrink-0">
+                                            <i class="bi bi-2-circle"></i>
+                                        </div>
+                                        <div>
+                                            <h6>Utilisation Optimale</h6>
+                                            <p class="text-muted small">Maîtrise des fonctions avancées</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="training-step d-flex align-items-start animate-slide-in-left" style="animation-delay: 0.4s;">
+                                        <div class="step-icon bg-warning text-white rounded-circle d-flex align-items-center justify-content-center me-3 flex-shrink-0">
+                                            <i class="bi bi-3-circle"></i>
+                                        </div>
+                                        <div>
+                                            <h6>Maintenance Préventive</h6>
+                                            <p class="text-muted small">Entretien et dépannage basique</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="training-step d-flex align-items-start animate-slide-in-left" style="animation-delay: 0.6s;">
+                                        <div class="step-icon bg-warning text-white rounded-circle d-flex align-items-center justify-content-center me-3 flex-shrink-0">
+                                            <i class="bi bi-4-circle"></i>
+                                        </div>
+                                        <div>
+                                            <h6>Support Avancé</h6>
+                                            <p class="text-muted small">Accès à notre équipe technique</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    -->
+                </div>
+            </div>
+
+            <!-- Sidebar Contact -->
+            <div class="col-lg-4">
+                <div class="service-sidebar sticky-top animate-slide-in-right">
+                    <div class="card border-0 shadow-lg">
+                        <div class="card-header bg-warning text-dark py-4">
+                            <h4 class="mb-0 text-center">
+                                <i class="bi bi-tools me-2"></i>Devis Location
+                            </h4>
+                        </div>
+                        
+                        <div class="card-body p-4">
+                            <!--
+                                <div class="text-center mb-4">
+                                    <div class="price-badge bg-dark text-white rounded-pill px-4 py-2 d-inline-block">
+                                        <span class="h5 mb-0">À partir de 800€/semaine</span>
+                                    </div>
+                                </div>
+                            -->
+                            
+                            <div class="contact-options mb-4">
+                                <a href="tel:<%= companyInfo.phone %>" class="btn btn-outline-warning w-100 mb-3 d-flex align-items-center justify-content-center">
+                                    <i class="bi bi-phone me-2"></i>Appel Location
+                                </a>
+                                <a href="https://wa.me/<%= companyInfo.whatsapp %>?text=Bonjour, je souhaite un devis pour la location de machines de décapage" class="btn btn-outline-success w-100 mb-3 d-flex align-items-center justify-content-center">
+                                    <i class="bi bi-whatsapp me-2"></i>WhatsApp Devis
+                                </a>
+                                <button type="button" class="btn btn-warning w-100" data-bs-toggle="modal" data-bs-target="#locationModal">
+                                    <i class="bi bi-calendar-check me-2"></i>Réserver Maintenant
+                                </button>
+                            </div>
+
+                            <div class="service-info">
+                                <div class="info-item d-flex align-items-center mb-3">
+                                    <i class="bi bi-clock text-warning me-3"></i>
+                                    <div>
+                                        <strong>Livraison</strong>
+                                        <div class="text-muted">Sous 48-72h</div>
+                                    </div>
+                                </div>
+                            <!--
+                                <div class="info-item d-flex align-items-center mb-3">
+                                    <i class="bi bi-gear text-warning me-3"></i>
+                                    <div>
+                                        <strong>Formation</strong>
+                                        <div class="text-muted">2 jours inclus</div>
+                                    </div>
+                                </div>
+                            -->
+                                <div class="info-item d-flex align-items-center mb-3">
+                                    <i class="bi bi-headset text-warning me-3"></i>
+                                    <div>
+                                        <strong>Support</strong>
+                                        <div class="text-muted">Technique 24/7</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Témoignage Machine -->
+                    <div class="card border-0 shadow-sm mt-4 animate-fade-in-up" style="animation-delay: 0.4s;">
+                        <div class="card-body">
+                            <div class="text-center mb-3">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                            </div>
+                            <blockquote class="blockquote mb-0">
+                                <p class="text-muted">"La location de machine nous a permis de traiter de gros volumes rapidement. Formation excellente et support réactif."</p>
+                                <footer class="blockquote-footer mt-2">Marc T., Entrepreneur</footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CTA Section -->
+<div class="container-fluid bg-dark py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 text-center text-lg-start animate-fade-in">
+                <h3 class="text-white mb-3">Prêt à Optimiser Votre Production ?</h3>
+                <p class="text-white-50 mb-0">Louez nos machines professionnelles et boostez votre capacité de traitement</p>
+            </div>
+            <div class="col-lg-4 text-center animate-pulse">
+                <a href="tel:<%= companyInfo.phone %>" class="btn btn-warning btn-lg rounded-pill px-5">
+                    <i class="bi bi-calendar me-2"></i>Réserver Maintenant
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Location -->
+<div class="modal fade" id="locationModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-warning text-dark">
+                <h5 class="modal-title">Demande de Location Machine</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form action="/contact/send" method="POST">
+                    <input type="hidden" name="service" value="location-machines">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="Votre Nom" name="name" required>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="email" class="form-control" placeholder="Votre Email" name="email" required>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="tel" class="form-control" placeholder="Téléphone" name="phone" required>
+                        </div>
+                        <div class="col-md-6">
+                            <select class="form-select" name="machine_type" required>
+                                <option value="" selected disabled>Type de machine</option>
+                                <option value="decap-pro-5000">Décap'Pro 5000</option>
+                                <option value="ultra-clean-8000">UltraClean 8000</option>
+                                <option value="autre">Autre demande</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <select class="form-select" name="duration" required>
+                                <option value="" selected disabled>Durée location</option>
+                                <option value="1-semaine">1 semaine</option>
+                                <option value="2-semaines">2 semaines</option>
+                                <option value="1-mois">1 mois</option>
+                                <option value="3-mois">3 mois</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="number" class="form-control" placeholder="Volume estimé (billets/jour)" name="volume" required>
+                        </div>
+                        <div class="col-12">
+                            <textarea class="form-control" rows="4" placeholder="Informations complémentaires..." name="message"></textarea>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <button type="submit" class="btn btn-warning btn-lg px-5">
+                            <i class="bi bi-send me-2"></i>Demander Location
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.machine-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.machine-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15) !important;
+    border-color: var(--bs-warning);
+}
+
+.benefit-icon {
+    width: 70px;
+    height: 70px;
+}
+
+.training-step {
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.training-step:hover {
+    transform: translateX(10px);
+}
+
+.step-icon {
+    width: 40px;
+    height: 40px;
+}
+
+.price-tag {
+    border: 2px dashed var(--bs-warning);
+}
+
+/* Animations spécifiques machines */
+@keyframes machineGlow {
+    0% { box-shadow: 0 0 5px rgba(255, 193, 7, 0.5); }
+    50% { box-shadow: 0 0 20px rgba(255, 193, 7, 0.8); }
+    100% { box-shadow: 0 0 5px rgba(255, 193, 7, 0.5); }
+}
+
+.animate-machine-glow {
+    animation: machineGlow 2s infinite;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Animation des cartes machines au survol
+    const machineCards = document.querySelectorAll('.machine-card');
+    machineCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.classList.add('animate-machine-glow');
+        });
+        card.addEventListener('mouseleave', function() {
+            this.classList.remove('animate-machine-glow');
+        });
+    });
+
+    // Gestion vidéo machine
+    const machineVideo = document.getElementById('machineVideo');
+    if (machineVideo) {
+        machineVideo.addEventListener('play', function() {
+            console.log('Video machine démonstration started');
+        });
+    }
+
+    // Animation au scroll
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.animationPlayState = 'running';
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.animate-scale-in, .animate-fade-in-up, .animate-slide-in-left').forEach(el => {
+        observer.observe(el);
+    });
+});
+</script>
+
+<%- include('partials/footer') %>

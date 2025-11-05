@@ -1,0 +1,430 @@
+<%- include('partials/header', {
+    meta: meta || {
+        title: 'Analyse Spectrophotométrie Billets | Contrôle Qualité Scientifique - Clean Laboratoire',
+        description: 'Service d analyse spectrophotométrie avancée pour billets. Contrôle qualité scientifique, composition encres et optimisation protocoles nettoyage.',
+        keywords: 'analyse spectrophotométrie billets, contrôle qualité billets, analyse scientifique encres, spectrophotométrie',
+        canonical: '/service/analyse-spectrophotometrie-billets',
+        robots: 'index, follow'
+    }
+}) %>
+
+<!-- Hero Section Service -->
+<div class="container-fluid py-5 bg-gradient" style="background: linear-gradient(135deg, #198754 0%, #0d6efd 100%);">
+    <div class="container py-5">
+        <div class="row align-items-center">
+            <div class="col-lg-6 animate-fade-in">
+                <h1 class="display-4 text-white mb-4">
+                    Analyse <span class="text-info">Spectrophotométrie</span>
+                </h1>
+                <p class="text-white-50 lead mb-4">
+                    Contrôle qualité scientifique avancé pour déterminer la composition des encres et optimiser les protocoles de nettoyage
+                </p>
+                <div class="d-flex flex-wrap gap-3">
+                    <a href="tel:<%= companyInfo.phone %>" class="btn btn-info btn-lg rounded-pill animate-pulse">
+                        <i class="bi bi-microscope me-2"></i>Expertise Scientifique
+                    </a>
+                    <a href="https://wa.me/<%= companyInfo.whatsapp %>?text=Bonjour, je souhaite une analyse spectrophotométrique pour mes billets" class="btn btn-success btn-lg rounded-pill">
+                        <i class="bi bi-whatsapp me-2"></i>WhatsApp
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6 animate-slide-in-right">
+                <div class="service-hero-image">
+                    <img src="/img/slider-1.png" 
+                         alt="Analyse spectrophotométrie billets - Laboratoire scientifique Clean Laboratoire"
+                         class="img-fluid rounded-3 shadow-lg">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Description Détaillée -->
+<div class="container-fluid py-5">
+    <div class="container">
+        <div class="row g-5">
+            <!-- Contenu Principal -->
+            <div class="col-lg-8">
+                <div class="service-content animate-fade-in-up">
+                    <h2 class="text-info mb-4">Analyse Scientifique Avancée</h2>
+                    
+                    <p class="lead mb-4">
+                        Notre service d'analyse spectrophotométrie utilise des technologies de pointe pour analyser 
+                        la composition chimique des encres et déterminer le protocole de nettoyage optimal pour chaque type de billet.
+                    </p>
+<!--
+                     Section Technologies 
+                    <div class="tech-section mb-5">
+                        <h3 class="text-info mb-4">Technologies Utilisées</h3>
+                        <div class="row g-4">
+                            <div class="col-md-4">
+                                <div class="tech-card text-center p-4 rounded shadow-sm border animate-scale-in">
+                                    <div class="tech-icon bg-info rounded-circle d-inline-flex align-items-center justify-content-center mb-3">
+                                        <i class="bi bi-gem text-white fs-4"></i>
+                                    </div>
+                                    <h6 class="text-info">Spectromètre UV-Vis</h6>
+                                    <p class="text-muted small">Analyse précise des spectres d'absorption</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="tech-card text-center p-4 rounded shadow-sm border animate-scale-in" style="animation-delay: 0.2s;">
+                                    <div class="tech-icon bg-info rounded-circle d-inline-flex align-items-center justify-content-center mb-3">
+                                        <i class="bi bi-cpu text-white fs-4"></i>
+                                    </div>
+                                    <h6 class="text-info">Logiciel Expert</h6>
+                                    <p class="text-muted small">Algorithmes d'analyse avancés</p>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                     Section Processus Analyse 
+                    <div class="analysis-process mb-5">
+                        <h3 class="text-info mb-4">Processus d'Analyse</h3>
+                        <div class="process-timeline">
+                            <div class="timeline-item animate-slide-in-left">
+                                <div class="timeline-marker bg-info text-white">1</div>
+                                <div class="timeline-content">
+                                    <h5>Prélèvement Échantillon</h5>
+                                    <p class="text-muted mb-0">Prélèvement micro-invasive sur zone sécurisée du billet</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item animate-slide-in-left" style="animation-delay: 0.2s;">
+                                <div class="timeline-marker bg-info text-white">2</div>
+                                <div class="timeline-content">
+                                    <h5>Analyse Spectrale</h5>
+                                    <p class="text-muted mb-0">Mesure des spectres d'absorption UV-Visible</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item animate-slide-in-left" style="animation-delay: 0.4s;">
+                                <div class="timeline-marker bg-info text-white">3</div>
+                                <div class="timeline-content">
+                                    <h5>Identification Composition</h5>
+                                    <p class="text-muted mb-0">Comparaison avec base de données des encres</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item animate-slide-in-left" style="animation-delay: 0.6s;">
+                                <div class="timeline-marker bg-info text-white">4</div>
+                                <div class="timeline-content">
+                                    <h5>Rapport Détaillé</h5>
+                                    <p class="text-muted mb-0">Protocole de nettoyage personnalisé</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+-->
+                    <!-- Section Vidéo Explicative -->
+                    <div class="video-section mb-5">
+                        <h3 class="text-info mb-4">Notre Laboratoire en Action</h3>
+                        <div class="video-container rounded shadow-lg overflow-hidden animate-fade-in-up">
+                            <video id="analysisVideo" class="w-100" controls poster="/img/video-poster-lab.png">
+                                <source src="/videos/laboratoire-analyse-spectro.mp4" type="video/mp4">
+                                Votre navigateur ne supporte pas la lecture vidéo.
+                            </video>
+                        </div>
+                        <p class="text-muted mt-3 text-center">
+                            Visite de notre laboratoire et démonstration du processus d'analyse
+                        </p>
+                    </div>
+<!--
+                     Section Applications 
+                    <div class="applications-section mb-5">
+                        <h3 class="text-info mb-4">Applications de l'Analyse</h3>
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="app-card p-4 rounded shadow-sm bg-light animate-fade-in-up">
+                                    <h6 class="text-info">Optimisation Nettoyage</h6>
+                                    <p class="text-muted small mb-0">Détermination du protocole idéal selon la composition des encres</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="app-card p-4 rounded shadow-sm bg-light animate-fade-in-up" style="animation-delay: 0.2s;">
+                                    <h6 class="text-info">Contrôle Qualité</h6>
+                                    <p class="text-muted small mb-0">Vérification de l'efficacité des traitements appliqués</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="app-card p-4 rounded shadow-sm bg-light animate-fade-in-up" style="animation-delay: 0.4s;">
+                                    <h6 class="text-info">Authentification</h6>
+                                    <p class="text-muted small mb-0">Analyse de composition pour vérification d'authenticité</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="app-card p-4 rounded shadow-sm bg-light animate-fade-in-up" style="animation-delay: 0.6s;">
+                                    <h6 class="text-info">R&D</h6>
+                                    <p class="text-muted small mb-0">Développement de nouvelles solutions de nettoyage</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    -->
+                </div>
+            </div>
+
+            <!-- Sidebar Contact -->
+            <div class="col-lg-4">
+                <div class="service-sidebar sticky-top animate-slide-in-right">
+                    <div class="card border-0 shadow-lg">
+                        <div class="card-header bg-info text-white py-4">
+                            <h4 class="mb-0 text-center">
+                                <i class="bi bi-microscope me-2"></i>Analyse Expert
+                            </h4>
+                        </div>
+                        <div class="card-body p-4">
+                            
+                            
+                            <div class="contact-options mb-4">
+                                <a href="tel:<%= companyInfo.phone %>" class="btn btn-outline-info w-100 mb-3 d-flex align-items-center justify-content-center">
+                                    <i class="bi bi-phone me-2"></i>Consultation Expert
+                                </a>
+                                <a href="https://wa.me/<%= companyInfo.whatsapp %>?text=Bonjour, je souhaite une analyse spectrophotométrique" class="btn btn-outline-success w-100 mb-3 d-flex align-items-center justify-content-center">
+                                    <i class="bi bi-whatsapp me-2"></i>WhatsApp Analyse
+                                </a>
+                                <button type="button" class="btn btn-info w-100" data-bs-toggle="modal" data-bs-target="#analysisModal">
+                                    <i class="bi bi-clipboard-data me-2"></i>Demander Analyse
+                                </button>
+                            </div>
+
+                            <div class="service-info">
+                                <div class="info-item d-flex align-items-center mb-3">
+                                    <i class="bi bi-clock text-info me-3"></i>
+                                    <div>
+                                        <strong>Délai Analyse</strong>
+                                        <div class="text-muted">24-48 heures</div>
+                                    </div>
+                                </div>
+                                <div class="info-item d-flex align-items-center mb-3">
+                                    <i class="bi bi-file-earmark-text text-info me-3"></i>
+                                    <div>
+                                        <strong>Rapport</strong>
+                                        <div class="text-muted">Complet avec recommandations</div>
+                                    </div>
+                                </div>
+                                <div class="info-item d-flex align-items-center mb-3">
+                                    <i class="bi bi-shield-check text-info me-3"></i>
+                                    <div>
+                                        <strong>Confidentialité</strong>
+                                        <div class="text-muted">Totale garantie</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Témoignage Analyse -->
+                    <div class="card border-0 shadow-sm mt-4 animate-fade-in-up" style="animation-delay: 0.4s;">
+                        <div class="card-body">
+                            <div class="text-center mb-3">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                            </div>
+                            <blockquote class="blockquote mb-0">
+                                <p class="text-muted">"L'analyse spectrophotométrique nous a permis d'optimiser nos protocoles. Précision scientifique remarquable."</p>
+                                <footer class="blockquote-footer mt-2">Sarah L., Institution</footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CTA Section -->
+<div class="container-fluid bg-dark py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 text-center text-lg-start animate-fade-in">
+                <h3 class="text-white mb-3">Besoin d'une Analyse Scientifique ?</h3>
+                <p class="text-white-50 mb-0">Confiez-nous vos billets pour une analyse spectrophotométrique précise</p>
+            </div>
+            <div class="col-lg-4 text-center animate-pulse">
+                <a href="tel:<%= companyInfo.phone %>" class="btn btn-info btn-lg rounded-pill px-5">
+                    <i class="bi bi-microscope me-2"></i>Analyser Maintenant
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Analyse -->
+<div class="modal fade" id="analysisModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-info text-white">
+                <h5 class="modal-title">Demande d'Analyse Spectrophotométrique</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form action="/contact/send" method="POST">
+                    <input type="hidden" name="service" value="analyse-spectrophotometrie">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="Votre Nom" name="name" required>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="email" class="form-control" placeholder="Votre Email" name="email" required>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="tel" class="form-control" placeholder="Téléphone" name="phone" required>
+                        </div>
+                        <div class="col-md-6">
+                            <select class="form-select" name="currency_type" required>
+                                <option value="" selected disabled>Type de devise</option>
+                                <option value="usd">USD - Dollar</option>
+                                <option value="eur">EUR - Euro</option>
+                                <option value="gbp">GBP - Livre</option>
+                                <option value="multiple">Multiple</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="number" class="form-control" placeholder="Nombre de billets à analyser" name="quantity" required>
+                        </div>
+                        <div class="col-md-6">
+                            <select class="form-select" name="analysis_type">
+                                <option value="" selected disabled>Type d'analyse</option>
+                                <option value="complete">Analyse complète</option>
+                                <option value="rapide">Analyse rapide</option>
+                                <option value="expert">Analyse expert</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <textarea class="form-control" rows="4" placeholder="Description du problème ou objectif de l'analyse..." name="message"></textarea>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <button type="submit" class="btn btn-info btn-lg px-5">
+                            <i class="bi bi-send me-2"></i>Demander Analyse
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.tech-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tech-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.15) !important;
+}
+
+.tech-icon {
+    width: 80px;
+    height: 80px;
+}
+
+.process-timeline {
+    position: relative;
+}
+
+.process-timeline::before {
+    content: '';
+    position: absolute;
+    left: 25px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--bs-info);
+    opacity: 0.3;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.timeline-marker {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-right: 2rem;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.timeline-content {
+    flex: 1;
+    padding-top: 0.5rem;
+}
+
+.app-card {
+    transition: transform 0.3s ease;
+    border-left: 4px solid var(--bs-info);
+}
+
+.app-card:hover {
+    transform: translateX(10px);
+}
+
+/* Animation spécifique analyse */
+@keyframes spectrumPulse {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
+}
+
+.animate-spectrum {
+    animation: spectrumPulse 3s infinite;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Animation des cartes tech au scroll
+    const techCards = document.querySelectorAll('.tech-card');
+    techCards.forEach((card, index) => {
+        card.style.animationDelay = `${index * 0.1}s`;
+    });
+
+    // Gestion vidéo analyse
+    const analysisVideo = document.getElementById('analysisVideo');
+    if (analysisVideo) {
+        analysisVideo.addEventListener('play', function() {
+            console.log('Video analyse spectrophotométrie started');
+        });
+    }
+
+    // Animation timeline
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    const timelineObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.animationPlayState = 'running';
+            }
+        });
+    }, { threshold: 0.3 });
+
+    timelineItems.forEach(item => {
+        timelineObserver.observe(item);
+    });
+
+    // Effet sur les cartes applications
+    const appCards = document.querySelectorAll('.app-card');
+    appCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.classList.add('animate-spectrum');
+        });
+        card.addEventListener('mouseleave', function() {
+            this.classList.remove('animate-spectrum');
+        });
+    });
+});
+</script>
+
+<%- include('partials/footer') %>

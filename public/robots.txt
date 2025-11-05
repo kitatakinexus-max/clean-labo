@@ -1,0 +1,50 @@
+# Robots.txt optimisé pour Clean Laboratoire
+# Generated: ${new Date().toISOString().split('T')[0]}
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/
+Disallow: /*?print=
+Disallow: /*?pdf=
+
+# Paramètres d'URL à éviter
+Disallow: /*?session=
+Disallow: /*?token=
+Disallow: /*?redirect=
+
+# Sitemaps
+Sitemap: https://www.clean-lab.com/sitemap.xml
+Sitemap: https://www.clean-lab.com/sitemap-static.xml
+
+# Crawl delay pour éviter la surcharge
+Crawl-delay: 1
+
+# Instructions spécifiques pour les bots majeurs
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0.5
+Disallow: /*.pdf$
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 2
+
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 3
+
+# Blocage des bots indésirables
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Crawl-delay: 10

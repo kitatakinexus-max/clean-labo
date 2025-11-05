@@ -1,0 +1,92 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "projects": "Gallery",
+    "pages": "Pages",
+    "features": "Features",
+    "team": "Our Team",
+    "testimonial": "Testimonials",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Universal Solution for",
+    "titleHighlight": "Banknote",
+    "titleEnd": "Cleaning",
+    "subtitle": "Clean-Lab Laboratory leader in Europe and Africa; Specialist in secure banknote cleaning.",
+    "feature1": "Color banknote stripping",
+    "feature2": "High-performance stripping machines",
+    "feature3": "Banknote cleaning products",
+    "feature4": "Affordable prices with security guarantee"
+  },
+  "about": {
+    "badge": "About Us",
+    "title": "Clean Lab",
+    "description1": "Clean Lab operates as a state-of-the-art laboratory, applying modern and proven working techniques. We master a complete range of cleaning products - including SSD solution, universal TTZ solution, Vectrol paste, activation powder - as well as equipment designed for the restoration of charred banknotes. These products and services are offered to our customers to meet their specific requirements and demands.",
+    "description2": "Clean Lab works with all currencies - USD, euro, etc. - to ensure safe and effective cleaning. We provide a range of items, chemicals, activation salts and suitable powders, as well as machines capable of processing large volumes. Our team of experts will study your needs and propose customized solutions to restore your banknotes.",
+    "check1": "Awarded",
+    "check2": "Professional Staff",
+    "check3": "24/7 Support",
+    "check4": "Fair Prices",
+    "readMore": "Read More"
+  },
+  "feature": {
+    "title": "Why People",
+    "titleHighlight": "Choose Us",
+    "experience": "Fast and effective cleaning by experts",
+    "design": "Most sophisticated solutions",
+    "architects": "In-depth analysis",
+    "satisfaction": "Customer Satisfaction",
+    "budget": "Affordable Prices",
+    "material": "Secure banknote processing"
+  },
+  "reseau": {
+    "title": "Our Network",
+    "titleHighlight": "Our Network",
+    "paragraph": "Our extensive network of laboratories specialized in secure banknote processing extends across Europe and Africa. Thanks to this international presence, we are able to offer personalized and responsive support, adapted to local constraints and processing volumes. Our local teams and centralized experts collaborate to guarantee reliable services, compliant with security standards, and quickly available to meet your needs.",
+    "kitchens": "Diam sed sed dolor stet amet eirmod"
+  },
+  "service": {
+    "title": "Our",
+    "titleHighlight": "Services",
+    "description1": "Our expert team uses specialized chemicals and specific powders for banknote cleaning, supported by machines capable of processing large volumes. Our stock includes advanced chemicals, activation salts and humine powders. Entrust us with your needs, we will propose customized solutions.",
+    "description2": "You can count on us to effectively resolve all your banknote cleaning concerns.",
+    "additionalTitle1": "Sale of Universal SSD solution for cleaning",
+    "additionalTitle2": "Banknote stripping machine rental",
+    "additionalTitle3": "Spectrophotometric analysis",
+    "additionalTitle4": "Sale of activation powder for banknote cleaning",
+    "interiorDesc1": "Customized banknote cleaning solutions",
+    "interiorDesc2": "Customized banknote cleaning solutions",
+    "interiorDesc3": "Customized banknote cleaning solutions",
+    "interiorDesc4": "Customized banknote cleaning solutions",
+    "commercialDesc": "Commercial space design"
+  },
+  "gallerie": {
+    "title": "Our",
+    "titleHighlight": "Gallery",
+    "placeholder": "Discover our achievements in the analysis and cleaning of secure banknotes",
+    "note": "Diam sed sed dolor stet amet eirmod"
+  },
+  "newsletter": {
+    "title": "Subscribe to our",
+    "titleHighlight": "Newsletter",
+    "placeholder": "Enter your email",
+    "note": "Diam sed sed dolor stet amet eirmod"
+  },
+  "footer": {
+    "title": "Clean-Lab Laboratory leader in Europe and Africa; Specialist in secure banknote cleaning.",
+    "titleContact": "Contact Us",
+    "titleLink": "Enter your email",
+    "titleService": "Our Services",
+    "service1": "Color banknote stripping",
+    "service2": "High-performance stripping machines",
+    "service3": "Black and white banknote cleaning",
+    "service4": "Banknote security analysis",
+    "linkHome": "Home",
+    "linkAbout": "About",
+    "linkService": "Services",
+    "linkGallerie": "Gallery",
+    "linkContact": "Contact Us"
+  }
+}
