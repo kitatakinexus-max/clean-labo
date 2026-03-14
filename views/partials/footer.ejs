@@ -4,75 +4,121 @@
         <div class="row g-5">
             <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
                 <a href="/?lang=<%= currentLang %>" class="d-inline-block mb-3" itemprop="url">
-                    <h1 class="text-white" itemprop="name">Clean Laboratoire</h1>
+                    <h1 class="text-white" itemprop="name"><%= companyInfo.name || 'Clean Laboratoire' %></h1>
                 </a>
-                <p class="mb-0" itemprop="description"><%= typeof t !== 'undefined' && t.footer ? t.footer.title : 'Laboratoire Clean-Lab leader en Europe et Afrique; Spécialiste en nettoyage de billets de Banque sécurisé.' %></p>
-                
+                <p class="mb-0" itemprop="description">
+                    <%= typeof t !=='undefined' && t.footer ? t.footer.title
+                        : 'Laboratoire Clean-Lab leader en Europe et Afrique; Spécialiste en nettoyage de billets de Banque sécurisé.'
+                        %>
+                </p>
+
                 <!-- Données structurées LocalBusiness -->
                 <div style="display:none;" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
                     <span itemprop="addressLocality">Paris</span>,
                     <span itemprop="addressCountry">France</span>
                 </div>
                 <div style="display:none;" itemprop="contactPoint" itemscope itemtype="https://schema.org/ContactPoint">
-                    <span itemprop="telephone"><%= companyInfo.phone %></span>
-                    <span itemprop="email"><%= companyInfo.email %></span>
-                    <span itemprop="contactType">Customer Service</span>
+                    <% (companyInfo.phones || []).forEach(p=> { %>
+                        <span itemprop="telephone">
+                            <%= p %>
+                        </span>
+                        <% }) %>
+                            <% (companyInfo.emails && companyInfo.emails.length > 0 ? companyInfo.emails : (companyInfo.email ? [companyInfo.email] : [])).forEach(function(e) { %>
+                            <span itemprop="email">
+                                <%= e %>
+                            </span>
+                            <% }); %>
+                            <span itemprop="contactType">Customer Service</span>
                 </div>
             </div>
-            
+
             <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
-                <h5 class="text-white mb-4"><%= typeof t !== 'undefined' && t.footer ? t.footer.titleContact : 'Nous contacter' %></h5>
-                <p itemprop="telephone"><i class="fa fa-phone-alt me-3"></i><%= companyInfo.phone %></p>
-                <p itemprop="telephone"><i class="fa fa-phone-alt me-3"></i><%= companyInfo.phone %></p>
-                <p itemprop="telephone"><i class="fa fa-phone-alt me-3"></i><%= companyInfo.phone %></p>
-                <p itemprop="telephone"><i class="fa fa-phone-alt me-3"></i><%= companyInfo.phone %></p>
-                <p itemprop="telephone"><i class="fa fa-phone-alt me-3"></i><%= companyInfo.phone %></p>
-                <p itemprop="telephone"><i class="fa fa-phone-alt me-3"></i><%= companyInfo.phone %></p>
-                <p itemprop="email"><i class="fa fa-envelope me-3"></i><%= companyInfo.email %></p>
-                
-                <div class="d-flex pt-2">
-                    <a class="btn btn-outline-primary btn-square border-2 me-2" href="https://facebook.com/cleanlaboratoire" aria-label="Facebook" rel="noopener noreferrer">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a class="btn btn-outline-primary btn-square border-2 me-2" href="https://instagram.com/cleanlaboratoire" aria-label="Instagram" rel="noopener noreferrer">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    
-                </div>
+                <h5 class="text-white mb-4">
+                    <%= typeof t !=='undefined' && t.footer ? t.footer.titleContact : 'Nous contacter' %>
+                </h5>
+                <% (companyInfo.phones || []).forEach(p=> { %>
+                    <p itemprop="telephone"><i class="fa fa-phone-alt me-3"></i>
+                        <%= p %>
+                    </p>
+                    <% }) %>
+                        <% (companyInfo.emails && companyInfo.emails.length > 0 ? companyInfo.emails : (companyInfo.email ? [companyInfo.email] : [])).forEach(function(e) { %>
+                        <p itemprop="email"><i class="fa fa-envelope me-3"></i>
+                            <%= e %>
+                        </p>
+                        <% }); %>
+
+                        <div class="d-flex pt-2">
+                            <a class="btn btn-outline-primary btn-square border-2 me-2"
+                                href="https://facebook.com/cleanlaboratoire" aria-label="Facebook"
+                                rel="noopener noreferrer">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a class="btn btn-outline-primary btn-square border-2 me-2"
+                                href="https://instagram.com/cleanlaboratoire" aria-label="Instagram"
+                                rel="noopener noreferrer">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+
+                        </div>
             </div>
-            
+
             <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
-                <h5 class="text-white mb-4"><%= typeof t !== 'undefined' && t.footer ? t.footer.titleLink : 'Liens rapides' %></h5>
-                <a class="btn btn-link" href="/?lang=<%= currentLang %>" itemprop="url"><%= typeof t !== 'undefined' && t.footer ? t.footer.linkHome : 'Accueil' %></a>
-                <a class="btn btn-link" href="/a-propos-laboratoire-nettoyage-billets?lang=<%= currentLang %>" itemprop="url"><%= typeof t !== 'undefined' && t.footer ? t.footer.linkAbout : 'À propos' %></a>
-                <a class="btn btn-link" href="/services-nettoyage-decapage-billets?lang=<%= currentLang %>" itemprop="url"><%= typeof t !== 'undefined' && t.footer ? t.footer.linkService : 'Services' %></a>
-                <a class="btn btn-link" href="/realisations-nettoyage-billets?lang=<%= currentLang %>" itemprop="url"><%= typeof t !== 'undefined' && t.footer ? t.footer.linkGallerie : 'Galerie' %></a>
-                <a class="btn btn-link" href="/contact-laboratoire-nettoyage?lang=<%= currentLang %>" itemprop="url"><%= typeof t !== 'undefined' && t.footer ? t.footer.linkContact : 'Contactez-nous' %></a>
+                <h5 class="text-white mb-4">
+                    <%= typeof t !=='undefined' && t.footer ? t.footer.titleLink : 'Liens rapides' %>
+                </h5>
+                <a class="btn btn-link" href="/?lang=<%= currentLang %>" itemprop="url">
+                    <%= typeof t !=='undefined' && t.footer ? t.footer.linkHome : 'Accueil' %>
+                </a>
+                <a class="btn btn-link" href="/a-propos-laboratoire-nettoyage-billets?lang=<%= currentLang %>"
+                    itemprop="url">
+                    <%= typeof t !=='undefined' && t.footer ? t.footer.linkAbout : 'À propos' %>
+                </a>
+                <a class="btn btn-link" href="/services-nettoyage-decapage-billets?lang=<%= currentLang %>"
+                    itemprop="url">
+                    <%= typeof t !=='undefined' && t.footer ? t.footer.linkService : 'Services' %>
+                </a>
+                <a class="btn btn-link" href="/realisations-nettoyage-billets?lang=<%= currentLang %>" itemprop="url">
+                    <%= typeof t !=='undefined' && t.footer ? t.footer.linkGallerie : 'Galerie' %>
+                </a>
+                <a class="btn btn-link" href="/contact-laboratoire-nettoyage?lang=<%= currentLang %>" itemprop="url">
+                    <%= typeof t !=='undefined' && t.footer ? t.footer.linkContact : 'Contactez-nous' %>
+                </a>
             </div>
-            
+
             <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
-                <h5 class="text-white mb-4"><%= typeof t !== 'undefined' && t.footer ? t.footer.titleService : 'Nos Services' %></h5>
-                <a class="btn btn-link" href="/service/solution-ssd-universelle-nettoyage?lang=<%= currentLang %>" itemprop="makesOffer"><%= typeof t !== 'undefined' && t.footer ? t.footer.service1 : 'Solution SSD Universelle' %></a>
-                <a class="btn btn-link" href="/service/location-machines-decapage?lang=<%= currentLang %>" itemprop="makesOffer"><%= typeof t !== 'undefined' && t.footer ? t.footer.service2 : 'Location Machines Décapage' %></a>
-                <a class="btn btn-link" href="/service/analyse-spectrophotometrie-billets?lang=<%= currentLang %>" itemprop="makesOffer"><%= typeof t !== 'undefined' && t.footer ? t.footer.service3 : 'Analyse Spectrophotométrie' %></a>
-                <a class="btn btn-link" href="/service/poudre-activation-nettoyage?lang=<%= currentLang %>" itemprop="makesOffer"><%= typeof t !== 'undefined' && t.footer ? t.footer.service4 : 'Poudre Activation' %></a>
+                <h5 class="text-white mb-4">
+                    <%= typeof t !=='undefined' && t.footer ? t.footer.titleService : 'Nos Services' %>
+                </h5>
+                <a class="btn btn-link" href="/service/solution-ssd-universelle-nettoyage?lang=<%= currentLang %>"
+                    itemprop="makesOffer">
+                    <%= typeof t !=='undefined' && t.footer ? t.footer.service1 : 'Solution SSD Universelle' %>
+                </a>
+                <a class="btn btn-link" href="/service/location-machines-decapage?lang=<%= currentLang %>"
+                    itemprop="makesOffer">
+                    <%= typeof t !=='undefined' && t.footer ? t.footer.service2 : 'Location Machines Décapage' %>
+                </a>
+                <a class="btn btn-link" href="/service/analyse-spectrophotometrie-billets?lang=<%= currentLang %>"
+                    itemprop="makesOffer">
+                    <%= typeof t !=='undefined' && t.footer ? t.footer.service3 : 'Analyse Spectrophotométrie' %>
+                </a>
+                <a class="btn btn-link" href="/service/poudre-activation-nettoyage?lang=<%= currentLang %>"
+                    itemprop="makesOffer">
+                    <%= typeof t !=='undefined' && t.footer ? t.footer.service4 : 'Poudre Activation' %>
+                </a>
             </div>
         </div>
-        
-        
+
+
     </div>
-    
-    
+
+
 </div>
 <!-- Footer End -->
 
 <!-- WhatsApp Floating Button -->
-<a href="https://wa.me/<%= companyInfo.whatsapp %>?text=Bonjour%20Clean%20Laboratoire,%20je%20souhaite%20obtenir%20des%20informations%20sur%20vos%20services%20de%20nettoyage%20de%20billets." 
-   target="_blank" 
-   rel="noopener noreferrer"
-   class="btn btn-success btn-lg-square social-float whatsapp-float"
-   aria-label="Contactez-nous sur WhatsApp"
-   title="Discuter sur WhatsApp">
+<a href="https://wa.me/<%= companyInfo.whatsapp %>?text=Bonjour%20Clean%20Laboratoire,%20je%20souhaite%20obtenir%20des%20informations%20sur%20vos%20services%20de%20nettoyage%20de%20billets."
+    target="_blank" rel="noopener noreferrer" class="btn btn-success btn-lg-square social-float whatsapp-float"
+    aria-label="Contactez-nous sur WhatsApp" title="Discuter sur WhatsApp">
     <i class="fab fa-whatsapp"></i>
 </a>
 
@@ -97,9 +143,9 @@
 {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Clean Laboratoire",
+    "name": "<%= companyInfo.name || 'Clean Laboratoire' %>",
     "url": "https://www.clean-lab.com",
-    "logo": "https://www.clean-lab.com/img/logo.png",
+    "logo": "https://www.clean-lab.com<%= getAsset('/img/logo.png') %>",
     "description": "Laboratoire expert en nettoyage sécurisé de billets de banque - Solutions SSD, décapage, analyses spectrophotométriques",
     "address": {
         "@type": "PostalAddress",
@@ -109,9 +155,9 @@
     },
     "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": "<%= companyInfo.phone %>",
+        "telephone": "<%= (companyInfo.phones && companyInfo.phones[0]) || '' %>",
         "contactType": "customer service",
-        "email": "<%= companyInfo.email %>",
+        "email": "<%= (companyInfo.emails && companyInfo.emails[0]) || companyInfo.email || '' %>",
         "areaServed": ["EU", "AF"],
         "availableLanguage": ["fr", "en", "ar", "es", "de", "hi"]
     },
@@ -126,11 +172,12 @@
 <script>
     // Mettre à jour l'année du copyright
     document.getElementById('current-year').textContent = new Date().getFullYear();
-    
+
     // Analytics (à configurer après déploiement)
     if (typeof gtag !== 'undefined') {
         gtag('config', 'G-XXXXXXXXXX');
     }
 </script>
 </body>
+
 </html>

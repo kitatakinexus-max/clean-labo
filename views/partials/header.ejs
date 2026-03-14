@@ -3,30 +3,32 @@
 
 <head>
     <meta charset="utf-8">
+    <% const _meta = locals.meta || {}; %>
+    <% const _companyInfo = locals.companyInfo || { phones: [], email: '', name: 'Clean Laboratoire' }; %>
     
     <!-- METADONNÉES PRINCIPALES OPTIMISÉES -->
-    <title><%= meta && meta.title ? meta.title : 'Clean Laboratoire | Expert Nettoyage & Décapage Billets de Banque Sécurisé' %></title>
-    <meta name="description" content="<%= meta && meta.description ? meta.description : 'Laboratoire Clean-Lab leader en Europe et Afrique. Solutions professionnelles de nettoyage, décapage et analyse de billets. Technologies SSD et spectrophotométrie.' %>">
-    <meta name="keywords" content="<%= meta && meta.keywords ? meta.keywords : 'nettoyage billets, décapage billets, solution SSD, laboratoire nettoyage, spectrophotométrie, billets de banque, clean laboratoire' %>">
+    <title><%= _meta.title ? _meta.title : 'Clean Laboratoire | Expert Nettoyage & Décapage Billets de Banque Sécurisé' %></title>
+    <meta name="description" content="<%= _meta.description ? _meta.description : 'Laboratoire Clean-Lab leader en Europe et Afrique. Solutions professionnelles de nettoyage, décapage et analyse de billets. Technologies SSD et spectrophotométrie.' %>">
+    <meta name="keywords" content="<%= _meta.keywords ? _meta.keywords : 'nettoyage billets, décapage billets, solution SSD, laboratoire nettoyage, spectrophotométrie, billets de banque, clean laboratoire' %>">
     <meta name="author" content="Clean Laboratoire">
-    <meta name="robots" content="<%= meta && meta.robots ? meta.robots : 'index, follow' %>">
+    <meta name="robots" content="<%= _meta.robots ? _meta.robots : 'index, follow' %>">
     
     <!-- VIEWPORT RESPONSIVE -->
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     
     <!-- CANONICAL URL -->
-    <link rel="canonical" href="https://www.clean-lab.com<%= meta && meta.canonical ? meta.canonical : '/' %>">
+    <link rel="canonical" href="https://www.clean-lab.com<%= _meta.canonical ? _meta.canonical : '/' %>">
     
     <!-- DONNÉES STRUCTURÉES SCHEMA.ORG -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "ProfessionalService",
-        "name": "Clean Laboratoire",
+        "name": "<%= _companyInfo.name || 'Clean Laboratoire' %>",
         "description": "Laboratoire expert en nettoyage sécurisé de billets de banque - Solutions SSD, décapage, analyses spectrophotométriques",
         "url": "https://www.clean-lab.com",
-        "telephone": "<%= companyInfo.phone %>",
-        "email": "<%= companyInfo.email %>",
+        "telephone": "<%= (_companyInfo.phones && _companyInfo.phones[0]) || '' %>",
+        "email": "<%= (_companyInfo.emails && _companyInfo.emails[0]) || _companyInfo.email || '' %>",
         "areaServed": ["Europe", "Afrique"],
         "serviceType": "Nettoyage de billets de banque",
         "address": {
@@ -44,9 +46,9 @@
     </script>
     
     <!-- OPEN GRAPH META TAGS -->
-    <meta property="og:title" content="<%= meta && meta.title ? meta.title : 'Clean Laboratoire | Expert Nettoyage & Décapage Billets' %>">
-    <meta property="og:description" content="<%= meta && meta.description ? meta.description : 'Laboratoire expert en nettoyage sécurisé de billets de banque - Solutions SSD, décapage, analyses spectrophotométriques' %>">
-    <meta property="og:url" content="https://www.clean-lab.com<%= meta && meta.canonical ? meta.canonical : '/' %>">
+    <meta property="og:title" content="<%= _meta.title ? _meta.title : 'Clean Laboratoire | Expert Nettoyage & Décapage Billets' %>">
+    <meta property="og:description" content="<%= _meta.description ? _meta.description : 'Laboratoire expert en nettoyage sécurisé de billets de banque - Solutions SSD, décapage, analyses spectrophotométriques' %>">
+    <meta property="og:url" content="https://www.clean-lab.com<%= _meta.canonical ? _meta.canonical : '/' %>">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Clean Laboratoire">
     <meta property="og:image" content="https://www.clean-lab.com/img/og-image.jpg">
@@ -56,13 +58,13 @@
     
     <!-- TWITTER CARD -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="<%= meta && meta.title ? meta.title : 'Clean Laboratoire | Expert Nettoyage Billets' %>">
-    <meta name="twitter:description" content="<%= meta && meta.description ? meta.description : 'Laboratoire expert en nettoyage sécurisé de billets de banque' %>">
+    <meta name="twitter:title" content="<%= _meta.title ? _meta.title : 'Clean Laboratoire | Expert Nettoyage Billets' %>">
+    <meta name="twitter:description" content="<%= _meta.description ? _meta.description : 'Laboratoire expert en nettoyage sécurisé de billets de banque' %>">
     <meta name="twitter:image" content="https://www.clean-lab.com/img/twitter-image.jpg">
     
     <!-- FAVICON ET ICÔNES -->
-    <link href="/img/favicon.ico" rel="icon" type="image/x-icon">
-    <link href="/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="<%= getAsset('/img/favicon.ico') %>" rel="icon" type="image/x-icon">
+    <link href="<%= getAsset('/img/apple-touch-icon.png') %>" rel="apple-touch-icon">
     <link href="/img/web-app-manifest.json" rel="manifest">
     
     <!-- PRELOAD DES RESSOURCES CRITIQUES -->
@@ -93,6 +95,9 @@
 
     <!-- TEMPLATE STYLESHEET -->
     <link href="/css/style.css" rel="stylesheet">
+    
+    <!-- CLOUDINARY UPLOAD WIDGET -->
+    <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>
     
     <!-- BREADCRUMB STRUCTURED DATA -->
     <script type="application/ld+json">
@@ -267,6 +272,60 @@
                 left: 85px;
             }
         }
+        
+        /* Styles pour iPhone SE et petits écrans */
+        @media (max-width: 400px) {
+            /* Réduire la taille de la navbar */
+            .navbar {
+                padding: 8px 0 !important;
+            }
+            
+            .navbar-brand h1 {
+                font-size: 1.2rem !important;
+                line-height: 1.2 !important;
+            }
+            
+            .navbar-toggler {
+                padding: 4px 8px !important;
+            }
+            
+            .navbar-toggler-icon {
+                width: 1.2em !important;
+                height: 1.2em !important;
+            }
+            
+            /* Réduire la taille du menu langue */
+            .language-dropdown .dropdown-toggle {
+                padding: 5px 8px !important;
+                font-size: 0.85rem !important;
+            }
+            
+            .language-dropdown .dropdown-toggle .flag-icon {
+                width: 16px !important;
+                height: 12px !important;
+            }
+            
+            /* Réduire les liens de navigation */
+            .navbar-nav .nav-link {
+                padding: 8px 0 !important;
+                font-size: 0.9rem !important;
+            }
+            
+            /* Ajuster le dropdown menu */
+            .language-dropdown .dropdown-menu {
+                min-width: 150px !important;
+            }
+            
+            .language-dropdown .dropdown-item {
+                padding: 8px 12px !important;
+                font-size: 0.85rem !important;
+            }
+            
+            .language-dropdown .dropdown-item .flag-icon {
+                width: 16px !important;
+                height: 12px !important;
+            }
+        }
     </style>
 
     <% if (currentLang === 'ar') { %>
@@ -334,7 +393,7 @@
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light border-bottom border-2 border-white" role="navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
                 <a href="/?lang=<%= currentLang %>" class="navbar-brand" itemprop="url">
-                    <h1 itemprop="name">Clean Laboratoire</h1>
+                    <h1 itemprop="name"><%= companyInfo.name || 'Clean Laboratoire' %></h1>
                 </a>
                 <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse"
                     data-bs-target="#navbarCollapse" aria-label="Toggle navigation">
@@ -372,7 +431,7 @@
                         <!-- Language Dropdown -->
                         <div class="nav-item dropdown language-dropdown">
                             <a href="#!" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img src="/img/flags/<%= currentLang %>.png" alt="<%= languages[currentLang] %>" class="flag-icon">
+                                <img src="<%= getAsset('/img/flags/' + currentLang + '.png') %>" alt="<%= languages[currentLang] %>" class="flag-icon">
                                 <span><%= languages[currentLang] %></span>
                             </a>
                             <div class="dropdown-menu bg-light mt-2">
@@ -380,7 +439,7 @@
                                     <a href="?lang=<%= lang %>" 
                                        class="dropdown-item <%= currentLang === lang ? 'active' : '' %>"
                                        hreflang="<%= lang %>">
-                                        <img src="/img/flags/<%= lang %>.png" alt="<%= languages[lang] %>" class="flag-icon">
+                                        <img src="<%= getAsset('/img/flags/' + lang + '.png') %>" alt="<%= languages[lang] %>" class="flag-icon">
                                         <%= languages[lang] %>
                                     </a>
                                 <% }) %>

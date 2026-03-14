@@ -9,28 +9,28 @@
 }) %>
 
 <!-- Hero Section Service -->
-<div class="container-fluid py-5 bg-primary bg-gradient">
+<div class="container-fluid py-5 " style="background: linear-gradient(135deg, #198754 0%, #157347 100%);">
     <div class="container py-5">
         <div class="row align-items-center">
             <div class="col-lg-6 animate-fade-in">
                 <h1 class="display-4 text-white mb-4">
-                    Solution SSD <span class="text-dark">Universelle</span>
+                    <%= t.service_details['solution-ssd-universelle-nettoyage'].hero.title %> <span class="text-success-light"><%= t.service_details['solution-ssd-universelle-nettoyage'].hero.titleHighlight %></span>
                 </h1>
                 <p class="text-white-50 lead mb-4">
-                    Formule brevetée pour le nettoyage et décapage profond de tous types de billets de banque
+                    <%= t.service_details['solution-ssd-universelle-nettoyage'].hero.subtitle %>
                 </p>
                 <div class="d-flex flex-wrap gap-3">
-                    <a href="tel:<%= companyInfo.phone %>" class="btn btn-dark btn-lg rounded-pill animate-pulse">
-                        <i class="bi bi-phone me-2"></i>Appel Expert
+                    <a href="tel:<%= companyInfo.phones[0] %>" class="btn btn-dark btn-lg rounded-pill animate-pulse">
+                        <i class="bi bi-phone me-2"></i><%= t.cta.call %>
                     </a>
                     <a href="https://wa.me/<%= companyInfo.whatsapp %>" class="btn btn-success btn-lg rounded-pill">
-                        <i class="bi bi-whatsapp me-2"></i>WhatsApp
+                        <i class="bi bi-whatsapp me-2"></i><%= t.nav.contact %>
                     </a>
                 </div>
             </div>
             <div class="col-lg-6 animate-slide-in-right">
                 <div class="service-hero-image">
-                    <img src="/img/slider-3.png" 
+                    <img src="<%= getAsset('/img/slider-3.png') %>" 
                          alt="Solution SSD universelle nettoyage billets - Clean Laboratoire"
                          class="img-fluid rounded-3 shadow-lg">
                 </div>
@@ -46,51 +46,25 @@
             <!-- Contenu Principal -->
             <div class="col-lg-8">
                 <div class="service-content animate-fade-in-up">
-                    <h2 class="text-primary mb-4">Solution SSD Universelle Professionnelle</h2>
+                    <h2 class="text-success mb-4"><%= t.service_details['solution-ssd-universelle-nettoyage'].content.title %></h2>
                     
                     <p class="lead mb-4">
-                        Notre solution SSD brevetée représente l'innovation la plus avancée dans le domaine du nettoyage et décapage de billets. 
-                        Formulée spécifiquement pour éliminer toutes les encres et colorants tout en préservant l'intégrité des billets.
+                        <%= t.service_details['solution-ssd-universelle-nettoyage'].content.description %>
                     </p>
 
                     <!-- Section Caractéristiques -->
                     <div class="row g-4 mb-5">
+                        <% t.service_details['solution-ssd-universelle-nettoyage'].features.forEach((feature, index) => { %>
                         <div class="col-md-6">
-                            <div class="feature-card p-4 rounded shadow-sm animate-scale-in">
-                                <div class="feature-icon bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-3">
-                                    <i class="bi bi-shield-check text-white"></i>
+                            <div class="feature-card p-4 rounded shadow-sm animate-scale-in" style="animation-delay: <%= index * 0.2 %>s;">
+                                <div class="feature-icon <%= feature.bg %> rounded-circle d-inline-flex align-items-center justify-content-center mb-3">
+                                    <i class="bi <%= feature.icon %> text-white"></i>
                                 </div>
-                                <h5>Sécurité Maximale</h5>
-                                <p class="mb-0">Protocoles stricts garantissant l'intégrité des billets traités</p>
+                                <h5><%= feature.title %></h5>
+                                <p class="mb-0 text-muted"><%= feature.description %></p>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="feature-card p-4 rounded shadow-sm animate-scale-in" style="animation-delay: 0.2s;">
-                                <div class="feature-icon bg-success rounded-circle d-inline-flex align-items-center justify-content-center mb-3">
-                                    <i class="bi bi-globe text-white"></i>
-                                </div>
-                                <h5>Universalité</h5>
-                                <p class="mb-0">Compatible avec toutes les devises internationales</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="feature-card p-4 rounded shadow-sm animate-scale-in" style="animation-delay: 0.4s;">
-                                <div class="feature-icon bg-warning rounded-circle d-inline-flex align-items-center justify-content-center mb-3">
-                                    <i class="bi bi-lightning-charge text-white"></i>
-                                </div>
-                                <h5>Rapidité</h5>
-                                <p class="mb-0">Résultats visibles en moins de 48 heures</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="feature-card p-4 rounded shadow-sm animate-scale-in" style="animation-delay: 0.6s;">
-                                <div class="feature-icon bg-info rounded-circle d-inline-flex align-items-center justify-content-center mb-3">
-                                    <i class="bi bi-award text-white"></i>
-                                </div>
-                                <h5>Résultats Garantis</h5>
-                                <p class="mb-0">Efficacité prouvée sur des milliers de cas</p>
-                            </div>
-                        </div>
+                        <% }); %>
                     </div>
 
                     <!-- Section Processus -->
@@ -132,15 +106,15 @@
 
                     <!-- Section Vidéo -->
                     <div class="video-section mb-5">
-                        <h3 class="text-primary mb-4">Démonstration en Vidéo</h3>
+                        <h3 class="text-success mb-4"><%= t.service_details['solution-ssd-universelle-nettoyage'].video.title %></h3>
                         <div class="video-container rounded shadow-lg animate-fade-in-up">
-                            <video id="ssdVideo" class="w-100 rounded" controls poster="/img/video-poster-1.png">
-                                <source src="/videos/processus-ssd.mp4" type="video/mp4">
-                                Votre navigateur ne supporte pas la lecture vidéo.
+                            <video id="ssdVideo" class="w-100 rounded" controls poster="<%= getAsset(t.service_details['solution-ssd-universelle-nettoyage'].video.poster) %>">
+                                <source src="<%= getAsset(t.service_details['solution-ssd-universelle-nettoyage'].video.src) %>" type="video/mp4">
+                                <%= t.common.loading %>
                             </video>
                         </div>
                         <p class="text-muted mt-3 text-center">
-                            Démonstration complète du processus de nettoyage SSD sur billet USD
+                            <%= t.service_details['solution-ssd-universelle-nettoyage'].video.caption %>
                         </p>
                     </div>
 
@@ -152,9 +126,9 @@
             <div class="col-lg-4">
                 <div class="service-sidebar sticky-top animate-slide-in-right">
                     <div class="card border-0 shadow-lg">
-                        <div class="card-header bg-primary text-white py-4">
+                        <div class="card-header bg-success text-white py-4">
                             <h4 class="mb-0 text-center">
-                                <i class="bi bi-chat-quote me-2"></i>Devis Gratuit
+                                <i class="bi bi-chat-quote me-2"></i><%= t.service_details['solution-ssd-universelle-nettoyage'].sidebar.title %>
                             </h4>
                         </div>
                         <div class="card-body p-4">
@@ -166,41 +140,27 @@
                                 </div>
                             -->
                             <div class="contact-options mb-4">
-                                <a href="tel:<%= companyInfo.phone %>" class="btn btn-outline-primary w-100 mb-3 d-flex align-items-center justify-content-center">
-                                    <i class="bi bi-phone me-2"></i>Appel Immédiat
+                                <a href="tel:<%= companyInfo.phones[0] %>" class="btn btn-outline-success w-100 mb-3 d-flex align-items-center justify-content-center">
+                                    <i class="bi bi-phone me-2"></i><%= t.service_details['solution-ssd-universelle-nettoyage'].sidebar.call %>
                                 </a>
                                 <a href="https://wa.me/<%= companyInfo.whatsapp %>" class="btn btn-outline-success w-100 mb-3 d-flex align-items-center justify-content-center">
-                                    <i class="bi bi-whatsapp me-2"></i>WhatsApp Expert
+                                    <i class="bi bi-whatsapp me-2"></i><%= t.service_details['solution-ssd-universelle-nettoyage'].sidebar.whatsapp %>
                                 </a>
                                 <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#quoteModal">
-                                    <i class="bi bi-envelope me-2"></i>Devis par Email
+                                    <i class="bi bi-envelope me-2"></i><%= t.service_details['solution-ssd-universelle-nettoyage'].sidebar.email %>
                                 </button>
                             </div>
 
                             <div class="service-info">
-                                <!--
+                                <% t.service_details['solution-ssd-universelle-nettoyage'].sidebar.info.forEach(info => { %>
                                 <div class="info-item d-flex align-items-center mb-3">
-                                    <i class="bi bi-clock text-primary me-3"></i>
+                                    <i class="bi <%= info.icon %> text-primary me-3"></i>
                                     <div>
-                                        <strong>Délai moyen</strong>
-                                        <div class="text-muted">24-48 heures</div>
+                                        <strong><%= info.title %></strong>
+                                        <div class="text-muted"><%= info.text %></div>
                                     </div>
                                 </div>
-                                -->
-                                <div class="info-item d-flex align-items-center mb-3">
-                                    <i class="bi bi-currency-dollar text-primary me-3"></i>
-                                    <div>
-                                        <strong>Devises traitées</strong>
-                                        <div class="text-muted">USD, EUR, GBP, etc.</div>
-                                    </div>
-                                </div>
-                                <div class="info-item d-flex align-items-center mb-3">
-                                    <i class="bi bi-shield-check text-primary me-3"></i>
-                                    <div>
-                                        <strong>Garantie</strong>
-                                        <div class="text-muted">Résultats 100% satisfaisants</div>
-                                    </div>
-                                </div>
+                                <% }); %>
                             </div>
                         </div>
                     </div>
@@ -216,8 +176,8 @@
                                 <i class="bi bi-star-fill text-warning"></i>
                             </div>
                             <blockquote class="blockquote mb-0">
-                                <p class="text-muted">"La solution SSD a parfaitement nettoyé mes billets USD. Résultats exceptionnels et service professionnel."</p>
-                                <footer class="blockquote-footer mt-2">Pierre M.</footer>
+                                <p class="text-muted"><%= t.service_details['solution-ssd-universelle-nettoyage'].testimonial.text %></p>
+                                <footer class="blockquote-footer mt-2"><%= t.service_details['solution-ssd-universelle-nettoyage'].testimonial.author %></footer>
                             </blockquote>
                         </div>
                     </div>
@@ -232,12 +192,12 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-8 text-center text-lg-start animate-fade-in">
-                <h3 class="text-white mb-3">Prêt à Découvrir Notre Solution SSD ?</h3>
-                <p class="text-white-50 mb-0">Contactez nos experts pour une évaluation gratuite de vos billets</p>
+                <h3 class="text-white mb-3"><%= t.service_details['solution-ssd-universelle-nettoyage'].cta.title %></h3>
+                <p class="text-white-50 mb-0"><%= t.service_details['solution-ssd-universelle-nettoyage'].cta.subtitle %></p>
             </div>
             <div class="col-lg-4 text-center animate-pulse">
-                <a href="tel:<%= companyInfo.phone %>" class="btn btn-primary btn-lg rounded-pill px-5">
-                    <i class="bi bi-phone me-2"></i>Appeler Maintenant
+                <a href="tel:<%= companyInfo.phones[0] %>" class="btn btn-success btn-lg rounded-pill px-5">
+                    <i class="bi bi-phone me-2"></i><%= t.service_details['solution-ssd-universelle-nettoyage'].cta.button %>
                 </a>
             </div>
         </div>
@@ -248,12 +208,12 @@
 <div class="modal fade" id="quoteModal" tabindex="-1">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
-            <div class="modal-header bg-primary text-white">
+            <div class="modal-header bg-success text-white">
                 <h5 class="modal-title">Devis Solution SSD Universelle</h5>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
             </div>
             <div class="modal-body">
-                <form action="/contact/send" method="POST">
+                <form id="quoteModalForm">
                     <input type="hidden" name="service" value="solution-ssd-universelle">
                     <div class="row g-3">
                         <div class="col-md-6">
@@ -279,7 +239,7 @@
                         </div>
                     </div>
                     <div class="mt-4 text-center">
-                        <button type="submit" class="btn btn-primary btn-lg px-5">
+                        <button type="submit" class="btn btn-success btn-lg px-5">
                             <i class="bi bi-send me-2"></i>Demander Devis
                         </button>
                     </div>
@@ -464,7 +424,37 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('Video SSD started playing');
         });
     }
-});
-</script>
+    </script>
+
+    <!-- Toastify -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+    <script>
+    document.getElementById('quoteModalForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const btn = this.querySelector('[type="submit"]');
+        btn.disabled = true;
+        const body = new URLSearchParams(new FormData(this)).toString();
+        try {
+            const res = await fetch('/contact/send', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'Accept': 'application/json' },
+                body: body
+            });
+            const json = await res.json();
+            if (json.success) {
+                Toastify({ text: '✅ Votre demande de devis a bien été envoyée ! Nous vous répondrons rapidement.', duration: 5000, gravity: 'top', position: 'right', style: { background: 'linear-gradient(135deg, #198754, #157347)', borderRadius: '10px', fontWeight: '600' } }).showToast();
+                this.reset();
+                const modal = bootstrap.Modal.getInstance(document.getElementById('quoteModal'));
+                if (modal) modal.hide();
+            } else { throw new Error(); }
+        } catch {
+            Toastify({ text: '❌ Une erreur est survenue. Veuillez réessayer.', duration: 5000, gravity: 'top', position: 'right', style: { background: 'linear-gradient(135deg, #dc3545, #b02a37)', borderRadius: '10px', fontWeight: '600' } }).showToast();
+        } finally {
+            btn.disabled = false;
+        }
+    });
+    </script>
 
 <%- include('partials/footer') %>

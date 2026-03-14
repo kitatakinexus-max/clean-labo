@@ -9,28 +9,28 @@
 }) %>
 
 <!-- Hero Section Service -->
-<div class="container-fluid py-5 bg-gradient" style="background: linear-gradient(135deg, #198754 0%, #0d6efd 100%);">
+<div class="container-fluid py-5" style="background: linear-gradient(135deg, #198754 0%, #157347 100%);">
     <div class="container py-5">
         <div class="row align-items-center">
             <div class="col-lg-6 animate-fade-in">
                 <h1 class="display-4 text-white mb-4">
-                    Analyse <span class="text-info">Spectrophotométrie</span>
+                    <%= t.service_details['analyse-spectrophotometrie-billets'].hero.title %> <span class="text-success-light"><%= t.service_details['analyse-spectrophotometrie-billets'].hero.titleHighlight %></span>
                 </h1>
                 <p class="text-white-50 lead mb-4">
-                    Contrôle qualité scientifique avancé pour déterminer la composition des encres et optimiser les protocoles de nettoyage
+                    <%= t.service_details['analyse-spectrophotometrie-billets'].hero.subtitle %>
                 </p>
                 <div class="d-flex flex-wrap gap-3">
-                    <a href="tel:<%= companyInfo.phone %>" class="btn btn-info btn-lg rounded-pill animate-pulse">
-                        <i class="bi bi-microscope me-2"></i>Expertise Scientifique
+                    <a href="tel:<%= companyInfo.phones[0] %>" class="btn btn-success btn-lg rounded-pill animate-pulse">
+                        <i class="bi bi-microscope me-2"></i><%= t.service_details['analyse-spectrophotometrie-billets'].cta.button %>
                     </a>
-                    <a href="https://wa.me/<%= companyInfo.whatsapp %>?text=Bonjour, je souhaite une analyse spectrophotométrique pour mes billets" class="btn btn-success btn-lg rounded-pill">
-                        <i class="bi bi-whatsapp me-2"></i>WhatsApp
+                    <a href="https://wa.me/<%= companyInfo.whatsapp %>" class="btn btn-success btn-lg rounded-pill">
+                        <i class="bi bi-whatsapp me-2"></i><%= t.nav.contact %>
                     </a>
                 </div>
             </div>
             <div class="col-lg-6 animate-slide-in-right">
                 <div class="service-hero-image">
-                    <img src="/img/slider-1.png" 
+                    <img src="<%= getAsset('/img/slider-1.png') %>" 
                          alt="Analyse spectrophotométrie billets - Laboratoire scientifique Clean Laboratoire"
                          class="img-fluid rounded-3 shadow-lg">
                 </div>
@@ -46,11 +46,10 @@
             <!-- Contenu Principal -->
             <div class="col-lg-8">
                 <div class="service-content animate-fade-in-up">
-                    <h2 class="text-info mb-4">Analyse Scientifique Avancée</h2>
+                    <h2 class="text-success mb-4"><%= t.service_details['analyse-spectrophotometrie-billets'].content.title %></h2>
                     
                     <p class="lead mb-4">
-                        Notre service d'analyse spectrophotométrie utilise des technologies de pointe pour analyser 
-                        la composition chimique des encres et déterminer le protocole de nettoyage optimal pour chaque type de billet.
+                        <%= t.service_details['analyse-spectrophotometrie-billets'].content.description %>
                     </p>
 <!--
                      Section Technologies 
@@ -116,15 +115,15 @@
 -->
                     <!-- Section Vidéo Explicative -->
                     <div class="video-section mb-5">
-                        <h3 class="text-info mb-4">Notre Laboratoire en Action</h3>
+                        <h3 class="text-success mb-4"><%= t.service_details['analyse-spectrophotometrie-billets'].video.title %></h3>
                         <div class="video-container rounded shadow-lg overflow-hidden animate-fade-in-up">
-                            <video id="analysisVideo" class="w-100" controls poster="/img/video-poster-lab.png">
-                                <source src="/videos/laboratoire-analyse-spectro.mp4" type="video/mp4">
-                                Votre navigateur ne supporte pas la lecture vidéo.
+                            <video id="analysisVideo" class="w-100" controls poster="<%= getAsset(t.service_details['analyse-spectrophotometrie-billets'].video.poster) %>">
+                                <source src="<%= getAsset(t.service_details['analyse-spectrophotometrie-billets'].video.src) %>" type="video/mp4">
+                                <%= t.common.loading %>
                             </video>
                         </div>
                         <p class="text-muted mt-3 text-center">
-                            Visite de notre laboratoire et démonstration du processus d'analyse
+                            <%= t.service_details['analyse-spectrophotometrie-billets'].video.caption %>
                         </p>
                     </div>
 <!--
@@ -166,48 +165,36 @@
             <div class="col-lg-4">
                 <div class="service-sidebar sticky-top animate-slide-in-right">
                     <div class="card border-0 shadow-lg">
-                        <div class="card-header bg-info text-white py-4">
+                        <div class="card-header bg-success text-white py-4">
                             <h4 class="mb-0 text-center">
-                                <i class="bi bi-microscope me-2"></i>Analyse Expert
+                                <i class="bi bi-microscope me-2"></i><%= t.service_details['analyse-spectrophotometrie-billets'].sidebar.title %>
                             </h4>
                         </div>
                         <div class="card-body p-4">
                             
                             
                             <div class="contact-options mb-4">
-                                <a href="tel:<%= companyInfo.phone %>" class="btn btn-outline-info w-100 mb-3 d-flex align-items-center justify-content-center">
-                                    <i class="bi bi-phone me-2"></i>Consultation Expert
+                                <a href="tel:<%= companyInfo.phones[0] %>" class="btn btn-outline-success w-100 mb-3 d-flex align-items-center justify-content-center">
+                                    <i class="bi bi-phone me-2"></i><%= t.service_details['analyse-spectrophotometrie-billets'].sidebar.call %>
                                 </a>
-                                <a href="https://wa.me/<%= companyInfo.whatsapp %>?text=Bonjour, je souhaite une analyse spectrophotométrique" class="btn btn-outline-success w-100 mb-3 d-flex align-items-center justify-content-center">
-                                    <i class="bi bi-whatsapp me-2"></i>WhatsApp Analyse
+                                <a href="https://wa.me/<%= companyInfo.whatsapp %>" class="btn btn-outline-success w-100 mb-3 d-flex align-items-center justify-content-center">
+                                    <i class="bi bi-whatsapp me-2"></i><%= t.service_details['analyse-spectrophotometrie-billets'].sidebar.whatsapp %>
                                 </a>
-                                <button type="button" class="btn btn-info w-100" data-bs-toggle="modal" data-bs-target="#analysisModal">
-                                    <i class="bi bi-clipboard-data me-2"></i>Demander Analyse
+                                <button type="button" class="btn btn-success w-100" data-bs-toggle="modal" data-bs-target="#analysisModal">
+                                    <i class="bi bi-clipboard-data me-2"></i><%= t.service_details['analyse-spectrophotometrie-billets'].sidebar.email %>
                                 </button>
                             </div>
 
                             <div class="service-info">
+                                <% t.service_details['analyse-spectrophotometrie-billets'].sidebar.info.forEach(info => { %>
                                 <div class="info-item d-flex align-items-center mb-3">
-                                    <i class="bi bi-clock text-info me-3"></i>
+                                    <i class="bi <%= info.icon %> text-success me-3"></i>
                                     <div>
-                                        <strong>Délai Analyse</strong>
-                                        <div class="text-muted">24-48 heures</div>
+                                        <strong><%= info.title %></strong>
+                                        <div class="text-muted"><%= info.text %></div>
                                     </div>
                                 </div>
-                                <div class="info-item d-flex align-items-center mb-3">
-                                    <i class="bi bi-file-earmark-text text-info me-3"></i>
-                                    <div>
-                                        <strong>Rapport</strong>
-                                        <div class="text-muted">Complet avec recommandations</div>
-                                    </div>
-                                </div>
-                                <div class="info-item d-flex align-items-center mb-3">
-                                    <i class="bi bi-shield-check text-info me-3"></i>
-                                    <div>
-                                        <strong>Confidentialité</strong>
-                                        <div class="text-muted">Totale garantie</div>
-                                    </div>
-                                </div>
+                                <% }); %>
                             </div>
                         </div>
                     </div>
@@ -223,8 +210,8 @@
                                 <i class="bi bi-star-fill text-warning"></i>
                             </div>
                             <blockquote class="blockquote mb-0">
-                                <p class="text-muted">"L'analyse spectrophotométrique nous a permis d'optimiser nos protocoles. Précision scientifique remarquable."</p>
-                                <footer class="blockquote-footer mt-2">Sarah L., Institution</footer>
+                                <p class="text-muted"><%= t.service_details['analyse-spectrophotometrie-billets'].testimonial.text %></p>
+                                <footer class="blockquote-footer mt-2"><%= t.service_details['analyse-spectrophotometrie-billets'].testimonial.author %></footer>
                             </blockquote>
                         </div>
                     </div>
@@ -239,12 +226,12 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-8 text-center text-lg-start animate-fade-in">
-                <h3 class="text-white mb-3">Besoin d'une Analyse Scientifique ?</h3>
-                <p class="text-white-50 mb-0">Confiez-nous vos billets pour une analyse spectrophotométrique précise</p>
+                <h3 class="text-white mb-3"><%= t.service_details['analyse-spectrophotometrie-billets'].cta.title %></h3>
+                <p class="text-white-50 mb-0"><%= t.service_details['analyse-spectrophotometrie-billets'].cta.subtitle %></p>
             </div>
             <div class="col-lg-4 text-center animate-pulse">
-                <a href="tel:<%= companyInfo.phone %>" class="btn btn-info btn-lg rounded-pill px-5">
-                    <i class="bi bi-microscope me-2"></i>Analyser Maintenant
+                <a href="tel:<%= companyInfo.phones[0] %>" class="btn btn-success btn-lg rounded-pill px-5">
+                    <i class="bi bi-microscope me-2"></i><%= t.service_details['analyse-spectrophotometrie-billets'].cta.button %>
                 </a>
             </div>
         </div>
@@ -255,12 +242,12 @@
 <div class="modal fade" id="analysisModal" tabindex="-1">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
-            <div class="modal-header bg-info text-white">
+            <div class="modal-header bg-success text-white">
                 <h5 class="modal-title">Demande d'Analyse Spectrophotométrique</h5>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
             </div>
             <div class="modal-body">
-                <form action="/contact/send" method="POST">
+                <form id="analysisModalForm">
                     <input type="hidden" name="service" value="analyse-spectrophotometrie">
                     <div class="row g-3">
                         <div class="col-md-6">
@@ -297,7 +284,7 @@
                         </div>
                     </div>
                     <div class="mt-4 text-center">
-                        <button type="submit" class="btn btn-info btn-lg px-5">
+                        <button type="submit" class="btn btn-success btn-lg px-5">
                             <i class="bi bi-send me-2"></i>Demander Analyse
                         </button>
                     </div>
@@ -333,7 +320,7 @@
     top: 0;
     bottom: 0;
     width: 2px;
-    background: var(--bs-info);
+    background: var(--bs-success);
     opacity: 0.3;
 }
 
@@ -365,7 +352,7 @@
 
 .app-card {
     transition: transform 0.3s ease;
-    border-left: 4px solid var(--bs-info);
+    border-left: 4px solid var(--bs-success);
 }
 
 .app-card:hover {
@@ -426,5 +413,36 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
+
+    <!-- Toastify -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+    <script>
+    document.getElementById('analysisModalForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const btn = this.querySelector('[type="submit"]');
+        btn.disabled = true;
+        const body = new URLSearchParams(new FormData(this)).toString();
+        try {
+            const res = await fetch('/contact/send', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'Accept': 'application/json' },
+                body: body
+            });
+            const json = await res.json();
+            if (json.success) {
+                Toastify({ text: '✅ Votre demande d\'analyse a bien été envoyée ! Nous vous répondrons rapidement.', duration: 5000, gravity: 'top', position: 'right', style: { background: 'linear-gradient(135deg, #198754, #157347)', borderRadius: '10px', fontWeight: '600' } }).showToast();
+                this.reset();
+                const modal = bootstrap.Modal.getInstance(document.getElementById('analysisModal'));
+                if (modal) modal.hide();
+            } else { throw new Error(); }
+        } catch {
+            Toastify({ text: '❌ Une erreur est survenue. Veuillez réessayer.', duration: 5000, gravity: 'top', position: 'right', style: { background: 'linear-gradient(135deg, #dc3545, #b02a37)', borderRadius: '10px', fontWeight: '600' } }).showToast();
+        } finally {
+            btn.disabled = false;
+        }
+    });
+    </script>
 
 <%- include('partials/footer') %>

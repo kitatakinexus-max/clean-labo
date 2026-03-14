@@ -9,28 +9,28 @@
 }) %>
 
 <!-- Hero Section Service -->
-<div class="container-fluid py-5 bg-gradient" style="background: linear-gradient(135deg, #6c757d 0%, #495057 100%);">
+<div class="container-fluid py-5 " style="background: linear-gradient(135deg, #198754 0%, #157347 100%);">
     <div class="container py-5">
         <div class="row align-items-center">
             <div class="col-lg-6 animate-fade-in">
-                <h1 class="display-4 text-white mb-4">
-                    Location Machines <span class="text-warning">Professionnelles</span>
+                <h1 class="display-4 text-light mb-4">
+                    <%= t.service_details['location-machines-decapage'].hero.title %> <span class="text-light"><%= t.service_details['location-machines-decapage'].hero.titleHighlight %></span>
                 </h1>
                 <p class="text-white-50 lead mb-4">
-                    Équipements haute performance pour le décapage et nettoyage de billets avec formation complète incluse
+                    <%= t.service_details['location-machines-decapage'].hero.subtitle %>
                 </p>
                 <div class="d-flex flex-wrap gap-3">
-                    <a href="tel:<%= companyInfo.phone %>" class="btn btn-warning btn-lg rounded-pill animate-pulse">
-                        <i class="bi bi-phone me-2"></i>Devis Location
+                    <a href="tel:<%= companyInfo.phones[0] %>" class="btn btn-success btn-lg rounded-pill animate-pulse">
+                        <i class="bi bi-phone me-2"></i><%= t.cta.quote %>
                     </a>
                     <a href="https://wa.me/<%= companyInfo.whatsapp %>?text=Bonjour, je souhaite obtenir un devis pour la location de machines de décapage" class="btn btn-success btn-lg rounded-pill">
-                        <i class="bi bi-whatsapp me-2"></i>WhatsApp
+                        <i class="bi bi-whatsapp me-2"></i><%= t.nav.contact %>
                     </a>
                 </div>
             </div>
             <div class="col-lg-6 animate-slide-in-right">
                 <div class="service-hero-image">
-                    <img src="/img/slider-4.png" 
+                    <img src="<%= getAsset('/img/slider-4.png') %>" 
                          alt="Location machines décapage professionnelles - Clean Laboratoire"
                          class="img-fluid rounded-3 shadow-lg">
                 </div>
@@ -46,11 +46,10 @@
             <!-- Contenu Principal -->
             <div class="col-lg-8">
                 <div class="service-content animate-fade-in-up">
-                    <h2 class="text-warning mb-4">Machines de Décapage Haute Performance</h2>
+                    <h2 class="text-success mb-4"><%= t.service_details['location-machines-decapage'].content.title %></h2>
                     
                     <p class="lead mb-4">
-                        Notre parc de machines professionnelles offre des solutions complètes pour le décapage et nettoyage 
-                        de billets à grande échelle. Chaque équipement est accompagné d'une formation complète et d'un support technique dédié.
+                        <%= t.service_details['location-machines-decapage'].content.description %>
                     </p>
 
                     <!-- Section Types de Machines -->
@@ -95,49 +94,33 @@
                     -->
                     <!-- Section Avantages -->
                     <div class="benefits-section mb-5">
-                        <h3 class="text-warning mb-4">Avantages de la Location</h3>
+                        <h3 class="text-success mb-4"><%= t.services.machines.title %></h3>
                         <div class="row g-4">
+                            <% t.service_details['location-machines-decapage'].features.forEach((feature, index) => { %>
                             <div class="col-md-4">
-                                <div class="benefit-item text-center p-4 rounded shadow-sm animate-fade-in-up">
-                                    <div class="benefit-icon bg-warning rounded-circle d-inline-flex align-items-center justify-content-center mb-3">
-                                        <i class="bi bi-cash-coin text-white fs-4"></i>
+                                <div class="benefit-item text-center p-4 rounded shadow-sm animate-fade-in-up" style="animation-delay: <%= index * 0.2 %>s;">
+                                    <div class="benefit-icon <%= feature.bg %> rounded-circle d-inline-flex align-items-center justify-content-center mb-3">
+                                        <i class="bi <%= feature.icon %> text-white fs-4"></i>
                                     </div>
-                                    <h6>Économique</h6>
-                                    <p class="text-muted small">Pas d'investissement initial lourd</p>
+                                    <h6><%= feature.title %></h6>
+                                    <p class="text-muted small mb-0"><%= feature.description %></p>
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <div class="benefit-item text-center p-4 rounded shadow-sm animate-fade-in-up" style="animation-delay: 0.2s;">
-                                    <div class="benefit-icon bg-warning rounded-circle d-inline-flex align-items-center justify-content-center mb-3">
-                                        <i class="bi bi-tools text-white fs-4"></i>
-                                    </div>
-                                    <h6>Maintenance Incluse</h6>
-                                    <p class="text-muted small">Support technique 24/7</p>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="benefit-item text-center p-4 rounded shadow-sm animate-fade-in-up" style="animation-delay: 0.4s;">
-                                    <div class="benefit-icon bg-warning rounded-circle d-inline-flex align-items-center justify-content-center mb-3">
-                                        <i class="bi bi-graph-up-arrow text-white fs-4"></i>
-                                    </div>
-                                    <h6>Flexibilité</h6>
-                                    <p class="text-muted small">Adapté à vos volumes</p>
-                                </div>
-                            </div>
+                            <% }); %>
                         </div>
                     </div>
 
                     <!-- Section Vidéo Démo -->
                     <div class="video-section mb-5">
-                        <h3 class="text-warning mb-4">Démonstration Machine en Action</h3>
+                        <h3 class="text-success mb-4"><%= t.service_details['location-machines-decapage'].video.title %></h3>
                         <div class="video-container rounded shadow-lg overflow-hidden animate-fade-in-up">
-                            <video id="machineVideo" class="w-100" controls poster="/img/video-poster-machine.png">
-                                <source src="/videos/demonstration-machine-decapage.mp4" type="video/mp4">
-                                Votre navigateur ne supporte pas la lecture vidéo.
+                            <video id="machineVideo" class="w-100" controls poster="<%= getAsset(t.service_details['location-machines-decapage'].video.poster) %>">
+                                <source src="<%= getAsset(t.service_details['location-machines-decapage'].video.src) %>" type="video/mp4">
+                                <%= t.common.loading %>
                             </video>
                         </div>
                         <p class="text-muted mt-3 text-center">
-                            Démonstration complète du fonctionnement de la machine Décap'Pro 5000
+                            <%= t.service_details['location-machines-decapage'].video.caption %>
                         </p>
                     </div>
 
@@ -200,9 +183,9 @@
             <div class="col-lg-4">
                 <div class="service-sidebar sticky-top animate-slide-in-right">
                     <div class="card border-0 shadow-lg">
-                        <div class="card-header bg-warning text-dark py-4">
+                        <div class="card-header bg-success text-white py-4">
                             <h4 class="mb-0 text-center">
-                                <i class="bi bi-tools me-2"></i>Devis Location
+                                <i class="bi bi-tools me-2"></i><%= t.service_details['location-machines-decapage'].sidebar.title %>
                             </h4>
                         </div>
                         
@@ -216,41 +199,27 @@
                             -->
                             
                             <div class="contact-options mb-4">
-                                <a href="tel:<%= companyInfo.phone %>" class="btn btn-outline-warning w-100 mb-3 d-flex align-items-center justify-content-center">
-                                    <i class="bi bi-phone me-2"></i>Appel Location
+                                <a href="tel:<%= companyInfo.phones[0] %>" class="btn btn-outline-success w-100 mb-3 d-flex align-items-center justify-content-center">
+                                    <i class="bi bi-phone me-2"></i><%= t.service_details['location-machines-decapage'].sidebar.call %>
                                 </a>
                                 <a href="https://wa.me/<%= companyInfo.whatsapp %>?text=Bonjour, je souhaite un devis pour la location de machines de décapage" class="btn btn-outline-success w-100 mb-3 d-flex align-items-center justify-content-center">
-                                    <i class="bi bi-whatsapp me-2"></i>WhatsApp Devis
+                                    <i class="bi bi-whatsapp me-2"></i><%= t.service_details['location-machines-decapage'].sidebar.whatsapp %>
                                 </a>
-                                <button type="button" class="btn btn-warning w-100" data-bs-toggle="modal" data-bs-target="#locationModal">
-                                    <i class="bi bi-calendar-check me-2"></i>Réserver Maintenant
+                                <button type="button" class="btn btn-success w-100" data-bs-toggle="modal" data-bs-target="#locationModal">
+                                    <i class="bi bi-calendar-check me-2"></i><%= t.service_details['location-machines-decapage'].sidebar.email %>
                                 </button>
                             </div>
 
                             <div class="service-info">
+                                <% t.service_details['location-machines-decapage'].sidebar.info.forEach(info => { %>
                                 <div class="info-item d-flex align-items-center mb-3">
-                                    <i class="bi bi-clock text-warning me-3"></i>
+                                    <i class="bi <%= info.icon %> text-success me-3"></i>
                                     <div>
-                                        <strong>Livraison</strong>
-                                        <div class="text-muted">Sous 48-72h</div>
+                                        <strong><%= info.title %></strong>
+                                        <div class="text-muted"><%= info.text %></div>
                                     </div>
                                 </div>
-                            <!--
-                                <div class="info-item d-flex align-items-center mb-3">
-                                    <i class="bi bi-gear text-warning me-3"></i>
-                                    <div>
-                                        <strong>Formation</strong>
-                                        <div class="text-muted">2 jours inclus</div>
-                                    </div>
-                                </div>
-                            -->
-                                <div class="info-item d-flex align-items-center mb-3">
-                                    <i class="bi bi-headset text-warning me-3"></i>
-                                    <div>
-                                        <strong>Support</strong>
-                                        <div class="text-muted">Technique 24/7</div>
-                                    </div>
-                                </div>
+                                <% }); %>
                             </div>
                         </div>
                     </div>
@@ -266,8 +235,8 @@
                                 <i class="bi bi-star-fill text-warning"></i>
                             </div>
                             <blockquote class="blockquote mb-0">
-                                <p class="text-muted">"La location de machine nous a permis de traiter de gros volumes rapidement. Formation excellente et support réactif."</p>
-                                <footer class="blockquote-footer mt-2">Marc T., Entrepreneur</footer>
+                                <p class="text-muted"><%= t.service_details['location-machines-decapage'].testimonial.text %></p>
+                                <footer class="blockquote-footer mt-2"><%= t.service_details['location-machines-decapage'].testimonial.author %></footer>
                             </blockquote>
                         </div>
                     </div>
@@ -282,12 +251,12 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-8 text-center text-lg-start animate-fade-in">
-                <h3 class="text-white mb-3">Prêt à Optimiser Votre Production ?</h3>
-                <p class="text-white-50 mb-0">Louez nos machines professionnelles et boostez votre capacité de traitement</p>
+                <h3 class="text-white mb-3"><%= t.service_details['location-machines-decapage'].cta.title %></h3>
+                <p class="text-white-50 mb-0"><%= t.service_details['location-machines-decapage'].cta.subtitle %></p>
             </div>
             <div class="col-lg-4 text-center animate-pulse">
-                <a href="tel:<%= companyInfo.phone %>" class="btn btn-warning btn-lg rounded-pill px-5">
-                    <i class="bi bi-calendar me-2"></i>Réserver Maintenant
+                <a href="tel:<%= companyInfo.phones[0] %>" class="btn btn-success btn-lg rounded-pill px-5">
+                    <i class="bi bi-calendar me-2"></i><%= t.service_details['location-machines-decapage'].cta.button %>
                 </a>
             </div>
         </div>
@@ -298,12 +267,12 @@
 <div class="modal fade" id="locationModal" tabindex="-1">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
-            <div class="modal-header bg-warning text-dark">
+            <div class="modal-header bg-success text-white">
                 <h5 class="modal-title">Demande de Location Machine</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
             </div>
             <div class="modal-body">
-                <form action="/contact/send" method="POST">
+                <form id="locationModalForm">
                     <input type="hidden" name="service" value="location-machines">
                     <div class="row g-3">
                         <div class="col-md-6">
@@ -340,7 +309,7 @@
                         </div>
                     </div>
                     <div class="mt-4 text-center">
-                        <button type="submit" class="btn btn-warning btn-lg px-5">
+                        <button type="submit" class="btn btn-success btn-lg px-5">
                             <i class="bi bi-send me-2"></i>Demander Location
                         </button>
                     </div>
@@ -359,7 +328,7 @@
 .machine-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 40px rgba(0,0,0,0.15) !important;
-    border-color: var(--bs-warning);
+    border-color: var(--bs-success);
 }
 
 .benefit-icon {
@@ -384,14 +353,14 @@
 }
 
 .price-tag {
-    border: 2px dashed var(--bs-warning);
+    border: 2px dashed var(--bs-success);
 }
 
 /* Animations spécifiques machines */
 @keyframes machineGlow {
-    0% { box-shadow: 0 0 5px rgba(255, 193, 7, 0.5); }
-    50% { box-shadow: 0 0 20px rgba(255, 193, 7, 0.8); }
-    100% { box-shadow: 0 0 5px rgba(255, 193, 7, 0.5); }
+    0% { box-shadow: 0 0 5px rgba(25, 135, 84, 0.5); }
+    50% { box-shadow: 0 0 20px rgba(25, 135, 84, 0.8); }
+    100% { box-shadow: 0 0 5px rgba(25, 135, 84, 0.5); }
 }
 
 .animate-machine-glow {
@@ -434,5 +403,36 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
+
+    <!-- Toastify -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+    <script>
+    document.getElementById('locationModalForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const btn = this.querySelector('[type="submit"]');
+        btn.disabled = true;
+        const body = new URLSearchParams(new FormData(this)).toString();
+        try {
+            const res = await fetch('/contact/send', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'Accept': 'application/json' },
+                body: body
+            });
+            const json = await res.json();
+            if (json.success) {
+                Toastify({ text: '✅ Votre demande de location a bien été envoyée ! Nous vous répondrons rapidement.', duration: 5000, gravity: 'top', position: 'right', style: { background: 'linear-gradient(135deg, #198754, #157347)', borderRadius: '10px', fontWeight: '600' } }).showToast();
+                this.reset();
+                const modal = bootstrap.Modal.getInstance(document.getElementById('locationModal'));
+                if (modal) modal.hide();
+            } else { throw new Error(); }
+        } catch {
+            Toastify({ text: '❌ Une erreur est survenue. Veuillez réessayer.', duration: 5000, gravity: 'top', position: 'right', style: { background: 'linear-gradient(135deg, #dc3545, #b02a37)', borderRadius: '10px', fontWeight: '600' } }).showToast();
+        } finally {
+            btn.disabled = false;
+        }
+    });
+    </script>
 
 <%- include('partials/footer') %>

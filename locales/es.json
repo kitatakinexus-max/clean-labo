@@ -1,92 +1,379 @@
 {
+  "common": {
+    "loading": "Cargando...",
+    "readMore": "Leer más",
+    "contactUs": "Contáctenos",
+    "getQuote": "Obtener cotización",
+    "learnMore": "Conocer más",
+    "viewAll": "Ver todo"
+  },
   "nav": {
     "home": "Inicio",
     "about": "Acerca de",
     "services": "Servicios",
-    "projects": "Galería",
+    "projects": "Proyectos",
     "pages": "Páginas",
-    "features": "Características",
+    "features": "Tecnologías",
     "team": "Nuestro Equipo",
     "testimonial": "Testimonios",
     "contact": "Contacto"
   },
   "hero": {
-    "title": "Solución Universal para la",
+    "title": "Solución Universal para",
     "titleHighlight": "Limpieza",
     "titleEnd": "de Billetes",
-    "subtitle": "Laboratorio Clean-Lab líder en Europa y África; Especialista en limpieza segura de billetes bancarios.",
-    "feature1": "Decapado de billetes en color",
-    "feature2": "Máquinas de decapado de alto rendimiento",
-    "feature3": "Productos de limpieza para billetes bancarios",
-    "feature4": "Precios asequibles con garantía de seguridad"
+    "subtitle": "Laboratorio Clean-Lab líder en Europa y África - Especialista en limpieza segura de billetes con solución SSD avanzada.",
+    "feature1": "Decapado de alta precisión",
+    "feature2": "Máquinas profesionales",
+    "feature3": "Soluciones SSD patentadas",
+    "feature4": "Resultados garantizados"
   },
   "about": {
-    "badge": "Acerca de Nosotros",
+    "badge": "Experiencia",
     "title": "Clean Lab",
-    "description1": "Clean Lab funciona como un laboratorio de vanguardia, aplicando técnicas de trabajo modernas y probadas. Dominamos una gama completa de productos de limpieza - incluyendo solución SSD, solución universal TTZ, pasta Vectrol, polvo de activación - así como equipos diseñados para la restauración de billetes bancarios carbonizados. Estos productos y servicios se ofrecen a nuestros clientes para satisfacer sus requisitos y demandas específicas.",
-    "description2": "Clean Lab interviene en todas las divisas - USD, euro, etc. - para garantizar una limpieza segura y efectiva. Proveemos una gama de artículos, productos químicos, sales de activación y polvos adecuados, así como máquinas capaces de procesar grandes volúmenes. Nuestro equipo de expertos estudiará sus necesidades y propondrá soluciones personalizadas para restaurar sus billetes.",
-    "check1": "Premiado",
-    "check2": "Personal Profesional",
+    "description1": "Fundado en 2010, Clean Lab opera como un centro internacional de experiencia especializado en la limpieza y restauración de billetes de banco. Nuestro laboratorio de vanguardia utiliza tecnologías avanzadas, incluyendo la solución universal SSD, pasta Vectrol, polvos de activación y equipos de alto rendimiento para la restauración de billetes dañados.",
+    "description2": "Nuestra experiencia se extiende a todas las divisas internacionales (USD, EUR, GBP, etc.) con estrictos protocolos de seguridad. Ofrecemos una gama completa de productos químicos especializados, apoyados por máquinas capaces de procesar grandes volúmenes.",
+    "check1": "Certificado",
+    "check2": "Equipo Experto",
     "check3": "Soporte 24/7",
-    "check4": "Precios Justos",
-    "readMore": "Saber Más"
+    "check4": "Precios Transparentes",
+    "readMore": "Descubra nuestra experiencia"
   },
   "feature": {
     "title": "Por Qué La Gente",
     "titleHighlight": "Nos Elige",
-    "experience": "Limpieza rápida y efectiva por expertos",
-    "design": "Soluciones más sofisticadas",
-    "architects": "Análisis en profundidad",
-    "satisfaction": "Satisfacción del Cliente",
-    "budget": "Precios Asequibles",
-    "material": "Procesamiento seguro de billetes"
+    "experience": "Limpieza rápida y efectiva",
+    "experienceDesc": "Resultados visibles en menos de 48h",
+    "design": "Tecnologías avanzadas",
+    "designDesc": "Equipos de última generación",
+    "architects": "Experiencia científica",
+    "architectsDesc": "Análisis espectrofotométrico preciso",
+    "satisfaction": "Satisfacción Garantizada",
+    "satisfactionDesc": "Resultados 100% satisfactorios",
+    "budget": "Soluciones Asequibles",
+    "budgetDesc": "Precios competitivos y transparentes",
+    "material": "Seguridad Absoluta",
+    "materialDesc": "Proceso discreto y seguro"
   },
   "reseau": {
     "title": "Nuestra Red",
-    "titleHighlight": "Nuestra Red",
-    "paragraph": "Nuestra extensa red de laboratorios especializados en el procesamiento de billetes seguros se extiende por Europa y África. Gracias a esta presencia internacional, podemos ofrecer un acompañamiento personalizado y reactivo, adaptado a las limitaciones locales y los volúmenes procesados. Nuestros equipos locales y nuestros expertos centralizados colaboran para garantizar prestaciones fiables, conformes con los estándares de seguridad, y disponibles rápidamente para responder a sus necesidades.",
-    "kitchens": "Diam sed sed dolor stet amet eirmod"
+    "titleHighlight": "Internacional",
+    "paragraph": "Con laboratorios asociados ubicados estratégicamente en Europa y África, Clean Lab ofrece una cobertura internacional integral. Nuestra red nos permite ofrecer un soporte personalizado, capaz de manejar todos los volúmenes, desde particulares hasta instituciones financieras.",
+    "europe": "Europa",
+    "africa": "África",
+    "worldwide": "Mundial",
+    "kitchen": "Tratamiento USD",
+    "kitchenCount": "25 Proyectos",
+    "bathroom": "Restauración EUR",
+    "bathroomCount": "18 Proyectos",
+    "bedroom": "Decoloración",
+    "bedroomCount": "32 Proyectos",
+    "living": "Billetes Antiguos",
+    "livingCount": "15 Proyectos",
+    "furniture": "Billetes Carbonizados",
+    "furnitureCount": "12 Proyectos",
+    "renovation": "Billetes Mojados",
+    "renovationCount": "28 Proyectos"
   },
   "service": {
-    "title": "Nuestros",
-    "titleHighlight": "Servicios",
-    "description1": "Nuestro equipo experto utiliza productos químicos especializados y polvos específicos para la limpieza de billetes bancarios, respaldados por máquinas capaces de procesar grandes volúmenes. Nuestro stock incluye productos químicos avanzados, sales de activación y polvos de humina. Confíenos sus necesidades, le propondremos soluciones a medida.",
-    "description2": "Puede contar con nosotros para resolver eficazmente todas sus preocupaciones relacionadas con la limpieza de billetes bancarios.",
-    "additionalTitle1": "Venta de solución SSD Universal para la limpieza",
-    "additionalTitle2": "Alquiler de máquinas de decapado de billetes",
-    "additionalTitle3": "Análisis por espectrofotometría",
-    "additionalTitle4": "Venta de polvo de activación para limpieza de billetes",
-    "interiorDesc1": "Soluciones personalizadas de limpieza de billetes",
-    "interiorDesc2": "Soluciones personalizadas de limpieza de billetes",
-    "interiorDesc3": "Soluciones personalizadas de limpieza de billetes",
-    "interiorDesc4": "Soluciones personalizadas de limpieza de billetes",
-    "commercialDesc": "Diseño de espacios comerciales"
+    "title": "Nuestras Soluciones",
+    "titleHighlight": "Profesionales",
+    "description1": "Clean Lab ofrece servicios integrales de limpieza y restauración de billetes utilizando tecnologías patentadas. Nuestro equipo domina las técnicas más avanzadas para obtener resultados óptimos.",
+    "description2": "Ya sea un particular, una empresa o una institución, tenemos la solución adecuada para sus necesidades específicas.",
+    "additionalTitle1": "Solución SSD Universal",
+    "additionalTitle2": "Alquiler de Máquinas Pro",
+    "additionalTitle3": "Análisis Espectrofotométrico",
+    "additionalTitle4": "Polvos de Activación",
+    "interiorDesc1": "Fórmula patentada para limpieza profunda",
+    "interiorDesc2": "Equipos de alto rendimiento",
+    "interiorDesc3": "Control de calidad científico",
+    "interiorDesc4": "Productos de activación profesionales",
+    "commercialDesc": "Soluciones para instituciones",
+    "phone": "Llámenos para un diagnóstico"
+  },
+  "services": {
+    "title": "Nuestras Soluciones",
+    "titleHighlight": "Profesionales",
+    "description1": "Clean Lab ofrece servicios integrales de limpieza y restauración de billetes utilizando tecnologías patentadas. Nuestro equipo de expertos domina las técnicas más avanzadas.",
+    "description2": "Ya sea un particular, empresa o institución, tenemos la solución.",
+    "additionalTitle1": "Solución SSD Universal",
+    "additionalTitle2": "Alquiler de Máquinas",
+    "additionalTitle3": "Análisis Espectrofotométrico",
+    "additionalTitle4": "Polvos de Activación",
+    "interiorDesc1": "Fórmula para limpieza profunda de todo tipo de billetes",
+    "interiorDesc2": "Equipo profesional de alto rendimiento con formación",
+    "interiorDesc3": "Control de calidad científico avanzado para resultados óptimos",
+    "interiorDesc4": "Productos de activación profesionales para un limpieza optimizada",
+    "commercialDesc": "Servicios dedicados a instituciones financieras con protocolos reforzados",
+    "phoneNum": "+33 1 23 45 67 89",
+    "phone": "Llámenos para un diagnóstico gratuito",
+    "ssd": {
+      "title": "Solución SSD Universal",
+      "description": "Nuestra solución SSD patentada elimina eficazmente todas las tintas."
+    },
+    "machines": {
+      "title": "Alquiler de Máquinas",
+      "description": "Equipo profesional disponible para alquiler."
+    },
+    "analysis": {
+      "title": "Análisis Espectrofotométrico",
+      "description": "Servicio de análisis científico avanzado."
+    },
+    "powder": {
+      "title": "Polvos de Activación",
+      "description": "Polvos de activación profesionales."
+    },
+    "expertiseTitle": "Experiencia y Consultoría",
+    "expertiseDesc": "Apoyo personalizado de nuestros expertos para soluciones a medida adaptadas a sus necesidades específicas",
+    "institutionTitle": "Soluciones para Instituciones"
   },
   "gallerie": {
-    "title": "Nuestra",
-    "titleHighlight": "Galería",
-    "placeholder": "Descubra nuestros logros en el análisis y limpieza de billetes bancarios seguros",
-    "note": "Diam sed sed dolor stet amet eirmod"
+    "title": "Nuestros",
+    "titleHighlight": "Logros",
+    "placeholder": "Descubra nuestros casos de éxito en la limpieza - Resultados de antes/después",
+    "note": "Proyectos completados con éxito desde 2010"
   },
   "newsletter": {
-    "title": "Suscríbase a nuestro",
-    "titleHighlight": "Boletín",
-    "placeholder": "Ingrese su email",
-    "note": "Diam sed sed dolor stet amet eirmod"
+    "title": "Manténgase Informado",
+    "titleHighlight": "Boletín de Expertos",
+    "placeholder": "Su email",
+    "note": "Reciba nuestras últimas innovaciones",
+    "subscribe": "Suscribirse",
+    "success": "Gracias por suscribirse"
   },
   "footer": {
-    "title": "Laboratorio Clean-Lab líder en Europa y África; Especialista en limpieza segura de billetes bancarios.",
-    "titleContact": "Contáctenos",
-    "titleLink": "Ingrese su email",
-    "titleService": "Nuestros Servicios",
-    "service1": "Decapado de billetes en color",
-    "service2": "Máquinas de decapado de alto rendimiento",
-    "service3": "Limpieza de billetes en blanco y negro",
-    "service4": "Análisis de seguridad de billetes",
+    "title": "Clean Lab - Experto internacional en limpieza segura de billetes desde 2010.",
+    "titleContact": "Contacto Experto",
+    "titleLink": "Enlaces Rápidos",
+    "titleService": "Soluciones",
+    "service1": "Solución SSD Universal",
+    "service2": "Alquiler de Máquina Pro",
+    "service3": "Análisis Espectrométrico",
+    "service4": "Polvos de Activación",
     "linkHome": "Inicio",
-    "linkAbout": "Acerca de",
-    "linkService": "Servicios",
-    "linkGallerie": "Galería",
-    "linkContact": "Contáctenos"
+    "linkAbout": "Nuestra Experiencia",
+    "linkService": "Soluciones",
+    "linkGallerie": "Proyectos",
+    "linkContact": "Cotización Gratuita"
+  },
+  "cta": {
+    "consultation": "Consulta Gratuita",
+    "quote": "Cotización",
+    "contact": "Experiencia Inmediata",
+    "whatsapp": "Chat de WhatsApp",
+    "call": "Llamada Directa"
+  },
+  "seo": {
+    "homeTitle": "Clean Lab | Experto en Limpieza Segura de Billetes",
+    "homeDescription": "Laboratorio líder en Europa. Soluciones SSD, resultados garantizados.",
+    "aboutTitle": "Sobre Clean Lab | Experiencia en Billetes",
+    "aboutDescription": "Descubra nuestra experiencia en limpieza segura de billetes.",
+    "servicesTitle": "Servicios de Limpieza | Soluciones SSD",
+    "servicesDescription": "Servicios integrales de limpieza, solución SSD universal.",
+    "contactTitle": "Contacto Clean Lab | Cotización Gratuita",
+    "contactDescription": "Contacte a nuestros expertos para una cotización gratuita."
+  },
+  "abouts": {
+    "badge": "Experiencia",
+    "title": "Clean Lab",
+    "description1": "Fundado en 2010, Clean Lab opera como un centro internacional de experiencia especializado en limpieza de billetes. Utilizamos tecnologías avanzadas.",
+    "description2": "Nuestra experiencia abarca todas las monedas internacionales con estrictos protocolos.",
+    "check1": "Certificado",
+    "check2": "Equipo Experto",
+    "check3": "Soporte 24/7",
+    "check4": "Precios Transparentes",
+    "readMore": "Descubra nuestra experiencia",
+    "stats": {
+      "experience": "10+ Años de Experiencia",
+      "continents": "2 Continentes",
+      "projects": "500+ Proyectos",
+      "satisfaction": "100% Satisfacción"
+    },
+    "values": {
+      "title": "Nuestro Compromiso",
+      "subtitle": "Excelencia Garantizada",
+      "description": "En Clean Lab combinamos experiencia técnica y total discreción.",
+      "security": "Máxima Seguridad",
+      "securityDesc": "Protocolos estrictos y entorno seguro.",
+      "expertise": "Experiencia Científica",
+      "expertiseDesc": "Tecnologías patentadas y análisis espectrofotométrico.",
+      "speed": "Ejecución Rápida",
+      "speedDesc": "Tratamientos rápidos y optimizados.",
+      "support": "Soporte Personalizado",
+      "supportDesc": "Soluciones a medida para cada necesidad."
+    },
+    "process": {
+      "title": "Nuestro Proceso",
+      "subtitle": "Cómo Trabajamos",
+      "description": "Un proceso estructurado para obtener resultados óptimos.",
+      "step1": "Diagnóstico Experto",
+      "step1Desc": "Análisis en profundidad del estado de los billetes.",
+      "step2": "Tratamiento Especializado",
+      "step2Desc": "Aplicación de soluciones SSD y técnicas de decapado.",
+      "step3": "Control de Calidad",
+      "step3Desc": "Rigurosa verificación espectrofotométrica.",
+      "step4": "Entrega Segura",
+      "step4Desc": "Retorno discreto y seguro de los billetes."
+    },
+    "cta": {
+      "title": "¿Listo para Empezar?",
+      "subtitle": "Confíe en Nosotros para Restaurar sus Billetes",
+      "description": "Nuestro equipo de expertos está a su disposición.",
+      "quote": "Cotización Gratuita",
+      "whatsapp": "Chat de WhatsApp"
+    }
+  },
+  "consultation": {
+    "title": "Consulta de Expertos",
+    "subtitle": "Obtenga un Análisis Personalizado",
+    "formTitle": "Solicitar Experiencia",
+    "serviceType": "Tipo de Servicio",
+    "currency": "Moneda",
+    "name": "Su Nombre",
+    "email": "Su Email",
+    "phone": "Su Teléfono",
+    "volume": "Volumen a tratar",
+    "message": "Descripción...",
+    "submit": "Enviar",
+    "quote": "Cotización"
+  },
+  "testimonials": {
+    "title": "Testimonios",
+    "subtitle": "Lo Que Dicen",
+    "client1": {
+      "text": "¡Servicio excepcional! Mis billetes USD quedaron perfectos.",
+      "name": "Pedro M.",
+      "role": "Cliente Particular"
+    },
+    "client2": {
+      "text": "Como institución, apreciamos enormemente la profesionalidad.",
+      "name": "Sara L.",
+      "role": "Gerente Institucional"
+    },
+    "client3": {
+      "text": "El alquiler de máquinas con formación incluida fue fundamental.",
+      "name": "Marcos T.",
+      "role": "Empresario"
+    }
+  },
+  "contact": {
+    "title": "¿Una Pregunta?",
+    "titleHighlight": "Contáctenos",
+    "description": "Nuestro equipo de expertos está a su disposición para responder. Obtenga una consulta gratuita.",
+    "phone": "Teléfono",
+    "email": "Email",
+    "address": "Dirección",
+    "quickContact": "Contacto Rápido",
+    "call": "Llamar",
+    "form": {
+      "name": "Nombre",
+      "email": "Email",
+      "phone": "Teléfono",
+      "service": "Servicio",
+      "subject": "Asunto",
+      "message": "Mensaje...",
+      "submit": "Enviar Mensaje"
+    },
+    "success": {
+      "title": "¡Mensaje Enviado!",
+      "message": "Gracias por su mensaje. Lo contactaremos a la brevedad."
+    },
+    "error": {
+      "title": "Error",
+      "message": "Ocurrió un error al enviar. Por favor intente nuevamente."
+    }
+  },
+  "videos": {
+    "demo": "Demostraciones",
+    "title": "Vea Nuestras Soluciones en Acción",
+    "desc": "Descubra nuestros procesos de limpieza y los resultados obtenidos con nuestras tecnologías patentadas",
+    "processTitle": "Proceso de Limpieza SSD",
+    "processDesc": "Demostración completa del proceso de limpieza con nuestra solución SSD universal",
+    "resultsTitle": "Resultados Antes/Después",
+    "resultsDesc": "Comparación visual de los resultados obtenidos en diferentes tipos de billetes tratados",
+    "moreInfo": "¿Necesita más información?",
+    "moreInfoDesc": "Nuestros expertos están disponibles para responder todas sus preguntas y ofrecerle una demostración personalizada",
+    "cta": "Demostración Personalizada"
+  },
+  "projects": {
+    "seo": {
+      "title": "Galería de Proyectos | Logros en Limpieza de Billetes - Clean Lab",
+      "description": "Descubra nuestros logros en limpieza y restauración de billetes. Galería antes/después, resultados concretos y testimonios de clientes."
+    },
+    "hero": {
+      "title1": "Nuestra",
+      "titleHighlight": "Galería",
+      "title2": "de Logros",
+      "subtitle": "Descubra los resultados concretos de nuestras intervenciones en limpieza y restauración de billetes"
+    },
+    "filters": {
+      "all": "Todos los Proyectos",
+      "ssd": "Solución SSD",
+      "machines": "Máquinas",
+      "powder": "Polvos de Activación"
+    },
+    "testimonials": {
+      "title": "Ellos Confiaron en Nosotros",
+      "subtitle": "Descubra los comentarios de nuestros clientes satisfechos",
+      "client1Role": "Cliente Particular",
+      "client1Quote": "Resultados excepcionales en mis billetes de USD. El proceso fue rápido y profesional. ¡Lo recomiendo encarecidamente!",
+      "client2Role": "Gerente Institucional",
+      "client2Quote": "La profesionalidad y discreción de Clean Lab son notables. Análisis precisos y resultados consistentes.",
+      "client3Role": "Emprendedor",
+      "client3Quote": "El alquiler de máquinas impulsó nuestra productividad. Excelente formación y soporte técnico receptivo. Un socio de confianza."
+    },
+    "cta": {
+      "title": "¿Listo para Transformar sus Billetes?",
+      "subtitle": "Únase a nuestros numerosos clientes satisfechos y obtenga resultados profesionales",
+      "btn": "Presupuesto Gratuito"
+    },
+    "loadMore": "Cargar Más Proyectos"
+  },
+  "team": {
+    "seo": {
+      "title": "Nuestro Equipo | Expertos en Limpieza de Billetes - Clean Lab",
+      "description": "Descubre nuestro equipo de expertos en limpieza y restauración de billetes."
+    },
+    "hero": {
+      "title": "Nuestro",
+      "titleHighlight": "Equipo",
+      "subtitle": "Expertos calificados a tu servicio"
+    },
+    "members": [
+      {
+        "name": "Dr. Martín",
+        "role": "Director Científico",
+        "bio": "Experto en química analítica con 15 años de experiencia"
+      },
+      {
+        "name": "Sofía Bernard",
+        "role": "Gerente de Operaciones",
+        "bio": "Gestión de operaciones y control de calidad"
+      },
+      {
+        "name": "Ahmed Al-Fayed",
+        "role": "Director Regional de África",
+        "bio": "Coordinación de operaciones en África"
+      },
+      {
+        "name": "María Dubois",
+        "role": "Gerente de Atención al Cliente",
+        "bio": "Soporte al cliente y gestión de solicitudes"
+      }
+    ],
+    "cta": {
+      "title": "Únete a Nuestro Equipo",
+      "subtitle": "Siempre estamos buscando talento",
+      "button": "Contáctanos"
+    }
+  },
+  "error404": {
+    "title": "404",
+    "titleHighlight": "Página No Encontrada",
+    "subtitle": "La página que buscas no existe o ha sido movida.",
+    "cta": {
+      "button": "Volver a Inicio",
+      "link": "/"
+    }
   }
 }

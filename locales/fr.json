@@ -61,7 +61,19 @@
     "paragraph": "Avec des laboratoires partenaires stratégiquement localisés à travers l'Europe et l'Afrique, Clean Laboratoire assure une couverture internationale complète. Notre réseau nous permet d'offrir un accompagnement personnalisé, adapté aux réglementations locales et capable de traiter tous volumes, des particuliers aux institutions financières. Chaque partenaire respecte nos standards de qualité et de sécurité élevés.",
     "europe": "Europe",
     "africa": "Afrique",
-    "worldwide": "International"
+    "worldwide": "International",
+    "kitchen": "USD Traitement",
+    "kitchenCount": "25 Projets",
+    "bathroom": "EUR Restauration",
+    "bathroomCount": "18 Projets",
+    "bedroom": "Décapage Couleur",
+    "bedroomCount": "32 Projets",
+    "living": "Billets Anciens",
+    "livingCount": "15 Projets",
+    "furniture": "Billets Carbonisés",
+    "furnitureCount": "12 Projets",
+    "renovation": "Billets Mouillés",
+    "renovationCount": "28 Projets"
   },
   "service": {
     "title": "Nos Solutions",
@@ -93,6 +105,7 @@
     "interiorDesc3": "Contrôle qualité scientifique avancé pour résultats optimaux",
     "interiorDesc4": "Produits activation professionnels pour nettoyage optimisé",
     "commercialDesc": "Services dédiés aux institutions financières avec protocoles renforcés",
+    "phoneNum": "+33 1 23 45 67 89",
     "phone": "Appelez-nous pour un diagnostic gratuit",
     "ssd": {
       "title": "Solution SSD Universelle",
@@ -109,7 +122,10 @@
     "powder": {
       "title": "Poudres d'Activation",
       "description": "Poudres professionnelles d'activation pour processus de nettoyage optimisé. Compatibles avec toutes les devises et types d'encres."
-    }
+    },
+    "expertiseTitle": "Expertise & Conseil",
+    "expertiseDesc": "Accompagnement personnalisé par nos experts pour solutions sur mesure adaptées à vos besoins spécifiques",
+    "institutionTitle": "Solutions Institutions"
   },
   "gallerie": {
     "title": "Nos",
@@ -132,7 +148,7 @@
     "titleService": "Solutions",
     "service1": "Solution SSD Universelle",
     "service2": "Location Machines Pro",
-    "service3": "Analyse Spectrophotométrie", 
+    "service3": "Analyse Spectrophotométrie",
     "service4": "Poudres d'Activation",
     "linkHome": "Accueil",
     "linkAbout": "Notre Expertise",
@@ -157,7 +173,6 @@
     "contactTitle": "Contact Clean Laboratoire | Devis Gratuit Nettoyage Billets",
     "contactDescription": "Contactez nos experts pour un devis gratuit. Solutions sur mesure pour particuliers et professionnels. Europe et Afrique."
   },
-
   "abouts": {
     "badge": "Expertise",
     "title": "Clean Laboratoire",
@@ -241,7 +256,6 @@
       "role": "Entrepreneur"
     }
   },
-
   "contact": {
     "title": "Une Question ?",
     "titleHighlight": "Contactez-Nous",
@@ -268,7 +282,258 @@
       "title": "Erreur d'Envoi",
       "message": "Une erreur s'est produite lors de l'envoi de votre message. Veuillez réessayer ou nous contacter directement."
     }
+  },
+  "videos": {
+    "demo": "Démonstrations",
+    "title": "Voir Nos Solutions en Action",
+    "desc": "Découvrez nos processus de nettoyage et les résultats obtenus grâce à nos technologies brevetées",
+    "processTitle": "Processus de Nettoyage SSD",
+    "processDesc": "Démonstration complète du processus de nettoyage avec notre solution SSD universelle",
+    "resultsTitle": "Résultats Avant/Après",
+    "resultsDesc": "Comparaison visuelle des résultats obtenus sur différents types de billets traités",
+    "moreInfo": "Besoin de Plus d'Informations ?",
+    "moreInfoDesc": "Nos experts sont disponibles pour répondre à toutes vos questions et vous proposer une démonstration personnalisée",
+    "cta": "Démonstration Personnalisée"
+  },
+  "projects": {
+    "seo": {
+      "title": "Galerie Projets | Réalisations Nettoyage Billets - Clean Laboratoire",
+      "description": "Découvrez nos réalisations en nettoyage et restauration de billets. Galerie avant/après, résultats concrets et témoignages clients."
+    },
+    "hero": {
+      "title1": "Notre",
+      "titleHighlight": "Galerie",
+      "title2": "de Réalisations",
+      "subtitle": "Découvrez les résultats concrets de nos interventions en nettoyage et restauration de billets"
+    },
+    "filters": {
+      "all": "Tous les Projets",
+      "ssd": "Solution SSD",
+      "machines": "Machines",
+      "powder": "Poudres Activation"
+    },
+    "testimonials": {
+      "title": "Ils Nous Ont Fait Confiance",
+      "subtitle": "Découvrez les retours de nos clients satisfaits",
+      "client1Role": "Client Particulier",
+      "client1Quote": "Des résultats exceptionnels sur mes billets USD. Le processus était rapide et professionnel. Je recommande vivement !",
+      "client2Role": "Gestionnaire Institutionnel",
+      "client2Quote": "Le professionnalisme et la discrétion de Clean Laboratoire sont remarquables. Analyses précises et résultats constants.",
+      "client3Role": "Entrepreneur",
+      "client3Quote": "La location de machine a boosté notre productivité. Formation excellente et support technique réactif. Partenaire de confiance."
+    },
+    "cta": {
+      "title": "Prêt à Transformer Vos Billets ?",
+      "subtitle": "Rejoignez nos nombreux clients satisfaits et obtenez des résultats professionnels",
+      "btn": "Devis Gratuit"
+    },
+    "loadMore": "Charger Plus de Projets"
+  },
+  "service_details": {
+    "solution-ssd-universelle-nettoyage": {
+      "hero": {
+        "title": "Solution SSD",
+        "titleHighlight": "Universelle",
+        "subtitle": "Formule brevetée pour le nettoyage et décapage profond de tous types de billets de banque"
+      },
+      "content": {
+        "title": "Solution SSD Universelle Professionnelle",
+        "description": "Notre solution SSD brevetée représente l'innovation la plus avancée dans le domaine du nettoyage et décapage de billets. Formulée spécifiquement pour éliminer toutes les encres et colorants tout en préservant l'intégrité des billets."
+      },
+      "features": [
+        { "icon": "bi-shield-check", "bg": "bg-primary", "title": "Sécurité Maximale", "description": "Protocoles stricts garantissant l'intégrité des billets traités" },
+        { "icon": "bi-globe", "bg": "bg-success", "title": "Universalité", "description": "Compatible avec toutes les devises internationales" },
+        { "icon": "bi-lightning-charge", "bg": "bg-warning", "title": "Rapidité", "description": "Résultats visibles en moins de 48 heures" },
+        { "icon": "bi-award", "bg": "bg-info", "title": "Résultats Garantis", "description": "Efficacité prouvée sur des milliers de cas" }
+      ],
+      "video": {
+        "title": "Démonstration en Vidéo",
+        "poster": "/img/video-poster-1.png",
+        "src": "/videos/processus-ssd.mp4",
+        "caption": "Démonstration complète du processus de nettoyage SSD sur billet USD"
+      },
+      "sidebar": {
+        "title": "Devis Gratuit",
+        "call": "Appel Immédiat",
+        "whatsapp": "WhatsApp Expert",
+        "email": "Devis par Email",
+        "info": [
+          { "icon": "bi-currency-dollar", "title": "Devises traitées", "text": "USD, EUR, GBP, etc." },
+          { "icon": "bi-shield-check", "title": "Garantie", "text": "Résultats 100% satisfaisants" }
+        ]
+      },
+      "testimonial": {
+        "text": "\"La solution SSD a parfaitement nettoyé mes billets USD. Résultats exceptionnels et service professionnel.\"",
+        "author": "Pierre M."
+      },
+      "cta": {
+        "title": "Prêt à Découvrir Notre Solution SSD ?",
+        "subtitle": "Contactez nos experts pour une évaluation gratuite de vos billets",
+        "button": "Appeler Maintenant"
+      }
+    },
+    "location-machines-decapage": {
+      "hero": {
+        "title": "Location Machines",
+        "titleHighlight": "Professionnelles",
+        "subtitle": "Équipements haute performance pour le décapage et nettoyage de billets avec formation complète incluse"
+      },
+      "content": {
+        "title": "Machines de Décapage Haute Performance",
+        "description": "Notre parc de machines professionnelles offre des solutions complètes pour le décapage et nettoyage de billets à grande échelle. Chaque équipement est accompagné d'une formation complète et d'un support technique dédié."
+      },
+      "features": [
+        { "icon": "bi-cash-coin", "bg": "bg-warning", "title": "Économique", "description": "Pas d'investissement initial lourd" },
+        { "icon": "bi-tools", "bg": "bg-warning", "title": "Maintenance Incluse", "description": "Support technique 24/7" },
+        { "icon": "bi-graph-up-arrow", "bg": "bg-warning", "title": "Flexibilité", "description": "Adapté à vos volumes" }
+      ],
+      "video": {
+        "title": "Démonstration Machine en Action",
+        "poster": "/img/video-poster-machine.png",
+        "src": "/videos/demonstration-machine-decapage.mp4",
+        "caption": "Démonstration complète du fonctionnement de la machine Décap'Pro 5000"
+      },
+      "sidebar": {
+        "title": "Devis Location",
+        "call": "Appel Location",
+        "whatsapp": "WhatsApp Devis",
+        "email": "Réserver Maintenant",
+        "info": [
+          { "icon": "bi-clock", "title": "Livraison", "text": "Sous 48-72h" },
+          { "icon": "bi-headset", "title": "Support", "text": "Technique 24/7" }
+        ]
+      },
+      "testimonial": {
+        "text": "\"La location de machine nous a permis de traiter de gros volumes rapidement. Formation excellente et support réactif.\"",
+        "author": "Marc T., Entrepreneur"
+      },
+      "cta": {
+        "title": "Prêt à Optimiser Votre Production ?",
+        "subtitle": "Louez nos machines professionnelles et boostez votre capacité de traitement",
+        "button": "Réserver Maintenant"
+      }
+    },
+    "analyse-spectrophotometrie-billets": {
+      "hero": {
+        "title": "Analyse",
+        "titleHighlight": "Spectrophotométrie",
+        "subtitle": "Contrôle qualité scientifique avancé pour déterminer la composition des encres et optimiser les protocoles de nettoyage"
+      },
+      "content": {
+        "title": "Analyse Scientifique Avancée",
+        "description": "Notre service d'analyse spectrophotométrie utilise des technologies de pointe pour analyser la composition chimique des encres et déterminer le protocole de nettoyage optimal pour chaque type de billet."
+      },
+      "features": [],
+      "video": {
+        "title": "Notre Laboratoire en Action",
+        "poster": "/img/video-poster-lab.png",
+        "src": "/videos/laboratoire-analyse-spectro.mp4",
+        "caption": "Visite de notre laboratoire et démonstration du processus d'analyse"
+      },
+      "sidebar": {
+        "title": "Analyse Expert",
+        "call": "Consultation Expert",
+        "whatsapp": "WhatsApp Analyse",
+        "email": "Demander Analyse",
+        "info": [
+          { "icon": "bi-clock", "title": "Délai Analyse", "text": "24-48 heures" },
+          { "icon": "bi-file-earmark-text", "title": "Rapport", "text": "Complet avec recommandations" },
+          { "icon": "bi-shield-check", "title": "Confidentialité", "text": "Totale garantie" }
+        ]
+      },
+      "testimonial": {
+        "text": "\"L'analyse spectrophotométrique nous a permis d'optimiser nos protocoles. Précision scientifique remarquable.\"",
+        "author": "Sarah L., Institution"
+      },
+      "cta": {
+        "title": "Besoin d'une Analyse Scientifique ?",
+        "subtitle": "Confiez-nous vos billets pour une analyse spectrophotométrique précise",
+        "button": "Analyser Maintenant"
+      }
+    },
+    "poudre-activation-nettoyage": {
+      "hero": {
+        "title": "Poudres",
+        "titleHighlight": "d'Activation",
+        "subtitle": "Produits activation professionnels pour processus de nettoyage optimisé. Compatibles avec toutes les devises et types d'encres."
+      },
+      "content": {
+        "title": "Poudres d'Activation Professionnelles",
+        "description": "Nos poudres d'activation spécialement formulées optimisent le processus de nettoyage des billets. Développées en laboratoire, elles garantissent des résultats constants et une efficacité maximale."
+      },
+      "features": [],
+      "video": {
+        "title": "Guide d'Utilisation",
+        "poster": "/img/video-poster-poudre.png",
+        "src": "/videos/utilisation-poudres-activation.mp4",
+        "caption": "Démonstration complète de l'utilisation des poudres d'activation"
+      },
+      "sidebar": {
+        "title": "Commander",
+        "call": "Commander par Téléphone",
+        "whatsapp": "Commander WhatsApp",
+        "email": "Devis en Ligne",
+        "info": [
+          { "icon": "bi-shield-check", "title": "Emballage", "text": "Discret et sécurisé" },
+          { "icon": "bi-arrow-repeat", "title": "Stock", "text": "Disponible immédiatement" }
+        ]
+      },
+      "testimonial": {
+        "text": "\"La poudre Pro a résolu nos problèmes d'encres résistantes. Efficacité remarquable et facile à utiliser.\"",
+        "author": "Technicien Professionnel"
+      },
+      "cta": {
+        "title": "Prêt à Optimiser Votre Nettoyage ?",
+        "subtitle": "Commandez nos poudres d'activation et obtenez des résultats professionnels",
+        "button": "Commander WhatsApp"
+      }
+    }
+  },
+  "team": {
+    "seo": {
+      "title": "Notre Équipe | Experts Nettoyage Billets - Clean Laboratoire",
+      "description": "Découvrez notre équipe d'experts en nettoyage et restauration de billets de banque."
+    },
+    "hero": {
+      "title": "Notre",
+      "titleHighlight": "Équipe",
+      "subtitle": "Des experts qualifiés à votre service"
+    },
+    "members": [
+      {
+        "name": "Dr. Martin",
+        "role": "Directeur Scientifique",
+        "bio": "Expert en chimie analytique avec 15 ans d'expérience"
+      },
+      {
+        "name": "Sophie Bernard",
+        "role": "Responsable Opérations",
+        "bio": "Gestion des opérations et contrôle qualité"
+      },
+      {
+        "name": "Ahmed Al-Fayed",
+        "role": "Directeur Régional Afrique",
+        "bio": "Coordination des opérations en Afrique"
+      },
+      {
+        "name": "Marie Dubois",
+        "role": "Responsable Clientèle",
+        "bio": "Support client et gestion des demandes"
+      }
+    ],
+    "cta": {
+      "title": "Rejoignez Notre Équipe",
+      "subtitle": "Nous sommes toujours à la recherche de talents",
+      "button": "Contactez-nous"
+    }
+  },
+  "error404": {
+    "title": "404",
+    "titleHighlight": "Page Non Trouvée",
+    "subtitle": "La page que vous recherchez n'existe pas ou a été déplacée.",
+    "cta": {
+      "button": "Retour à l'Accueil",
+      "link": "/"
+    }
   }
-
-
 }

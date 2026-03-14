@@ -1,136 +1,164 @@
-<%- include('partials/header', {
-    meta: meta || {
-        title: 'Contact Clean Laboratoire | Devis Gratuit Nettoyage Billets - Expert Europe Afrique',
-        description: 'Contactez Clean Laboratoire pour un devis gratuit. Expert en nettoyage de billets, solutions SSD, décapage sécurisé. Europe et Afrique.',
-        keywords: 'contact clean lab, devis nettoyage billets, expert SSD, laboratoire contact, consultation gratuite',
-        canonical: '/contact-laboratoire-nettoyage',
-        robots: 'index, follow'
-    }
-}) %>
+<%- include('partials/header', { meta: typeof meta !=='undefined' && meta ? meta : { title: typeof t !=='undefined' &&
+    t.seo ? t.seo.contactTitle : 'Contact Clean Laboratoire | Devis Gratuit Nettoyage Billets - Expert Europe Afrique' ,
+    description: typeof t !=='undefined' && t.seo ? t.seo.contactDescription
+    : 'Contactez Clean Laboratoire pour un devis gratuit. Expert en nettoyage de billets, solutions SSD, décapage sécurisé. Europe et Afrique.'
+    , keywords: 'contact clean lab, devis nettoyage billets, expert SSD, laboratoire contact, consultation gratuite' ,
+    canonical: '/contact-laboratoire-nettoyage' , robots: 'index, follow' } }) %>
 
     <!-- Contact Start -->
     <div class="container-fluid py-5">
         <div class="container py-5">
             <div class="text-center wow fadeIn" data-wow-delay="0.1s">
                 <h1 class="mb-5">
-                    <%= typeof t !== 'undefined' && t.contact ? t.contact.title : 'Une Question ?' %> 
-                    <span class="text-uppercase text-primary bg-light px-2">
-                        <%= typeof t !== 'undefined' && t.contact ? t.contact.titleHighlight : 'Contactez-Nous' %>
-                    </span>
+                    <%= typeof t !=='undefined' && t.contact ? t.contact.title : 'Une Question ?' %>
+                        <span class="text-uppercase text-primary bg-light px-2">
+                            <%= typeof t !=='undefined' && t.contact ? t.contact.titleHighlight : 'Contactez-Nous' %>
+                        </span>
                 </h1>
             </div>
             <div class="row justify-content-center">
                 <div class="col-lg-7">
                     <p class="text-center mb-4">
-                        <%= typeof t !== 'undefined' && t.contact ? t.contact.description : 'Notre équipe d\'experts est à votre écoute pour répondre à toutes vos questions concernant le nettoyage et la restauration de billets. Obtenez une consultation gratuite et personnalisée.' %>
+                        <%= typeof t !=='undefined' && t.contact ? t.contact.description
+                            : "Notre équipe d' experts est à votre écoute pour répondre à toutes vos questions concernant le nettoyage et la restauration de billets. Obtenez une consultation gratuite et personnalisée."
+                            %>
                     </p>
-                    
+
                     <!-- Informations de contact -->
-                    <div class="row mb-5">
-                        <div class="col-md-4 text-center mb-3">
-                            <div class="contact-info bg-light rounded p-4">
-                                <i class="fa fa-2x fa-phone text-primary mb-3"></i>
-                                <h5><%= typeof t !== 'undefined' && t.contact ? t.contact.phone : 'Téléphone' %></h5>
-                                <p class="mb-0"><%= companyInfo.phone %></p>
+                    <div class="row mb-5 justify-content-center">
+                        <% (companyInfo.phones || []).forEach(p=> { %>
+                            <div class="col-md-4 text-center mb-3">
+                                <div class="contact-info bg-light rounded p-4">
+                                    <i class="fa fa-2x fa-phone text-primary mb-3"></i>
+                                    <h5>
+                                        <%= typeof t !=='undefined' && t.contact ? t.contact.phone : 'Téléphone' %>
+                                    </h5>
+                                    <p class="mb-0">
+                                        <%= p %>
+                                    </p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-4 text-center mb-3">
-                            <div class="contact-info bg-light rounded p-4">
-                                <i class="fa fa-2x fa-phone text-primary mb-3"></i>
-                                <h5><%= typeof t !== 'undefined' && t.contact ? t.contact.phone : 'Téléphone' %></h5>
-                                <p class="mb-0"><%= companyInfo.phone %></p>
-                            </div>
-                        </div>
+                            <% }) %>
 
-                        <div class="col-md-4 text-center mb-3">
-                            <div class="contact-info bg-light rounded p-4">
-                                <i class="fa fa-2x fa-phone text-primary mb-3"></i>
-                                <h5><%= typeof t !== 'undefined' && t.contact ? t.contact.phone : 'Téléphone' %></h5>
-                                <p class="mb-0"><%= companyInfo.phone %></p>
-                            </div>
-                        </div>
-                        <div class="col-md-4 text-center mb-3">
-                            <div class="contact-info bg-light rounded p-4">
-                                <i class="fa fa-2x fa-phone text-primary mb-3"></i>
-                                <h5><%= typeof t !== 'undefined' && t.contact ? t.contact.phone : 'Téléphone' %></h5>
-                                <p class="mb-0"><%= companyInfo.phone %></p>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-4 text-center mb-3">
-                            <div class="contact-info bg-light rounded p-4">
-                                <i class="fa fa-2x fa-envelope text-primary mb-3"></i>
-                                <h5><%= typeof t !== 'undefined' && t.contact ? t.contact.email : 'Email' %></h5>
-                                <p class="mb-0"><%= companyInfo.email %></p>
-                            </div>
-                        </div>
+                                <% (companyInfo.emails && companyInfo.emails.length > 0 ? companyInfo.emails : (companyInfo.email ? [companyInfo.email] : [])).forEach(function(e) { %>
+                                <div class="col-md-4 text-center mb-3">
+                                    <div class="contact-info bg-light rounded p-4">
+                                        <i class="fa fa-2x fa-envelope text-primary mb-3"></i>
+                                        <h5>
+                                            <%= typeof t !=='undefined' && t.contact ? t.contact.email : 'Email' %>
+                                        </h5>
+                                        <p class="mb-0">
+                                            <%= e %>
+                                        </p>
+                                    </div>
+                                </div>
+                                <% }); %>
 
-                        <div class="col-md-4 text-center mb-3">
-                            <div class="contact-info bg-light rounded p-4">
-                                <i class="fa fa-2x fa-envelope text-primary mb-3"></i>
-                                <h5><%= typeof t !== 'undefined' && t.contact ? t.contact.email : 'Email' %></h5>
-                                <p class="mb-0"><%= companyInfo.email %></p>
-                            </div>
-                        </div>
-                        
                     </div>
 
                     <div class="wow fadeIn" data-wow-delay="0.3s">
-                        <form action="/contact/send" method="POST">
+                        <form id="contactMainForm">
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="name" name="name" 
-                                               placeholder="<%= typeof t !== 'undefined' && t.contact ? t.contact.form.name : 'Votre Nom' %>" required>
-                                        <label for="name"><%= typeof t !== 'undefined' && t.contact ? t.contact.form.name : 'Votre Nom' %></label>
+                                        <input type="text" class="form-control" id="name" name="name"
+                                            placeholder="<%= typeof t !== 'undefined' && t.contact ? t.contact.form.name : 'Votre Nom' %>"
+                                            required>
+                                        <label for="name">
+                                            <%= typeof t !=='undefined' && t.contact ? t.contact.form.name : 'Votre Nom'
+                                                %>
+                                        </label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="email" class="form-control" id="email" name="email" 
-                                               placeholder="<%= typeof t !== 'undefined' && t.contact ? t.contact.form.email : 'Votre Email' %>" required>
-                                        <label for="email"><%= typeof t !== 'undefined' && t.contact ? t.contact.form.email : 'Votre Email' %></label>
+                                        <input type="email" class="form-control" id="email" name="email"
+                                            placeholder="<%= typeof t !== 'undefined' && t.contact ? t.contact.form.email : 'Votre Email' %>"
+                                            required>
+                                        <label for="email">
+                                            <%= typeof t !=='undefined' && t.contact ? t.contact.form.email
+                                                : 'Votre Email' %>
+                                        </label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="tel" class="form-control" id="phone" name="phone" 
-                                               placeholder="<%= typeof t !== 'undefined' && t.contact ? t.contact.form.phone : 'Votre Téléphone' %>">
-                                        <label for="phone"><%= typeof t !== 'undefined' && t.contact ? t.contact.form.phone : 'Votre Téléphone' %></label>
+                                        <input type="tel" class="form-control" id="phone" name="phone"
+                                            placeholder="<%= typeof t !== 'undefined' && t.contact ? t.contact.form.phone : 'Votre Téléphone' %>">
+                                        <label for="phone">
+                                            <%= typeof t !=='undefined' && t.contact ? t.contact.form.phone
+                                                : 'Votre Téléphone' %>
+                                        </label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
                                         <select class="form-select" id="service" name="service" required>
-                                            <option value="" selected disabled><%= typeof t !== 'undefined' && t.contact ? t.contact.form.service : 'Type de Service' %></option>
-                                            <option value="ssd"><%= typeof t !== 'undefined' && t.services ? t.services.additionalTitle1 : 'Solution SSD Universelle' %></option>
-                                            <option value="machines"><%= typeof t !== 'undefined' && t.services ? t.services.additionalTitle2 : 'Location Machines' %></option>
-                                            <option value="analysis"><%= typeof t !== 'undefined' && t.services ? t.services.additionalTitle3 : 'Analyse Spectrophotométrie' %></option>
-                                            <option value="powder"><%= typeof t !== 'undefined' && t.services ? t.services.additionalTitle4 : 'Poudres d\'Activation' %></option>
-                                            <option value="expertise">Expertise & Conseil</option>
-                                            <option value="institution">Solutions Institutions</option>
+                                            <option value="" selected disabled>
+                                                <%= typeof t !=='undefined' && t.contact ? t.contact.form.service
+                                                    : 'Type de Service' %>
+                                            </option>
+                                            <option value="ssd">
+                                                <%= typeof t !=='undefined' && t.services ? t.services.additionalTitle1
+                                                    : 'Solution SSD Universelle' %>
+                                            </option>
+                                            <option value="machines">
+                                                <%= typeof t !=='undefined' && t.services ? t.services.additionalTitle2
+                                                    : 'Location Machines' %>
+                                            </option>
+                                            <option value="analysis">
+                                                <%= typeof t !=='undefined' && t.services ? t.services.additionalTitle3
+                                                    : 'Analyse Spectrophotométrie' %>
+                                            </option>
+                                            <option value="powder">
+                                                <%= typeof t !=='undefined' && t.services ? t.services.additionalTitle4
+                                                    : 'Poudres d\' Activation' %>
+                                            </option>
+                                            <option value="expertise">
+                                                <%= typeof t !=='undefined' && t.services && t.services.expertiseTitle ?
+                                                    t.services.expertiseTitle : 'Expertise & Conseil' %>
+                                            </option>
+                                            <option value="institution">
+                                                <%= typeof t !=='undefined' && t.services && t.services.institutionTitle
+                                                    ? t.services.institutionTitle : 'Solutions Institutions' %>
+                                            </option>
                                         </select>
-                                        <label for="service"><%= typeof t !== 'undefined' && t.contact ? t.contact.form.service : 'Type de Service' %></label>
+                                        <label for="service">
+                                            <%= typeof t !=='undefined' && t.contact ? t.contact.form.service
+                                                : 'Type de Service' %>
+                                        </label>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="subject" name="subject" 
-                                               placeholder="<%= typeof t !== 'undefined' && t.contact ? t.contact.form.subject : 'Sujet' %>" required>
-                                        <label for="subject"><%= typeof t !== 'undefined' && t.contact ? t.contact.form.subject : 'Sujet' %></label>
+                                        <input type="text" class="form-control" id="subject" name="subject"
+                                            placeholder="<%= typeof t !== 'undefined' && t.contact ? t.contact.form.subject : 'Sujet' %>"
+                                            required>
+                                        <label for="subject">
+                                            <%= typeof t !=='undefined' && t.contact ? t.contact.form.subject : 'Sujet'
+                                                %>
+                                        </label>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <textarea class="form-control" placeholder="<%= typeof t !== 'undefined' && t.contact ? t.contact.form.message : 'Décrivez votre besoin en détail...' %>" 
-                                                  id="message" name="message" style="height: 150px" required></textarea>
-                                        <label for="message"><%= typeof t !== 'undefined' && t.contact ? t.contact.form.message : 'Message' %></label>
+                                        <textarea class="form-control"
+                                            placeholder="<%= typeof t !== 'undefined' && t.contact ? t.contact.form.message : 'Décrivez votre besoin en détail...' %>"
+                                            id="message" name="message" style="height: 150px" required></textarea>
+                                        <label for="message">
+                                            <%= typeof t !=='undefined' && t.contact ? t.contact.form.message
+                                                : 'Message' %>
+                                        </label>
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <button class="btn btn-primary w-100 py-3" type="submit">
+                                    <button class="btn btn-primary w-100 py-3" id="contactSubmitBtn" type="submit">
                                         <i class="fa fa-paper-plane me-2"></i>
-                                        <%= typeof t !== 'undefined' && t.contact ? t.contact.form.submit : 'Envoyer le Message' %>
+                                        <span id="contactBtnText">
+                                        <%= typeof t !=='undefined' && t.contact ? t.contact.form.submit
+                                            : 'Envoyer le Message' %>
+                                        </span>
+                                        <span id="contactBtnSpinner" style="display:none;"><i class="fa fa-spinner fa-spin"></i></span>
                                     </button>
                                 </div>
                             </div>
@@ -139,17 +167,19 @@
 
                     <!-- Contact rapide -->
                     <div class="text-center mt-5">
-                        <h4 class="mb-3"><%= typeof t !== 'undefined' && t.contact ? t.contact.quickContact : 'Contact Rapide' %></h4>
+                        <h4 class="mb-3">
+                            <%= typeof t !=='undefined' && t.contact ? t.contact.quickContact : 'Contact Rapide' %>
+                        </h4>
                         <div class="d-flex justify-content-center gap-3 flex-wrap">
-                            <a href="https://wa.me/<%= companyInfo.whatsapp %>?text=Bonjour%20Clean%20Laboratoire,%20je%20souhaite%20obtenir%20des%20informations%20sur%20vos%20services%20de%20nettoyage%20de%20billets." 
-                               target="_blank" 
-                               class="btn btn-success btn-lg">
+                            <a href="https://wa.me/<%= companyInfo.whatsapp %>?text=Bonjour%20Clean%20Laboratoire,%20je%20souhaite%20obtenir%20des%20informations%20sur%20vos%20services%20de%20nettoyage%20de%20billets."
+                                target="_blank" class="btn btn-success btn-lg">
                                 <i class="fab fa-whatsapp me-2"></i>WhatsApp
                             </a>
-                            <a href="tel:<%= companyInfo.phone %>" class="btn btn-primary btn-lg">
-                                <i class="fa fa-phone me-2"></i><%= typeof t !== 'undefined' && t.contact ? t.contact.call : 'Appeler' %>
+                            <a href="tel:<%= (companyInfo.phones && companyInfo.phones[0]) || '' %>" class="btn btn-primary btn-lg">
+                                <i class="fa fa-phone me-2"></i>
+                                <%= typeof t !=='undefined' && t.contact ? t.contact.call : 'Appeler' %>
                             </a>
-                            <a href="mailto:<%= companyInfo.email %>" class="btn btn-outline-primary btn-lg">
+                            <a href="mailto:<%= (companyInfo.emails && companyInfo.emails[0]) || companyInfo.email || '' %>" class="btn btn-outline-primary btn-lg">
                                 <i class="fa fa-envelope me-2"></i>Email
                             </a>
                         </div>
@@ -160,31 +190,89 @@
     </div>
     <!-- Contact End -->
 
-<style>
-.contact-info {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid #e9ecef;
-}
+    <style>
+        .contact-info {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #e9ecef;
+        }
 
-.contact-info:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
+        .contact-info:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
 
-.form-floating > .form-control:focus ~ label,
-.form-floating > .form-control:not(:placeholder-shown) ~ label {
-    color: #0d6efd;
-}
+        .form-floating>.form-control:focus~label,
+        .form-floating>.form-control:not(:placeholder-shown)~label {
+            color: #0d6efd;
+        }
 
-.btn-success {
-    background-color: #25D366;
-    border-color: #25D366;
-}
+        .btn-success {
+            background-color: #25D366;
+            border-color: #25D366;
+        }
 
-.btn-success:hover {
-    background-color: #128C7E;
-    border-color: #128C7E;
-}
-</style>
+        .btn-success:hover {
+            background-color: #128C7E;
+            border-color: #128C7E;
+        }
+    </style>
 
-<%- include('partials/footer') %>
+    <!-- Toastify -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+    <script>
+    document.getElementById('contactMainForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        const btn = document.getElementById('contactSubmitBtn');
+        const btnText = document.getElementById('contactBtnText');
+        const spinner = document.getElementById('contactBtnSpinner');
+        btn.disabled = true;
+        btnText.style.display = 'none';
+        spinner.style.display = 'inline-block';
+
+        const formData = new FormData(this);
+        const body = new URLSearchParams(formData).toString();
+
+        try {
+            const res = await fetch('/contact/send', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'Accept': 'application/json'
+                },
+                body: body
+            });
+
+            const json = await res.json();
+
+            if (json.success) {
+                Toastify({
+                    text: "✅ Votre message a bien été envoyé ! Nous vous répondrons rapidement.",
+                    duration: 5000,
+                    gravity: "top",
+                    position: "right",
+                    style: { background: "linear-gradient(135deg, #198754, #157347)", borderRadius: "10px", fontWeight: "600" }
+                }).showToast();
+                this.reset();
+            } else {
+                throw new Error('Erreur serveur');
+            }
+        } catch (err) {
+            Toastify({
+                text: "❌ Une erreur est survenue. Veuillez vérifier votre connexion et réessayer.",
+                duration: 5000,
+                gravity: "top",
+                position: "right",
+                style: { background: "linear-gradient(135deg, #dc3545, #b02a37)", borderRadius: "10px", fontWeight: "600" }
+            }).showToast();
+        } finally {
+            btn.disabled = false;
+            btnText.style.display = 'inline';
+            spinner.style.display = 'none';
+        }
+    });
+    </script>
+
+    <%- include('partials/footer') %>

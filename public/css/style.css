@@ -55,7 +55,7 @@
 
 /*** Navbar ***/
 .sticky-top {
-    top: -150px;
+    top: 0;
     transition: .5s;
 }
 
@@ -96,6 +96,38 @@
     .navbar .navbar-nav .nav-link  {
         margin-left: 0;
         padding: 10px 0;
+    }
+}
+
+/* Styles pour iPhone SE et petits écrans (max 400px) */
+@media (max-width: 400px) {
+    .navbar {
+        padding: 8px 0 !important;
+        font-size: 14px !important;
+    }
+    
+    .navbar-brand h1 {
+        font-size: 1.2rem !important;
+        line-height: 1.2 !important;
+    }
+    
+    .navbar-toggler {
+        padding: 4px 8px !important;
+    }
+    
+    .navbar-toggler-icon {
+        width: 1.2em !important;
+        height: 1.2em !important;
+    }
+    
+    .navbar .navbar-nav .nav-link {
+        padding: 8px 0 !important;
+        font-size: 0.9rem !important;
+    }
+    
+    .navbar .dropdown-toggle::after {
+        margin-left: 4px;
+        font-size: 0.8rem;
     }
 }
 

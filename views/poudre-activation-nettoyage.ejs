@@ -9,28 +9,28 @@
 }) %>
 
 <!-- Hero Section Service -->
-<div class="container-fluid py-5 bg-gradient" style="background: linear-gradient(135deg, #6f42c1 0%, #d63384 100%);">
+<div class="container-fluid py-5" style="background: linear-gradient(135deg, #198754 0%, #157347 100%);">
     <div class="container py-5">
         <div class="row align-items-center">
             <div class="col-lg-6 animate-fade-in">
                 <h1 class="display-4 text-white mb-4">
-                    <span class="text-warning">Poudres d'Activation</span>
+                    <%= t.service_details['poudre-activation-nettoyage'].hero.title %> <span class="text-success-light"><%= t.service_details['poudre-activation-nettoyage'].hero.titleHighlight %></span>
                 </h1>
                 <p class="text-white-50 lead mb-4">
-                    Produits activation professionnels pour processus de nettoyage optimisé. Compatibles avec toutes les devises et types d'encres.
+                    <%= t.service_details['poudre-activation-nettoyage'].hero.subtitle %>
                 </p>
                 <div class="d-flex flex-wrap gap-3">
-                    <a href="tel:<%= companyInfo.phone %>" class="btn btn-warning btn-lg rounded-pill animate-pulse">
-                        <i class="bi bi-cart me-2"></i>Commander
+                    <a href="tel:<%= companyInfo.phones[0] %>" class="btn btn-success btn-lg rounded-pill animate-pulse">
+                        <i class="bi bi-cart me-2"></i><%= t.cta.quote %>
                     </a>
                     <a href="https://wa.me/<%= companyInfo.whatsapp %>?text=Bonjour, je souhaite commander des poudres d'activation" class="btn btn-success btn-lg rounded-pill">
-                        <i class="bi bi-whatsapp me-2"></i>WhatsApp
+                        <i class="bi bi-whatsapp me-2"></i><%= t.nav.contact %>
                     </a>
                 </div>
             </div>
             <div class="col-lg-6 animate-slide-in-right">
                 <div class="service-hero-image">
-                    <img src="/img/m-4.png" 
+                    <img src="<%= getAsset('/img/m-4.png') %>" 
                          alt="Poudres activation nettoyage billets - Produits professionnels Clean Laboratoire"
                          class="img-fluid rounded-3 shadow-lg">
                 </div>
@@ -46,11 +46,10 @@
             <!-- Contenu Principal -->
             <div class="col-lg-8">
                 <div class="service-content animate-fade-in-up">
-                    <h2 class="text-warning mb-4">Poudres d'Activation Professionnelles</h2>
+                    <h2 class="text-success mb-4"><%= t.service_details['poudre-activation-nettoyage'].content.title %></h2>
                     
                     <p class="lead mb-4">
-                        Nos poudres d'activation spécialement formulées optimisent le processus de nettoyage des billets. 
-                        Développées en laboratoire, elles garantissent des résultats constants et une efficacité maximale.
+                        <%= t.service_details['poudre-activation-nettoyage'].content.description %>
                     </p>
 
                     <!-- Section Produits -->
@@ -184,15 +183,15 @@
                     -->
                     <!-- Section Vidéo Utilisation -->
                     <div class="video-section mb-5">
-                        <h3 class="text-warning mb-4">Guide d'Utilisation</h3>
+                        <h3 class="text-success mb-4"><%= t.service_details['poudre-activation-nettoyage'].video.title %></h3>
                         <div class="video-container rounded shadow-lg overflow-hidden animate-fade-in-up">
-                            <video id="powderVideo" class="w-100" controls poster="/img/video-poster-poudre.png">
-                                <source src="/videos/utilisation-poudres-activation.mp4" type="video/mp4">
-                                Votre navigateur ne supporte pas la lecture vidéo.
+                            <video id="powderVideo" class="w-100" controls poster="<%= t.service_details['poudre-activation-nettoyage'].video.poster %>">
+                                <source src="<%= t.service_details['poudre-activation-nettoyage'].video.src %>" type="video/mp4">
+                                <%= t.common.loading %>
                             </video>
                         </div>
                         <p class="text-muted mt-3 text-center">
-                            Démonstration complète de l'utilisation des poudres d'activation
+                            <%= t.service_details['poudre-activation-nettoyage'].video.caption %>
                         </p>
                     </div>
 
@@ -238,9 +237,9 @@
             <div class="col-lg-4">
                 <div class="service-sidebar sticky-top animate-slide-in-right">
                     <div class="card border-0 shadow-lg">
-                        <div class="card-header bg-warning text-dark py-4">
+                        <div class="card-header bg-success text-white py-4">
                             <h4 class="mb-0 text-center">
-                                <i class="bi bi-cart me-2"></i>Commander
+                                <i class="bi bi-cart me-2"></i><%= t.service_details['poudre-activation-nettoyage'].sidebar.title %>
                             </h4>
                         </div>
                         <div class="card-body p-4">
@@ -254,41 +253,27 @@
                         -->
                             
                             <div class="contact-options mb-4">
-                                <a href="tel:<%= companyInfo.phone %>" class="btn btn-outline-warning w-100 mb-3 d-flex align-items-center justify-content-center">
-                                    <i class="bi bi-phone me-2"></i>Commander par Téléphone
+                                <a href="tel:<%= companyInfo.phones[0] %>" class="btn btn-outline-success w-100 mb-3 d-flex align-items-center justify-content-center">
+                                    <i class="bi bi-phone me-2"></i><%= t.service_details['poudre-activation-nettoyage'].sidebar.call %>
                                 </a>
                                 <a href="https://wa.me/<%= companyInfo.whatsapp %>?text=Bonjour, je souhaite commander des poudres d'activation" class="btn btn-outline-success w-100 mb-3 d-flex align-items-center justify-content-center">
-                                    <i class="bi bi-whatsapp me-2"></i>Commander WhatsApp
+                                    <i class="bi bi-whatsapp me-2"></i><%= t.service_details['poudre-activation-nettoyage'].sidebar.whatsapp %>
                                 </a>
-                                <button type="button" class="btn btn-warning w-100" data-bs-toggle="modal" data-bs-target="#orderModal">
-                                    <i class="bi bi-envelope me-2"></i>Devis en Ligne
+                                <button type="button" class="btn btn-success w-100" data-bs-toggle="modal" data-bs-target="#orderModal">
+                                    <i class="bi bi-envelope me-2"></i><%= t.service_details['poudre-activation-nettoyage'].sidebar.email %>
                                 </button>
                             </div>
 
                             <div class="service-info">
-                                <!--
+                                <% t.service_details['poudre-activation-nettoyage'].sidebar.info.forEach(info => { %>
                                 <div class="info-item d-flex align-items-center mb-3">
-                                    <i class="bi bi-truck text-warning me-3"></i>
+                                    <i class="bi <%= info.icon %> text-success me-3"></i>
                                     <div>
-                                        <strong>Livraison</strong>
-                                        <div class="text-muted">48h Europe, 5-7 jours International</div>
+                                        <strong><%= info.title %></strong>
+                                        <div class="text-muted"><%= info.text %></div>
                                     </div>
                                 </div>
-                            -->
-                                <div class="info-item d-flex align-items-center mb-3">
-                                    <i class="bi bi-shield-check text-warning me-3"></i>
-                                    <div>
-                                        <strong>Emballage</strong>
-                                        <div class="text-muted">Discret et sécurisé</div>
-                                    </div>
-                                </div>
-                                <div class="info-item d-flex align-items-center mb-3">
-                                    <i class="bi bi-arrow-repeat text-warning me-3"></i>
-                                    <div>
-                                        <strong>Stock</strong>
-                                        <div class="text-muted">Disponible immédiatement</div>
-                                    </div>
-                                </div>
+                                <% }); %>
                             </div>
 
                             <!-- Promo -->
@@ -313,8 +298,8 @@
                                 <i class="bi bi-star-fill text-warning"></i>
                             </div>
                             <blockquote class="blockquote mb-0">
-                                <p class="text-muted">"La poudre Pro a résolu nos problèmes d'encres résistantes. Efficacité remarquable et facile à utiliser."</p>
-                                <footer class="blockquote-footer mt-2">Technicien Professionnel</footer>
+                                <p class="text-muted"><%= t.service_details['poudre-activation-nettoyage'].testimonial.text %></p>
+                                <footer class="blockquote-footer mt-2"><%= t.service_details['poudre-activation-nettoyage'].testimonial.author %></footer>
                             </blockquote>
                         </div>
                     </div>
@@ -329,12 +314,12 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-8 text-center text-lg-start animate-fade-in">
-                <h3 class="text-white mb-3">Prêt à Optimiser Votre Nettoyage ?</h3>
-                <p class="text-white-50 mb-0">Commandez nos poudres d'activation et obtenez des résultats professionnels</p>
+                <h3 class="text-white mb-3"><%= t.service_details['poudre-activation-nettoyage'].cta.title %></h3>
+                <p class="text-white-50 mb-0"><%= t.service_details['poudre-activation-nettoyage'].cta.subtitle %></p>
             </div>
             <div class="col-lg-4 text-center animate-pulse">
-                <a href="https://wa.me/<%= companyInfo.whatsapp %>?text=Bonjour, je souhaite commander des poudres d'activation" class="btn btn-warning btn-lg rounded-pill px-5">
-                    <i class="bi bi-whatsapp me-2"></i>Commander WhatsApp
+                <a href="https://wa.me/<%= companyInfo.whatsapp %>?text=Bonjour, je souhaite commander des poudres d'activation" class="btn btn-success btn-lg rounded-pill px-5">
+                    <i class="bi bi-whatsapp me-2"></i><%= t.service_details['poudre-activation-nettoyage'].cta.button %>
                 </a>
             </div>
         </div>
@@ -345,17 +330,17 @@
 <div class="modal fade" id="orderModal" tabindex="-1">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
-            <div class="modal-header bg-warning text-dark">
+            <div class="modal-header bg-success text-white">
                 <h5 class="modal-title">Commande de Poudres d'Activation</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
             </div>
             <div class="modal-body">
-                <form action="/contact/send" method="POST">
+                <form id="poudreModalForm">
                     <input type="hidden" name="service" value="poudre-activation">
                     
                     <!-- Sélection Produits -->
                     <div class="mb-4">
-                        <h6 class="text-warning mb-3">Sélectionnez vos produits :</h6>
+                        <h6 class="text-success mb-3">Sélectionnez vos produits :</h6>
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <div class="product-select-card p-3 border rounded">
@@ -404,7 +389,7 @@
                     </div>
 
                     <div class="mt-4 text-center">
-                        <button type="submit" class="btn btn-warning btn-lg px-5">
+                        <button type="submit" class="btn btn-success btn-lg px-5">
                             <i class="bi bi-send me-2"></i>Demander Devis
                         </button>
                     </div>
@@ -468,7 +453,7 @@
 }
 
 .promo-card {
-    border: 2px dashed var(--bs-warning);
+    border: 2px dashed var(--bs-success);
 }
 
 .product-select-card {
@@ -476,8 +461,8 @@
 }
 
 .product-select-card:has(input:checked) {
-    border-color: var(--bs-warning);
-    background-color: rgba(255, 193, 7, 0.05);
+    border-color: var(--bs-success);
+    background-color: rgba(25, 135, 84, 0.05);
 }
 
 /* Animation poudre */
@@ -538,5 +523,36 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
+
+    <!-- Toastify -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+    <script>
+    document.getElementById('poudreModalForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const btn = this.querySelector('[type="submit"]');
+        btn.disabled = true;
+        const body = new URLSearchParams(new FormData(this)).toString();
+        try {
+            const res = await fetch('/contact/send', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'Accept': 'application/json' },
+                body: body
+            });
+            const json = await res.json();
+            if (json.success) {
+                Toastify({ text: '✅ Votre commande a bien été envoyée ! Nous vous répondrons rapidement.', duration: 5000, gravity: 'top', position: 'right', style: { background: 'linear-gradient(135deg, #198754, #157347)', borderRadius: '10px', fontWeight: '600' } }).showToast();
+                this.reset();
+                const modal = bootstrap.Modal.getInstance(document.getElementById('poudreModal'));
+                if (modal) modal.hide();
+            } else { throw new Error(); }
+        } catch {
+            Toastify({ text: '❌ Une erreur est survenue. Veuillez réessayer.', duration: 5000, gravity: 'top', position: 'right', style: { background: 'linear-gradient(135deg, #dc3545, #b02a37)', borderRadius: '10px', fontWeight: '600' } }).showToast();
+        } finally {
+            btn.disabled = false;
+        }
+    });
+    </script>
 
 <%- include('partials/footer') %>

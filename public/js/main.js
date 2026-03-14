@@ -21,7 +21,7 @@
         if ($(this).scrollTop() > 300) {
             $('.sticky-top').addClass('bg-white shadow-sm').css('top', '0px');
         } else {
-            $('.sticky-top').removeClass('bg-white shadow-sm').css('top', '-150px');
+            $('.sticky-top').removeClass('bg-white shadow-sm').css('top', '0px');
         }
     });
     

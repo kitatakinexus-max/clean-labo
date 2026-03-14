@@ -1,0 +1,185 @@
+<%- include('partials/header') %>
+
+    <!-- Header Start -->
+    <div class="container-fluid page-header py-5 mb-5">
+        <div class="container py-5">
+            <h1 class="display-3 text-white mb-3 animated slideInRight">
+                <%= typeof t !== 'undefined' && t.testimonials ? t.testimonials.title : 'Témoignages' %>
+            </h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb animated slideInRight">
+                    <li class="breadcrumb-item"><a class="text-white" href="/?lang=<%= currentLang %>"> <%= typeof t !== 'undefined' && t.nav ? t.nav.home : 'Accueil' %></a></li>
+                    <li class="breadcrumb-item text-primary" aria-current="page">
+                        <%= typeof t !== 'undefined' && t.testimonials ? t.testimonials.title : 'Témoignages' %>
+                    </li>
+                </ol>
+            </nav>
+            <p class="text-white mt-3">
+                <%= typeof t !== 'undefined' && t.testimonials ? t.testimonials.subtitle : 'Ce que disent nos clients' %>
+            </p>
+        </div>
+    </div>
+    <!-- Header End -->
+
+    <!-- Testimonial Section Start -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5" style="max-width: 600px;">
+                <h1 class="display-4 mb-4">
+                    <%= typeof t !== 'undefined' && t.testimonials ? t.testimonials.title : 'Témoignages' %>
+                </h1>
+                <p class="mb-4">
+                    <%= typeof t !== 'undefined' && t.testimonials ? t.testimonials.subtitle : 'Ce que disent nos clients' %>
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Client 1 -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="testimonial-item bg-light rounded p-4">
+                        <div class="d-flex align-items-center mb-4">
+                            <img class="img-fluid flex-shrink-0 rounded" src="<%= getAsset('/img/testimonial-1.jpg') %>" style="width: 80px; height: 80px;" alt="<%= typeof t !== 'undefined' && t.testimonials && t.testimonials.client1 ? t.testimonials.client1.name : 'Client' %>">
+                            <div class="ms-4">
+                                <h4 class="mb-2">
+                                    <%= typeof t !== 'undefined' && t.testimonials && t.testimonials.client1 ? t.testimonials.client1.name : 'Pierre M.' %>
+                                </h4>
+                                <p class="mb-1 text-primary">
+                                    <%= typeof t !== 'undefined' && t.testimonials && t.testimonials.client1 ? t.testimonials.client1.role : 'Client Particulier' %>
+                                </p>
+                            </div>
+                        </div>
+                        <p class="mb-0">
+                            <%= typeof t !== 'undefined' && t.testimonials && t.testimonials.client1 ? t.testimonials.client1.text : '"Service exceptionnel ! Mes billets USD ont été parfaitement nettoyés avec la solution SSD. Résultats au-delà de mes attentes. Je recommande vivement Clean Laboratoire."' %>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Client 2 -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="testimonial-item bg-light rounded p-4">
+                        <div class="d-flex align-items-center mb-4">
+                            <img class="img-fluid flex-shrink-0 rounded" src="<%= getAsset('/img/testimonial-2.jpg') %>" style="width: 80px; height: 80px;" alt="<%= typeof t !== 'undefined' && t.testimonials && t.testimonials.client2 ? t.testimonials.client2.name : 'Client' %>">
+                            <div class="ms-4">
+                                <h4 class="mb-2">
+                                    <%= typeof t !== 'undefined' && t.testimonials && t.testimonials.client2 ? t.testimonials.client2.name : 'Sarah L.' %>
+                                </h4>
+                                <p class="mb-1 text-primary">
+                                    <%= typeof t !== 'undefined' && t.testimonials && t.testimonials.client2 ? t.testimonials.client2.role : 'Gestionnaire Institutionnel' %>
+                                </p>
+                            </div>
+                        </div>
+                        <p class="mb-0">
+                            <%= typeof t !== 'undefined' && t.testimonials && t.testimonials.client2 ? t.testimonials.client2.text : '"En tant qu\'institution, nous apprécions particulièrement le professionnalisme et la discrétion de Clean Laboratoire. Leurs analyses spectrophotométriques sont d\'une précision remarquable."' %>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Client 3 -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="testimonial-item bg-light rounded p-4">
+                        <div class="d-flex align-items-center mb-4">
+                            <img class="img-fluid flex-shrink-0 rounded" src="<%= getAsset('/img/testimonial-3.jpg') %>" style="width: 80px; height: 80px;" alt="<%= typeof t !== 'undefined' && t.testimonials && t.testimonials.client3 ? t.testimonials.client3.name : 'Client' %>">
+                            <div class="ms-4">
+                                <h4 class="mb-2">
+                                    <%= typeof t !== 'undefined' && t.testimonials && t.testimonials.client3 ? t.testimonials.client3.name : 'Marc T.' %>
+                                </h4>
+                                <p class="mb-1 text-primary">
+                                    <%= typeof t !== 'undefined' && t.testimonials && t.testimonials.client3 ? t.testimonials.client3.role : 'Entrepreneur' %>
+                                </p>
+                            </div>
+                        </div>
+                        <p class="mb-0">
+                            <%= typeof t !== 'undefined' && t.testimonials && t.testimonials.client3 ? t.testimonials.client3.text : '"La location de machines avec formation incluse a été déterminante pour notre activité. Support technique réactif et résultats constants. Partenaire de confiance."' %>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Testimonials from Projects -->
+            <div class="mt-5">
+                <div class="text-center mx-auto mb-5" style="max-width: 600px;">
+                    <h2 class="mb-4">
+                        <%= typeof t !== 'undefined' && t.projects && t.projects.testimonials ? t.projects.testimonials.title : 'Ils Nous Ont Fait Confiance' %>
+                    </h2>
+                    <p class="mb-4">
+                        <%= typeof t !== 'undefined' && t.projects && t.projects.testimonials ? t.projects.testimonials.subtitle : 'Découvrez les retours de nos clients satisfaits' %>
+                    </p>
+                </div>
+
+                <div class="row g-4">
+                    <!-- Project Client 1 -->
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="testimonial-item bg-light rounded p-4">
+                            <div class="d-flex align-items-center mb-4">
+                                <div class="d-flex flex-column">
+                                    <h4 class="mb-2">
+                                        <%= typeof t !== 'undefined' && t.projects && t.projects.testimonials ? t.projects.testimonials.client1Role : 'Client Particulier' %>
+                                    </h4>
+                                </div>
+                            </div>
+                            <p class="mb-0">
+                                <%= typeof t !== 'undefined' && t.projects && t.projects.testimonials ? t.projects.testimonials.client1Quote : 'Des résultats exceptionnels sur mes billets USD. Le processus était rapide et professionnel. Je recommande vivement !' %>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Project Client 2 -->
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="testimonial-item bg-light rounded p-4">
+                            <div class="d-flex align-items-center mb-4">
+                                <div class="d-flex flex-column">
+                                    <h4 class="mb-2">
+                                        <%= typeof t !== 'undefined' && t.projects && t.projects.testimonials ? t.projects.testimonials.client2Role : 'Gestionnaire Institutionnel' %>
+                                    </h4>
+                                </div>
+                            </div>
+                            <p class="mb-0">
+                                <%= typeof t !== 'undefined' && t.projects && t.projects.testimonials ? t.projects.testimonials.client2Quote : 'Le professionnalisme et la discrétion de Clean Laboratoire sont remarquables. Analyses précises et résultats constants.' %>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Project Client 3 -->
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="testimonial-item bg-light rounded p-4">
+                            <div class="d-flex align-items-center mb-4">
+                                <div class="d-flex flex-column">
+                                    <h4 class="mb-2">
+                                        <%= typeof t !== 'undefined' && t.projects && t.projects.testimonials ? t.projects.testimonials.client3Role : 'Entrepreneur' %>
+                                    </h4>
+                                </div>
+                            </div>
+                            <p class="mb-0">
+                                <%= typeof t !== 'undefined' && t.projects && t.projects.testimonials ? t.projects.testimonials.client3Quote : 'La location de machine a boosté notre productivité. Formation excellente et support technique réactif. Partenaire de confiance.' %>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial Section End -->
+
+    <!-- CTA Section Start -->
+    <div class="container-fluid py-5 bg-primary">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7 text-center text-lg-start">
+                    <h3 class="text-white mb-4">
+                        <%= typeof t !== 'undefined' && t.cta ? t.cta.quote : 'Devis Personnalisé' %>
+                    </h3>
+                    <p class="text-white mb-0">
+                        <%= typeof t !== 'undefined' && t.contact ? t.contact.description : 'Notre équipe d\'experts est à votre écoute pour répondre à toutes vos questions.' %>
+                    </p>
+                </div>
+                <div class="col-lg-5 text-center text-lg-end">
+                    <a class="btn btn-outline-light btn-lg-rounded py-2 px-4" href="/contact?lang=<%= currentLang %>">
+                        <%= typeof t !== 'undefined' && t.common ? t.common.contactUs : 'Nous contacter' %>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- CTA Section End -->
+
+<%- include('partials/footer') %>
