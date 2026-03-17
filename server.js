@@ -25,12 +25,34 @@ const twilioService = require('./services/twilio');
 // MIDDLEWARES ESSENTIELS
 // ============================================================================
 
+// Indispensable en production (Render, Heroku, etc.) pour que les cookies "secure" 
+// soient acceptés alors que le trafic passe par un reverse proxy SSL
+app.set('trust proxy', 1);
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
 
-// Sessions (pour l'authentification admin)
+const { Firestore } = require('@google-cloud/firestore');
+const { FirestoreStore } = require('@google-cloud/connect-firestore');
+
+// Initialiser le client Firestore spécifiquement pour les sessions
+// Il utilisera soit les credentials passés (en dev local), soit les credentials par défaut (GCP/Render si bien configuré)
+const sessionFirestoreClient = new Firestore({
+    projectId: process.env.FIREBASE_PROJECT_ID,
+    credentials: {
+        client_email: process.env.FIREBASE_CLIENT_EMAIL,
+        // Remplace les \\n par de vrais sauts de ligne si la clé vient des variables d'environnement texte
+        private_key: process.env.FIREBASE_PRIVATE_KEY ? process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, '\n') : undefined
+    }
+});
+
+// Sessions (pour l'authentification admin) avec stockage Firestore pour la production
 app.use(session({
+    store: new FirestoreStore({
+        dataset: sessionFirestoreClient,
+        kind: 'express-sessions',
+    }),
     secret: process.env.ADMIN_SESSION_SECRET || 'clean-lab-admin-secret-change-in-prod',
     resave: false,
     saveUninitialized: false,
