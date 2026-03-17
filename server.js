@@ -25,6 +25,8 @@ const twilioService = require('./services/twilio');
 // MIDDLEWARES ESSENTIELS
 // ============================================================================
 
+app.set('trust proxy', 1); // Nécessaire si derrière un proxy (comme Nginx)
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // Sessions (pour l'authentification admin) - cookie-session pour persistance
