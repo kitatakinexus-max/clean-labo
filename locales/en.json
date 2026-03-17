@@ -1,0 +1,379 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "readMore": "Read more",
+    "contactUs": "Contact us",
+    "getQuote": "Get a quote",
+    "learnMore": "Learn more",
+    "viewAll": "View all"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "projects": "Projects",
+    "pages": "Pages",
+    "features": "Technologies",
+    "team": "Our Team",
+    "testimonial": "Testimonials",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Universal Solution for",
+    "titleHighlight": "Banknote Cleaning",
+    "titleEnd": "& Stripping",
+    "subtitle": "Clean-Lab Laboratory leader in Europe and Africa - Specialist in secure banknote cleaning with advanced SSD solution and spectrophotometry.",
+    "feature1": "High-precision stripping",
+    "feature2": "Professional machines",
+    "feature3": "Patented SSD solutions",
+    "feature4": "Guaranteed results"
+  },
+  "about": {
+    "badge": "Expertise",
+    "title": "Clean Lab",
+    "description1": "Founded in 2010, Clean Lab operates as an international center of expertise specializing in the cleaning and restoration of banknotes. Our state-of-the-art laboratory uses advanced technologies including the universal SSD solution, Vectrol paste, activation powders and high-performance equipment for the restoration of damaged, charred or discolored banknotes.",
+    "description2": "Our expertise extends to all international currencies (USD, EUR, GBP, etc.) with strict security protocols. We offer a full range of specialized chemicals, activation salts and customized solutions, supported by machines capable of processing large volumes while ensuring confidentiality and optimal results.",
+    "check1": "Certified",
+    "check2": "Expert Team",
+    "check3": "24/7 Support",
+    "check4": "Transparent Pricing",
+    "readMore": "Discover our expertise"
+  },
+  "feature": {
+    "title": "Why People",
+    "titleHighlight": "Choose Us",
+    "experience": "Fast and effective cleaning",
+    "experienceDesc": "Visible results in less than 48 hours",
+    "design": "Advanced technologies",
+    "designDesc": "Latest generation equipment",
+    "architects": "Scientific expertise",
+    "architectsDesc": "Accurate spectrophotometric analysis",
+    "satisfaction": "Satisfaction Guaranteed",
+    "satisfactionDesc": "100% satisfactory results",
+    "budget": "Affordable Solutions",
+    "budgetDesc": "Competitive and transparent pricing",
+    "material": "Absolute security",
+    "materialDesc": "Discreet and secure process"
+  },
+  "reseau": {
+    "title": "Our",
+    "titleHighlight": "International Network",
+    "paragraph": "With partner laboratories strategically located across Europe and Africa, Clean Lab provides comprehensive international coverage. Our network allows us to offer personalized support, adapted to local regulations and capable of handling all volumes, from individuals to financial institutions. Each partner adheres to our high quality and safety standards.",
+    "europe": "Europe",
+    "africa": "Africa",
+    "worldwide": "Worldwide",
+    "kitchen": "USD Treatment",
+    "kitchenCount": "25 Projects",
+    "bathroom": "EUR Restoration",
+    "bathroomCount": "18 Projects",
+    "bedroom": "Color Stripping",
+    "bedroomCount": "32 Projects",
+    "living": "Old Banknotes",
+    "livingCount": "15 Projects",
+    "furniture": "Charred Notes",
+    "furnitureCount": "12 Projects",
+    "renovation": "Wet Banknotes",
+    "renovationCount": "28 Projects"
+  },
+  "service": {
+    "title": "Our Professional",
+    "titleHighlight": "Solutions",
+    "description1": "Clean Lab offers comprehensive banknote cleaning and restoration services using patented technologies. Our team of experts masters the most advanced techniques including SSD solutions, spectrophotometry and specialized chemical processes for optimal results on all types of banknotes.",
+    "description2": "Whether you are an individual, a company or an institution, we have the right solution for your specific banknote cleaning and restoration needs.",
+    "additionalTitle1": "Universal SSD Solution",
+    "additionalTitle2": "Professional Machine Rental",
+    "additionalTitle3": "Spectrophotometric Analysis",
+    "additionalTitle4": "Activation Powders",
+    "interiorDesc1": "Patented formula for deep cleaning",
+    "interiorDesc2": "High-performance equipment",
+    "interiorDesc3": "Scientific quality control",
+    "interiorDesc4": "Professional activation products",
+    "commercialDesc": "Solutions for financial institutions",
+    "phone": "Call us for a free diagnosis"
+  },
+  "services": {
+    "title": "Our Professional",
+    "titleHighlight": "Solutions",
+    "description1": "Clean Lab offers comprehensive banknote cleaning and restoration services using patented technologies. Our team of experts masters the most advanced techniques including SSD solutions, spectrophotometry and specialized chemical processes for optimal results on all types of banknotes.",
+    "description2": "Whether you are an individual, a company or an institution, we have the right solution for your specific banknote cleaning and restoration needs.",
+    "additionalTitle1": "Universal SSD Solution",
+    "additionalTitle2": "Stripping Machine Rental",
+    "additionalTitle3": "Spectrophotometric Analysis",
+    "additionalTitle4": "Activation Powders",
+    "interiorDesc1": "Patented formula for deep cleaning of all types of banknotes",
+    "interiorDesc2": "High-performance professional equipment with training included",
+    "interiorDesc3": "Advanced scientific quality control for optimal results",
+    "interiorDesc4": "Professional activation products for optimized cleaning",
+    "commercialDesc": "Dedicated services for financial institutions with reinforced protocols",
+    "phoneNum": "+33 1 23 45 67 89",
+    "phone": "Call us for a free diagnosis",
+    "ssd": {
+      "title": "Universal SSD Solution",
+      "description": "Our patented SSD solution effectively removes all inks and dyes on all types of banknotes. Advanced formula ensuring integrity and security of the treated banknotes."
+    },
+    "machines": {
+      "title": "Machine Rental",
+      "description": "Professional high-performance stripping equipment available for rent. Complete training and technical support included."
+    },
+    "analysis": {
+      "title": "Spectrometric Analysis",
+      "description": "Advanced scientific analysis service to determine ink composition and optimize cleaning protocols."
+    },
+    "powder": {
+      "title": "Activation Powders",
+      "description": "Professional activation powders for optimized cleaning process. Compatible with all currencies and ink types."
+    },
+    "expertiseTitle": "Expertise & Consulting",
+    "expertiseDesc": "Personalized support by our experts for tailor-made solutions adapted to your specific needs",
+    "institutionTitle": "Institution Solutions"
+  },
+  "gallerie": {
+    "title": "Our",
+    "titleHighlight": "Gallery",
+    "placeholder": "Discover our success stories in banknote cleaning and restoration - Before/after results and case studies",
+    "note": "Projects successfully completed since 2010"
+  },
+  "newsletter": {
+    "title": "Stay Informed",
+    "titleHighlight": "Expert Newsletter",
+    "placeholder": "Your professional email",
+    "note": "Receive our latest innovations in banknote cleaning",
+    "subscribe": "Subscribe",
+    "success": "Thank you for subscribing!"
+  },
+  "footer": {
+    "title": "Clean Lab - International expert in secure banknote cleaning. SSD technologies, spectrophotometry and customized solutions since 2010.",
+    "titleContact": "Expert Contact",
+    "titleLink": "Quick Links",
+    "titleService": "Solutions",
+    "service1": "Universal SSD Solution",
+    "service2": "Pro Machine Rental",
+    "service3": "Spectrometric Analysis",
+    "service4": "Activation Powders",
+    "linkHome": "Home",
+    "linkAbout": "Our Expertise",
+    "linkService": "Our Solutions",
+    "linkGallerie": "Projects",
+    "linkContact": "Free Quote"
+  },
+  "cta": {
+    "consultation": "Free Consultation",
+    "quote": "Personalized Quote",
+    "contact": "Immediate Expertise",
+    "whatsapp": "WhatsApp Chat",
+    "call": "Direct Call"
+  },
+  "seo": {
+    "homeTitle": "Clean Lab | Expert Secure Banknote Cleaning & Stripping",
+    "homeDescription": "Leading laboratory in Europe and Africa. SSD solutions, high-performance machines, spectrophotometric analysis. Guaranteed results since 2010.",
+    "aboutTitle": "About Clean Lab | Banknote Cleaning Expertise",
+    "aboutDescription": "Discover our expertise in secure banknote cleaning. 10 years of experience, patented technologies, international network in Europe-Africa.",
+    "servicesTitle": "Banknote Cleaning Services | Pro SSD & Stripping Solutions",
+    "servicesDescription": "Comprehensive banknote cleaning and stripping services. Universal SSD solution, machine rental, spectrophotometric analysis, guaranteed results.",
+    "contactTitle": "Contact Clean Lab | Free Banknote Cleaning Quote",
+    "contactDescription": "Contact our experts for a free quote. Customized solutions for individuals and professionals. Europe and Africa."
+  },
+  "abouts": {
+    "badge": "Expertise",
+    "title": "Clean Lab",
+    "description1": "Founded in 2010, Clean Lab operates as an international center of expertise specializing in the cleaning and restoration of banknotes. Our state-of-the-art laboratory uses advanced technologies including the universal SSD solution, Vectrol paste, activation powders and high-performance equipment for the restoration of damaged, charred or discolored banknotes.",
+    "description2": "Our expertise extends to all international currencies (USD, EUR, GBP, etc.) with strict security protocols. We offer a full range of specialized chemicals, activation salts and customized solutions, supported by machines capable of processing large volumes while ensuring confidentiality and optimal results.",
+    "check1": "Certified",
+    "check2": "Expert Team",
+    "check3": "24/7 Support",
+    "check4": "Transparent Pricing",
+    "readMore": "Discover our expertise",
+    "stats": {
+      "experience": "10+ Years of Expertise",
+      "continents": "2 Continents",
+      "projects": "500+ Projects",
+      "satisfaction": "100% Satisfaction"
+    },
+    "values": {
+      "title": "Our Commitment",
+      "subtitle": "Excellence & Confidentiality Guaranteed",
+      "description": "At Clean Lab, we combine technical expertise and absolute discretion for optimal results.",
+      "security": "Maximum Security",
+      "securityDesc": "Strict protocols and secure environment to ensure the confidentiality of each intervention.",
+      "expertise": "Scientific Expertise",
+      "expertiseDesc": "Patented technologies and spectrophotometric analysis for accurate and reliable results.",
+      "speed": "Fast Execution",
+      "speedDesc": "Efficient treatments with optimized lead times to meet your deadlines.",
+      "support": "Personalized Support",
+      "supportDesc": "Tailor-made solutions adapted to each specific situation and need."
+    },
+    "process": {
+      "title": "Our Process",
+      "subtitle": "How We Work",
+      "description": "A structured process for optimal results at every stage.",
+      "step1": "Expert Diagnosis",
+      "step1Desc": "In-depth analysis of the condition of the banknotes and determination of the appropriate treatment protocol.",
+      "step2": "Specialized Treatment",
+      "step2Desc": "Application of SSD solutions and stripping techniques with precision and expertise.",
+      "step3": "Quality Control",
+      "step3Desc": "Rigorous verification and spectrophotometric analysis to guarantee excellence.",
+      "step4": "Secure Delivery",
+      "step4Desc": "Discreet and secure return of treated banknotes with detailed intervention report."
+    },
+    "cta": {
+      "title": "Ready to Start?",
+      "subtitle": "Entrust Us With Your Banknotes to Restore",
+      "description": "Our team of experts is at your disposal to evaluate your situation and propose the optimal solution.",
+      "quote": "Free Quote",
+      "whatsapp": "WhatsApp Chat"
+    }
+  },
+  "consultation": {
+    "title": "Expert Consultation",
+    "subtitle": "Get a Personalized Analysis",
+    "formTitle": "Request an Expertise",
+    "serviceType": "Type of Service",
+    "currency": "Currency to Treat",
+    "name": "Your Name",
+    "email": "Your Email",
+    "phone": "Your Phone",
+    "volume": "Volume to treat",
+    "message": "Detailed description of your need...",
+    "submit": "Submit my Request",
+    "quote": "Free Quote"
+  },
+  "testimonials": {
+    "title": "Testimonials",
+    "subtitle": "What Our Clients Say",
+    "client1": {
+      "text": "\"Exceptional service! My USD banknotes were perfectly cleaned with the SSD solution. Results beyond my expectations. I highly recommend Clean Lab.\"",
+      "name": "Peter M.",
+      "role": "Private Client"
+    },
+    "client2": {
+      "text": "\"As an institution, we particularly appreciate the professionalism and discretion of Clean Lab. Their spectrophotometric analyses are remarkably accurate.\"",
+      "name": "Sarah L.",
+      "role": "Institutional Manager"
+    },
+    "client3": {
+      "text": "\"The rental of machines with training included was decisive for our business. Responsive technical support and consistent results. A trusted partner.\"",
+      "name": "Mark T.",
+      "role": "Entrepreneur"
+    }
+  },
+  "contact": {
+    "title": "A Question?",
+    "titleHighlight": "Contact Us",
+    "description": "Our team of experts is at your disposal to answer all your questions regarding banknote cleaning and restoration. Get a free, personalized consultation.",
+    "phone": "Phone",
+    "email": "Email",
+    "address": "Address",
+    "quickContact": "Quick Contact",
+    "call": "Call",
+    "form": {
+      "name": "Your Name",
+      "email": "Your Email",
+      "phone": "Your Phone",
+      "service": "Type of Service",
+      "subject": "Subject",
+      "message": "Describe your need in detail...",
+      "submit": "Send Message"
+    },
+    "success": {
+      "title": "Message Sent!",
+      "message": "Thank you for your message. Our team will contact you as soon as possible."
+    },
+    "error": {
+      "title": "Sending Error",
+      "message": "An error occurred while sending your message. Please try again or contact us directly."
+    }
+  },
+  "videos": {
+    "demo": "Demonstrations",
+    "title": "See Our Solutions in Action",
+    "desc": "Discover our cleaning processes and the results obtained with our patented technologies",
+    "processTitle": "SSD Cleaning Process",
+    "processDesc": "Complete demonstration of the cleaning process with our universal SSD solution",
+    "resultsTitle": "Before/After Results",
+    "resultsDesc": "Visual comparison of the results obtained on different types of treated banknotes",
+    "moreInfo": "Need More Information?",
+    "moreInfoDesc": "Our experts are available to answer all your questions and offer you a personalized demonstration",
+    "cta": "Personalized Demonstration"
+  },
+  "projects": {
+    "seo": {
+      "title": "Projects Gallery | Banknote Cleaning Achievements - Clean Lab",
+      "description": "Discover our achievements in banknote cleaning and restoration. Before/after gallery, concrete results and client testimonials."
+    },
+    "hero": {
+      "title1": "Our",
+      "titleHighlight": "Gallery",
+      "title2": "of Achievements",
+      "subtitle": "Discover the concrete results of our interventions in banknote cleaning and restoration"
+    },
+    "filters": {
+      "all": "All Projects",
+      "ssd": "SSD Solution",
+      "machines": "Machines",
+      "powder": "Activation Powders"
+    },
+    "testimonials": {
+      "title": "They Trusted Us",
+      "subtitle": "Discover the feedback from our satisfied clients",
+      "client1Role": "Private Client",
+      "client1Quote": "Exceptional results on my USD notes. The process was fast and professional. I highly recommend!",
+      "client2Role": "Institutional Manager",
+      "client2Quote": "The professionalism and discretion of Clean Lab are remarkable. Accurate analysis and consistent results.",
+      "client3Role": "Entrepreneur",
+      "client3Quote": "Machine rental boosted our productivity. Excellent training and responsive technical support. A trusted partner."
+    },
+    "cta": {
+      "title": "Ready to Transform Your Banknotes?",
+      "subtitle": "Join our many satisfied clients and get professional results",
+      "btn": "Free Quote"
+    },
+    "loadMore": "Load More Projects"
+  },
+  "team": {
+    "seo": {
+      "title": "Our Team | Banknote Cleaning Experts - Clean Lab",
+      "description": "Discover our team of experts in banknote cleaning and restoration."
+    },
+    "hero": {
+      "title": "Our",
+      "titleHighlight": "Team",
+      "subtitle": "Qualified experts at your service"
+    },
+    "members": [
+      {
+        "name": "Dr. Martin",
+        "role": "Scientific Director",
+        "bio": "Expert in analytical chemistry with 15 years of experience"
+      },
+      {
+        "name": "Sophie Bernard",
+        "role": "Operations Manager",
+        "bio": "Operations management and quality control"
+      },
+      {
+        "name": "Ahmed Al-Fayed",
+        "role": "Africa Regional Director",
+        "bio": "Coordination of operations in Africa"
+      },
+      {
+        "name": "Marie Dubois",
+        "role": "Customer Service Manager",
+        "bio": "Client support and request management"
+      }
+    ],
+    "cta": {
+      "title": "Join Our Team",
+      "subtitle": "We are always looking for talent",
+      "button": "Contact Us"
+    }
+  },
+  "error404": {
+    "title": "404",
+    "titleHighlight": "Page Not Found",
+    "subtitle": "The page you are looking for does not exist or has been moved.",
+    "cta": {
+      "button": "Back to Home",
+      "link": "/"
+    }
+  }
+}

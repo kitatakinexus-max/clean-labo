@@ -1,0 +1,1763 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin — Clean Laboratoire</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --bg: #0f1117;
+            --surface: #1a1d27;
+            --surface2: #22263a;
+            --surface3: #2a2f45;
+            --border: rgba(255, 255, 255, 0.07);
+            --primary: #198754;
+            --primary-h: #146c43;
+            --primary-g: rgba(25, 135, 84, 0.25);
+            --text: #eef0f6;
+            --muted: #7b82a0;
+            --success: #22c55e;
+            --success-g: rgba(34, 197, 94, 0.15);
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --sidebar-w: 260px;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* ---- SIDEBAR ---- */
+        .sidebar {
+            width: var(--sidebar-w);
+            height: 100vh;
+            background: var(--surface);
+            border-right: 1px solid var(--border);
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            z-index: 200;
+            transition: transform 0.3s ease;
+        }
+
+        .sidebar-brand {
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .brand-icon {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--primary), #157347);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 12px var(--primary-g);
+        }
+
+        .brand-text h2 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .brand-text span {
+            font-size: 0.65rem;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .sidebar-nav {
+            flex: 1;
+            padding: 1rem;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(25, 135, 84, 0.3) transparent;
+        }
+
+        .sidebar-nav::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .sidebar-nav::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .sidebar-nav::-webkit-scrollbar-thumb {
+            background: rgba(25, 135, 84, 0.3);
+            border-radius: 3px;
+        }
+
+        .sidebar-nav::-webkit-scrollbar-thumb:hover {
+            background: rgba(25, 135, 84, 0.5);
+        }
+
+        .nav-section-label {
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--muted);
+            padding: 0.5rem 0.75rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            width: 100%;
+            background: transparent;
+            border: none;
+            color: var(--muted);
+            font-size: 0.875rem;
+            font-weight: 500;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-bottom: 0.25rem;
+            text-align: left;
+        }
+
+        .nav-item:hover {
+            color: var(--text);
+            background: var(--surface2);
+        }
+
+        .nav-item.active {
+            color: #fff;
+            background: var(--primary);
+            box-shadow: 0 4px 12px var(--primary-g);
+        }
+
+        .nav-item i {
+            width: 1.25rem;
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        .sidebar-footer {
+            padding: 1rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .btn-logout {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.15);
+            border-radius: 8px;
+            color: #fca5a5;
+            font-size: 0.875rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .btn-logout:hover {
+            background: rgba(239, 68, 68, 0.2);
+            color: #ef4444;
+        }
+
+        /* ---- MAIN ---- */
+        .main {
+            flex: 1;
+            margin-left: var(--sidebar-w);
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            min-height: 100vh;
+        }
+
+        .topbar {
+            height: 70px;
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        .mobile-toggle {
+            display: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            background: var(--surface2);
+            border: 1px solid var(--border);
+            color: var(--text);
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            margin-right: 1rem;
+        }
+
+        .topbar-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0;
+            background: transparent;
+            border-radius: 0;
+            font-size: 0;
+        }
+
+        .status-badge .dot {
+            width: 8px;
+            height: 8px;
+            background: var(--success);
+            border-radius: 50%;
+            animation: pulse-green 2s infinite;
+        }
+
+        @keyframes pulse-green {
+            0% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+            }
+
+            70% {
+                transform: scale(1);
+                box-shadow: 0 0 0 6px rgba(34, 197, 94, 0);
+            }
+
+            100% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+            }
+        }
+
+        /* ---- RESPONSIVE ---- */
+        @media (max-width: 991px) {
+            .sidebar {
+                transform: translateX(-100%);
+            }
+
+            body.sidebar-open .sidebar {
+                transform: translateX(0);
+            }
+
+            .main {
+                margin-left: 0;
+            }
+
+            .mobile-toggle {
+                display: flex;
+            }
+
+            .sidebar-overlay {
+                display: none;
+                position: fixed;
+                inset: 0;
+                background: rgba(0, 0, 0, 0.5);
+                backdrop-filter: blur(4px);
+                z-index: 150;
+            }
+
+            body.sidebar-open .sidebar-overlay {
+                display: block;
+            }
+
+            /* Dashboard Specific Responsive Adjustments */
+            .card-header {
+                flex-wrap: wrap;
+            }
+            
+            #panel-messages .card-header {
+                gap: 1rem;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            #panel-messages .card-header > div:last-child {
+                grid-template-columns: 1fr !important;
+            }
+            
+            .twilio-neon-box {
+                flex-direction: column !important;
+                text-align: center;
+                gap: 1.5rem !important;
+                padding: 1.5rem !important;
+            }
+            
+            .twilio-neon-box > div:last-child {
+                min-width: 0 !important;
+            }
+            
+            .twilio-neon-box .flex-gap {
+                justify-content: center;
+            }
+
+            /* Modal Responsive */
+            .modal-content {
+                width: 95% !important;
+                border-radius: 16px !important;
+            }
+            
+            .modal-header, .modal-body, .modal-footer {
+                padding: 1rem !important;
+            }
+            
+            .modal-header h3 {
+                font-size: 1rem !important;
+            }
+        }
+
+        /* ---- CONTENT ---- */
+        .content {
+            padding: 2rem;
+            flex: 1;
+        }
+
+        /* ---- PANELS ---- */
+        .panel {
+            display: none;
+        }
+
+        .panel.active {
+            display: block;
+        }
+
+        /* ---- LANG TABS ---- */
+        .lang-tabs {
+            display: flex;
+            gap: 0.4rem;
+            margin-bottom: 1.5rem;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 0.4rem;
+            overflow-x: auto;
+            scrollbar-width: none; 
+            -ms-overflow-style: none;
+        }
+
+        .lang-tabs::-webkit-scrollbar {
+            display: none;
+        }
+
+        .lang-tab {
+            flex: 1;
+            flex-shrink: 0;
+            min-width: 110px;
+            padding: 0.5rem;
+            border-radius: 7px;
+            border: none;
+            background: transparent;
+            color: var(--muted);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+        }
+
+        .lang-tab:hover {
+            color: var(--text);
+            background: var(--surface2);
+        }
+
+        .lang-tab.active {
+            background: var(--primary);
+            color: #fff;
+            box-shadow: 0 2px 8px var(--primary-g);
+        }
+
+        /* ---- CARDS ---- */
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            margin-bottom: 1.25rem;
+            overflow: hidden;
+        }
+
+        .card-header {
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .card-header-icon {
+            width: 34px;
+            height: 34px;
+            background: var(--primary-g);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 0.85rem;
+        }
+
+        .card-header h3 {
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .card-header p {
+            font-size: 0.75rem;
+            color: var(--muted);
+        }
+
+        .card-body {
+            padding: 1.25rem;
+        }
+
+        /* ---- FORM ELEMENTS ---- */
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .form-group label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            background: var(--surface2);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 0.65rem 0.85rem;
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            resize: vertical;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px var(--primary-g);
+        }
+
+        .form-group textarea {
+            min-height: 90px;
+        }
+
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+        /* ---- SAVE BUTTON ---- */
+        .btn-save {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.65rem 1.4rem;
+            background: linear-gradient(135deg, var(--primary), #146c43);
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 4px 12px var(--primary-g);
+        }
+
+        .btn-save:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px var(--primary-g);
+        }
+
+        .btn-save:active {
+            transform: translateY(0);
+        }
+
+        .btn-save .spin {
+            display: none;
+            width: 14px;
+            height: 14px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-top-color: #fff;
+            border-radius: 50%;
+            animation: spin 0.6s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .card-footer {
+            padding: 1rem 1.25rem;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .save-feedback {
+            font-size: 0.8rem;
+            font-weight: 500;
+            display: none;
+        }
+
+        .save-feedback.success {
+            color: var(--success);
+        }
+
+        .save-feedback.error {
+            color: var(--danger);
+        }
+
+        /* ---- STATS ---- */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 1.25rem;
+        }
+
+        .stat-card .stat-label {
+            font-size: 0.75rem;
+            color: var(--muted);
+            margin-bottom: 0.4rem;
+        }
+
+        .stat-card .stat-value {
+            font-size: 1.6rem;
+            font-weight: 700;
+        }
+
+        .stat-card .stat-sub {
+            font-size: 0.72rem;
+            color: var(--muted);
+            margin-top: 0.2rem;
+        }
+
+        .stat-card .stat-icon {
+            font-size: 1.4rem;
+            float: right;
+            opacity: 0.4;
+        }
+
+        /* ---- MODALS ---- */        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(10, 11, 16, 0.85);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-overlay.show {
+            opacity: 1;
+        }
+
+        .modal-content {
+            background: rgba(26, 29, 39, 0.95);
+            border: 1px solid rgba(25, 135, 84, 0.3);
+            border-radius: 24px;
+            width: 100%;
+            max-width: 650px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(25, 135, 84, 0.1);
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+
+        .modal-overlay.show .modal-content {
+            transform: translateY(0);
+        }
+
+
+        .modal-body {
+            max-height: 70vh;
+            overflow-y: auto;
+            padding: 1.5rem;
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary) transparent;
+        }
+
+        .modal-body::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .modal-body::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 10px;
+        }
+
+        .modal-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(37, 211, 102, 0.05);
+        }
+
+        .modal-header h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            color: var(--success);
+            text-shadow: 0 0 10px rgba(37, 211, 102, 0.3);
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            color: var(--muted);
+            font-size: 1.25rem;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .modal-close:hover {
+            color: var(--text);
+        }
+
+        .modal-body {
+            padding: 1.5rem;
+        }
+
+        .modal-footer {
+            padding: 1.25rem 1.5rem;
+            border-top: 1px solid var(--border);
+            background: var(--surface2);
+        }
+    </style>
+
+    <!-- TOASTIFY -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+</head>
+
+<body class="">
+    <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <div class="brand-icon">🧪</div>
+            <div class="brand-text">
+                <h2>Admin Panel</h2>
+                <span>Clean Laboratoire</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <div class="nav-section-label">Vue d'ensemble</div>
+            <button class="nav-item active" onclick="showPanel('overview')">
+                <i class="fas fa-home"></i> Tableau de bord
+            </button>
+
+            <div class="nav-section-label">Informations Globales</div>
+            <button class="nav-item" onclick="showPanel('companyInfo')">
+                <i class="fas fa-building"></i> Infos entreprise
+            </button>
+            <button class="nav-item" onclick="showPanel('footer')">
+                <i class="fas fa-layer-group"></i> Footer
+            </button>
+
+            <div class="nav-section-label">Page d'accueil</div>
+            <button class="nav-item" onclick="showPanel('hero')">
+                <i class="fas fa-star"></i> Hero
+            </button>
+            <button class="nav-item" onclick="showPanel('features')">
+                <i class="fas fa-check-circle"></i> Pourquoi nous choisir
+            </button>
+            <button class="nav-item" onclick="showPanel('about')">
+                <i class="fas fa-users"></i> À propos (Section)
+            </button>
+            <button class="nav-item" onclick="showPanel('services')">
+                <i class="fas fa-flask"></i> Services (Section)
+            </button>
+            <button class="nav-item" onclick="showPanel('reseau')">
+                <i class="fas fa-globe"></i> Réseau International
+            </button>
+
+            <div class="nav-section-label">Page À propos</div>
+            <button class="nav-item" onclick="showPanel('abouts')">
+                <i class="fas fa-users"></i> À propos (Contenu)
+            </button>
+
+            <div class="nav-section-label">Pages Services</div>
+            <button class="nav-item" onclick="showPanel('services')">
+                <i class="fas fa-flask"></i> Services (Accueil)
+            </button>
+            <button class="nav-item" onclick="showPanel('ssd')">
+                <i class="fas fa-microchip"></i> Solution SSD
+            </button>
+            <button class="nav-item" onclick="showPanel('machines')">
+                <i class="fas fa-cogs"></i> Machines
+            </button>
+            <button class="nav-item" onclick="showPanel('spectro')">
+                <i class="fas fa-microscope"></i> Spectrophotométrie
+            </button>
+            <button class="nav-item" onclick="showPanel('poudre')">
+                <i class="fas fa-vial"></i> Poudres d'Activation
+            </button>
+
+            <div class="nav-section-label">Réalisations</div>
+            <button class="nav-item" onclick="showPanel('projects')">
+                <i class="fas fa-images"></i> Projets / Galerie
+            </button>
+            <button class="nav-item" onclick="showPanel('testimonials')">
+                <i class="fas fa-comment-dots"></i> Témoignages
+            </button>
+
+            <div class="nav-section-label">Contact & Autres</div>
+            <button class="nav-item" onclick="showPanel('messages'); fetchMessages();">
+                <i class="fas fa-inbox"></i> Boîte de réception
+            </button>
+            <button class="nav-item" onclick="showPanel('contact')">
+                <i class="fas fa-envelope"></i> Contact
+            </button>
+            <button class="nav-item" onclick="showPanel('error404')">
+                <i class="fas fa-exclamation-triangle"></i> Page 404
+            </button>
+
+            <div class="nav-section-label">Automatisations</div>
+            <button class="nav-item" onclick="showPanel('twilio', this)">
+                <i class="fab fa-whatsapp"></i> Réception Automatique
+            </button>
+        </nav>
+
+        <div class="sidebar-footer">
+            <button class="btn-logout" onclick="openPasswordModal()" style="margin-bottom: 0.5rem; background: rgba(25, 135, 84, 0.1); border-color: rgba(25, 135, 84, 0.15); color: #198754;">
+                <i class="fas fa-key"></i> Mot de passe
+            </button>
+            <a href="/admin/logout" class="btn-logout">
+                <i class="fas fa-sign-out-alt"></i> Déconnexion
+            </a>
+        </div>
+    </aside>
+
+    <!-- MAIN -->
+    <div class="main">
+        <div class="topbar">
+            <div style="display: flex; align-items: center;">
+                <button class="mobile-toggle" onclick="toggleSidebar()">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div>
+                    <div class="topbar-title" id="panelTitle">Tableau de bord</div>
+                </div>
+            </div>
+            <div class="status-badge online">
+                <span class="dot"></span>
+            </div>
+        </div>
+
+        <div class="content">
+
+                <!-- ====== PANEL OVERVIEW ====== -->
+            <div class="panel active" id="panel-overview">
+                
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-header-icon"><i class="fas fa-info-circle"></i></div>
+                        <div>
+                            <h3>Guide d'utilisation</h3>
+                            <p>Comment personnaliser votre site</p>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <ol style="padding-left:1.2rem; line-height:2; color: var(--muted); font-size:0.875rem;">
+                            <li>Sélectionnez une section dans le menu de gauche</li>
+                            <li>Choisissez la langue à modifier avec les onglets de langue</li>
+                            <li>Modifiez les champs souhaités</li>
+                            <li>Cliquez <strong style="color:var(--primary)">Enregistrer</strong> — les changements sont
+                                immédiats sur le site</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header" style="justify-content: space-between;">
+                        <div style="display:flex; align-items:center; gap: 0.75rem;">
+                            <div class="card-header-icon"><i class="fas fa-inbox"></i></div>
+                            <div>
+                                <h3>Derniers Messages</h3>
+                                <p>Aperçu rapide des soumissions récentes</p>
+                            </div>
+                        </div>
+                        <button onclick="showPanel('messages'); fetchMessages();" class="btn-save" style="width:auto; padding:0.4rem 0.8rem; font-size: 0.75rem; background: var(--surface2); box-shadow: none; border: 1px solid var(--border);">
+                            Voir tout
+                        </button>
+                    </div>
+                    <div class="card-body" style="padding: 0;">
+                        <div style="overflow-x: auto;">
+                            <table style="width: 100%; border-collapse: collapse; text-align: left;">
+                                <thead>
+                                    <tr style="border-bottom: 1px solid var(--border); background: var(--surface2);">
+                                        <th style="padding: 0.75rem 1rem; font-weight: 600; color: var(--muted); font-size: 0.8rem;">Date</th>
+                                        <th style="padding: 0.75rem 1rem; font-weight: 600; color: var(--muted); font-size: 0.8rem;">Nom</th>
+                                        <th style="padding: 0.75rem 1rem; font-weight: 600; color: var(--muted); font-size: 0.8rem;">Service</th>
+                                        <th style="padding: 0.75rem 1rem; font-weight: 600; color: var(--muted); font-size: 0.8rem;">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="overview-messages-tbody">
+                                    <!-- Injection JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ====== PANEL COMPANY INFO ====== -->
+            <div class="panel" id="panel-companyInfo">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-header-icon"><i class="fas fa-phone"></i></div>
+                        <div>
+                            <h3>Informations de contact</h3>
+                            <p>Ces infos apparaissent dans le header, footer et pages contact</p>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>Nom entreprise</label>
+                                <input type="text" id="ci-name" value="<%= companyInfo.name || '' %>">
+                            </div>
+                            <div class="form-group full">
+                                <label>Numéros de téléphone (footer & contact)</label>
+                                <div id="phone-list-container" class="phone-list">
+                                    <% const phones=companyInfo.phones || (companyInfo.phone ? [companyInfo.phone] :
+                                        []); phones.forEach(function(p, index) { %>
+                                        <div class="phone-row"
+                                            style="display: flex; gap: 0.5rem; margin-bottom: 0.5rem;">
+                                            <input type="text" class="ci-phone-input" value="<%= p %>"
+                                                placeholder="+33 1 23 45 67 89" style="flex: 1">
+                                            <button class="btn-remove-phone" onclick="this.parentElement.remove()"
+                                                style="background: var(--danger); border: none; color: white; border-radius: 6px; width: 38px; cursor: pointer">
+                                                <i class="fas fa-times"></i>
+                                            </button>
+                                        </div>
+                                        <% }); %>
+                                </div>
+                                <button class="btn-add-phone" onclick="addPhoneInput()"
+                                    style="background: var(--surface2); border: 1px solid var(--border); color: var(--text); padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.8rem; cursor: pointer; margin-top: 0.5rem">
+                                    <i class="fas fa-plus me-1"></i> Ajouter un numéro
+                                </button>
+                            </div>
+                            <div class="form-group">
+                                <label>WhatsApp (chiffres uniquement)</label>
+                                <input type="text" id="ci-whatsapp" value="<%= companyInfo.whatsapp || '' %>"
+                                    placeholder="33612345678">
+                            </div>
+                            <div class="form-group full">
+                                <label>Emails (footer & contact)</label>
+                                <div id="email-list-container" class="phone-list">
+                                    <% const emails=companyInfo.emails || (companyInfo.email ? [companyInfo.email] :
+                                        []); emails.forEach(function(e, index) { %>
+                                        <div class="phone-row"
+                                            style="display: flex; gap: 0.5rem; margin-bottom: 0.5rem;">
+                                            <input type="email" class="ci-email-input" value="<%= e %>"
+                                                placeholder="contact@exemple.com" style="flex: 1">
+                                            <button class="btn-remove-phone" onclick="this.parentElement.remove()"
+                                                style="background: var(--danger); border: none; color: white; border-radius: 6px; width: 38px; cursor: pointer">
+                                                <i class="fas fa-times"></i>
+                                            </button>
+                                        </div>
+                                        <% }); %>
+                                </div>
+                                <button class="btn-add-phone" onclick="addEmailInput()"
+                                    style="background: var(--surface2); border: 1px solid var(--border); color: var(--text); padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.8rem; cursor: pointer; margin-top: 0.5rem">
+                                    <i class="fas fa-plus me-1"></i> Ajouter un email
+                                </button>
+                            </div>
+                            <div class="form-group full">
+                                <label>Adresse</label>
+                                <input type="text" id="ci-address" value="<%= companyInfo.address || '' %>">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <span class="save-feedback" id="fb-companyInfo"></span>
+                        <button class="btn-save" onclick="saveCompanyInfo()">
+                            <span class="btn-text"><i class="fas fa-save"></i> Enregistrer</span>
+                            <div class="spin"></div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ====== PANEL MESSAGES ====== -->
+            <div class="panel" id="panel-messages">
+                <div class="card">
+                    <div class="card-header" style="flex-direction: column; align-items: flex-start;">
+                        <div style="display:flex; align-items:center; gap: 1rem; width: 100%; justify-content: space-between;">
+                            <div style="display:flex; align-items:center; gap: 1rem;">
+                                <div class="card-header-icon"><i class="fas fa-inbox"></i></div>
+                                <div>
+                                    <h3>Boîte de Réception (Devis & Contact)</h3>
+                                    <p>Gérez les demandes de devis et de contact envoyées depuis le site.</p>
+                                </div>
+                            </div>
+                            <button onclick="fetchMessages()" class="btn-save" style="width:auto; padding:0.5rem 1rem;">
+                                <span class="btn-text"><i class="fas fa-sync-alt"></i> Actualiser</span>
+                            </button>
+                        </div>
+                        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:1rem; margin-top:1rem; width:100%;">
+                            <div class="form-group" style="flex:1">
+                                <input type="text" id="msg-filter-text" placeholder="Rechercher par nom, email..." style="width:100%; padding:0.65rem; border:1px solid var(--border); border-radius:8px; background:var(--surface2); color:white;" oninput="applyMessageFilters()">
+                            </div>
+                            <div class="form-group" style="width: 150px;">
+                                <select id="msg-filter-status" style="width:100%; padding:0.65rem; border:1px solid var(--border); border-radius:8px; background:var(--surface2); color:white;" onchange="applyMessageFilters()">
+                                    <option value="all">Tous les statuts</option>
+                                    <option value="new">Nouveaux</option>
+                                    <option value="read">Lus</option>
+                                </select>
+                            </div>
+                            <div class="form-group" style="width: 180px;">
+                                <select id="msg-filter-date" style="width:100%; padding:0.65rem; border:1px solid var(--border); border-radius:8px; background:var(--surface2); color:white;" onchange="applyMessageFilters()">
+                                    <option value="all">Toutes périodes</option>
+                                    <option value="today">Dernières 24h</option>
+                                    <option value="week">7 derniers jours</option>
+                                    <option value="month">30 derniers jours</option>
+                                    <option value="year">Cette année</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body" style="padding: 0;">
+                        <div style="overflow-x: auto;">
+                            <table style="width: 100%; border-collapse: collapse; text-align: left;" id="messages-table">
+                                <thead>
+                                    <tr style="border-bottom: 1px solid var(--border); background: var(--surface2);">
+                                        <th style="padding: 1rem; font-weight: 600; color: var(--muted);">Date</th>
+                                        <th style="padding: 1rem; font-weight: 600; color: var(--muted);">Nom</th>
+                                        <th style="padding: 1rem; font-weight: 600; color: var(--muted);">Contact</th>
+                                        <th style="padding: 1rem; font-weight: 600; color: var(--muted);">Service</th>
+                                        <th style="padding: 1rem; font-weight: 600; color: var(--muted);">Statut</th>
+                                        <th style="padding: 1rem; font-weight: 600; color: var(--muted);">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="messages-tbody">
+                                    <!-- Messages injectés ici -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="card-footer" style="justify-content: center; background: var(--surface2);">
+                        <div id="messages-pagination" style="display: flex; gap: 0.5rem; align-items: center;">
+                            <!-- Pagination JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Lire Message -->
+            <div class="modal-overlay" id="readMessageModal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Détails du message</h3>
+                        <button class="modal-close" onclick="closeMessageModal()">&times;</button>
+                    </div>
+                    <div class="modal-body" id="readMessageBody">
+                        <!-- Contenu injecté -->
+                    </div>
+                    <div class="modal-footer" style="padding: 1rem 1.5rem; border-top: 1px solid var(--border); display: flex; justify-content: flex-end; gap: 0.5rem;">
+                         <button onclick="closeMessageModal()" style="padding: 0.5rem 1rem; background: var(--surface2); border: 1px solid var(--border); color: white; border-radius: 6px; cursor: pointer;">Fermer</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Supprimer Message -->
+            <div class="modal-overlay" id="deleteConfirmModal">
+                <input type="hidden" id="deleteMessageId">
+                <div class="modal-content" style="border: 2px solid var(--danger); box-shadow: 0 0 40px rgba(239, 68, 68, 0.3), inset 0 0 20px rgba(239, 68, 68, 0.05);">
+                    <div style="text-align: center; margin-bottom: 1.5rem; padding: 1rem;">
+                        <div style="width: 60px; height: 60px; background: rgba(239, 68, 68, 0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                            <i class="fas fa-exclamation-triangle" style="font-size: 1.5rem; color: var(--danger);"></i>
+                        </div>
+                        <h3 style="color: #fff; margin-bottom: 0.5rem;">Confirmer la suppression</h3>
+                        <p style="color: var(--muted); font-size: 0.9rem; line-height: 1.5;">Vous êtes sur le point de supprimer définitivement ce message. Cette action est irréversible et le message ne pourra pas être récupéré.</p>
+                    </div>
+                    <div style="display: flex; gap: 1rem; justify-content: center; padding: 0 1rem 1.5rem;">
+                        <button onclick="closeDeleteModal()" style="flex: 1; padding: 0.75rem 1rem; background: var(--surface2); border: 1px solid var(--border); color: white; border-radius: 8px; cursor: pointer; font-weight: 500; transition: all 0.2s;">
+                            Annuler
+                        </button>
+                        <button onclick="confirmDeleteMessage()" style="flex: 1; padding: 0.75rem 1rem; background: var(--danger); border: none; color: white; border-radius: 8px; cursor: pointer; font-weight: 500; transition: all 0.2s; box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);">
+                            <i class="fas fa-trash" style="margin-right: 0.5rem;"></i>Supprimer
+                        </button>
+                    </div>
+                </div>
+            </div>
+                <% 
+                    const langFlags={ fr: '🇫🇷 FR', en: '🇬🇧 EN', ar: '🇸🇦 AR', es: '🇪🇸 ES', de: '🇩🇪 DE', hi: '🇮🇳 HI' };
+                    const langNames={ fr: 'Français', en: 'English', ar: 'العربية', es: 'Español', de: 'Deutsch', hi: 'हिन्दी' };
+                    const langs=['fr','en','ar','es','de','hi']; %>
+
+                <% panels.forEach(function(panel) { %>
+                    <div class="panel" id="panel-<%= panel %>">
+                        <!-- Language tabs -->
+                        <div class="lang-tabs">
+                            <% langs.forEach(function(lang, idx) { %>
+                                <button class="lang-tab <%= idx === 0 ? 'active' : '' %>"
+                                    onclick="switchLang('<%= panel %>', '<%= lang %>', this)">
+                                    <%= langFlags[lang] %>
+                                        <%= langNames[lang] %>
+                                </button>
+                                <% }); %>
+                        </div>
+
+                        <!-- One card per language -->
+                        <% langs.forEach(function(lang) { %>
+                            <div class="lang-panel" data-panel="<%= panel %>" data-lang="<%= lang %>" <% if (lang
+                                !=='fr' ) { %> style="display: none" <% } %> >
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <div class="card-header-icon"><i
+                                                    class="fas <%= panelMeta[panel].icon %>"></i>
+                                            </div>
+                                            <div>
+                                                <h3>
+                                                    <%= panelMeta[panel].label %> — <%= langFlags[lang] %>
+                                                            <%= langNames[lang] %>
+                                                </h3>
+                                                <p>
+                                                    <%= panelMeta[panel].sub %>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="form-grid">
+                                                <% fieldSets[panel].forEach(function(field) { %>
+                                                    <div class="form-group <%= field.textarea ? 'full' : '' %>">
+                                                        <label>
+                                                            <%= field.label %>
+                                                        </label>
+                                                        <% if (field.textarea) { %>
+                                                            <textarea data-key="<%= field.key %>"
+                                                                data-lang="<%= lang %>"
+                                                                data-panel="<%= panel %>"><%= getNestedValue(siteContent[lang], field.key) %></textarea>
+                                                            <% } else { %>
+                                                                <input type="text" data-key="<%= field.key %>"
+                                                                    data-lang="<%= lang %>" data-panel="<%= panel %>"
+                                                                    value="<%= getNestedValue(siteContent[lang], field.key) %>">
+                                                                <% } %>
+                                                    </div>
+                                                    <% }); %>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer">
+                                            <span class="save-feedback" id="fb-<%= panel %>-<%= lang %>"></span>
+                                            <button class="btn-save"
+                                                onclick="saveContent('<%= panel %>', '<%= lang %>', this)">
+                                                <span class="btn-text"><i class="fas fa-save"></i> Enregistrer</span>
+                                                <div class="spin"></div>
+                                            </button>
+                                        </div>
+                                    </div>
+                            </div>
+                            <% }); %>
+            </div>
+            <% }); %>
+
+            <!-- ====== PANEL TWILIO ====== -->
+            <div class="panel" id="panel-twilio">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-header-icon" style="background: rgba(37, 211, 102, 0.1); color: #25D366;">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div>
+                            <h3>Notifications WhatsApp</h3>
+                            <p>Recevez des notifications automatiques pour les soumissions de formulaires.</p>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="twilio-neon-box" style="background: rgba(15, 17, 23, 0.4); border: 1px solid rgba(25, 135, 84, 0.4); border-radius: 20px; padding: 2.5rem; margin-bottom: 2rem; display: flex; align-items: center; gap: 2.5rem; flex-wrap: wrap; box-shadow: 0 0 30px rgba(25, 135, 84, 0.1), inset 0 0 20px rgba(25, 135, 84, 0.05); position: relative; overflow: hidden;">
+                            <div style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(25, 135, 84, 0.05) 0%, transparent 70%); pointer-events: none;"></div>
+                            <div style="background: white; padding: 1rem; border-radius: 16px; flex-shrink: 0; box-shadow: 0 15px 35px rgba(0,0,0,0.4), 0 0 15px rgba(25, 135, 84, 0.2); position: relative; z-index: 1;">
+                                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https%3A%2F%2Fwa.me%2F14155238886%3Ftext%3Djoin%2520caught-won&bgcolor=ffffff&color=25D366&margin=10" 
+                                     alt="WhatsApp QR Code"
+                                     style="width: 130px; height: 130px; display: block;">
+                            </div>
+                            <div style="flex: 1; min-width: 300px;">
+                                <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.8rem;" class="flex-gap">
+                                    <i class="fab fa-whatsapp" style="color: #25D366; font-size: 1.2rem;"></i>
+                                    <h4 style="color: #25D366; font-size: 1.15rem; font-weight: 700; text-shadow: 0 0 10px rgba(37, 211, 102, 0.4); margin: 0;">
+                                        📷 Scanne moi
+                                    </h4>
+                                </div>
+                                <p style="font-size: 0.92rem; color: #fff; opacity: 0.95; line-height: 1.6; margin-bottom: 1.5rem;">
+                                    Pour recevoir les notifications automatiques, scannez ce code ou envoyez <strong style="color: #25D366;">join caught-won</strong> au <strong style="color: #25D366;">+1 415 523 8886</strong> sur WhatsApp.
+                                </p>
+                                <div style="display: flex; gap: 1rem; flex-wrap: wrap;" class="flex-gap">
+                                    <div style="background: rgba(26, 29, 41, 0.8); padding: 0.6rem 1rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); font-size: 0.82rem; color: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                                        <span style="color: #8b92a5; font-weight: 600;">Étape 1:</span> Rejoindre la Sandbox
+                                    </div>
+                                    <div style="background: rgba(26, 29, 41, 0.8); padding: 0.6rem 1rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); font-size: 0.82rem; color: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                                        <span style="color: #8b92a5; font-weight: 600;">Étape 2:</span> Ajouter votre numéro ci-dessous
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-grid">
+                            <div class="form-group full">
+                                <label>Destinataires WhatsApp Autorisés (Un par ligne)</label>
+                                <p style="font-size: 0.72rem; color: var(--muted); margin-bottom: 0.5rem;">
+                                    Format international requis : (Exp: +33...). Seuls ces numéros ayant rejoint la sandbox recevront les notifications.
+                                </p>
+                                <textarea id="twilio-recipients" style="height: 120px;" placeholder="+33612345678&#10;+33788990011"><%= (twilioConfig.recipients || []).join('\n') %></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <span class="save-feedback" id="fb-twilio"></span>
+                        <button class="btn-save" onclick="saveTwilioConfig()">
+                            <span class="btn-text"><i class="fas fa-save"></i> Enregistrer les destinataires</span>
+                            <div class="spin"></div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- /content -->
+    </div><!-- /main -->
+
+    <!-- PASSWORD MODAL -->
+    <div class="modal-overlay" id="passwordModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-key" style="color: var(--warning); margin-right: 0.5rem;"></i> Changer de mot de passe</h3>
+                <button class="modal-close" onclick="closePasswordModal()"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body form-grid">
+                <div class="form-group full">
+                    <p style="font-size: 0.85rem; color: var(--muted); margin-bottom: 1rem; line-height: 1.5;">
+                        La modification de votre mot de passe prendra effet immédiatement. Vous devrez utiliser ce nouveau mot de passe lors de vos prochaines connexions.
+                    </p>
+                </div>
+                <div class="form-group full">
+                    <label>Ancien mot de passe</label>
+                    <input type="password" id="oldPassword" placeholder="••••••••" required>
+                </div>
+                <div class="form-group full">
+                    <label>Nouveau mot de passe</label>
+                    <input type="password" id="newPassword" placeholder="Minimum 6 caractères" required>
+                </div>
+                <div class="form-group full">
+                    <label>Confirmer le nouveau mot de passe</label>
+                    <input type="password" id="confirmPassword" placeholder="Retapez le nouveau mot de passe" required>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-save" id="btnChangePassword" onclick="submitPasswordChange(this)" style="width: 100%; justify-content: center;">
+                    <span class="btn-text">Modifier le mot de passe</span>
+                    <span class="spin" style="display:none;"><i class="fas fa-spinner fa-spin"></i></span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ============================================================================
+        // NAVIGATION
+        // ============================================================================
+        const panelTitles = {
+            overview: 'Tableau de bord',
+            companyInfo: 'Infos entreprise',
+            hero: 'Section Hero',
+            features: 'Technologies & Équipements',
+            about: 'À propos (Section)',
+            abouts: 'Page À propos (Complet)',
+            reseau: 'Réseau International',
+            services: 'Services (Accueil)',
+            projects: 'Réalisations / Galerie',
+            contact: 'Contact',
+            footer: 'Footer',
+            testimonials: 'Témoignages',
+            ssd: 'Détails: Solution SSD',
+            machines: 'Détails: Machines',
+            spectro: 'Détails: Spectrophotométrie',
+            poudre: 'Détails: Poudres',
+            error404: 'Page 404',
+            twilio: 'Réception automatique',
+        };
+
+        function showPanel(name) {
+            // Hide all panels
+            document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+
+            // Show target
+            const panel = document.getElementById('panel-' + name);
+            if (panel) panel.classList.add('active');
+
+            // Mark nav item
+            const clicked = (window.event && window.event.currentTarget) ? window.event.currentTarget : null;
+            if (clicked && clicked.classList.contains('nav-item')) {
+                clicked.classList.add('active');
+            } else {
+                // Find nav item by panel name if triggered programmatically
+                document.querySelectorAll('.nav-item').forEach(item => {
+                    const onclick = item.getAttribute('onclick') || "";
+                    if (onclick.includes(`'${name}'`)) {
+                        item.classList.add('active');
+                    }
+                });
+            }
+
+            // Update topbar
+            document.getElementById('panelTitle').textContent = panelTitles[name] || name;
+
+            // Close sidebar on mobile
+            if (window.innerWidth < 992) {
+                document.body.classList.remove('sidebar-open');
+            }
+        }
+
+        function toggleSidebar() {
+            document.body.classList.toggle('sidebar-open');
+        }
+
+        function addPhoneInput() {
+            const container = document.getElementById('phone-list-container');
+            const row = document.createElement('div');
+            row.className = 'phone-row';
+            row.style.cssText = 'display: flex; gap: 0.5rem; margin-bottom: 0.5rem;';
+            row.innerHTML = `
+                <input type="text" class="ci-phone-input" placeholder="+33 1 23 45 67 89" style="flex: 1">
+                <button class="btn-remove-phone" onclick="this.parentElement.remove()" style="background: var(--danger); border: none; color: white; border-radius: 6px; width: 38px; cursor: pointer">
+                    <i class="fas fa-times"></i>
+                </button>
+            `;
+            container.appendChild(row);
+            row.querySelector('input').focus();
+        }
+
+        function addEmailInput() {
+            const container = document.getElementById('email-list-container');
+            const row = document.createElement('div');
+            row.className = 'phone-row';
+            row.style.cssText = 'display: flex; gap: 0.5rem; margin-bottom: 0.5rem;';
+            row.innerHTML = `
+                <input type="email" class="ci-email-input" placeholder="contact@exemple.com" style="flex: 1">
+                <button class="btn-remove-phone" onclick="this.parentElement.remove()" style="background: var(--danger); border: none; color: white; border-radius: 6px; width: 38px; cursor: pointer">
+                    <i class="fas fa-times"></i>
+                </button>
+            `;
+            container.appendChild(row);
+            row.querySelector('input').focus();
+        }
+
+        // ============================================================================
+        // LANGUAGE TABS
+        // ============================================================================
+        function switchLang(panel, lang, btn) {
+            // Update tab active state
+            btn.closest('.lang-tabs').querySelectorAll('.lang-tab').forEach(t => t.classList.remove('active'));
+            btn.classList.add('active');
+
+            // Show/hide lang panels
+            document.querySelectorAll(`.lang-panel[data-panel="${panel}"]`).forEach(lp => {
+                lp.style.display = lp.dataset.lang === lang ? 'block' : 'none';
+            });
+        }
+
+        // ============================================================================
+        // SAVE COMPANY INFO
+        // ============================================================================
+        async function saveCompanyInfo() {
+            const btn = event.currentTarget;
+            setLoading(btn, true);
+
+            const phoneInputs = document.querySelectorAll('.ci-phone-input');
+            const phones = Array.from(phoneInputs).map(input => input.value).filter(val => val.trim() !== "");
+
+            const emailInputs = document.querySelectorAll('.ci-email-input');
+            const emails = Array.from(emailInputs).map(input => input.value).filter(val => val.trim() !== "");
+
+            const data = {
+                name: document.getElementById('ci-name').value,
+                phones: phones,
+                whatsapp: document.getElementById('ci-whatsapp').value,
+                email: emails.length > 0 ? emails[0] : '',
+                emails: emails,
+                address: document.getElementById('ci-address').value,
+            };
+
+            try {
+                const res = await fetch('/admin/api/company-info', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data),
+                });
+                const json = await res.json();
+
+                if (res.ok) {
+                    showToast('✅ Informations entreprise enregistrées !', 'success');
+                    showFeedback('fb-companyInfo', 'Enregistré avec succès', 'success');
+                } else {
+                    showToast('❌ ' + (json.error || 'Erreur'), 'error');
+                    showFeedback('fb-companyInfo', json.error || 'Erreur', 'error');
+                }
+            } catch (err) {
+                showToast('❌ Erreur réseau', 'error');
+                showFeedback('fb-companyInfo', 'Erreur réseau', 'error');
+            } finally {
+                setLoading(btn, false);
+            }
+        }
+
+        // ============================================================================
+        // SAVE CONTENT (traductions)
+        // ============================================================================
+        async function saveContent(panel, lang, btn) {
+            setLoading(btn, true);
+
+            // Collect all fields for this panel+lang
+            const fields = document.querySelectorAll(
+                `input[data-panel="${panel}"][data-lang="${lang}"], textarea[data-panel="${panel}"][data-lang="${lang}"]`
+            );
+
+            const updates = {};
+            fields.forEach(el => {
+                // key format: "hero.title" → set nested
+                setNestedValue(updates, el.dataset.key, el.value);
+            });
+
+            try {
+                const res = await fetch(`/admin/api/content/${lang}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ section: panel, data: updates }),
+                });
+                const json = await res.json();
+
+                const fbId = `fb-${panel}-${lang}`;
+                if (res.ok) {
+                    showToast('✅ Contenu enregistré !', 'success');
+                    showFeedback(fbId, 'Enregistré avec succès', 'success');
+                } else {
+                    showToast('❌ ' + (json.error || 'Erreur'), 'error');
+                    showFeedback(fbId, json.error || 'Erreur', 'error');
+                }
+            } catch (err) {
+                showToast('❌ Erreur réseau', 'error');
+            } finally {
+                setLoading(btn, false);
+            }
+        }
+
+        // ============================================================================
+        // HELPERS
+        // ============================================================================
+        function setLoading(btn, state) {
+            btn.disabled = state;
+            btn.querySelector('.btn-text').style.display = state ? 'none' : '';
+            btn.querySelector('.spin').style.display = state ? 'block' : 'none';
+        }
+
+        function showFeedback(id, msg, type) {
+            const el = document.getElementById(id);
+            if (!el) return;
+            el.textContent = msg;
+            el.className = 'save-feedback ' + type;
+            el.style.display = 'flex';
+            setTimeout(() => { el.style.display = 'none'; }, 4000);
+        }
+
+        function showToast(msg, type) {
+            Toastify({
+                text: msg,
+                duration: 3000,
+                gravity: "top", // `top` or `bottom`
+                position: "right", // `left`, `center` or `right`
+                stopOnFocus: true, // Prevents dismissing of toast on hover
+                style: {
+                    background: type === 'success' ? "linear-gradient(to right, #00b09b, #96c93d)" : "linear-gradient(to right, #ff5f6d, #ffc371)",
+                    borderRadius: "8px",
+                    fontFamily: "'Inter', sans-serif"
+                }
+            }).showToast();
+        }
+
+        // ============================================================================
+        // TWILIO CONFIG
+        // ============================================================================
+        async function saveTwilioConfig() {
+            const btn = event.currentTarget;
+            setLoading(btn, true);
+
+            const recipientsRaw = document.getElementById('twilio-recipients').value;
+            const recipients = recipientsRaw.split('\n').map(r => r.trim()).filter(r => r !== '');
+
+            try {
+                const res = await fetch('/admin/api/twilio-config', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ recipients }),
+                });
+                const json = await res.json();
+
+                if (res.ok) {
+                    showToast('✅ Configuration Twilio enregistrée !', 'success');
+                    showFeedback('fb-twilio', 'Enregistré avec succès', 'success');
+                } else {
+                    showToast('❌ ' + (json.error || 'Erreur'), 'error');
+                    showFeedback('fb-twilio', json.error || 'Erreur', 'error');
+                }
+            } catch (err) {
+                showToast('❌ Erreur réseau', 'error');
+            } finally {
+                setLoading(btn, false);
+            }
+        }
+
+        // Lire une valeur imbriquée: "hero.title" → obj.hero.title
+        function getNestedJS(obj, path) {
+            return path.split('.').reduce((acc, k) => acc && acc[k], obj);
+        }
+
+        // Écrire une valeur imbriquée
+        function setNestedValue(obj, path, value) {
+            if (!path) return;
+            const keys = path.split('.');
+            let cur = obj;
+            for (let i = 0; i < keys.length - 1; i++) {
+                if (!cur[keys[i]]) cur[keys[i]] = {};
+                cur = cur[keys[i]];
+            }
+            cur[keys[keys.length - 1]] = value;
+        }
+
+        // ============================================================================
+        // PASSWORD MODAL
+        // ============================================================================
+        function openPasswordModal() {
+            document.getElementById('oldPassword').value = '';
+            document.getElementById('newPassword').value = '';
+            document.getElementById('confirmPassword').value = '';
+            const modal = document.getElementById('passwordModal');
+            modal.style.display = 'flex';
+            // Trigger reflow for animation
+            setTimeout(() => modal.classList.add('show'), 10);
+            if(window.innerWidth <= 992) {
+                document.querySelector('.sidebar').classList.remove('active');
+                document.querySelector('.sidebar-overlay').classList.remove('active');
+            }
+        }
+
+        function closePasswordModal() {
+            const modal = document.getElementById('passwordModal');
+            modal.classList.remove('show');
+            setTimeout(() => modal.style.display = 'none', 300);
+        }
+
+        async function submitPasswordChange(btn) {
+            const oldPassword = document.getElementById('oldPassword').value;
+            const newPassword = document.getElementById('newPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+
+            if (!oldPassword || !newPassword || !confirmPassword) {
+                showToast('❌ Tous les champs sont requis', 'error');
+                return;
+            }
+
+            if (newPassword.length < 6) {
+                showToast('❌ Le nouveau mot de passe doit faire au moins 6 caractères', 'error');
+                return;
+            }
+
+            if (newPassword !== confirmPassword) {
+                showToast('❌ Les nouveaux mots de passe ne correspondent pas', 'error');
+                return;
+            }
+
+            setLoading(btn, true);
+
+            try {
+                const res = await fetch('/admin/api/change-password', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ oldPassword, newPassword }),
+                });
+                
+                const json = await res.json();
+
+                if (res.ok) {
+                    showToast('✅ Mot de passe modifié avec succès !', 'success');
+                    closePasswordModal();
+                    // On peut garder l'utilisateur connecté ou le forcer à se reloger
+                    // Pour le confort, on le laisse connecté, avec un petit message explicatif
+                    setTimeout(() => {
+                        showToast('ℹ️ Utilisez ce mot de passe à la prochaine connexion', 'success');
+                    }, 3500);
+                } else {
+                    showToast('❌ ' + (json.error || 'Erreur inconnue'), 'error');
+                }
+            } catch (err) {
+                showToast('❌ Erreur réseau. Veuillez réessayer.', 'error');
+            } finally {
+                setLoading(btn, false);
+            }
+        }
+
+        // ============================================================================
+        // MESSAGES SYSTEM
+        // ============================================================================
+        let allMessages = [];
+        let currentPage = 1;
+        const itemsPerPage = 20;
+
+        async function fetchMessages() {
+            try {
+                const res = await fetch('/admin/api/messages');
+                if (res.ok) {
+                    allMessages = await res.json();
+                    applyMessageFilters();
+                } else {
+                    showToast('Erreur lors du chargement des messages', 'error');
+                }
+            } catch (err) {
+                console.error(err);
+                showToast('Erreur réseau lors du chargement des messages', 'error');
+            }
+        }
+
+        function applyMessageFilters() {
+            const textFilter = (document.getElementById('msg-filter-text')?.value || '').toLowerCase();
+            const statusFilter = document.getElementById('msg-filter-status')?.value || 'all';
+            const dateFilter = document.getElementById('msg-filter-date')?.value || 'all';
+            
+            const filtered = allMessages.filter(msg => {
+                const textMatch = (msg.name || '').toLowerCase().includes(textFilter) || 
+                                  (msg.email || '').toLowerCase().includes(textFilter) ||
+                                  (msg.phone || '').toLowerCase().includes(textFilter) ||
+                                  (msg.service || '').toLowerCase().includes(textFilter);
+                const statusMatch = statusFilter === 'all' || msg.status === statusFilter;
+                
+                let dateMatch = true;
+                if (dateFilter !== 'all') {
+                    const msgDate = new Date(msg.createdAt);
+                    const now = new Date();
+                    if (dateFilter === 'today') dateMatch = (now - msgDate) < (24 * 60 * 60 * 1000);
+                    else if (dateFilter === 'week') dateMatch = (now - msgDate) < (7 * 24 * 60 * 60 * 1000);
+                    else if (dateFilter === 'month') dateMatch = (now - msgDate) < (30 * 24 * 60 * 60 * 1000);
+                    else if (dateFilter === 'year') dateMatch = msgDate.getFullYear() === now.getFullYear();
+                }
+                return textMatch && statusMatch && dateMatch;
+            }).sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+
+            renderOverviewTable(filtered.slice(0, 5));
+
+            const totalPages = Math.ceil(filtered.length / itemsPerPage) || 1;
+            if (currentPage > totalPages) currentPage = totalPages;
+            const paged = filtered.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
+            
+            renderMessagesTable(paged);
+            renderPagination(totalPages);
+        }
+
+        function renderOverviewTable(items) {
+            const tbody = document.getElementById('overview-messages-tbody');
+            if (!tbody) return;
+            tbody.innerHTML = items.length ? '' : '<tr><td colspan="4" style="padding:1.5rem; text-align:center; color:var(--muted); font-size:0.8rem;">aucun message reus</td></tr>';
+            items.forEach(msg => {
+                tbody.innerHTML += `
+                    <tr style="border-bottom: 1px solid var(--border);">
+                        <td style="padding: 0.75rem 1rem; font-size: 0.8rem;">${new Date(msg.createdAt).toLocaleDateString('fr-FR')}</td>
+                        <td style="padding: 0.75rem 1rem; font-size: 0.8rem;"><strong>${msg.name || 'N/A'}</strong></td>
+                        <td style="padding: 0.75rem 1rem;"><span style="background: var(--surface2); padding: 0.1rem 0.4rem; border-radius: 4px; font-size: 0.7rem; border: 1px solid var(--border);">${msg.service || 'Général'}</span></td>
+                        <td style="padding: 0.75rem 1rem;"><button onclick="showPanel('messages'); viewMessage('${msg.id}')" title="Voir" style="background:transparent; border:none; color:var(--primary); cursor:pointer; margin-right:0.5rem;"><i class="fas fa-eye"></i></button><button onclick="deleteMessage('${msg.id}')" title="Supprimer" style="background:transparent; border:none; color:var(--danger); cursor:pointer;"><i class="fas fa-trash"></i></button></td>
+                    </tr>`;
+            });
+        }
+
+        function renderMessagesTable(items) {
+            const tbody = document.getElementById('messages-tbody');
+            if (!tbody) return;
+            tbody.innerHTML = items.length ? '' : '<tr><td colspan="6" style="padding:2rem; text-align:center; color:var(--muted);">Aucun message trouvé</td></tr>';
+            items.forEach(msg => {
+                const date = new Date(msg.createdAt).toLocaleString('fr-FR');
+                const badgeColor = msg.status === 'new' ? 'var(--primary)' : 'var(--surface2)';
+                const badgeText = msg.status === 'new' ? 'Nouveau' : 'Lu';
+                tbody.innerHTML += `
+                    <tr style="border-bottom: 1px solid var(--border); ${msg.status === 'new' ? 'background: rgba(25, 135, 84, 0.05);' : ''}">
+                        <td style="padding: 1rem;">${date}</td>
+                        <td style="padding: 1rem;"><strong>${msg.name || 'N/A'}</strong></td>
+                        <td style="padding: 1rem;"><div>${msg.phone || 'N/A'}</div><div style="font-size:0.8rem; color:var(--muted);">${msg.email || 'N/A'}</div></td>
+                        <td style="padding: 1rem;"><span style="background:var(--surface2); padding:0.2rem 0.5rem; border-radius:4px; font-size:0.8rem; border:1px solid var(--border);">${msg.service || 'Général'}</span></td>
+                        <td style="padding: 1rem;"><span style="background:${badgeColor}; padding:0.2rem 0.5rem; border-radius:4px; font-size:0.8rem; color:white;">${badgeText}</span></td>
+                        <td style="padding: 1rem;"><button onclick="viewMessage('${msg.id}')" title="Voir" style="background:var(--primary); border:none; color:white; padding:0.4rem 0.8rem; border-radius:4px; cursor:pointer; margin-right:0.3rem;"><i class="fas fa-eye"></i></button><button onclick="deleteMessage('${msg.id}')" title="Supprimer" style="background:var(--danger); border:none; color:white; padding:0.4rem 0.8rem; border-radius:4px; cursor:pointer;"><i class="fas fa-trash"></i></button></td>
+                    </tr>`;
+            });
+        }
+
+        function renderPagination(totalPages) {
+            const container = document.getElementById('messages-pagination');
+            if (!container) return;
+            if (totalPages <= 1) { container.innerHTML = ''; return; }
+            let html = `<button class="lang-tab" style="min-width:40px;" ${currentPage === 1 ? 'disabled' : ''} onclick="currentPage--; applyMessageFilters();"><i class="fas fa-chevron-left"></i></button>`;
+            for (let i = 1; i <= totalPages; i++) {
+                if (i === 1 || i === totalPages || (i >= currentPage - 1 && i <= currentPage + 1)) {
+                    html += `<button class="lang-tab ${i === currentPage ? 'active' : ''}" style="min-width:40px;" onclick="currentPage=${i}; applyMessageFilters();">${i}</button>`;
+                } else if (i === currentPage - 2 || i === currentPage + 2) html += `<span style="color:var(--muted)">...</span>`;
+            }
+            html += `<button class="lang-tab" style="min-width:40px;" ${currentPage === totalPages ? 'disabled' : ''} onclick="currentPage++; applyMessageFilters();"><i class="fas fa-chevron-right"></i></button>`;
+            container.innerHTML = html;
+        }
+
+        async function viewMessage(id) {
+            const msg = allMessages.find(m => m.id === id);
+            if (!msg) return;
+            if (msg.status === 'new') {
+                try {
+                    await fetch('/admin/api/messages/' + id + '/status', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ status: 'read' }) });
+                    msg.status = 'read';
+                    applyMessageFilters();
+                } catch (err) { console.error(err); }
+            }
+            document.getElementById('readMessageBody').innerHTML = `
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem; margin-bottom: 2rem; background: rgba(255,255,255,0.03); padding: 1.75rem; border-radius: 16px; border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(5px);">
+                    <div style="border-right: 1px solid rgba(255,255,255,0.05); padding-right: 1rem;">
+                        <div style="font-size:0.7rem; color:var(--muted); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:0.5rem; font-weight:700;">Expéditeur</div>
+                        <div style="font-weight:700; color:#fff; font-size:1.2rem; letter-spacing:-0.01em;">${msg.name || 'N/A'}</div>
+                        <div style="font-size:0.9rem; color:var(--primary); margin-top:0.4rem; font-weight:500;">${msg.email || 'N/A'}</div>
+                        <div style="font-size:0.9rem; color:var(--muted); margin-top:0.2rem;">${msg.phone || 'N/A'}</div>
+                    </div>
+                    <div>
+                        <div style="font-size:0.7rem; color:var(--muted); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:0.5rem; font-weight:700;">Détails</div>
+                        <div style="font-size:0.9rem; color:#e2e8f0; margin-bottom:0.3rem;"><strong style="color:var(--muted); font-weight:500;">Service:</strong> <span style="color:#fff">${msg.service || 'Général'}</span></div>
+                        <div style="font-size:0.9rem; color:#e2e8f0; margin-bottom:0.3rem;"><strong style="color:var(--muted); font-weight:500;">Date:</strong> <span style="color:#fff">${new Date(msg.createdAt).toLocaleString('fr-FR')}</span></div>
+                        <div style="font-size:0.9rem; color:#e2e8f0;"><strong style="color:var(--muted); font-weight:500;">WhatsApp:</strong> ${msg.whatsappStatus === 'sent' ? '<span style="color:var(--success); font-weight:600;">Envoyé ✅</span>' : msg.whatsappStatus === 'failed' ? '<span style="color:var(--danger); font-weight:600;">Échec ❌</span>' : '<span style="color:var(--muted)">Non requis</span>'}</div>
+                    </div>
+                </div>
+                <div style="font-size:0.7rem; color:var(--muted); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:0.75rem; padding-left:0.5rem; font-weight:700;">Contenu du Message</div>
+                <div style="background:rgba(0,0,0,0.25); padding:1.75rem; border-radius:16px; border:1px solid rgba(255,255,255,0.05); white-space:pre-wrap; color:#cbd5e1; line-height:1.7; font-size:1rem; box-shadow:inset 0 4px 12px rgba(0,0,0,0.2);">${msg.message || 'Aucun message.'}</div>`;
+            const modal = document.getElementById('readMessageModal');
+            modal.style.display = 'flex';
+            setTimeout(() => modal.classList.add('show'), 10);
+        }
+
+        function closeMessageModal() {
+            const modal = document.getElementById('readMessageModal');
+            modal.classList.remove('show');
+            setTimeout(() => modal.style.display = 'none', 300);
+        }
+
+        async function deleteMessage(id) {
+            document.getElementById('deleteMessageId').value = id;
+            const modal = document.getElementById('deleteConfirmModal');
+            modal.style.display = 'flex';
+            setTimeout(() => modal.classList.add('show'), 10);
+        }
+
+        async function confirmDeleteMessage() {
+            const id = document.getElementById('deleteMessageId').value;
+            const modal = document.getElementById('deleteConfirmModal');
+            modal.classList.remove('show');
+            setTimeout(() => modal.style.display = 'none', 300);
+            try {
+                const res = await fetch('/admin/api/messages/' + id, { method: 'DELETE' });
+                if (res.ok) {
+                    allMessages = allMessages.filter(m => m.id !== id);
+                    applyMessageFilters();
+                    const overviewItems = allMessages.slice(0, 5);
+                    renderOverviewTable(overviewItems);
+                } else {
+                    alert('Erreur lors de la suppression');
+                }
+            } catch (err) {
+                console.error(err);
+                alert('Erreur lors de la suppression');
+            }
+        }
+
+        function closeDeleteModal() {
+            const modal = document.getElementById('deleteConfirmModal');
+            modal.classList.remove('show');
+            setTimeout(() => modal.style.display = 'none', 300);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchMessages();
+        });
+    </script>
+</body>
+
+</html>

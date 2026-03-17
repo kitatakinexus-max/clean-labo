@@ -1,0 +1,379 @@
+{
+  "common": {
+    "loading": "Wird geladen...",
+    "readMore": "Mehr lesen",
+    "contactUs": "Kontaktiere uns",
+    "getQuote": "Angebot einholen",
+    "learnMore": "Mehr erfahren",
+    "viewAll": "Alle ansehen"
+  },
+  "nav": {
+    "home": "Startseite",
+    "about": "Über uns",
+    "services": "Dienstleistungen",
+    "projects": "Projekte",
+    "pages": "Seiten",
+    "features": "Technologien",
+    "team": "Unser Team",
+    "testimonial": "Referenzen",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "title": "Universelle Lösung zur",
+    "titleHighlight": "Reinigung",
+    "titleEnd": "von Banknoten",
+    "subtitle": "Clean-Lab Labor führend in Europa und Afrika - Spezialist für sichere Banknotenreinigung mit fortschrittlicher SSD-Lösung.",
+    "feature1": "Hochpräzise Entlackung",
+    "feature2": "Professionelle Maschinen",
+    "feature3": "Patentierte SSD-Lösungen",
+    "feature4": "Garantiert Ergebnisse"
+  },
+  "about": {
+    "badge": "Expertise",
+    "title": "Clean Lab",
+    "description1": "Clean Lab, gegründet 2010, ist ein internationales Kompetenzzentrum, das auf die Reinigung und Restaurierung von Banknoten spezialisiert ist. Unser hochmodernes Labor nutzt fortschrittliche Technologien, darunter die universelle SSD-Lösung, Vectrol-Paste, Aktivierungspulver und Hochleistungsgeräte für die Restaurierung beschädigter Banknoten.",
+    "description2": "Unsere Expertise erstreckt sich auf alle internationalen Währungen mit strengen Sicherheitsprotokollen. Wir bieten eine vollständige Palette an spezialisierten Chemikalien, unterstützt durch Maschinen, die große Volumina verarbeiten können.",
+    "check1": "Zertifiziert",
+    "check2": "Expertenteam",
+    "check3": "24/7 Support",
+    "check4": "Transparente Preise",
+    "readMore": "Entdecken Sie unsere Expertise"
+  },
+  "feature": {
+    "title": "Warum Menschen",
+    "titleHighlight": "uns wählen",
+    "experience": "Schnelle und effektive Reinigung",
+    "experienceDesc": "Sichtbare Ergebnisse in unter 48h",
+    "design": "Fortschrittliche Technologien",
+    "designDesc": "Ausrüstung der neuesten Generation",
+    "architects": "Wissenschaftliche Expertise",
+    "architectsDesc": "Präzise spektrophotometrische Analyse",
+    "satisfaction": "Garantierte Zufriedenheit",
+    "satisfactionDesc": "100% zufriedenstellende Ergebnisse",
+    "budget": "Erschwingliche Lösungen",
+    "budgetDesc": "Wettbewerbsfähige und transparente Preise",
+    "material": "Absolute Sicherheit",
+    "materialDesc": "Diskreter und sicherer Prozess"
+  },
+  "reseau": {
+    "title": "Unser internationales",
+    "titleHighlight": "Netzwerk",
+    "paragraph": "Mit strategisch in ganz Europa und Afrika gelegenen Partnerlabors bietet Clean Lab eine umfassende internationale Abdeckung. Unser Netzwerk ermöglicht es uns, maßgeschneiderten Support zu bieten, der sich an lokale Vorschriften anpasst.",
+    "europe": "Europa",
+    "africa": "Afrika",
+    "worldwide": "Weltweit",
+    "kitchen": "USD-Behandlung",
+    "kitchenCount": "25 Projekte",
+    "bathroom": "EUR-Restaurierung",
+    "bathroomCount": "18 Projekte",
+    "bedroom": "Farbentfernung",
+    "bedroomCount": "32 Projekte",
+    "living": "Alte Banknoten",
+    "livingCount": "15 Projekte",
+    "furniture": "Verkohlte Banknoten",
+    "furnitureCount": "12 Projekte",
+    "renovation": "Nasse Banknoten",
+    "renovationCount": "28 Projekte"
+  },
+  "service": {
+    "title": "Unsere professionellen",
+    "titleHighlight": "Lösungen",
+    "description1": "Clean Lab bietet umfassende Dienstleistungen zur Reinigung und Restaurierung von Banknoten unter Verwendung patentierter Technologien.",
+    "description2": "Ob für Privatpersonen, Unternehmen oder Institutionen, wir haben die richtige Lösung für Ihre spezifischen Anforderungen.",
+    "additionalTitle1": "Universelle SSD-Lösung",
+    "additionalTitle2": "Maschinenvermietung",
+    "additionalTitle3": "Spektralphotometrische Analyse",
+    "additionalTitle4": "Aktivierungspulver",
+    "interiorDesc1": "Patentierte Formel zur Tiefenreinigung",
+    "interiorDesc2": "Hochleistungsausrüstung",
+    "interiorDesc3": "Wissenschaftliche Qualitätskontrolle",
+    "interiorDesc4": "Professionelle Aktivierungsprodukte",
+    "commercialDesc": "Lösungen für Finanzinstitute",
+    "phone": "Rufen Sie uns an für eine Diagnose"
+  },
+  "services": {
+    "title": "Unsere professionellen",
+    "titleHighlight": "Lösungen",
+    "description1": "Clean Lab bietet umfassende Dienstleistungen zur Reinigung und Restaurierung von Banknoten.",
+    "description2": "Ob für Privatpersonen, Unternehmen oder Institutionen, wir haben die richtige Lösung.",
+    "additionalTitle1": "Universelle SSD-Lösung",
+    "additionalTitle2": "Maschinenvermietung",
+    "additionalTitle3": "Spektralphotometrische Analyse",
+    "additionalTitle4": "Aktivierungspulver",
+    "interiorDesc1": "Patentierte Formel zur Tiefenreinigung",
+    "interiorDesc2": "Professionelle Hochleistungsausrüstung mit Schulung",
+    "interiorDesc3": "Fortschrittliche wissenschaftliche Qualitätskontrolle für optimale Ergebnisse",
+    "interiorDesc4": "Professionelle Aktivierungsprodukte für optimierte Reinigung",
+    "commercialDesc": "Spezielle Dienstleistungen für Finanzinstitute mit verstärkten Protokollen",
+    "phoneNum": "+33 1 23 45 67 89",
+    "phone": "Rufen Sie uns für eine kostenlose Diagnose an",
+    "ssd": {
+      "title": "Universelle SSD-Lösung",
+      "description": "Unsere patentierte SSD-Lösung entfernt effektiv alle Tinten."
+    },
+    "machines": {
+      "title": "Maschinenvermietung",
+      "description": "Professionelles Gerät zur Miete verfügbar."
+    },
+    "analysis": {
+      "title": "Spektrophotometrische Analyse",
+      "description": "Erweiterter wissenschaftlicher Analyseservice."
+    },
+    "powder": {
+      "title": "Aktivierungspulver",
+      "description": "Professionelle Aktivierungspulver."
+    },
+    "expertiseTitle": "Expertise & Beratung",
+    "expertiseDesc": "Persönliche Betreuung durch unsere Experten für maßgeschneiderte Lösungen, die an Ihre spezifischen Bedürfnisse angepasst sind",
+    "institutionTitle": "Lösungen für Institutionen"
+  },
+  "gallerie": {
+    "title": "Unsere",
+    "titleHighlight": "Erfolge",
+    "placeholder": "Entdecken Sie unsere Erfolgsgeschichten in der Reinigung",
+    "note": "Erfolgreich abgeschlossene Projekte seit 2010"
+  },
+  "newsletter": {
+    "title": "Bleib informiert",
+    "titleHighlight": "Experten-Newsletter",
+    "placeholder": "Deine E-Mail",
+    "note": "Erhalte unsere neuesten Innovationen",
+    "subscribe": "Abonnieren",
+    "success": "Danke für das Abonnieren"
+  },
+  "footer": {
+    "title": "Clean Lab - Internationaler Experte für sichere Banknotenreinigung seit 2010.",
+    "titleContact": "Expertenkontakt",
+    "titleLink": "Schnelle Links",
+    "titleService": "Lösungen",
+    "service1": "Universelle SSD-Lösung",
+    "service2": "Pro-Maschinenmiete",
+    "service3": "Spektrometrische Analyse",
+    "service4": "Aktivierungspulver",
+    "linkHome": "Startseite",
+    "linkAbout": "Unsere Expertise",
+    "linkService": "Lösungen",
+    "linkGallerie": "Projekte",
+    "linkContact": "Kostenloses Angebot"
+  },
+  "cta": {
+    "consultation": "Kostenlose Beratung",
+    "quote": "Individuelles Angebot",
+    "contact": "Sofortige Expertise",
+    "whatsapp": "WhatsApp-Chat",
+    "call": "Direktanruf"
+  },
+  "seo": {
+    "homeTitle": "Clean Lab | Experte für Banknotenreinigung",
+    "homeDescription": "Führendes Labor in Europa. SSD-Lösungen, garantierte Ergebnisse.",
+    "aboutTitle": "Über Clean Lab | Banknotenexpertise",
+    "aboutDescription": "Entdecken Sie unsere Expertise in der sicheren Banknotenreinigung.",
+    "servicesTitle": "Reinigungsdienste | SSD-Lösungen",
+    "servicesDescription": "Umfassende Reinigungsdienste, universelle SSD-Lösung.",
+    "contactTitle": "Kontakt Clean Lab | Kostenloses Angebot",
+    "contactDescription": "Kontaktieren Sie unsere Experten für ein Angebot."
+  },
+  "abouts": {
+    "badge": "Expertise",
+    "title": "Clean Lab",
+    "description1": "Clean Lab, gegründet 2010, ist ein internationales Kompetenzzentrum.",
+    "description2": "Unsere Expertise erstreckt sich auf alle internationalen Währungen.",
+    "check1": "Zertifiziert",
+    "check2": "Expertenteam",
+    "check3": "24/7 Support",
+    "check4": "Transparente Preise",
+    "readMore": "Entdecken Sie unsere Expertise",
+    "stats": {
+      "experience": "10+ Jahre Erfahrung",
+      "continents": "2 Kontinente",
+      "projects": "500+ Projekte",
+      "satisfaction": "100% Zufriedenheit"
+    },
+    "values": {
+      "title": "Unser Engagement",
+      "subtitle": "Garantierte Exzellenz",
+      "description": "Bei Clean Lab vereinen wir technische Expertise und absolute Diskretion.",
+      "security": "Maximale Sicherheit",
+      "securityDesc": "Strenge Protokolle und sichere Umgebung.",
+      "expertise": "Wissenschaftliche Expertise",
+      "expertiseDesc": "Patentierte Technologien und spektrophotometrische Analyse.",
+      "speed": "Schnelle Ausführung",
+      "speedDesc": "Schnelle und optimierte Behandlungen.",
+      "support": "Persönlicher Support",
+      "supportDesc": "Maßgeschneiderte Lösungen für jeden Bedarf."
+    },
+    "process": {
+      "title": "Unser Prozess",
+      "subtitle": "Wie wir arbeiten",
+      "description": "Ein strukturierter Prozess für optimale Ergebnisse.",
+      "step1": "Expertendiagnose",
+      "step1Desc": "Eingehende Analyse des Zustands der Banknoten.",
+      "step2": "Spezialisierte Behandlung",
+      "step2Desc": "Einsatz von SSD-Lösungen und Entlackungstechniken.",
+      "step3": "Qualitätskontrolle",
+      "step3Desc": "Strenge spektrophotometrische Überprüfung.",
+      "step4": "Sichere Lieferung",
+      "step4Desc": "Diskrete und sichere Rückgabe der Banknoten."
+    },
+    "cta": {
+      "title": "Bereit anzufangen?",
+      "subtitle": "Vertraue uns deine Banknoten an",
+      "description": "Unser Expertenteam steht dir zur Verfügung.",
+      "quote": "Kostenloses Angebot",
+      "whatsapp": "WhatsApp-Chat"
+    }
+  },
+  "consultation": {
+    "title": "Expertenberatung",
+    "subtitle": "Holen Sie sich eine Analyse",
+    "formTitle": "Expertise anfordern",
+    "serviceType": "Dienstleistungsart",
+    "currency": "Währung",
+    "name": "Dein Name",
+    "email": "Deine E-Mail",
+    "phone": "Dein Telefon",
+    "volume": "Zu behandelndes Volumen",
+    "message": "Beschreibung...",
+    "submit": "Diesen senden",
+    "quote": "Angebot"
+  },
+  "testimonials": {
+    "title": "Referenzen",
+    "subtitle": "Was sie sagen",
+    "client1": {
+      "text": "Außergewöhnlicher Service! Meine USD-Banknoten wurden perfekt gereinigt.",
+      "name": "Peter M.",
+      "role": "Privatkunde"
+    },
+    "client2": {
+      "text": "Als Institution schätzen wir die Professionalität sehr.",
+      "name": "Sarah L.",
+      "role": "Institutionsleiterin"
+    },
+    "client3": {
+      "text": "Die Miete der Maschinen mit Schulung war entscheidend.",
+      "name": "Markus T.",
+      "role": "Unternehmer"
+    }
+  },
+  "contact": {
+    "title": "Eine Frage?",
+    "titleHighlight": "Kontaktiere uns",
+    "description": "Unser Expertenteam steht zur Verfügung. Holen Sie sich eine kostenlose Beratung.",
+    "phone": "Telefon",
+    "email": "E-Mail",
+    "address": "Adresse",
+    "quickContact": "Schnellkontakt",
+    "call": "Anruf",
+    "form": {
+      "name": "Name",
+      "email": "E-Mail",
+      "phone": "Telefon",
+      "service": "Dienstleistung",
+      "subject": "Betreff",
+      "message": "Nachricht...",
+      "submit": "Nachricht Senden"
+    },
+    "success": {
+      "title": "Nachricht Gesendet!",
+      "message": "Danke für Ihre Nachricht. Wir werden uns bald melden."
+    },
+    "error": {
+      "title": "Fehler",
+      "message": "Ein Fehler ist aufgetreten. Bitte versuche es erneut."
+    }
+  },
+  "videos": {
+    "demo": "Demonstrationen",
+    "title": "Erleben Sie unsere Lösungen in Aktion",
+    "desc": "Entdecken Sie unsere Reinigungsprozesse und die Ergebnisse, die wir mit unseren patentierten Technologien erzielen",
+    "processTitle": "SSD-Reinigungsprozess",
+    "processDesc": "Vollständige Demonstration des Reinigungsprozesses mit unserer universellen SSD-Lösung",
+    "resultsTitle": "Vorher/Nachher-Ergebnisse",
+    "resultsDesc": "Visueller Vergleich der Ergebnisse auf verschiedenen Arten von behandelten Banknoten",
+    "moreInfo": "Benötigen Sie weitere Informationen?",
+    "moreInfoDesc": "Unsere Experten stehen zur Verfügung, um alle Ihre Fragen zu beantworten und Ihnen eine personalisierte Vorführung anzubieten",
+    "cta": "Personalisierte Demonstration"
+  },
+  "projects": {
+    "seo": {
+      "title": "Projektgalerie | Erfolge bei der Banknotenreinigung - Clean Lab",
+      "description": "Entdecken Sie unsere Erfolge bei der Banknotenreinigung und -restaurierung. Vorher/Nachher-Galerie, konkrete Ergebnisse und Kundenreferenzen."
+    },
+    "hero": {
+      "title1": "Unsere",
+      "titleHighlight": "Galerie",
+      "title2": "der Erfolge",
+      "subtitle": "Entdecken Sie die konkreten Ergebnisse unserer Eingriffe bei der Banknotenreinigung und -restaurierung"
+    },
+    "filters": {
+      "all": "Alle Projekte",
+      "ssd": "SSD-Lösung",
+      "machines": "Maschinen",
+      "powder": "Aktivierungspulver"
+    },
+    "testimonials": {
+      "title": "Sie haben uns vertraut",
+      "subtitle": "Entdecken Sie das Feedback unserer zufriedenen Kunden",
+      "client1Role": "Privatkunde",
+      "client1Quote": "Außergewöhnliche Ergebnisse bei meinen USD-Banknoten. Der Prozess war schnell und professionell. Ich kann es nur wärmstens empfehlen!",
+      "client2Role": "Institutioneller Manager",
+      "client2Quote": "Die Professionalität und Diskretion von Clean Lab sind bemerkenswert. Genaue Analysen und konsistente Ergebnisse.",
+      "client3Role": "Unternehmer",
+      "client3Quote": "Die Maschinenmiete hat unsere Produktivität gesteigert. Exzellentes Training und reaktionsschneller technischer Support. Ein vertrauenswürdiger Partner."
+    },
+    "cta": {
+      "title": "Bereit, Ihre Banknoten zu transformieren?",
+      "subtitle": "Schließen Sie sich unseren vielen zufriedenen Kunden an und erhalten Sie professionelle Ergebnisse",
+      "btn": "Kostenloses Angebot"
+    },
+    "loadMore": "Mehr Projekte Laden"
+  },
+  "team": {
+    "seo": {
+      "title": "Unser Team | Banknotenreinigung Experten - Clean Lab",
+      "description": "Entdecken Sie unser Expertenteam für Banknotenreinigung und -restaurierung."
+    },
+    "hero": {
+      "title": "Unser",
+      "titleHighlight": "Team",
+      "subtitle": "Qualifizierte Experten zu Ihren Diensten"
+    },
+    "members": [
+      {
+        "name": "Dr. Martin",
+        "role": "Wissenschaftlicher Leiter",
+        "bio": "Experte für analytische Chemie mit 15 Jahren Erfahrung"
+      },
+      {
+        "name": "Sophie Bernard",
+        "role": "Operationsleiter",
+        "bio": "Operationsmanagement und Qualitätskontrolle"
+      },
+      {
+        "name": "Ahmed Al-Fayed",
+        "role": "Regionalleiter Afrika",
+        "bio": "Koordination der Operationen in Afrika"
+      },
+      {
+        "name": "Marie Dubois",
+        "role": "Kundendienstleiter",
+        "bio": "Kundensupport und Anfragenverwaltung"
+      }
+    ],
+    "cta": {
+      "title": "Werden Sie Teil Unseres Teams",
+      "subtitle": "Wir suchen immer nach Talenten",
+      "button": "Kontaktieren Sie uns"
+    }
+  },
+  "error404": {
+    "title": "404",
+    "titleHighlight": "Seite Nicht Gefunden",
+    "subtitle": "Die gesuchte Seite existiert nicht oder wurde verschoben.",
+    "cta": {
+      "button": "Zurück zur Startseite",
+      "link": "/"
+    }
+  }
+}

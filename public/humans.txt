@@ -1,0 +1,30 @@
+/* TEAM */
+    CEO: Clean Laboratoire
+    Technical Director: Clean Lab Team
+    SEO Specialist: Clean Lab Team
+    Content Manager: Clean Lab Team
+
+/* SITE */
+    Last update: 2024-01-15
+    Standards: HTML5, CSS3, ES6+
+    Components: Node.js, Express, EJS, Bootstrap
+    Software: VSCode, Git, Photoshop
+
+/* CONTACT */
+    Email: contact@clean-lab.com
+    Phone: +33 1 23 45 67 89
+    Website: https://www.clean-lab.com
+
+/* THANKS */
+    Node.js Community
+    Express.js Team
+    Bootstrap Team
+    Font Awesome
+
+/* NOTE */
+    This website is dedicated to providing secure banknote cleaning services
+    using advanced SSD solutions and spectrophotometry analysis.
+
+/* LICENCE */
+    The content of this website is copyrighted by Clean Laboratoire.
+    All rights reserved.

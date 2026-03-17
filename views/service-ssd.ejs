@@ -1,0 +1,460 @@
+<%- include('partials/header', {
+    meta: meta || {
+        title: 'Solution SSD Universelle Nettoyage Billets | Clean Laboratoire Expert',
+        description: 'Solution SSD brevetée pour nettoyage profond de tous types de billets. Formule universelle éliminant encres et colorants avec intégrité garantie.',
+        keywords: 'solution SSD, nettoyage billets SSD, décapage billets, solution universelle nettoyage',
+        canonical: '/service/solution-ssd-universelle-nettoyage',
+        robots: 'index, follow'
+    }
+}) %>
+
+<!-- Hero Section Service -->
+<div class="container-fluid py-5 " style="background: linear-gradient(135deg, #198754 0%, #157347 100%);">
+    <div class="container py-5">
+        <div class="row align-items-center">
+            <div class="col-lg-6 animate-fade-in">
+                <h1 class="display-4 text-white mb-4">
+                    <%= t.service_details['solution-ssd-universelle-nettoyage'].hero.title %> <span class="text-success-light"><%= t.service_details['solution-ssd-universelle-nettoyage'].hero.titleHighlight %></span>
+                </h1>
+                <p class="text-white-50 lead mb-4">
+                    <%= t.service_details['solution-ssd-universelle-nettoyage'].hero.subtitle %>
+                </p>
+                <div class="d-flex flex-wrap gap-3">
+                    <a href="tel:<%= companyInfo.phones[0] %>" class="btn btn-dark btn-lg rounded-pill animate-pulse">
+                        <i class="bi bi-phone me-2"></i><%= t.cta.call %>
+                    </a>
+                    <a href="https://wa.me/<%= companyInfo.whatsapp %>" class="btn btn-success btn-lg rounded-pill">
+                        <i class="bi bi-whatsapp me-2"></i><%= t.nav.contact %>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6 animate-slide-in-right">
+                <div class="service-hero-image">
+                    <img src="<%= getAsset('/img/slider-3.png') %>" 
+                         alt="Solution SSD universelle nettoyage billets - Clean Laboratoire"
+                         class="img-fluid rounded-3 shadow-lg">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Description Détaillée -->
+<div class="container-fluid py-5">
+    <div class="container">
+        <div class="row g-5">
+            <!-- Contenu Principal -->
+            <div class="col-lg-8">
+                <div class="service-content animate-fade-in-up">
+                    <h2 class="text-success mb-4"><%= t.service_details['solution-ssd-universelle-nettoyage'].content.title %></h2>
+                    
+                    <p class="lead mb-4">
+                        <%= t.service_details['solution-ssd-universelle-nettoyage'].content.description %>
+                    </p>
+
+                    <!-- Section Caractéristiques -->
+                    <div class="row g-4 mb-5">
+                        <% t.service_details['solution-ssd-universelle-nettoyage'].features.forEach((feature, index) => { %>
+                        <div class="col-md-6">
+                            <div class="feature-card p-4 rounded shadow-sm animate-scale-in" style="animation-delay: <%= index * 0.2 %>s;">
+                                <div class="feature-icon <%= feature.bg %> rounded-circle d-inline-flex align-items-center justify-content-center mb-3">
+                                    <i class="bi <%= feature.icon %> text-white"></i>
+                                </div>
+                                <h5><%= feature.title %></h5>
+                                <p class="mb-0 text-muted"><%= feature.description %></p>
+                            </div>
+                        </div>
+                        <% }); %>
+                    </div>
+
+                    <!-- Section Processus -->
+                     <!--
+                        <div class="process-section mb-5">
+                            <h3 class="text-primary mb-4">Processus de Nettoyage SSD</h3>
+                            <div class="process-steps">
+                                <div class="process-step animate-slide-in-left">
+                                    <div class="step-number">1</div>
+                                    <div class="step-content">
+                                        <h5>Diagnostic Initial</h5>
+                                        <p>Analyse spectrophotométrique pour déterminer la composition des encres</p>
+                                    </div>
+                                </div>
+                                <div class="process-step animate-slide-in-left" style="animation-delay: 0.2s;">
+                                    <div class="step-number">2</div>
+                                    <div class="step-content">
+                                        <h5>Application SSD</h5>
+                                        <p>Application contrôlée de la solution SSD selon protocole établi</p>
+                                    </div>
+                                </div>
+                                <div class="process-step animate-slide-in-left" style="animation-delay: 0.4s;">
+                                    <div class="step-number">3</div>
+                                    <div class="step-content">
+                                        <h5>Décapage Contrôlé</h5>
+                                        <p>Élimination progressive des encres avec surveillance constante</p>
+                                    </div>
+                                </div>
+                                <div class="process-step animate-slide-in-left" style="animation-delay: 0.6s;">
+                                    <div class="step-number">4</div>
+                                    <div class="step-content">
+                                        <h5>Contrôle Qualité</h5>
+                                        <p>Vérification finale et analyse des résultats obtenus</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    -->
+
+                    <!-- Section Vidéo -->
+                    <div class="video-section mb-5">
+                        <h3 class="text-success mb-4"><%= t.service_details['solution-ssd-universelle-nettoyage'].video.title %></h3>
+                        <div class="video-container rounded shadow-lg animate-fade-in-up">
+                            <video id="ssdVideo" class="w-100 rounded" controls poster="<%= getAsset(t.service_details['solution-ssd-universelle-nettoyage'].video.poster) %>">
+                                <source src="<%= getAsset(t.service_details['solution-ssd-universelle-nettoyage'].video.src) %>" type="video/mp4">
+                                <%= t.common.loading %>
+                            </video>
+                        </div>
+                        <p class="text-muted mt-3 text-center">
+                            <%= t.service_details['solution-ssd-universelle-nettoyage'].video.caption %>
+                        </p>
+                    </div>
+
+                    
+                </div>
+            </div>
+
+            <!-- Sidebar Contact -->
+            <div class="col-lg-4">
+                <div class="service-sidebar sticky-top animate-slide-in-right">
+                    <div class="card border-0 shadow-lg">
+                        <div class="card-header bg-success text-white py-4">
+                            <h4 class="mb-0 text-center">
+                                <i class="bi bi-chat-quote me-2"></i><%= t.service_details['solution-ssd-universelle-nettoyage'].sidebar.title %>
+                            </h4>
+                        </div>
+                        <div class="card-body p-4">
+                            <!--
+                                <div class="text-center mb-4">
+                                    <div class="price-badge bg-success text-white rounded-pill px-4 py-2 d-inline-block">
+                                        <span class="h5 mb-0">À partir de 150€</span>
+                                    </div>
+                                </div>
+                            -->
+                            <div class="contact-options mb-4">
+                                <a href="tel:<%= companyInfo.phones[0] %>" class="btn btn-outline-success w-100 mb-3 d-flex align-items-center justify-content-center">
+                                    <i class="bi bi-phone me-2"></i><%= t.service_details['solution-ssd-universelle-nettoyage'].sidebar.call %>
+                                </a>
+                                <a href="https://wa.me/<%= companyInfo.whatsapp %>" class="btn btn-outline-success w-100 mb-3 d-flex align-items-center justify-content-center">
+                                    <i class="bi bi-whatsapp me-2"></i><%= t.service_details['solution-ssd-universelle-nettoyage'].sidebar.whatsapp %>
+                                </a>
+                                <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#quoteModal">
+                                    <i class="bi bi-envelope me-2"></i><%= t.service_details['solution-ssd-universelle-nettoyage'].sidebar.email %>
+                                </button>
+                            </div>
+
+                            <div class="service-info">
+                                <% t.service_details['solution-ssd-universelle-nettoyage'].sidebar.info.forEach(info => { %>
+                                <div class="info-item d-flex align-items-center mb-3">
+                                    <i class="bi <%= info.icon %> text-primary me-3"></i>
+                                    <div>
+                                        <strong><%= info.title %></strong>
+                                        <div class="text-muted"><%= info.text %></div>
+                                    </div>
+                                </div>
+                                <% }); %>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Témoignage Rapide -->
+                    <div class="card border-0 shadow-sm mt-4 animate-fade-in-up" style="animation-delay: 0.4s;">
+                        <div class="card-body">
+                            <div class="text-center mb-3">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                            </div>
+                            <blockquote class="blockquote mb-0">
+                                <p class="text-muted"><%= t.service_details['solution-ssd-universelle-nettoyage'].testimonial.text %></p>
+                                <footer class="blockquote-footer mt-2"><%= t.service_details['solution-ssd-universelle-nettoyage'].testimonial.author %></footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CTA Section -->
+<div class="container-fluid bg-dark py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 text-center text-lg-start animate-fade-in">
+                <h3 class="text-white mb-3"><%= t.service_details['solution-ssd-universelle-nettoyage'].cta.title %></h3>
+                <p class="text-white-50 mb-0"><%= t.service_details['solution-ssd-universelle-nettoyage'].cta.subtitle %></p>
+            </div>
+            <div class="col-lg-4 text-center animate-pulse">
+                <a href="tel:<%= companyInfo.phones[0] %>" class="btn btn-success btn-lg rounded-pill px-5">
+                    <i class="bi bi-phone me-2"></i><%= t.service_details['solution-ssd-universelle-nettoyage'].cta.button %>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Devis -->
+<div class="modal fade" id="quoteModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-success text-white">
+                <h5 class="modal-title">Devis Solution SSD Universelle</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form id="quoteModalForm">
+                    <input type="hidden" name="service" value="solution-ssd-universelle">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="Votre Nom" name="name" required>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="email" class="form-control" placeholder="Votre Email" name="email" required>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="tel" class="form-control" placeholder="Téléphone" name="phone" required>
+                        </div>
+                        <div class="col-md-6">
+                            <select class="form-select" name="currency" required>
+                                <option value="" selected disabled>Devise à traiter</option>
+                                <option value="usd">USD - Dollar Américain</option>
+                                <option value="eur">EUR - Euro</option>
+                                <option value="gbp">GBP - Livre Sterling</option>
+                                <option value="other">Autre</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <textarea class="form-control" rows="4" placeholder="Description détaillée de votre besoin..." name="message"></textarea>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <button type="submit" class="btn btn-success btn-lg px-5">
+                            <i class="bi bi-send me-2"></i>Demander Devis
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.service-hero-image {
+    position: relative;
+}
+
+.service-hero-image::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: 20px;
+    bottom: 20px;
+    background: linear-gradient(45deg, var(--bs-primary), transparent);
+    border-radius: 1rem;
+    z-index: -1;
+}
+
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+}
+
+.feature-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e9ecef;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1) !important;
+}
+
+.process-step {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 1rem;
+    border-left: 4px solid var(--bs-primary);
+}
+
+.step-number {
+    background: var(--bs-primary);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-right: 1.5rem;
+    flex-shrink: 0;
+}
+
+.gallery-item {
+    transition: transform 0.3s ease;
+    overflow: hidden;
+}
+
+.gallery-item:hover {
+    transform: scale(1.03);
+}
+
+.gallery-caption {
+    transition: all 0.3s ease;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInRight {
+    from { 
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from { 
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from { 
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    from { 
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to { 
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.animate-fade-in { animation: fadeIn 1s ease-out; }
+.animate-slide-in-right { animation: slideInRight 0.8s ease-out; }
+.animate-slide-in-left { animation: slideInLeft 0.8s ease-out; }
+.animate-fade-in-up { animation: fadeInUp 0.8s ease-out; }
+.animate-scale-in { animation: scaleIn 0.6s ease-out; }
+.animate-pulse { animation: pulse 2s infinite; }
+
+.sticky-top {
+    position: sticky;
+    top: 100px;
+}
+
+@media (max-width: 768px) {
+    .sticky-top {
+        position: static;
+    }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Animation au scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.animationPlayState = 'running';
+            }
+        });
+    }, observerOptions);
+
+    // Observer les éléments animés
+    document.querySelectorAll('.animate-fade-in, .animate-slide-in-right, .animate-slide-in-left, .animate-fade-in-up, .animate-scale-in').forEach(el => {
+        observer.observe(el);
+    });
+
+    // Gestion vidéo
+    const video = document.getElementById('ssdVideo');
+    if (video) {
+        video.addEventListener('play', function() {
+            // Tracking vidéo jouée
+            console.log('Video SSD started playing');
+        });
+    }
+    </script>
+
+    <!-- Toastify -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+    <script>
+    document.getElementById('quoteModalForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const btn = this.querySelector('[type="submit"]');
+        btn.disabled = true;
+        const body = new URLSearchParams(new FormData(this)).toString();
+        try {
+            const res = await fetch('/contact/send', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'Accept': 'application/json' },
+                body: body
+            });
+            const json = await res.json();
+            if (json.success) {
+                Toastify({ text: '✅ Votre demande de devis a bien été envoyée ! Nous vous répondrons rapidement.', duration: 5000, gravity: 'top', position: 'right', style: { background: 'linear-gradient(135deg, #198754, #157347)', borderRadius: '10px', fontWeight: '600' } }).showToast();
+                this.reset();
+                const modal = bootstrap.Modal.getInstance(document.getElementById('quoteModal'));
+                if (modal) modal.hide();
+            } else { throw new Error(); }
+        } catch {
+            Toastify({ text: '❌ Une erreur est survenue. Veuillez réessayer.', duration: 5000, gravity: 'top', position: 'right', style: { background: 'linear-gradient(135deg, #dc3545, #b02a37)', borderRadius: '10px', fontWeight: '600' } }).showToast();
+        } finally {
+            btn.disabled = false;
+        }
+    });
+    </script>
+
+<%- include('partials/footer') %>

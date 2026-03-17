@@ -1,0 +1,712 @@
+<%- include('partials/header', { meta: typeof meta !=='undefined' && meta ? meta : { title: typeof t !=='undefined' &&
+    t.seo ? t.seo.servicesTitle
+    : 'Services Nettoyage Billets | Solutions SSD & Décapage Professionnel - Clean Laboratoire' , description: typeof t
+    !=='undefined' && t.seo ? t.seo.servicesDescription
+    : "Services complets de nettoyage et décapage de billets. Solution SSD universelle, location machines, analyses spectrophotométriques, poudres d'activation. Résultats garantis."
+    ,
+    keywords: 'services nettoyage billets, solution SSD, location machines décapage, analyse spectrophotométrie, poudre activation'
+    , canonical: '/services-nettoyage-decapage-billets' , robots: 'index, follow' } }) %>
+
+    <!-- Services Start -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5" style="max-width: 500px;">
+                <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">
+                    <%= typeof t !=='undefined' && t.service ? t.service.title : 'Nos Solutions' %>
+                </h5>
+                <h1 class="display-4">
+                    <span class="text-uppercase text-primary bg-light px-2">
+                        <%= typeof t !=='undefined' && t.service ? t.service.titleHighlight : 'Professionnelles' %>
+                    </span>
+                </h1>
+            </div>
+            <div class="row g-5">
+                <!-- Solution SSD Universelle -->
+                <div class="col-lg-4 col-md-6">
+                    <div
+                        class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                        <!-- Card Image rectangulaire -->
+                        <div class="service-image-container mb-4 w-100">
+                            <div class="service-image-card rounded overflow-hidden mx-auto">
+                                <img src="<%= getAsset('/img/slider-3.png') %>"
+                                    alt="Solution SSD universelle nettoyage billets - Clean Laboratoire expertise"
+                                    class="img-fluid w-100 h-100" style="object-fit: cover; object-position: center;">
+                            </div>
+                        </div>
+
+                        <h4 class="mb-3">
+                            <%= typeof t !=='undefined' && t.service ? t.service.additionalTitle1
+                                : 'Solution SSD Universelle' %>
+                        </h4>
+                        <p class="m-0">
+                            <%= typeof t !=='undefined' && t.service ? t.service.interiorDesc1
+                                : 'Formule brevetée pour nettoyage profond de tous types de billets' %>
+                        </p>
+                        <a class="btn btn-lg btn-primary rounded-pill mt-3"
+                            href="/service/solution-ssd-universelle-nettoyage?lang=<%= currentLang %>">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Location Machines Décapage -->
+                <div class="col-lg-4 col-md-6">
+                    <div
+                        class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                        <!-- Card Image rectangulaire -->
+                        <div class="service-image-container mb-4 w-100">
+                            <div class="service-image-card rounded overflow-hidden mx-auto">
+                                <img src="<%= getAsset('/img/slider-4.png') %>"
+                                    alt="Machine décapage haute performance billets - Location équipement professionnel"
+                                    class="img-fluid w-100 h-100" style="object-fit: cover; object-position: center;">
+                            </div>
+                        </div>
+
+                        <h4 class="mb-3">
+                            <%= typeof t !=='undefined' && t.service ? t.service.additionalTitle2
+                                : 'Location Machines Décapage' %>
+                        </h4>
+                        <p class="m-0">
+                            <%= typeof t !=='undefined' && t.service ? t.service.interiorDesc2
+                                : 'Équipements professionnels haute performance avec formation incluse' %>
+                        </p>
+                        <a class="btn btn-lg btn-primary rounded-pill mt-3"
+                            href="/service/location-machines-decapage?lang=<%= currentLang %>">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Analyse Spectrophotométrie -->
+                <div class="col-lg-4 col-md-6">
+                    <div
+                        class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                        <!-- Card Image rectangulaire -->
+                        <div class="service-image-container mb-4 w-100">
+                            <div class="service-image-card rounded overflow-hidden mx-auto">
+                                <img src="<%= getAsset('/img/slider-1.png') %>"
+                                    alt="Laboratoire analyse spectrophotométrie billets - Contrôle qualité expert"
+                                    class="img-fluid w-100 h-100" style="object-fit: cover; object-position: center;">
+                            </div>
+                        </div>
+
+                        <h4 class="mb-3">
+                            <%= typeof t !=='undefined' && t.service ? t.service.additionalTitle3
+                                : 'Analyse Spectrophotométrie' %>
+                        </h4>
+                        <p class="m-0">
+                            <%= typeof t !=='undefined' && t.service ? t.service.interiorDesc3
+                                : 'Contrôle qualité scientifique avancé pour résultats optimaux' %>
+                        </p>
+                        <a class="btn btn-lg btn-primary rounded-pill mt-3"
+                            href="/service/analyse-spectrophotometrie-billets?lang=<%= currentLang %>">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Poudres d'Activation -->
+                <div class="col-lg-4 col-md-6">
+                    <div
+                        class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                        <!-- Card Image rectangulaire -->
+                        <div class="service-image-container mb-4 w-100">
+                            <div class="service-image-card rounded overflow-hidden mx-auto">
+                                <img src="<%= getAsset('/img/m-4.png') %>"
+                                    alt="Poudre activation nettoyage billets - Produits professionnels Clean Laboratoire"
+                                    class="img-fluid w-100 h-100" style="object-fit: cover; object-position: center;">
+                            </div>
+                        </div>
+
+                        <h4 class="mb-3">
+                            <%= typeof t !=='undefined' && t.service ? t.service.additionalTitle4
+                                : "Poudres d'Activation" %>
+                        </h4>
+                        <p class="m-0">
+                            <%= typeof t !=='undefined' && t.service ? t.service.interiorDesc4
+                                : 'Produits activation professionnels pour nettoyage optimisé' %>
+                        </p>
+                        <a class="btn btn-lg btn-primary rounded-pill mt-3"
+                            href="/service/poudre-activation-nettoyage?lang=<%= currentLang %>">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Expertise Conseil -->
+                <div class="col-lg-4 col-md-6">
+                    <div
+                        class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                        <!-- Card Image rectangulaire -->
+                        <div class="service-image-container mb-4 w-100">
+                            <div class="service-image-card rounded overflow-hidden mx-auto">
+                                <img src="<%= getAsset('/img/slider-2.png') %>"
+                                    alt="Expertise conseil nettoyage billets - Accompagnement personnalisé"
+                                    class="img-fluid w-100 h-100" style="object-fit: cover; object-position: center;">
+                            </div>
+                        </div>
+
+                        <h4 class="mb-3">
+                            <%= typeof t !=='undefined' && t.services && t.services.expertiseTitle ?
+                                t.services.expertiseTitle : 'Expertise & Conseil' %>
+                        </h4>
+                        <p class="m-0">
+                            <%= typeof t !=='undefined' && t.services && t.services.expertiseDesc ?
+                                t.services.expertiseDesc
+                                : 'Accompagnement personnalisé par nos experts pour solutions sur mesure adaptées à vos besoins spécifiques'
+                                %>
+                        </p>
+                        <a class="btn btn-lg btn-primary rounded-pill mt-3"
+                            href="/contact-laboratoire-nettoyage?lang=<%= currentLang %>">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Solutions Institutions -->
+                <div class="col-lg-4 col-md-6">
+                    <div
+                        class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                        <!-- Card Image rectangulaire -->
+                        <div class="service-image-container mb-4 w-100">
+                            <div class="service-image-card rounded overflow-hidden mx-auto">
+                                <img src="<%= getAsset('/img/r-1.png') %>"
+                                    alt="Solutions institutions financières - Services professionnels Clean Laboratoire"
+                                    class="img-fluid w-100 h-100" style="object-fit: cover; object-position: center;">
+                            </div>
+                        </div>
+
+                        <h4 class="mb-3">
+                            <%= typeof t !=='undefined' && t.services && t.services.institutionTitle ?
+                                t.services.institutionTitle : 'Solutions Institutions' %>
+                        </h4>
+                        <p class="m-0">
+                            <%= typeof t !=='undefined' && t.service ? t.service.commercialDesc
+                                : 'Services dédiés aux institutions financières avec protocoles renforcés' %>
+                        </p>
+                        <a class="btn btn-lg btn-primary rounded-pill mt-3"
+                            href="/contact-laboratoire-nettoyage?lang=<%= currentLang %>">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Services End -->
+
+    <!-- Consultation Start -->
+    <div class="container-fluid bg-primary my-5 py-5">
+        <div class="container py-5">
+            <div class="row gx-5">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <div class="mb-4">
+                        <h5 class="d-inline-block text-white text-uppercase border-bottom border-5">
+                            <%= typeof t !=='undefined' && t.consultation ? t.consultation.title : 'Consultation Expert'
+                                %>
+                        </h5>
+                        <h1 class="display-4 text-white">
+                            <%= typeof t !=='undefined' && t.consultation ? t.consultation.subtitle
+                                : 'Obtenez une Analyse Personnalisée' %>
+                        </h1>
+                    </div>
+                    <p class="text-white mb-5">
+                        <%= typeof t !=='undefined' && t.service ? t.service.description1
+                            : 'Notre équipe experte utilise des produits chimiques spécialisés et des poudres spécifiques pour le nettoyage des billets de banque, soutenus par des machines capables de traiter de gros volumes.'
+                            %>
+                    </p>
+                    <p class="text-white mb-5">
+                        <%= typeof t !=='undefined' && t.service ? t.service.description2
+                            : 'Vous pouvez compter sur nous pour résoudre efficacement toutes vos préoccupations liées au nettoyage de billets de banque.'
+                            %>
+                    </p>
+                    <a class="btn btn-dark rounded-pill py-3 px-5 me-3"
+                        href="/contact-laboratoire-nettoyage?lang=<%= currentLang %>">
+                        <%= typeof t !=='undefined' && t.consultation ? t.consultation.quote : 'Devis Gratuit' %>
+                    </a>
+                    <a class="btn btn-outline-dark rounded-pill py-3 px-5" href="tel:<%= (companyInfo.phones && companyInfo.phones[0]) || '' %>">
+                        <%= typeof t !=='undefined' && t.service ? t.service.phone : 'Appelez-nous' %>
+                    </a>
+                </div>
+                <div class="col-lg-6">
+                    <div class="bg-white text-center rounded p-5">
+                        <h1 class="mb-4">
+                            <%= typeof t !=='undefined' && t.consultation ? t.consultation.formTitle
+                                : "Demande d'Expertise" %>
+                        </h1>
+
+                        <!-- Messages d'alerte -->
+                        <div id="formAlert" class="alert d-none" role="alert"></div>
+
+                        <form id="expertiseForm" method="POST">
+                            <div class="row g-3">
+                                <div class="col-12 col-sm-6">
+                                    <select class="form-select bg-light border-0" style="height: 55px;" name="service"
+                                        id="service" required>
+                                        <option value="" selected disabled>
+                                            <%= typeof t !=='undefined' && t.consultation ? t.consultation.serviceType
+                                                : 'Type de Service' %>
+                                        </option>
+                                        <option value="ssd">
+                                            <%= typeof t !=='undefined' && t.services ? t.services.additionalTitle1
+                                                : 'Solution SSD Universelle' %>
+                                        </option>
+                                        <option value="machines">
+                                            <%= typeof t !=='undefined' && t.services ? t.services.additionalTitle2
+                                                : 'Location Machines' %>
+                                        </option>
+                                        <option value="analysis">
+                                            <%= typeof t !=='undefined' && t.services ? t.services.additionalTitle3
+                                                : 'Analyse Spectrophotométrie' %>
+                                        </option>
+                                        <option value="powder">
+                                            <%= typeof t !=='undefined' && t.services ? t.services.additionalTitle4
+                                                : 'Poudres d\' Activation' %>
+                                        </option>
+                                        <option value="expertise">
+                                            <%= typeof t !=='undefined' && t.services && t.services.expertiseTitle ?
+                                                t.services.expertiseTitle : 'Expertise Conseil' %>
+                                        </option>
+                                        <option value="institution">
+                                            <%= typeof t !=='undefined' && t.services && t.services.institutionTitle ?
+                                                t.services.institutionTitle : 'Solution Institution' %>
+                                        </option>
+                                    </select>
+                                    <div class="invalid-feedback text-start">Veuillez sélectionner un service</div>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <select class="form-select bg-light border-0" style="height: 55px;" name="currency"
+                                        id="currency" required>
+                                        <option value="" selected disabled>
+                                            <%= typeof t !=='undefined' && t.consultation ? t.consultation.currency
+                                                : 'Devise à Traiter' %>
+                                        </option>
+                                        <option value="usd">USD - Dollar Américain</option>
+                                        <option value="eur">EUR - Euro</option>
+                                        <option value="gbp">GBP - Livre Sterling</option>
+                                        <option value="other">Autre Devise</option>
+                                    </select>
+                                    <div class="invalid-feedback text-start">Veuillez sélectionner une devise</div>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="text" class="form-control bg-light border-0"
+                                        placeholder="<%= typeof t !== 'undefined' && t.consultation ? t.consultation.name : 'Votre Nom' %>"
+                                        style="height: 55px;" name="name" id="name" required minlength="2">
+                                    <div class="invalid-feedback text-start">Le nom doit contenir au moins 2 caractères
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="email" class="form-control bg-light border-0"
+                                        placeholder="<%= typeof t !== 'undefined' && t.consultation ? t.consultation.email : 'Votre Email' %>"
+                                        style="height: 55px;" name="email" id="email" required>
+                                    <div class="invalid-feedback text-start">Veuillez entrer un email valide</div>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="tel" class="form-control bg-light border-0"
+                                        placeholder="<%= typeof t !== 'undefined' && t.consultation ? t.consultation.phone : 'Votre Téléphone' %>"
+                                        style="height: 55px;" name="phone" id="phone" required
+                                        pattern="[0-9+\-\s()]{10,}">
+                                    <div class="invalid-feedback text-start">Veuillez entrer un numéro de téléphone
+                                        valide</div>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="text" class="form-control bg-light border-0"
+                                        placeholder="<%= typeof t !== 'undefined' && t.consultation ? t.consultation.volume : 'Volume à traiter' %>"
+                                        style="height: 55px;" name="volume" id="volume" required>
+                                    <div class="invalid-feedback text-start">Veuillez spécifier le volume</div>
+                                </div>
+                                <div class="col-12">
+                                    <textarea class="form-control bg-light border-0"
+                                        placeholder="<%= typeof t !== 'undefined' && t.consultation ? t.consultation.message : 'Description détaillée de votre besoin...' %>"
+                                        rows="3" name="message" id="message"></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-primary w-100 py-3" type="submit" id="submitBtn">
+                                        <span class="submit-text">
+                                            <%= typeof t !=='undefined' && t.consultation ? t.consultation.submit
+                                                : 'Soumettre ma Demande' %>
+                                        </span>
+                                        <div class="spinner-border spinner-border-sm d-none" role="status">
+                                            <span class="visually-hidden">Envoi en cours...</span>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Consultation End -->
+
+    <!-- Vidéos Démonstration Start -->
+    <div class="container-fluid py-5 bg-light">
+        <div class="container">
+            <div class="text-center mx-auto mb-5" style="max-width: 700px;">
+                <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">
+                    <%= typeof t !=='undefined' && t.videos ? t.videos.demo : 'Démonstrations' %>
+                </h5>
+                <h1 class="display-4 mb-4">
+                    <%= typeof t !=='undefined' && t.videos ? t.videos.title : 'Voir Nos Solutions en Action' %>
+                </h1>
+                <p class="lead">
+                    <%= typeof t !=='undefined' && t.videos ? t.videos.desc
+                        : 'Découvrez nos processus de nettoyage et les résultats obtenus grâce à nos technologies brevetées'
+                        %>
+                </p>
+            </div>
+            <div class="row g-5">
+                <!-- Vidéo 1 : Processus SSD -->
+                <div class="col-lg-6">
+                    <div class="video-card bg-white rounded shadow-sm p-4 text-center">
+                        <h4 class="mb-4">
+                            <%= typeof t !=='undefined' && t.videos ? t.videos.processTitle
+                                : 'Processus de Nettoyage SSD' %>
+                        </h4>
+                        <div class="video-container position-relative mb-4">
+                            <video id="video1" class="w-100 rounded" controls style="display: none;">
+                                <source src="<%= getAsset('/videos/processus-ssd.mp4') %>" type="video/mp4">
+                                Votre navigateur ne supporte pas la lecture vidéo.
+                            </video>
+                            <div id="video1-poster" class="video-poster position-relative cursor-pointer">
+                                <img src="<%= getAsset('/img/video-poster-1.png') %>"
+                                    alt="Poster vidéo processus nettoyage SSD - Démonstration Clean Laboratoire"
+                                    class="img-fluid w-100 rounded">
+                                <div class="video-play-btn position-absolute top-50 start-50 translate-middle">
+                                    <div class="play-icon bg-primary rounded-circle d-flex align-items-center justify-content-center"
+                                        style="width: 80px; height: 80px;">
+                                        <i class="fa fa-play text-white fa-2x" style="margin-left: 5px;"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-muted">
+                            <%= typeof t !=='undefined' && t.videos ? t.videos.processDesc
+                                : 'Démonstration complète du processus de nettoyage avec notre solution SSD universelle'
+                                %>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Vidéo 2 : Résultats Avant/Après -->
+                <div class="col-lg-6">
+                    <div class="video-card bg-white rounded shadow-sm p-4 text-center">
+                        <h4 class="mb-4">
+                            <%= typeof t !=='undefined' && t.videos ? t.videos.resultsTitle : 'Résultats Avant/Après' %>
+                        </h4>
+                        <div class="video-container position-relative mb-4">
+                            <video id="video2" class="w-100 rounded" controls style="display: none;">
+                                <source src="<%= getAsset('/videos/resultats-avant-apres.mp4') %>" type="video/mp4">
+                                Votre navigateur ne supporte pas la lecture vidéo.
+                            </video>
+                            <div id="video2-poster" class="video-poster position-relative cursor-pointer">
+                                <img src="<%= getAsset('/img/video-poster-2.png') %>"
+                                    alt="Poster vidéo résultats avant/après nettoyage - Clean Laboratoire"
+                                    class="img-fluid w-100 rounded">
+                                <div class="video-play-btn position-absolute top-50 start-50 translate-middle">
+                                    <div class="play-icon bg-primary rounded-circle d-flex align-items-center justify-content-center"
+                                        style="width: 80px; height: 80px;">
+                                        <i class="fa fa-play text-white fa-2x" style="margin-left: 5px;"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-muted">
+                            <%= typeof t !=='undefined' && t.videos ? t.videos.resultsDesc
+                                : 'Comparaison visuelle des résultats obtenus sur différents types de billets traités'
+                                %>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Informations complémentaires -->
+            <div class="row mt-5">
+                <div class="col-12 text-center">
+                    <div class="bg-primary text-white rounded p-4">
+                        <h4 class="mb-3">
+                            <%= typeof t !=='undefined' && t.videos ? t.videos.moreInfo
+                                : "Besoin de Plus d'Informations ?" %>
+                        </h4>
+                        <p class="mb-4">
+                            <%= typeof t !=='undefined' && t.videos ? t.videos.moreInfoDesc
+                                : 'Nos experts sont disponibles pour répondre à toutes vos questions et vous proposer une démonstration personnalisée'
+                                %>
+                        </p>
+                        <a href="/contact-laboratoire-nettoyage?lang=<%= currentLang %>" class="btn btn-light btn-lg">
+                            <i class="fa fa-video me-2"></i>
+                            <%= typeof t !=='undefined' && t.videos ? t.videos.cta : 'Démonstration Personnalisée' %>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Vidéos Démonstration End -->
+
+    <style>
+        .service-image-card {
+            height: 250px;
+
+            border: 3px solid #fff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            max-width: 400px;
+        }
+
+        .service-image-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .service-item:hover .service-icon {
+            transform: scale(1.1);
+        }
+
+        .service-item {
+            transition: all 0.3s ease;
+            padding: 2rem 1.5rem;
+            border: 1px solid #e9ecef;
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Styles pour les vidéos */
+        .video-poster {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .video-poster:hover {
+            transform: scale(1.02);
+        }
+
+        .video-poster:hover .play-icon {
+            background-color: #0b5ed7 !important;
+            transform: scale(1.1);
+        }
+
+        .play-icon {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .video-card {
+            transition: transform 0.3s ease;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .cursor-pointer {
+            cursor: pointer;
+        }
+
+        /* Styles pour la validation */
+        .is-valid {
+            border-color: #198754 !important;
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23198754' d='M2.3 6.73.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right calc(0.375em + 0.1875rem) center;
+            background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+        }
+
+        .is-invalid {
+            border-color: #dc3545 !important;
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath d='m5.8 3.6.4.4.4-.4'/%3e%3cpath d='M6 7v1'/%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right calc(0.375em + 0.1875rem) center;
+            background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+        }
+
+        .invalid-feedback {
+            display: block;
+        }
+
+        .form-control:focus,
+        .form-select:focus {
+            box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+            border-color: #86b7fe;
+        }
+
+        /* Animation pour le bouton */
+        .btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        /* Transition douce pour les champs */
+        .form-control,
+        .form-select {
+            transition: all 0.3s ease;
+        }
+
+        /* Style pour les champs focus */
+        .form-group.focused .form-label {
+            color: #0d6efd;
+            transform: translateY(-5px);
+            font-size: 0.875rem;
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Gestionnaire pour la vidéo 1
+            const video1 = document.getElementById('video1');
+            const video1Poster = document.getElementById('video1-poster');
+
+            video1Poster.addEventListener('click', function () {
+                video1.style.display = 'block';
+                video1Poster.style.display = 'none';
+                video1.play();
+            });
+
+            // Gestionnaire pour la vidéo 2
+            const video2 = document.getElementById('video2');
+            const video2Poster = document.getElementById('video2-poster');
+
+            video2Poster.addEventListener('click', function () {
+                video2.style.display = 'block';
+                video2Poster.style.display = 'none';
+                video2.play();
+            });
+
+            // Pause les vidéos quand elles ne sont pas visibles
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting && !entry.target.paused) {
+                        entry.target.pause();
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            observer.observe(video1);
+            observer.observe(video2);
+        });
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('expertiseForm');
+            const alertDiv = document.getElementById('formAlert');
+            const submitBtn = document.getElementById('submitBtn');
+            const submitText = submitBtn.querySelector('.submit-text');
+            const spinner = submitBtn.querySelector('.spinner-border');
+
+            // Fonction pour afficher les messages
+            function showAlert(message, type = 'success') {
+                alertDiv.className = `alert alert-${type} alert-dismissible fade show`;
+                alertDiv.innerHTML = `
+            ${message}
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        `;
+                alertDiv.classList.remove('d-none');
+
+                // Scroll vers l'alerte
+                alertDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+
+            // Validation en temps réel
+            form.addEventListener('blur', function (e) {
+                if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT' || e.target.tagName === 'TEXTAREA') {
+                    validateField(e.target);
+                }
+            }, true);
+
+            function validateField(field) {
+                field.classList.remove('is-invalid', 'is-valid');
+
+                if (!field.checkValidity()) {
+                    field.classList.add('is-invalid');
+                    return false;
+                } else {
+                    field.classList.add('is-valid');
+                    return true;
+                }
+            }
+
+            // Soumission du formulaire
+            form.addEventListener('submit', async function (e) {
+                e.preventDefault();
+
+                // Valider tous les champs
+                let isValid = true;
+                const fields = form.querySelectorAll('input, select, textarea');
+                fields.forEach(field => {
+                    if (!validateField(field)) {
+                        isValid = false;
+                    }
+                });
+
+                if (!isValid) {
+                    showAlert('Veuillez corriger les erreurs dans le formulaire.', 'danger');
+                    return;
+                }
+
+                // Préparer les données
+                const formData = new FormData(form);
+                const data = Object.fromEntries(formData.entries());
+
+                // Afficher le loading
+                submitBtn.disabled = true;
+                submitText.textContent = 'Envoi en cours...';
+                spinner.classList.remove('d-none');
+
+                try {
+                    // Envoyer la requête
+                    const response = await fetch('/send-expertise', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(data)
+                    });
+
+                    const result = await response.json();
+
+                    if (result.success) {
+                        showAlert(result.message, 'success');
+                        form.reset();
+                        // Réinitialiser les classes de validation
+                        form.querySelectorAll('.is-valid, .is-invalid').forEach(el => {
+                            el.classList.remove('is-valid', 'is-invalid');
+                        });
+                    } else {
+                        throw new Error(result.message);
+                    }
+
+                } catch (error) {
+                    console.error('Erreur:', error);
+                    showAlert(error.message || 'Une erreur est survenue. Veuillez réessayer.', 'danger');
+                } finally {
+                    // Réinitialiser le bouton
+                    submitBtn.disabled = false;
+                    submitText.textContent = 'Soumettre ma Demande';
+                    spinner.classList.add('d-none');
+                }
+            });
+
+            // Animation des champs au focus
+            form.addEventListener('focusin', function (e) {
+                if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT' || e.target.tagName === 'TEXTAREA') {
+                    e.target.parentElement.classList.add('focused');
+                }
+            });
+
+            form.addEventListener('focusout', function (e) {
+                if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT' || e.target.tagName === 'TEXTAREA') {
+                    e.target.parentElement.classList.remove('focused');
+                }
+            });
+        });
+    </script>
+
+    <%- include('partials/footer') %>

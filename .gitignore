@@ -1,0 +1,27 @@
+# Dépendances
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json.lock
+
+# Variables d'environnement
+.env
+.env.local
+.env.production
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Build
+dist/
+build/
+.cache/
+
+# IDE
+.vscode/settings.json
+.idea/
