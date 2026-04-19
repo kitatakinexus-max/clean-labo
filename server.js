@@ -41,15 +41,32 @@ const { Firestore } = require('@google-cloud/firestore');
 const { FirestoreStore } = require('@google-cloud/connect-firestore');
 
 // Initialiser le client Firestore spécifiquement pour les sessions
-// Il utilisera soit les credentials passés (en dev local), soit les credentials par défaut (GCP/Render si bien configuré)
-const sessionFirestoreClient = new Firestore({
-    projectId: process.env.FIREBASE_PROJECT_ID,
-    credentials: {
-        client_email: process.env.FIREBASE_CLIENT_EMAIL,
-        // Remplace les \\n par de vrais sauts de ligne si la clé vient des variables d'environnement texte
-        private_key: process.env.FIREBASE_PRIVATE_KEY ? process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, '\n') : undefined
+const sessionFirestoreClient = (function() {
+    const { Firestore } = require('@google-cloud/firestore');
+    const serviceAccountPath = path.join(process.cwd(), 'serviceAccountKey.json');
+
+    if (fs.existsSync(serviceAccountPath)) {
+        return new Firestore({
+            keyFilename: serviceAccountPath
+        });
+    } else {
+        return new Firestore({
+            projectId: process.env.FIREBASE_PROJECT_ID,
+            credentials: {
+                client_email: process.env.FIREBASE_CLIENT_EMAIL,
+                private_key: (function() {
+                    let key = process.env.FIREBASE_PRIVATE_KEY;
+                    if (!key) return undefined;
+                    key = key.replace(/^['"]|['"]$/g, '');
+                    if (!key.includes('-----BEGIN') && !key.includes('\n') && key.length > 500) {
+                        return Buffer.from(key, 'base64').toString('utf-8');
+                    }
+                    return key.replace(/\\n/g, '\n');
+                })()
+            }
+        });
     }
-});
+})();
 
 // Sessions (pour l'authentification admin) avec stockage Firestore pour la production
 app.use(session({
