@@ -45,11 +45,26 @@ const sessionFirestoreClient = (function() {
     const { Firestore } = require('@google-cloud/firestore');
     const serviceAccountPath = path.join(process.cwd(), 'serviceAccountKey.json');
 
-    if (fs.existsSync(serviceAccountPath)) {
+    // MÉTHODE 1 : Variable Base64 (Priorité)
+    if (process.env.FIREBASE_CONFIG_BASE64) {
+        const configBuffer = Buffer.from(process.env.FIREBASE_CONFIG_BASE64, 'base64');
+        const serviceAccount = JSON.parse(configBuffer.toString('utf-8'));
+        return new Firestore({
+            projectId: serviceAccount.project_id,
+            credentials: {
+                client_email: serviceAccount.client_email,
+                private_key: serviceAccount.private_key
+            }
+        });
+    } 
+    // MÉTHODE 2 : Fichier JSON
+    else if (fs.existsSync(serviceAccountPath)) {
         return new Firestore({
             keyFilename: serviceAccountPath
         });
-    } else {
+    } 
+    // MÉTHODE 3 : Variables ENV individuelles
+    else {
         return new Firestore({
             projectId: process.env.FIREBASE_PROJECT_ID,
             credentials: {

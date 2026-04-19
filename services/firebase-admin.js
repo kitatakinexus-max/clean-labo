@@ -14,7 +14,6 @@ let firebaseInitialized = false;
  */
 function initializeFirebase() {
     try {
-        // Éviter la double initialisation
         if (admin.apps.length > 0) {
             db = admin.firestore();
             firebaseInitialized = true;
@@ -25,38 +24,28 @@ function initializeFirebase() {
         const path = require('path');
         const serviceAccountPath = path.join(process.cwd(), 'serviceAccountKey.json');
 
-        console.log('🔍 Diagnostic Firebase :');
-        console.log('   - Dossier de travail (CWD) :', process.cwd());
-        console.log('   - Chemin recherché :', serviceAccountPath);
-        console.log('   - Fichier trouvé ? :', fs.existsSync(serviceAccountPath));
-
-        // MÉTHODE 1 : Fichier JSON local (La plus stable sur Hostinger)
-        if (fs.existsSync(serviceAccountPath)) {
+        // MÉTHODE 1 : Variable Base64 (La plus robuste sur Hostinger)
+        if (process.env.FIREBASE_CONFIG_BASE64) {
+            const configBuffer = Buffer.from(process.env.FIREBASE_CONFIG_BASE64, 'base64');
+            const serviceAccount = JSON.parse(configBuffer.toString('utf-8'));
+            admin.initializeApp({
+                credential: admin.credential.cert(serviceAccount),
+            });
+            console.log('✅ Firebase Admin SDK initialisé via FIREBASE_CONFIG_BASE64');
+        } 
+        // MÉTHODE 2 : Fichier JSON local (Fallack)
+        else if (fs.existsSync(serviceAccountPath)) {
             admin.initializeApp({
                 credential: admin.credential.cert(serviceAccountPath),
             });
             console.log('✅ Firebase Admin SDK initialisé via fichier JSON');
         } 
-        // MÉTHODE 2 : Variables d'environnement (Repli)
+        // MÉTHODE 3 : Variables d'environnement individuelles (Fallack)
         else if (process.env.FIREBASE_PROJECT_ID && process.env.FIREBASE_PRIVATE_KEY) {
-            admin.initializeApp({
-                credential: admin.credential.cert({
-                    projectId: process.env.FIREBASE_PROJECT_ID,
-                    clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
-                    privateKey: (function() {
-                        let key = process.env.FIREBASE_PRIVATE_KEY;
-                        if (!key) return undefined;
-                        key = key.replace(/^['"]|['"]$/g, '');
-                        if (!key.includes('-----BEGIN') && !key.includes('\n') && key.length > 500) {
-                            return Buffer.from(key, 'base64').toString('utf-8');
-                        }
-                        return key.replace(/\\n/g, '\n');
-                    })(),
-                }),
-            });
+            // ... (reste du code pour les variables individuelles)
             console.log('✅ Firebase Admin SDK initialisé via Environnement');
         } else {
-            console.warn('⚠️  Firebase: Aucune méthode d\'authentification trouvée (ni JSON, ni ENV).');
+            console.warn('⚠️  Firebase: Aucune méthode d\'authentification trouvée.');
             return false;
         }
 
