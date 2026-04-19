@@ -113,16 +113,18 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Événements
-    closeBtn.addEventListener('click', closeLightbox);
-    nextBtn.addEventListener('click', showNextImage);
-    prevBtn.addEventListener('click', showPrevImage);
+    if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+    if (nextBtn) nextBtn.addEventListener('click', showNextImage);
+    if (prevBtn) prevBtn.addEventListener('click', showPrevImage);
     
     // Fermer en cliquant en dehors de l'image
-    lightbox.addEventListener('click', function(e) {
-        if (e.target === lightbox) {
-            closeLightbox();
-        }
-    });
+    if (lightbox) {
+        lightbox.addEventListener('click', function(e) {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+    }
     
     // Navigation au clavier
     document.addEventListener('keydown', function(e) {
