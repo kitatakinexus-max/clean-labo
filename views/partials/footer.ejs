@@ -111,6 +111,20 @@
 
     </div>
 
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    &copy; <span id="current-year"></span> <a class="fw-medium text-light" href="#"><%= companyInfo.name || 'Clean Laboratoire' %></a>, All Right Reserved.
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    Designed By <a class="fw-medium text-light" href="https://clean-laboratoire.com">Clean Laboratoire Team</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
 
 </div>
 <!-- Footer End -->
@@ -171,8 +185,11 @@
 </script>
 
 <script>
-    // Mettre à jour l'année du copyright
-    document.getElementById('current-year').textContent = new Date().getFullYear();
+    // Mettre à jour l'année du copyright en toute sécurité
+    const yearElement = document.getElementById('current-year');
+    if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+    }
 </script>
 
 <% if (typeof googleAnalyticsId !== 'undefined' && googleAnalyticsId) { %>

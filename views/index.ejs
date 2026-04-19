@@ -440,25 +440,25 @@
                     <img src="/img/r-3.png" alt="Projet 4" class="gallery-image">
                 </div>
                 <div class="gallery-slide">
-                    <img src="/img/r-4.jpg" alt="Projet 4" class="gallery-image">
+                    <img src="/img/r-4.png" alt="Projet 4" class="gallery-image">
                 </div>
                 <div class="gallery-slide">
-                    <img src="/img/g-1.jpg" alt="Projet 5" class="gallery-image">
+                    <img src="/img/g-1.jpeg" alt="Projet 5" class="gallery-image">
                 </div>
                 <div class="gallery-slide">
-                    <img src="/img/g-2.jpg" alt="Projet 5" class="gallery-image">
+                    <img src="/img/g-2.jpeg" alt="Projet 5" class="gallery-image">
                 </div>
                 <div class="gallery-slide">
-                    <img src="/img/g-3.jpg" alt="Projet 5" class="gallery-image">
+                    <img src="/img/g-3.jpeg" alt="Projet 5" class="gallery-image">
                 </div>
                 <div class="gallery-slide">
-                    <img src="/img/g-4.jpg" alt="Projet 5" class="gallery-image">
+                    <img src="/img/g-4.jpeg" alt="Projet 5" class="gallery-image">
                 </div>
                 <div class="gallery-slide">
-                    <img src="/img/g-5.jpg" alt="Projet 5" class="gallery-image">
+                    <img src="/img/g-5.jpeg" alt="Projet 5" class="gallery-image">
                 </div>
                 <div class="gallery-slide">
-                    <img src="/img/g-6.jpg" alt="Projet 5" class="gallery-image">
+                    <img src="/img/g-6.jpeg" alt="Projet 5" class="gallery-image">
                 </div>
             </div>
         </div>
@@ -652,18 +652,27 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Gestion responsive de l'animation
     function updateAnimation() {
-        const track = document.querySelector('.gallery-slider-track');
         const slides = document.querySelectorAll('.gallery-slide');
+        if (slides.length === 0) return;
+        
         const slideWidth = slides[0].offsetWidth;
         const gap = 15;
         const totalWidth = (slideWidth + gap) * (slides.length / 2);
         
-        document.styleSheets[0].insertRule(`
+        // Méthode sécurisée : Créer une balise style dédiée pour éviter les erreurs SecurityError/CORS
+        let styleTag = document.getElementById('dynamic-gallery-style');
+        if (!styleTag) {
+            styleTag = document.createElement('style');
+            styleTag.id = 'dynamic-gallery-style';
+            document.head.appendChild(styleTag);
+        }
+        
+        styleTag.innerHTML = `
             @keyframes slide {
                 0% { transform: translateX(0); }
                 100% { transform: translateX(-${totalWidth}px); }
             }
-        `, document.styleSheets[0].cssRules.length);
+        `;
     }
     
     // Mettre à jour l'animation au redimensionnement

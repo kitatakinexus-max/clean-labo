@@ -73,9 +73,8 @@
     <meta name="twitter:image" content="<%= baseUrl %>/img/twitter-image.jpg">
     
     <!-- FAVICON ET ICÔNES -->
-    <link href="<%= getAsset('/img/favicon.ico') %>" rel="icon" type="image/x-icon">
-    <link href="<%= getAsset('/img/apple-touch-icon.png') %>" rel="apple-touch-icon">
-    <link href="/img/web-app-manifest.json" rel="manifest">
+    <link href="/img/favicon.ico" rel="icon" type="image/x-icon">
+    <!-- <link href="/manifest.json" rel="manifest"> -->
     
     <!-- PRELOAD DES RESSOURCES CRITIQUES -->
     <link rel="preload" href="/css/bootstrap.min.css" as="style">
@@ -85,7 +84,7 @@
     <!-- GOOGLE WEB FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" crossorigin>
     
     <!-- ARABIC FONT (si langue arabe) -->
     <% if (currentLang === 'ar') { %>
