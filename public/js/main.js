@@ -89,15 +89,19 @@ document.addEventListener('DOMContentLoaded', function() {
     
     function openLightbox(index) {
         const img = images[index];
+        if (!img || !lightbox || !lightboxImg) return;
+
         lightboxImg.src = img.getAttribute('data-src');
         lightboxImg.alt = img.alt;
-        lightboxTitle.textContent = img.getAttribute('data-title');
-        lightboxDescription.textContent = img.getAttribute('data-description');
+        if (lightboxTitle) lightboxTitle.textContent = img.getAttribute('data-title');
+        if (lightboxDescription) lightboxDescription.textContent = img.getAttribute('data-description');
+        
         lightbox.classList.add('show');
         document.body.style.overflow = 'hidden'; // Empêcher le scroll
     }
     
     function closeLightbox() {
+        if (!lightbox) return;
         lightbox.classList.remove('show');
         document.body.style.overflow = ''; // Rétablir le scroll
     }
@@ -128,7 +132,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Navigation au clavier
     document.addEventListener('keydown', function(e) {
-        if (!lightbox.classList.contains('show')) return;
+        if (!lightbox || !lightbox.classList.contains('show')) return;
         
         switch(e.key) {
             case 'Escape':
