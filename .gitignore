@@ -25,3 +25,7 @@ build/
 # IDE
 .vscode/settings.json
 .idea/
+
+# Firebase credentials (NE JAMAIS COMMITTER !)
+serviceAccountKey.json
+*serviceAccount*.json

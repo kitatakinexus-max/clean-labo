@@ -17,7 +17,17 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     
     <!-- CANONICAL URL -->
-    <link rel="canonical" href="https://www.clean-lab.com<%= _meta.canonical ? _meta.canonical : '/' %>">
+    <link rel="canonical" href="<%= baseUrl %><%= _meta.canonical ? _meta.canonical : '/' %>">
+
+    <!-- HREFLANG — MULTILINGUE (fr/en/ar/es/de/hi) -->
+    <%
+        const _pagePath = _meta.canonical ? _meta.canonical : '/';
+        const _hrefLangs = ['fr','en','ar','es','de','hi'];
+    %>
+    <% _hrefLangs.forEach(function(hl) { %>
+    <link rel="alternate" hreflang="<%= hl %>" href="<%= baseUrl %><%= _pagePath %>?lang=<%= hl %>">
+    <% }); %>
+    <link rel="alternate" hreflang="x-default" href="<%= baseUrl %><%= _pagePath %>">
     
     <!-- DONNÉES STRUCTURÉES SCHEMA.ORG -->
     <script type="application/ld+json">
@@ -26,7 +36,7 @@
         "@type": "ProfessionalService",
         "name": "<%= _companyInfo.name || 'Clean Laboratoire' %>",
         "description": "Laboratoire expert en nettoyage sécurisé de billets de banque - Solutions SSD, décapage, analyses spectrophotométriques",
-        "url": "https://www.clean-lab.com",
+        "url": "<%= baseUrl %>",
         "telephone": "<%= (_companyInfo.phones && _companyInfo.phones[0]) || '' %>",
         "email": "<%= (_companyInfo.emails && _companyInfo.emails[0]) || _companyInfo.email || '' %>",
         "areaServed": ["Europe", "Afrique"],
@@ -48,10 +58,10 @@
     <!-- OPEN GRAPH META TAGS -->
     <meta property="og:title" content="<%= _meta.title ? _meta.title : 'Clean Laboratoire | Expert Nettoyage & Décapage Billets' %>">
     <meta property="og:description" content="<%= _meta.description ? _meta.description : 'Laboratoire expert en nettoyage sécurisé de billets de banque - Solutions SSD, décapage, analyses spectrophotométriques' %>">
-    <meta property="og:url" content="https://www.clean-lab.com<%= _meta.canonical ? _meta.canonical : '/' %>">
+    <meta property="og:url" content="<%= baseUrl %><%= _meta.canonical ? _meta.canonical : '/' %>">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Clean Laboratoire">
-    <meta property="og:image" content="https://www.clean-lab.com/img/og-image.jpg">
+    <meta property="og:image" content="<%= baseUrl %>/img/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:locale" content="<%= currentLang === 'fr' ? 'fr_FR' : currentLang + '_' + currentLang.toUpperCase() %>">
@@ -60,7 +70,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="<%= _meta.title ? _meta.title : 'Clean Laboratoire | Expert Nettoyage Billets' %>">
     <meta name="twitter:description" content="<%= _meta.description ? _meta.description : 'Laboratoire expert en nettoyage sécurisé de billets de banque' %>">
-    <meta name="twitter:image" content="https://www.clean-lab.com/img/twitter-image.jpg">
+    <meta name="twitter:image" content="<%= baseUrl %>/img/twitter-image.jpg">
     
     <!-- FAVICON ET ICÔNES -->
     <link href="<%= getAsset('/img/favicon.ico') %>" rel="icon" type="image/x-icon">
@@ -109,7 +119,7 @@
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Accueil",
-                "item": "https://www.clean-lab.com/"
+                "item": "<%= baseUrl %>/"
             }<%
             let breadcrumbItems = [];
             if (page === 'about') breadcrumbItems.push({position: 2, name: 'À Propos', item: '/a-propos-laboratoire-nettoyage-billets'});
@@ -121,7 +131,7 @@
                 "@type": "ListItem",
                 "position": <%= item.position %>,
                 "name": "<%= item.name %>",
-                "item": "https://www.clean-lab.com<%= item.item %>"
+                "item": "<%= baseUrl %><%= item.item %>"
             }<% }); %>
         ]
     }

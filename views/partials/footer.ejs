@@ -144,8 +144,8 @@
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "<%= companyInfo.name || 'Clean Laboratoire' %>",
-    "url": "https://www.clean-lab.com",
-    "logo": "https://www.clean-lab.com<%= getAsset('/img/logo.png') %>",
+    "url": "<%= baseUrl %>",
+    "logo": "<%= baseUrl %><%= getAsset('/img/logo.png') %>",
     "description": "Laboratoire expert en nettoyage sécurisé de billets de banque - Solutions SSD, décapage, analyses spectrophotométriques",
     "address": {
         "@type": "PostalAddress",
@@ -162,6 +162,7 @@
         "availableLanguage": ["fr", "en", "ar", "es", "de", "hi"]
     },
     "sameAs": [
+        "<%= baseUrl %>",
         "https://www.facebook.com/cleanlaboratoire",
         "https://www.instagram.com/cleanlaboratoire",
         "https://www.linkedin.com/company/cleanlaboratoire"
@@ -172,12 +173,18 @@
 <script>
     // Mettre à jour l'année du copyright
     document.getElementById('current-year').textContent = new Date().getFullYear();
-
-    // Analytics (à configurer après déploiement)
-    if (typeof gtag !== 'undefined') {
-        gtag('config', 'G-XXXXXXXXXX');
-    }
 </script>
+
+<% if (typeof googleAnalyticsId !== 'undefined' && googleAnalyticsId) { %>
+<!-- Google Analytics GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=<%= googleAnalyticsId %>"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '<%= googleAnalyticsId %>', { anonymize_ip: true });
+</script>
+<% } %>
 </body>
 
 </html>

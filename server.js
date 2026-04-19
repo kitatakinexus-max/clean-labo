@@ -8,6 +8,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const fs = require('fs');
+const compression = require('compression');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -28,6 +29,9 @@ const twilioService = require('./services/twilio');
 // Indispensable en production (Render, Heroku, etc.) pour que les cookies "secure" 
 // soient acceptés alors que le trafic passe par un reverse proxy SSL
 app.set('trust proxy', 1);
+
+// Compression Gzip — améliore PageSpeed et Core Web Vitals (~70% de réduction)
+app.use(compression());
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -228,6 +232,9 @@ app.use(async (req, res, next) => {
     res.locals.getAsset = (path) => assetsCache[path] || path;
     res.locals.companyInfo = companyInfoCache || getDefaultCompanyInfo();
 
+    // URL de base du site (pour les templates — canonical, OG, hreflang, sitemap)
+    res.locals.baseUrl = (process.env.DOMAIN || 'https://www.clean-laboratoire.com').replace(/\/$/, '');
+
     // Ignorer les routes admin (ont leur propre logique pour le reste)
     if (req.path.startsWith('/admin')) return next();
 
@@ -249,7 +256,10 @@ app.use(async (req, res, next) => {
         es: 'Español', de: 'Deutsch', hi: 'हिन्दी'
     };
     res.locals.canonicalUrl = `${req.protocol}://${req.get('host')}${req.path}`;
-    
+
+    // Google Analytics GA4 — injecté via variable d'environnement (ne pas hardcoder)
+    res.locals.googleAnalyticsId = process.env.GOOGLE_ANALYTICS_ID || null;
+
     next();
 });
 
@@ -265,7 +275,7 @@ app.use((req, res, next) => {
         "@type": "ProfessionalService",
         "name": (companyInfoCache || {}).name || "Clean Laboratoire",
         "description": "Laboratoire expert en nettoyage sécurisé de billets de banque - Solutions SSD, décapage, analyses spectrophotométriques",
-        "url": `https://www.clean-lab.com`,
+        "url": `${process.env.DOMAIN || 'https://www.clean-laboratoire.com'}`,
         "telephone": (companyInfoCache || {}).phones ? (companyInfoCache.phones[0] || "") : "",
         "email": (companyInfoCache || {}).email || "",
         "areaServed": ["EU", "AF"],
@@ -1080,7 +1090,7 @@ app.get('/blog', (req, res) => res.redirect(301, '/blog-expertise-nettoyage-bill
 // ============================================================================
 
 app.get('/sitemap.xml', (req, res) => {
-    const baseUrl = process.env.DOMAIN || 'https://www.clean-lab.com';
+    const baseUrl = process.env.DOMAIN || 'https://www.clean-laboratoire.com';
     const urls = [
         { url: '/', changefreq: 'daily', priority: '1.0' },
         { url: '/a-propos-laboratoire-nettoyage-billets', changefreq: 'monthly', priority: '0.9' },
@@ -1116,7 +1126,7 @@ Allow: /
 Disallow: /admin/
 Disallow: /admin
 
-Sitemap: ${process.env.DOMAIN || 'https://www.clean-lab.com'}/sitemap.xml
+Sitemap: ${process.env.DOMAIN || 'https://www.clean-laboratoire.com'}/sitemap.xml
 
 Crawl-delay: 1`;
     res.type('text/plain');
