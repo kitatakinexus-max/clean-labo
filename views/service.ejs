@@ -15,6 +15,7 @@
                     <%= typeof t !=='undefined' && t.service ? t.service.title : 'Nos Solutions' %>
                 </h5>
                 <h1 class="display-4">
+                    <span class="text-primary"><%= typeof t !=='undefined' && t.service ? t.service.title : 'Nos Solutions' %></span>
                     <span class="text-uppercase text-primary bg-light px-2">
                         <%= typeof t !=='undefined' && t.service ? t.service.titleHighlight : 'Professionnelles' %>
                     </span>
@@ -205,10 +206,10 @@
                             <%= typeof t !=='undefined' && t.consultation ? t.consultation.title : 'Consultation Expert'
                                 %>
                         </h5>
-                        <h1 class="display-4 text-white">
+                        <h2 class="display-4 text-white">
                             <%= typeof t !=='undefined' && t.consultation ? t.consultation.subtitle
                                 : 'Obtenez une Analyse Personnalisée' %>
-                        </h1>
+                        </h2>
                     </div>
                     <p class="text-white mb-5">
                         <%= typeof t !=='undefined' && t.service ? t.service.description1
@@ -230,10 +231,10 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="bg-white text-center rounded p-5">
-                        <h1 class="mb-4">
+                        <h2 class="mb-4">
                             <%= typeof t !=='undefined' && t.consultation ? t.consultation.formTitle
                                 : "Demande d'Expertise" %>
-                        </h1>
+                        </h2>
 
                         <!-- Messages d'alerte -->
                         <div id="formAlert" class="alert d-none" role="alert"></div>
@@ -347,9 +348,9 @@
                 <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">
                     <%= typeof t !=='undefined' && t.videos ? t.videos.demo : 'Démonstrations' %>
                 </h5>
-                <h1 class="display-4 mb-4">
+                <h2 class="display-4 mb-4">
                     <%= typeof t !=='undefined' && t.videos ? t.videos.title : 'Voir Nos Solutions en Action' %>
-                </h1>
+                </h2>
                 <p class="lead">
                     <%= typeof t !=='undefined' && t.videos ? t.videos.desc
                         : 'Découvrez nos processus de nettoyage et les résultats obtenus grâce à nos technologies brevetées'

@@ -1,201 +1,74 @@
-<%- include('partials/header') %>
-
+<%- include('partials/header', { meta: typeof meta !=='undefined' && meta ? meta : { title: typeof t !=='undefined' && t.seo ? t.seo.blogTitle : 'Blog Expertise Nettoyage Billets | Conseils & Actualités - Clean Laboratoire' , description: typeof t !=='undefined' && t.seo ? t.seo.blogDescription : "Découvrez nos articles d'expert sur le nettoyage de billets, les technologies SSD et les conseils de sécurité financière. L'expertise Clean Laboratoire à votre service." , keywords: 'blog nettoyage billets, actualités SSD, conseils décapage billets, sécurité financière' , canonical: '/blog-expertise-nettoyage-billets' , robots: 'index, follow' } }) %>
 
     <!-- Blog Start -->
     <div class="container-fluid py-5">
         <div class="container">
             <div class="text-center mx-auto mb-5" style="max-width: 500px;">
-                <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">Blog Post</h5>
-                <h1 class="display-4">Our Latest Medical Blog Posts</h1>
+                <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">
+                    <%= typeof t !== 'undefined' && t.blog ? t.blog.badge : 'Actualités' %>
+                </h5>
+                <h1 class="display-4">
+                    <%= typeof t !== 'undefined' && t.blog ? t.blog.title : 'Expertise & Conseils' %>
+                </h1>
             </div>
             <div class="row g-5">
+                <!-- Article 1 -->
                 <div class="col-xl-4 col-lg-6">
                     <div class="bg-light rounded overflow-hidden">
-                        <img class="img-fluid w-100" src="<%= getAsset('/img/blog-1.jpg') %>" alt="">
+                        <img class="img-fluid w-100" src="<%= getAsset('/img/blog-1.jpg') %>" alt="Analyse spectrophotométrique billets">
                         <div class="p-4">
-                            <a class="h3 d-block mb-3" href="">Dolor clita vero elitr sea stet dolor justo  diam</a>
-                            <p class="m-0">Dolor lorem eos dolor duo et eirmod sea. Dolor sit magna
-                                rebum clita rebum dolor stet amet justo</p>
+                            <h3 class="d-block mb-3">L'importance de l'analyse spectrophotométrique</h3>
+                            <p class="m-0">Découvrez comment nos technologies identifient avec précision le type de pollution pour un nettoyage optimal.</p>
                         </div>
                         <div class="d-flex justify-content-between border-top p-4">
                             <div class="d-flex align-items-center">
-                                <img class="rounded-circle me-2" src="<%= getAsset('/img/user.jpg') %>" width="25" height="25" alt="">
-                                <small>John Doe</small>
+                                <small>Expert Clean Lab</small>
                             </div>
                             <div class="d-flex align-items-center">
-                                <small class="ms-3"><i class="far fa-eye text-primary me-1"></i>12345</small>
-                                <small class="ms-3"><i class="far fa-comment text-primary me-1"></i>123</small>
+                                <small class="ms-3"><i class="far fa-eye text-primary me-1"></i>2.4k</small>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!-- Article 2 -->
                 <div class="col-xl-4 col-lg-6">
                     <div class="bg-light rounded overflow-hidden">
-                        <img class="img-fluid w-100" src="<%= getAsset('/img/blog-2.jpg') %>" alt="">
+                        <img class="img-fluid w-100" src="<%= getAsset('/img/blog-2.jpg') %>" alt="Solution SSD Universelle">
                         <div class="p-4">
-                            <a class="h3 d-block mb-3" href="">Dolor clita vero elitr sea stet dolor justo  diam</a>
-                            <p class="m-0">Dolor lorem eos dolor duo et eirmod sea. Dolor sit magna
-                                rebum clita rebum dolor stet amet justo</p>
+                            <h3 class="d-block mb-3">Pourquoi choisir la Solution SSD Universelle ?</h3>
+                            <p class="m-0">Un guide complet sur les avantages de notre solution brevetée pour toutes les devises internationales.</p>
                         </div>
                         <div class="d-flex justify-content-between border-top p-4">
                             <div class="d-flex align-items-center">
-                                <img class="rounded-circle me-2" src="<%= getAsset('/img/user.jpg') %>" width="25" height="25" alt="">
-                                <small>John Doe</small>
+                                <small>Expert Clean Lab</small>
                             </div>
                             <div class="d-flex align-items-center">
-                                <small class="ms-3"><i class="far fa-eye text-primary me-1"></i>12345</small>
-                                <small class="ms-3"><i class="far fa-comment text-primary me-1"></i>123</small>
+                                <small class="ms-3"><i class="far fa-eye text-primary me-1"></i>1.8k</small>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!-- Article 3 -->
                 <div class="col-xl-4 col-lg-6">
                     <div class="bg-light rounded overflow-hidden">
-                        <img class="img-fluid w-100" src="<%= getAsset('/img/blog-3.jpg') %>" alt="">
+                        <img class="img-fluid w-100" src="<%= getAsset('/img/blog-3.jpg') %>" alt="Sécurité nettoyage billets">
                         <div class="p-4">
-                            <a class="h3 d-block mb-3" href="">Dolor clita vero elitr sea stet dolor justo  diam</a>
-                            <p class="m-0">Dolor lorem eos dolor duo et eirmod sea. Dolor sit magna
-                                rebum clita rebum dolor stet amet justo</p>
+                            <h3 class="d-block mb-3">Sécurisation et Restauration de Devises</h3>
+                            <p class="m-0">Comment protéger vos actifs et garantir une restauration réussie de billets endommagés ou pollués.</p>
                         </div>
                         <div class="d-flex justify-content-between border-top p-4">
                             <div class="d-flex align-items-center">
-                                <img class="rounded-circle me-2" src="<%= getAsset('/img/user.jpg') %>" width="25" height="25" alt="">
-                                <small>John Doe</small>
+                                <small>Expert Clean Lab</small>
                             </div>
                             <div class="d-flex align-items-center">
-                                <small class="ms-3"><i class="far fa-eye text-primary me-1"></i>12345</small>
-                                <small class="ms-3"><i class="far fa-comment text-primary me-1"></i>123</small>
+                                <small class="ms-3"><i class="far fa-eye text-primary me-1"></i>3.1k</small>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-xl-4 col-lg-6">
-                    <div class="bg-light rounded overflow-hidden">
-                        <img class="img-fluid w-100" src="<%= getAsset('/img/blog-2.jpg') %>" alt="">
-                        <div class="p-4">
-                            <a class="h3 d-block mb-3" href="">Dolor clita vero elitr sea stet dolor justo  diam</a>
-                            <p class="m-0">Dolor lorem eos dolor duo et eirmod sea. Dolor sit magna
-                                rebum clita rebum dolor stet amet justo</p>
-                        </div>
-                        <div class="d-flex justify-content-between border-top p-4">
-                            <div class="d-flex align-items-center">
-                                <img class="rounded-circle me-2" src="<%= getAsset('/img/user.jpg') %>" width="25" height="25" alt="">
-                                <small>John Doe</small>
-                            </div>
-                            <div class="d-flex align-items-center">
-                                <small class="ms-3"><i class="far fa-eye text-primary me-1"></i>12345</small>
-                                <small class="ms-3"><i class="far fa-comment text-primary me-1"></i>123</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-6">
-                    <div class="bg-light rounded overflow-hidden">
-                        <img class="img-fluid w-100" src="<%= getAsset('/img/blog-3.jpg') %>" alt="">
-                        <div class="p-4">
-                            <a class="h3 d-block mb-3" href="">Dolor clita vero elitr sea stet dolor justo  diam</a>
-                            <p class="m-0">Dolor lorem eos dolor duo et eirmod sea. Dolor sit magna
-                                rebum clita rebum dolor stet amet justo</p>
-                        </div>
-                        <div class="d-flex justify-content-between border-top p-4">
-                            <div class="d-flex align-items-center">
-                                <img class="rounded-circle me-2" src="<%= getAsset('/img/user.jpg') %>" width="25" height="25" alt="">
-                                <small>John Doe</small>
-                            </div>
-                            <div class="d-flex align-items-center">
-                                <small class="ms-3"><i class="far fa-eye text-primary me-1"></i>12345</small>
-                                <small class="ms-3"><i class="far fa-comment text-primary me-1"></i>123</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-6">
-                    <div class="bg-light rounded overflow-hidden">
-                        <img class="img-fluid w-100" src="<%= getAsset('/img/blog-1.jpg') %>" alt="">
-                        <div class="p-4">
-                            <a class="h3 d-block mb-3" href="">Dolor clita vero elitr sea stet dolor justo  diam</a>
-                            <p class="m-0">Dolor lorem eos dolor duo et eirmod sea. Dolor sit magna
-                                rebum clita rebum dolor stet amet justo</p>
-                        </div>
-                        <div class="d-flex justify-content-between border-top p-4">
-                            <div class="d-flex align-items-center">
-                                <img class="rounded-circle me-2" src="<%= getAsset('/img/user.jpg') %>" width="25" height="25" alt="">
-                                <small>John Doe</small>
-                            </div>
-                            <div class="d-flex align-items-center">
-                                <small class="ms-3"><i class="far fa-eye text-primary me-1"></i>12345</small>
-                                <small class="ms-3"><i class="far fa-comment text-primary me-1"></i>123</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-6">
-                    <div class="bg-light rounded overflow-hidden">
-                        <img class="img-fluid w-100" src="<%= getAsset('/img/blog-3.jpg') %>" alt="">
-                        <div class="p-4">
-                            <a class="h3 d-block mb-3" href="">Dolor clita vero elitr sea stet dolor justo  diam</a>
-                            <p class="m-0">Dolor lorem eos dolor duo et eirmod sea. Dolor sit magna
-                                rebum clita rebum dolor stet amet justo</p>
-                        </div>
-                        <div class="d-flex justify-content-between border-top p-4">
-                            <div class="d-flex align-items-center">
-                                <img class="rounded-circle me-2" src="<%= getAsset('/img/user.jpg') %>" width="25" height="25" alt="">
-                                <small>John Doe</small>
-                            </div>
-                            <div class="d-flex align-items-center">
-                                <small class="ms-3"><i class="far fa-eye text-primary me-1"></i>12345</small>
-                                <small class="ms-3"><i class="far fa-comment text-primary me-1"></i>123</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-6">
-                    <div class="bg-light rounded overflow-hidden">
-                        <img class="img-fluid w-100" src="<%= getAsset('/img/blog-1.jpg') %>" alt="">
-                        <div class="p-4">
-                            <a class="h3 d-block mb-3" href="">Dolor clita vero elitr sea stet dolor justo  diam</a>
-                            <p class="m-0">Dolor lorem eos dolor duo et eirmod sea. Dolor sit magna
-                                rebum clita rebum dolor stet amet justo</p>
-                        </div>
-                        <div class="d-flex justify-content-between border-top p-4">
-                            <div class="d-flex align-items-center">
-                                <img class="rounded-circle me-2" src="<%= getAsset('/img/user.jpg') %>" width="25" height="25" alt="">
-                                <small>John Doe</small>
-                            </div>
-                            <div class="d-flex align-items-center">
-                                <small class="ms-3"><i class="far fa-eye text-primary me-1"></i>12345</small>
-                                <small class="ms-3"><i class="far fa-comment text-primary me-1"></i>123</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-6">
-                    <div class="bg-light rounded overflow-hidden">
-                        <img class="img-fluid w-100" src="<%= getAsset('/img/blog-2.jpg') %>" alt="">
-                        <div class="p-4">
-                            <a class="h3 d-block mb-3" href="">Dolor clita vero elitr sea stet dolor justo  diam</a>
-                            <p class="m-0">Dolor lorem eos dolor duo et eirmod sea. Dolor sit magna
-                                rebum clita rebum dolor stet amet justo</p>
-                        </div>
-                        <div class="d-flex justify-content-between border-top p-4">
-                            <div class="d-flex align-items-center">
-                                <img class="rounded-circle me-2" src="<%= getAsset('/img/user.jpg') %>" width="25" height="25" alt="">
-                                <small>John Doe</small>
-                            </div>
-                            <div class="d-flex align-items-center">
-                                <small class="ms-3"><i class="far fa-eye text-primary me-1"></i>12345</small>
-                                <small class="ms-3"><i class="far fa-comment text-primary me-1"></i>123</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 text-center">
-                    <button class="btn btn-primary py-3 px-5">Load More</button>
                 </div>
             </div>
         </div>
     </div>
     <!-- Blog End -->
-    
 
 <%- include('partials/footer') %>

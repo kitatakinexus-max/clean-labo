@@ -939,9 +939,9 @@ app.post('/admin/api/messages/:id/status', requireAdminAuth, async (req, res) =>
 
 app.get('/', (req, res) => {
     const metaData = {
-        title: "Clean Laboratoire | Expert Nettoyage & Décapage Billets de Banque Sécurisé",
-        description: "Laboratoire Clean-Lab leader en Europe et Afrique. Solutions professionnelles de nettoyage, décapage et analyse de billets. Technologies SSD et spectrophotométrie.",
-        keywords: "nettoyage billets, décapage billets, solution SSD, laboratoire nettoyage, spectrophotométrie, billets de banque",
+        title: "Clean Laboratoire | Solution SSD Universelle & Nettoyage Billet Sécurisé",
+        description: "Expertise n°1 en nettoyage de billets de banque. Solution SSD universelle, décapage sécurisé et analyse spectrophotométrique. Laboratoire Clean Laboratoire leader Europe-Afrique.",
+        keywords: "clean laboratoire, nettoyage billets, solution SSD universelle, décapage billets, laboratoire nettoyage, billets de banque, expert nettoyage",
         canonical: "/"
     };
     res.render('index', { title: metaData.title, meta: metaData, page: 'home' });
@@ -961,9 +961,9 @@ app.get('/about', (req, res) => res.redirect(301, '/a-propos-laboratoire-nettoya
 
 app.get('/services-nettoyage-decapage-billets', (req, res) => {
     const metaData = {
-        title: "Services Nettoyage Billets | Solutions SSD & Décapage Professionnel",
-        description: "Services complets de nettoyage et décapage de billets. Solution SSD universelle, location machines, analyses spectrophotométriques, poudres d'activation.",
-        keywords: "services nettoyage billets, solution SSD, location machines décapage, analyse spectrophotométrie",
+        title: "Services Nettoyage Billets | Solution SSD Universelle & Décapage Pro",
+        description: "Découvrez nos solutions professionnelles : Solution SSD universelle, location de machines de décapage haute performance et analyses spectrophotométriques certifiées.",
+        keywords: "services nettoyage billets, solution SSD universelle, décapage professionnel, laboratoire billets",
         canonical: "/services-nettoyage-decapage-billets"
     };
     res.render('service', { title: metaData.title, meta: metaData, page: 'service' });
@@ -1001,10 +1001,10 @@ app.get('/contact', (req, res) => res.redirect(301, '/contact-laboratoire-nettoy
 
 app.get('/service/solution-ssd-universelle-nettoyage', (req, res) => {
     res.render('service-ssd', {
-        title: "Solution SSD Universelle | Nettoyage Professionnel Billets - Clean Lab",
+        title: "Solution SSD Universelle | Expert Nettoyage Nettoyage Billets Sécurisé",
         meta: {
-            description: "Solution SSD universelle pour le nettoyage efficace de tous types de billets.",
-            keywords: "solution SSD universelle, nettoyage billets SSD",
+            description: "La Solution SSD Universelle originale pour le nettoyage de tous types de billets sécurisés (USD, EUR). Technologie de pointe Clean Laboratoire.",
+            keywords: "solution SSD universelle, nettoyage billets SSD, produit nettoyage billets, expert SSD",
             canonical: "/service/solution-ssd-universelle-nettoyage"
         },
         page: 'service'
@@ -1131,6 +1131,8 @@ app.get('/sitemap.xml', (req, res) => {
         { url: '/contact-laboratoire-nettoyage', changefreq: 'monthly', priority: '0.8' },
         { url: '/service/solution-ssd-universelle-nettoyage', changefreq: 'weekly', priority: '0.7' },
         { url: '/service/location-machines-decapage', changefreq: 'weekly', priority: '0.7' },
+        { url: '/service/analyse-spectrophotometrie-billets', changefreq: 'weekly', priority: '0.7' },
+        { url: '/service/poudre-activation-nettoyage', changefreq: 'weekly', priority: '0.7' },
         { url: '/realisations-nettoyage-billets', changefreq: 'monthly', priority: '0.6' },
         { url: '/technologies-equipements-nettoyage', changefreq: 'monthly', priority: '0.6' },
         { url: '/equipe-experts-nettoyage-billets', changefreq: 'monthly', priority: '0.5' },

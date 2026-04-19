@@ -15,8 +15,7 @@ Disallow: /*?token=
 Disallow: /*?redirect=
 
 # Sitemaps
-Sitemap: https://www.clean-lab.com/sitemap.xml
-Sitemap: https://www.clean-lab.com/sitemap-static.xml
+Sitemap: https://www.clean-laboratoire.com/sitemap.xml
 
 # Crawl delay pour éviter la surcharge
 Crawl-delay: 1
