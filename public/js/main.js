@@ -144,27 +144,29 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Navigation tactile (swipe)
-    let touchStartX = 0;
-    let touchEndX = 0;
-    
-    lightbox.addEventListener('touchstart', function(e) {
-        touchStartX = e.changedTouches[0].screenX;
-    });
-    
-    lightbox.addEventListener('touchend', function(e) {
-        touchEndX = e.changedTouches[0].screenX;
-        handleSwipe();
-    });
-    
-    function handleSwipe() {
-        const swipeThreshold = 50;
-        const diff = touchStartX - touchEndX;
+    if (lightbox) {
+        let touchStartX = 0;
+        let touchEndX = 0;
         
-        if (Math.abs(diff) > swipeThreshold) {
-            if (diff > 0) {
-                showNextImage(); // Swipe gauche
-            } else {
-                showPrevImage(); // Swipe droit
+        lightbox.addEventListener('touchstart', function(e) {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+        
+        lightbox.addEventListener('touchend', function(e) {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+            
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    showNextImage(); // Swipe gauche
+                } else {
+                    showPrevImage(); // Swipe droit
+                }
             }
         }
     }
