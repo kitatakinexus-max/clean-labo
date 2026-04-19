@@ -31,8 +31,10 @@ function initializeFirebase() {
                 credential: admin.credential.cert({
                     projectId: process.env.FIREBASE_PROJECT_ID,
                     clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
-                    // Remplacer les \n en vrais retours à la ligne
-                    privateKey: process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, '\n'),
+                    // Parsing robuste de la clé privée (gère guillemets et retours à la ligne)
+                    privateKey: process.env.FIREBASE_PRIVATE_KEY
+                        ? process.env.FIREBASE_PRIVATE_KEY.replace(/^['"]|['"]$/g, '').replace(/\\n/g, '\n')
+                        : undefined,
                 }),
             });
         }
