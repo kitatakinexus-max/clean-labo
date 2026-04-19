@@ -1122,7 +1122,17 @@ app.get('/blog', (req, res) => res.redirect(301, '/blog-expertise-nettoyage-bill
 // ============================================================================
 
 app.get('/sitemap.xml', (req, res) => {
-    const baseUrl = process.env.DOMAIN || 'https://www.clean-laboratoire.com';
+    // Détection robuste du domaine : Priorité .env, puis Host de la requête
+    let baseUrl = process.env.DOMAIN;
+    
+    // Si DOMAIN est absent ou contient encore l'ancien domaine, on utilise le host actuel
+    if (!baseUrl || baseUrl.includes('clean-lab.com')) {
+        baseUrl = `${req.protocol}://${req.get('host')}`;
+    }
+    
+    // Nettoyage : retirer le slash final si présent pour éviter les doubles slashes
+    baseUrl = baseUrl.replace(/\/$/, '');
+
     const urls = [
         { url: '/', changefreq: 'daily', priority: '1.0' },
         { url: '/a-propos-laboratoire-nettoyage-billets', changefreq: 'monthly', priority: '0.9' },
