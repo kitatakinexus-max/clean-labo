@@ -25,6 +25,11 @@ function initializeFirebase() {
         const path = require('path');
         const serviceAccountPath = path.join(process.cwd(), 'serviceAccountKey.json');
 
+        console.log('🔍 Diagnostic Firebase :');
+        console.log('   - Dossier de travail (CWD) :', process.cwd());
+        console.log('   - Chemin recherché :', serviceAccountPath);
+        console.log('   - Fichier trouvé ? :', fs.existsSync(serviceAccountPath));
+
         // MÉTHODE 1 : Fichier JSON local (La plus stable sur Hostinger)
         if (fs.existsSync(serviceAccountPath)) {
             admin.initializeApp({
