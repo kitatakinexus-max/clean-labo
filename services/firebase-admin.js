@@ -31,10 +31,19 @@ function initializeFirebase() {
                 credential: admin.credential.cert({
                     projectId: process.env.FIREBASE_PROJECT_ID,
                     clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
-                    // Parsing robuste de la clé privée (gère guillemets et retours à la ligne)
-                    privateKey: process.env.FIREBASE_PRIVATE_KEY
-                        ? process.env.FIREBASE_PRIVATE_KEY.replace(/^['"]|['"]$/g, '').replace(/\\n/g, '\n')
-                        : undefined,
+                    // Détection et décodage Base64 si nécessaire, sinon parsing PEM classique
+                    privateKey: (function() {
+                        let key = process.env.FIREBASE_PRIVATE_KEY;
+                        if (!key) return undefined;
+                        // Nettoyer les guillemets accidentels
+                        key = key.replace(/^['"]|['"]$/g, '');
+                        // Si la clé ne contient pas les marqueurs PEM mais ressemble à du Base64, on la décode
+                        if (!key.includes('-----BEGIN') && !key.includes('\n') && key.length > 500) {
+                            return Buffer.from(key, 'base64').toString('utf-8');
+                        }
+                        // Sinon, parsing PEM robuste habituel
+                        return key.replace(/\\n/g, '\n');
+                    })(),
                 }),
             });
         }
