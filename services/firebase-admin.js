@@ -13,44 +13,50 @@ let firebaseInitialized = false;
  * Gère le cas où Firebase est déjà initialisé (HMR / module cache).
  */
 function initializeFirebase() {
-    // Vérifier si les credentials sont configurés
-    if (
-        !process.env.FIREBASE_PROJECT_ID ||
-        process.env.FIREBASE_PROJECT_ID === 'your-project-id' ||
-        !process.env.FIREBASE_CLIENT_EMAIL ||
-        !process.env.FIREBASE_PRIVATE_KEY
-    ) {
-        console.warn('⚠️  Firebase: credentials non configurés dans .env. Utilisation du fallback JSON local.');
-        return false;
-    }
-
     try {
-        // Éviter la double initialisation (utile avec nodemon)
-        if (admin.apps.length === 0) {
+        // Éviter la double initialisation
+        if (admin.apps.length > 0) {
+            db = admin.firestore();
+            firebaseInitialized = true;
+            return true;
+        }
+
+        const fs = require('fs');
+        const path = require('path');
+        const serviceAccountPath = path.join(process.cwd(), 'serviceAccountKey.json');
+
+        // MÉTHODE 1 : Fichier JSON local (La plus stable sur Hostinger)
+        if (fs.existsSync(serviceAccountPath)) {
+            admin.initializeApp({
+                credential: admin.credential.cert(serviceAccountPath),
+            });
+            console.log('✅ Firebase Admin SDK initialisé via fichier JSON');
+        } 
+        // MÉTHODE 2 : Variables d'environnement (Repli)
+        else if (process.env.FIREBASE_PROJECT_ID && process.env.FIREBASE_PRIVATE_KEY) {
             admin.initializeApp({
                 credential: admin.credential.cert({
                     projectId: process.env.FIREBASE_PROJECT_ID,
                     clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
-                    // Détection et décodage Base64 si nécessaire, sinon parsing PEM classique
                     privateKey: (function() {
                         let key = process.env.FIREBASE_PRIVATE_KEY;
                         if (!key) return undefined;
-                        // Nettoyer les guillemets accidentels
                         key = key.replace(/^['"]|['"]$/g, '');
-                        // Si la clé ne contient pas les marqueurs PEM mais ressemble à du Base64, on la décode
                         if (!key.includes('-----BEGIN') && !key.includes('\n') && key.length > 500) {
                             return Buffer.from(key, 'base64').toString('utf-8');
                         }
-                        // Sinon, parsing PEM robuste habituel
                         return key.replace(/\\n/g, '\n');
                     })(),
                 }),
             });
+            console.log('✅ Firebase Admin SDK initialisé via Environnement');
+        } else {
+            console.warn('⚠️  Firebase: Aucune méthode d\'authentification trouvée (ni JSON, ni ENV).');
+            return false;
         }
 
         db = admin.firestore();
         firebaseInitialized = true;
-        console.log('✅ Firebase Admin SDK initialisé avec succès');
         return true;
     } catch (error) {
         console.error('❌ Erreur initialisation Firebase:', error.message);
